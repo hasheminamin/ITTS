@@ -1,0 +1,51 @@
+
+N NVE null رخداد§n-13136 static_object_state N SBJ Arg0 شيء§n-12703 static_object
+N NVE null رخداد§n-13136 static_object_state N NCONJ null null static_object
+N NVE null رخداد§n-13136 static_object_state N NCONJ null null static_object
+
+
+
+
+ADJ MOS Arg2 مشخصه§n-12756 static_object_state N OBJ Arg1 شيء§n-12703 static_object
+ADJ MOS Arg2 مشخصه§n-12756 static_object_state N OBJ Arg1 شيء§n-12703 static_object
+ADJ MOS Arg2 مشخصه§n-12756 static_object_state N AJPP null هست§n-12706 static_object
+
+
+
+
+
+ADJ PREDEP null مشخصه§n-12756 static_object_state N MOZ null ساختار§n-12875 static_object
+ADJ PREDEP null مشخصه§n-12756 static_object_state N OBJ Arg1 شيء§n-12703 static_object
+ADJ PREDEP null مشخصه§n-12756 static_object_state N MOZ null شيء§n-12703 static_object
+ADJ PREDEP null مشخصه§n-12756 static_object_state N VPP Arg3 شيء§n-12703 static_object
+ADJ PREDEP null مشخصه§n-12756 static_object_state N SBJ Arg1 شيء§n-12703 static_object
+ADJ MOS Arg2 مشخصه§n-12756 static_object_state N MOZ null ساختار§n-12875 static_object
+ADJ MOS Arg2 مشخصه§n-12756 static_object_state N OBJ Arg1 شيء§n-12703 static_object
+ADJ MOS Arg2 مشخصه§n-12756 static_object_state N MOZ null شيء§n-12703 static_object
+ADJ MOS Arg2 مشخصه§n-12756 static_object_state N VPP Arg3 شيء§n-12703 static_object
+ADJ MOS Arg2 مشخصه§n-12756 static_object_state N SBJ Arg1 شيء§n-12703 static_object
+
+
+
+
+
+
+
+
+
+
+
+
+ADJ NPOSTMOD null مشخصه§n-12756 static_object_state N OBJ Arg1 شيء§n-12703 static_object
+
+ADJ NPOSTMOD null مشخصه§n-12756 static_object_state N MOZ null شيء§n-12703 static_object
+
+
+
+
+
+
+
+
+
+

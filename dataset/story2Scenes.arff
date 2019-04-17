@@ -1,0 +1,3078 @@
+newStory*************************************
+newScene*************************************
+
+1	حضرت	N	SBJ	6	null	null	role_state	Arg1 	
+2	هود	N	MOZ	1	هود§n-23052	نفر§n-13075	role		
+3	يكي‌از	ADJ	NPREMOD	4	null	null	junk		
+4	انبياي	N	MOS	6	رسول§n-15053	نفر§n-13075	role	Arg2 	
+5	الهي	ADJ	NPOSTMOD	4	رباني§a-2083	مشخصه§n-12756	role_state		
+6	است	V	ROOT	0	null	null	junk		
+7	که	SUBR	NCL	4	null	null	junk		
+8	نام	N	SBJ	14	null	null	junk	Arg1 	
+9	مبارک	ADJ	NPOSTMOD	8	همايون§a-1636	مشخصه§n-12756	role_state		
+10	ش	PR	MOZ	8	هود§n-23052	نفر§n-13075	role		
+11	ده‌بار	ADV	ADVRB	14	null	null	no	ArgM_EXT 	
+12	در	PREP	VPP	14	null	null	junk	Arg3 	
+13	قرآن	N	VPP	14	مصحف§n-10198	هست§n-12706	static_object	Arg3 	
+14	آمده	V	PREDEP	15	null	null	junk		
+15	و	CONJ	VCONJ	22	null	null	junk		
+16	يک	NUM	NPREMOD	17	null	null	junk		
+17	سوره	N	SBJ	22	سوره§n-20384	خبر§n-12766	no	Arg1 	
+18	نيز	ADV	ADVRB	22	null	null	junk	ArgM_ADV 	
+19	به	PREP	MOS	22	null	null	junk	Arg2 	
+20	نام	N	POSDEP	19	null	null	junk		
+21	ايشان	PR	MOZ	20	null	null	junk		
+22	مي‌باشد	V	PRD	7	بودن§v-9328	رخداد§n-13136	no		
+23	.	PUNC	PUNC	6	null	null	junk		
+
+1	هود	N	SBJ	6	هود§n-23052	نفر§n-13075	role	Arg1 Arg1 	
+2	از	PREP	MOS	6	null	null	junk	Arg2 	
+3	نوادگان	N	MOS	6	null	null	role	Arg2 	
+4	حضرت	N	MOZ	3	null	null	role_state		
+5	نوح	N	MOZ	4	حضرت نوح§n-23928	نفر§n-13075	role		
+6	بوده	V	PREDEP	7	null	null	junk		
+7	و	CONJ	VCONJ	13	null	null	junk		
+8	با	PREP	ADVRB	13	null	null	junk	ArgM_MNR 	
+9	هفت	NUM	NPREMOD	10	null	null	junk		
+10	واسطه	N	ADVRB	13	دلال§n-11961	نفر§n-13075	role	ArgM_MNR 	
+11	به	PREP	VPP	13	null	null	junk	Arg3 	
+12	او	PR	POSDEP	11	null	null	junk		
+13	مي‌رسد	V	ROOT	0	رسيدن§v-8613	رخداد§n-13136	no		
+14	.	PUNC	PUNC	13	null	null	junk		
+roles= 
+	[هود§n-23052= هود role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[رسول§n-15053= انبياي role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[هود§n-23052= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= نوادگان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[حضرت نوح§n-23928= نوح role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[دلال§n-11961= واسطه role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [قرآن=  مصحف§n-10198 object_states=  []]
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [null=  حضرت, رباني§a-2083=  الهي, همايون§a-1636=  مبارک, null=  حضرت]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	محل	N	SBJ	17	برزن§n-11841	جا§n-12733	location	Arg1 	
+2	سکونت	N	MOZ	1	اقامت کردن§n-10696	رخداد§n-13136	location		
+3	اين	ADJ	NPREMOD	4	null	null	junk		
+4	قوم	N	MOZ	2	قوم§n-13461	گروه§n-12753	role		
+5	در	PREP	MOS	17	null	null	junk	Arg2 	
+6	احقاف	N	MOS	17	null	null	location	Arg2 	
+7	(	PUNC	PUNC	8	null	null	junk		
+8	بين	PREP	POSDEP	6	null	null	junk		
+9	يمن	N	POSDEP	8	يمن§n-20336	گروه§n-12753	location		
+10	و	CONJ	NCONJ	9	null	null	junk		
+11	عمان	N	NCONJ	9	عمان§n-25382	گروه§n-12753	location		
+12	،	PUNC	PUNC	11	null	null	junk		
+13	در	PREP	POSDEP	11	null	null	junk		
+14	جنوب	N	POSDEP	11	جنوب§n-14891	جا§n-12733	location		
+15	عربستان	N	MOZ	14	عربستان§n-23600	گروه§n-12753	location		
+16	)	PUNC	PUNC	8	null	null	junk		
+17	است	V	ROOT	0	null	null	junk		
+18	.	PUNC	PUNC	17	null	null	junk		
+
+1	آن‌ها	PR	SBJ	6	قوم§n-13461	گروه§n-12753	role	Arg1 	
+2	مردمي	N	MOS	6	مردم§n-13215	گروه§n-12753	role	Arg2 	
+3	قوي	ADJ	NPOSTMOD	2	خوش بنيه§a-93	مشخصه§n-12756	role_state		
+4	و	CONJ	AJCONJ	3	null	null	junk		
+5	تنومند	ADJ	AJCONJ	3	خوش بنيه§a-93	مشخصه§n-12756	role_state		
+6	بودند	V	ROOT	0	null	null	junk		
+7	.	PUNC	PUNC	6	null	null	junk		
+
+1	هم‌چنين	ADV	ADVRB	7	null	null	no	ArgM_ADV 	
+2	صاحب	ADJ	MOS	7	مالک§n-13378	مشخصه§n-12756	role_state	Arg2 	
+3	شهرهاي	N	NEZ	2	شهر§n-10272	جا§n-12733	location		
+4	آباد	ADJ	NPOSTMOD	3	null	null	junk		
+5	و	CONJ	AJCONJ	4	null	null	junk		
+6	خرم	ADJ	AJCONJ	4	خرم§a-1575	مشخصه§n-12756	static_object_state		
+7	بودند	V	ROOT	0	null	null	junk		
+8	.	PUNC	PUNC	7	null	null	junk		
+
+1	آن‌ها	PR	SBJ	10	قوم§n-13461	گروه§n-12753	role	Arg1 	
+2	قومي	N	MOS	10	قوم§n-13461	گروه§n-12753	role	Arg2 	
+3	طغيانگر	ADJ	NPOSTMOD	2	null	null	role_state		
+4	،	PUNC	PUNC	3	null	null	junk		
+5	شهوت‌پرست	ADJ	AJCONJ	3	null	null	role_state		
+6	،	PUNC	PUNC	5	null	null	junk		
+7	گمراه	ADJ	AJCONJ	5	گمراه§a-661	مشخصه§n-12756	role_state		
+8	و	CONJ	AJCONJ	7	null	null	junk		
+9	لجوج	ADJ	AJCONJ	7	لج‌باز§a-17663	مشخصه§n-12756	role_state		
+10	بودند	V	ROOT	0	null	null	junk		
+11	.	PUNC	PUNC	10	null	null	junk		
+
+1	آن‌ها	PR	SBJ	3	قوم§n-13461	گروه§n-12753	role	Arg1 Arg0 Arg1 	
+2	حاضر	ADJ	MOS	3	null	null	junk	Arg2 	
+3	نبودند	V	ROOT	0	بودن§v-9328	رخداد§n-13136	no		
+4	دست	N	NVE	9	دست§n-13537	رابطه§n-13628	no		
+5	از	PREP	VPP	9	null	null	junk	Arg3 	
+6	کارهاي	N	VPP	9	کار§n-12781	رخداد§n-13136	no	Arg3 	
+7	خلاف	ADJ	NPOSTMOD	6	تخطي§n-10585	رخداد§n-13136	role_intent		
+8	خود	PR	MOZ	6	null	null	junk		
+9	بردارند	V	VCONJ	14	منصرف شدن§v-8543	رخداد§n-13136	no		
+10	و	CONJ	VCONJ	14	null	null	junk		
+11	دربرابر	PREP	AJPP	13	null	null	no		
+12	حق	N	POSDEP	11	null	null	junk		
+13	تسليم	ADJ	MOS	14	مطيع§a-542	مشخصه§n-12756	role_state	Arg2 	
+14	شوند	V	ACL	2	null	null	junk		
+15	.	PUNC	PUNC	3	null	null	junk		
+roles= 
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[مردم§n-13215= مردمي role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= قومي role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[برزن§n-11841=  محل], [اقامت کردن§n-10696=  سکونت], [null=  احقاف], [يمن§n-20336=  يمن], [عمان§n-25382=  عمان], [جنوب§n-14891=  جنوب], [عربستان§n-23600=  عربستان], [شهر§n-10272=  شهرهاي]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [خوش بنيه§a-93=  قوي, خوش بنيه§a-93=  تنومند, مالک§n-13378=  صاحب, null=  طغيانگر, null=  شهوت‌پرست, گمراه§a-661=  گمراه, لج‌باز§a-17663=  لجوج, مطيع§a-542=  تسليم]
+roal_intetns= [تخطي§n-10585=  خلاف]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [خرم§a-1575=  خرم]
+
+newScene*************************************
+
+1	هود	N	SBJ	10	هود§n-23052	نفر§n-13075	role	Arg0 	
+2	قوم	N	OBJ	10	قوم§n-13461	گروه§n-12753	role	Arg1 	
+3	خود	PR	MOZ	2	null	null	junk		
+4	را	POSTP	OBJ	10	null	null	junk	Arg1 	
+5	به	PREP	NPP	9	null	null	junk	Arg3 	
+6	پرستش	N	NPP	9	پرستش§n-10683	رخداد§n-13136	role_intent	Arg3 	
+7	خداي	N	MOZ	6	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+8	يگانه	ADJ	NPOSTMOD	7	بي نظير§a-1870	مشخصه§n-12756	role_state		
+9	دعوت	N	NVE	10	دعوت§n-11510	خبر§n-12766	role_intent		
+10	مي‌کرد	V	VCONJ	16	خواندن§v-8493	رخداد§n-13136	role_action		
+11	ولي	CONJ	VCONJ	16	null	null	junk		
+12	آن‌ها	PR	SBJ	16	قوم§n-13461	گروه§n-12753	role	Arg0 Arg0 	
+13	دعوت	N	OBJ	16	دعوت§n-11510	خبر§n-12766	role_intent	Arg1 	
+14	ش	PR	MOZ	13	هود§n-23052	نفر§n-13075	role		
+15	را	POSTP	OBJ	16	null	null	junk	Arg1 	
+16	نمي‌پذيرفتند	V	VCONJ	22	قبول کردن§v-7791	رخداد§n-13136	role_action		
+17	و	CONJ	VCONJ	22	null	null	junk		
+18	به	PREP	NPP	20	null	null	junk	Arg3 	
+19	او	PR	POSDEP	18	null	null	junk		
+20	نسبت	N	NVE	22	نسبت دادن§n-10102	خصوصيت_رواني§n-12725	no		
+21	دروغ	N	MOZ	20	دروغ§n-16181	null	role_state	Arg1 	
+22	مي‌دادند	V	ROOT	0	نسبت دادن§v-9142	رخداد§n-13136	no		
+23	.	PUNC	PUNC	22	null	null	junk		
+
+1	اين	ADJ	NPREMOD	2	null	null	junk		
+2	قوم	N	SBJ	10	قوم§n-13461	گروه§n-12753	role	Arg0 Arg1 	
+3	،	PUNC	PUNC	2	null	null	junk		
+4	خدا	N	OBJ	10	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no	Arg1 	
+5	را	POSTP	OBJ	10	null	null	junk	Arg1 	
+6	به‌خاطر	PREP	VPP	10	null	null	no	Arg3 	
+7	نعمتهاي	N	POSDEP	6	null	null	static_object		
+8	ش	PR	MOZ	7	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+9	سپاس	N	NVE	10	شکر§n-11536	مشخصه§n-12756	role_state		
+10	نمي‌گفتند	V	VCONJ	17	null	null	no		
+11	و	CONJ	VCONJ	17	null	null	junk		
+12	غرق	ADJ	MOS	17	null	null	role_state	Arg2 	
+13	در	PREP	AJPP	12	null	null	junk		
+14	غرور	N	AJPP	12	غرور§n-11203	مشخصه§n-12756	role_state		
+15	و	CONJ	NCONJ	14	null	null	junk		
+16	شهوت	N	NCONJ	14	هوا§n-11633	مشخصه§n-12756	role_state		
+17	بودند	V	ROOT	0	null	null	junk		
+18	.	PUNC	PUNC	17	null	null	junk		
+
+1	هود	N	SBJ	6	هود§n-23052	نفر§n-13075	role	Arg0 	
+2	بسيار	ADV	ADVRB	6	null	null	junk	ArgM_EXT 	
+3	آن‌ها	PR	OBJ	6	قوم§n-13461	گروه§n-12753	role	Arg1 	
+4	را	POSTP	OBJ	6	null	null	junk	Arg1 	
+5	نصيحت	N	NVE	6	موعظه§n-11468	خبر§n-12766	role_intent		
+6	مي‌کرد	V	VCONJ	14	اندرز دادن§v-8162	رخداد§n-13136	role_action		
+7	اما	CONJ	VCONJ	14	null	null	junk		
+8	اقدامات	N	SBJ	14	کنش§n-12746	رخداد§n-13136	no	Arg0 	
+9	هود	N	MOZ	8	هود§n-23052	نفر§n-13075	role		
+10	هيچ	ADJ	NPREMOD	11	null	null	junk		
+11	تاثيري	N	NVE	14	تاثير§n-11252	مشخصه§n-12756	no		
+12	بر	PREP	NPP	11	null	null	junk	Arg3 	
+13	آن‌ها	PR	POSDEP	12	قوم§n-13461	گروه§n-12753	role		
+14	نگذاشت	V	ROOT	0	اثر بخشيدن§v-9349	رخداد§n-13136	no		
+15	.	PUNC	PUNC	14	null	null	junk		
+roles= 
+	[هود§n-23052= هود role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[هود§n-23052= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [نعمتهاي=  null object_states=  []]
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [خواندن§v-8493=  مي‌کرد, قبول کردن§v-7791=  نمي‌پذيرفتند, اندرز دادن§v-8162=  مي‌کرد]
+roal_states= [بي نظير§a-1870=  يگانه, دروغ§n-16181=  دروغ, شکر§n-11536=  سپاس, null=  غرق, غرور§n-11203=  غرور, هوا§n-11633=  شهوت]
+roal_intetns= [پرستش§n-10683=  پرستش, دعوت§n-11510=  دعوت, دعوت§n-11510=  دعوت, موعظه§n-11468=  نصيحت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	هود	N	SBJ	6	هود§n-23052	نفر§n-13075	role	Arg0 Arg0 	
+2	از	PREP	NPP	5	null	null	junk	Arg3 	
+3	اين	ADJ	NPREMOD	4	null	null	junk		
+4	فرصت	N	NPP	5	فرصت§n-12497	دوره_زماني§n-12603	no	Arg3 	
+5	استفاده	N	NVE	6	null	null	junk		
+6	کرد	V	PREDEP	7	null	null	junk		
+7	و	CONJ	VCONJ	11	null	null	junk		
+8	مجددا	ADV	ADVRB	11	null	null	junk	ArgM_EXT 	
+9	از	PREP	VPP	11	null	null	junk	Arg3 	
+10	آن‌ها	PR	VPP	11	قوم§n-13461	گروه§n-12753	role	Arg3 	
+11	خواست	V	ROOT	0	null	null	junk		
+12	که	SUBR	VCL	11	null	null	junk	Arg1 	
+13	توبه	N	NVE	14	استغفار§n-17529	مشخصه§n-12756	role_state		
+14	کرده	V	PREDEP	15	null	null	junk		
+15	و	CONJ	VCONJ	19	null	null	junk		
+16	به	PREP	NPP	18	null	null	junk	Arg3 	
+17	خدا	N	NPP	18	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no	Arg3 	
+18	ايمان	N	NVE	19	ايمان§n-11400	خصوصيت_رواني§n-12725	role_intent		
+19	بياورند	V	PRD	12	ايمان آوردن§v-7966	رخداد§n-13136	role_action		
+20	.	PUNC	PUNC	11	null	null	junk		
+roles= 
+	[هود§n-23052= هود role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [ايمان آوردن§v-7966=  بياورند]
+roal_states= [استغفار§n-17529=  توبه]
+roal_intetns= [ايمان§n-11400=  ايمان]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	گروهي	N	SBJ	6	null	null	junk	Arg0 Arg0 	
+2	از	PREP	NPP	1	null	null	junk		
+3	مردم	N	POSDEP	2	null	null	junk		
+4	به‌نزد	PREP	VPP	6	محضر§n-10120	جا§n-12733	location	Arg4 	
+5	هود	N	POSDEP	4	هود§n-23052	نفر§n-13075	role		
+6	رفته	V	PREDEP	7	null	null	junk		
+7	و	CONJ	VCONJ	12	null	null	junk		
+8	از	PREP	NPP	10	null	null	junk	Arg3 	
+9	او	PR	POSDEP	8	null	null	junk		
+10	طلب	N	NVE	12	طلب§n-19500	رخداد§n-13136	role_intent		
+11	دعا	N	MOZ	10	مناجات§n-11513	خبر§n-12766	role_state	Arg1 	
+12	کردند	V	ROOT	0	null	null	junk		
+13	.	PUNC	PUNC	12	null	null	junk		
+roles= 
+	[هود§n-23052= هود role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[محضر§n-10120=  به‌نزد]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [مناجات§n-11513=  دعا]
+roal_intetns= [طلب§n-19500=  طلب]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	مجددا	ADV	ADVRB	6	null	null	junk	ArgM_EXT 	
+2	باران	N	SBJ	6	باران§n-12110	null	static_object	Arg1 	
+3	بر	PREP	AJPP	5	null	null	junk		
+4	آن‌ها	PR	POSDEP	3	قوم§n-13461	گروه§n-12753	role		
+5	نازل	ADJ	MOS	6	null	null	static_object_state	Arg2 	
+6	شد	V	PREDEP	7	null	null	junk		
+7	و	CONJ	VCONJ	14	null	null	junk		
+8	سرسبزي	N	SBJ	14	null	null	static_object_state	Arg0 	
+9	و	CONJ	NCONJ	8	null	null	junk		
+10	خرمي	N	NCONJ	8	null	null	static_object_state		
+11	به	PREP	VPP	14	null	null	junk	Arg3 	
+12	سرزمين	N	VPP	14	خطه§n-13265	جا§n-12733	location	Arg3 	
+13	شان	PR	MOZ	12	null	null	junk		
+14	بازگشت	V	ROOT	0	برگشتن§v-8032	رخداد§n-13136	no		
+roles= 
+	[قوم§n-13461= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [باران=  باران§n-12110 object_states=  []]
+location= null
+alternativeLocations= [[خطه§n-13265=  سرزمين]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [null=  نازل, null=  سرسبزي, null=  خرمي]
+
+newScene*************************************
+
+1	اما	SUBR	ROOT	0	null	null	junk	ArgM_DIS 	
+2	آن‌ها	PR	SBJ	8	قوم§n-13461	گروه§n-12753	role	Arg0 	
+3	همچنان	ADV	ADVRB	8	null	null	junk	ArgM_ADV 	
+4	به	PREP	VPP	8	null	null	junk	Arg3 	
+5	کفر	N	VPP	8	null	null	role_state	Arg3 	
+6	خود	PR	MOZ	5	null	null	junk		
+7	ادامه	N	NVE	8	دنباله§n-13567	رابطه§n-13628	role_intent		
+8	دادند	V	PRD	1	null	null	junk		
+9	،	PUNC	PUNC	8	null	null	junk		
+10	طوري	N	ADVRB	8	null	null	no	ArgM_ADV 	
+11	که	SUBR	NCL	10	null	null	junk		
+12	اين	ADJ	NPREMOD	13	null	null	junk		
+13	بار	N	ADVRB	19	null	null	junk		
+14	اراده	N	SBJ	19	خواست§n-11330	خصوصيت_رواني§n-12725	role_intent	Arg1 	
+15	خدا	N	MOZ	14	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+16	بر	PREP	VPP	19	null	null	junk	Arg2 	
+17	اين	PR	POSDEP	16	null	null	junk		
+18	قرار	N	NVE	19	null	null	no		
+19	گرفت	V	PRD	11	null	null	junk		
+20	که	SUBR	NCL	17	null	null	junk		
+21	عذاب	N	OBJ	26	نکبت§n-11559	رخداد§n-13136	no	Arg1 	
+22	را	POSTP	OBJ	26	null	null	junk	Arg1 	
+23	بر	PREP	AJPP	25	null	null	junk		
+24	آن‌ها	PR	POSDEP	23	قوم§n-13461	گروه§n-12753	role		
+25	نازل	ADJ	MOS	26	null	null	no	Arg2 	
+26	نمايد	V	PRD	20	null	null	junk		
+27	.	PUNC	PUNC	8	null	null	junk		
+
+1	خداوند	N	SBJ	9	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no	Arg0 	
+2	متعال	ADJ	NPOSTMOD	1	null	null	role_state		
+3	باد	N	OBJ	9	باد§n-12113	null	static_object	Arg1 Arg1 Arg1 Arg0 	
+4	بسيار	ADV	APREMOD	5	null	null	junk		
+5	شديدي	ADJ	NPOSTMOD	3	حاد§a-1375	مشخصه§n-12756	static_object_state		
+6	بر	PREP	AJPP	8	null	null	junk		
+7	آن‌ها	PR	POSDEP	6	قوم§n-13461	گروه§n-12753	role		
+8	نازل	ADJ	MOS	9	null	null	static_object_state	Arg2 	
+9	کرد	V	ROOT	0	null	null	junk		
+10	که	SUBR	NCL	3	null	null	junk		
+11	به	PREP	ADVRB	20	null	null	junk	ArgM_EXT 	
+12	مدت	N	POSDEP	11	null	null	junk		
+13	هفت	NUM	NPREMOD	14	null	null	junk		
+14	شب	N	MOZ	12	شب§n-12642	دوره_زماني§n-12603	time		
+15	و	CONJ	NCONJ	14	null	null	junk		
+16	هشت	NUM	NPREMOD	17	null	null	junk		
+17	روز	N	POSDEP	15	روشنايي روز§n-12637	دوره_زماني§n-12603	time		
+18	بر	PREP	VPP	20	null	null	junk	Arg3 	
+19	آن‌ها	PR	POSDEP	18	قوم§n-13461	گروه§n-12753	role		
+20	وزيد	V	VCONJ	28	null	null	no		
+21	و	CONJ	VCONJ	28	null	null	junk		
+roles= 
+	[قوم§n-13461= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [باد=  باد§n-12113 object_states=  []]
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= [[شب§n-12642=  شب], [روشنايي روز§n-12637=  روز]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [null=  کفر, null=  متعال]
+roal_intetns= [دنباله§n-13567=  ادامه, خواست§n-11330=  اراده]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [حاد§a-1375=  شديدي, null=  نازل]
+
+newScene*************************************
+
+22	يکايک	ADJ	NPREMOD	23	null	null	role		
+23	آن‌ها	PR	OBJ	28	قوم§n-13461	گروه§n-12753	role	Arg1 	
+24	را	POSTP	OBJ	28	null	null	junk	Arg1 	
+25	نيست	ADJ	MOS	28	null	null	junk	Arg2 	
+26	و	CONJ	AJCONJ	25	null	null	junk		
+27	نابود	ADJ	AJCONJ	25	منهدم§a-1202	مشخصه§n-12756	role_state		
+28	نمود	V	VCONJ	34	نابود کردن§v-9575	رخداد§n-13136	no		
+29	و	CONJ	VCONJ	34	null	null	junk		
+30	بدن‌هاي	N	OBJ	34	هيکل§n-12946	 شيء§n-12703	static_object	Arg1 	
+31	شان	PR	MOZ	30	null	null	junk		
+32	را	POSTP	OBJ	34	null	null	junk	Arg1 	
+33	قطعه‌قطعه	ADJ	MOS	34	null	null	static_object_state	Arg2 	
+34	نمود	V	PRD	10	قطعه قطعه کردن§v-18848	رخداد§n-13136	role_action		
+35	به‌طوري	PREP	ADVRB	34	null	null	no	ArgM_MNR 	
+36	که	SUBR	POSDEP	35	null	null	junk		
+37	حتي	ADV	ADVRB	42	null	null	junk	ArgM_ADV 	
+38	يکي‌از	ADJ	NPREMOD	39	null	null	role		
+39	آن‌ها	PR	SBJ	42	قوم§n-13461	گروه§n-12753	role	Arg1 	
+40	نيز	ADV	ADVRB	42	null	null	junk	ArgM_ADV 	
+41	زنده	ADJ	MOS	42	زنده§a-86	مشخصه§n-12756	role_state	Arg2 	
+42	نماندند	V	VCONJ	53	نجات يافتن§v-8668	رخداد§n-13136	no		
+43	و	CONJ	VCONJ	53	null	null	junk		
+44	فقط	ADV	ADVRB	53	null	null	junk	ArgM_ADV 	
+45	هود	N	SBJ	53	هود§n-23052	نفر§n-13075	role	Arg1 	
+46	و	CONJ	NCONJ	45	null	null	junk		
+47	اطرافيان	N	NCONJ	45	اطرافيان§n-16792	نفر§n-13075	role		
+48	ش	PR	MOZ	47	هود§n-23052	نفر§n-13075	role		
+49	از	PREP	NPP	52	null	null	junk	Arg3 	
+50	اين	ADJ	NPREMOD	51	null	null	junk		
+51	عذاب	N	NPP	52	نکبت§n-11559	رخداد§n-13136	no	Arg3 	
+52	نجات	N	NVE	53	نجات§n-10430	null	role_state		
+53	يافتند	V	PRD	36	نجات يافتن§v-8668	رخداد§n-13136	role_action		
+54	.	PUNC	PUNC	9	null	null	junk		
+roles= 
+	[null= يکايک role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= يکي‌از role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[هود§n-23052= هود role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[اطرافيان§n-16792= اطرافيان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[هود§n-23052= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [بدن‌هاي=  هيکل§n-12946 object_states=  []]
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [قطعه قطعه کردن§v-18848=  نمود, نجات يافتن§v-8668=  يافتند]
+roal_states= [منهدم§a-1202=  نابود, زنده§a-86=  زنده, نجات§n-10430=  نجات]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [null=  قطعه‌قطعه]
+
+newScene*************************************
+
+1	آن‌ها	PR	SBJ	12	null	null	role	Arg0 Arg0 	
+2	بعداز	PREP	ADVRB	12	null	null	no	ArgM_TMP 	
+3	پايان	N	POSDEP	2	نهايت§n-12517	مشخصه§n-12756	time		
+4	عذاب	N	MOZ	3	نکبت§n-11559	رخداد§n-13136	no		
+5	و	CONJ	NCONJ	4	null	null	junk		
+6	نابودي	N	NCONJ	4	نابودي§n-14609	مشخصه§n-12756	role_state		
+7	کافرين	N	MOZ	6	کافر§n-20269	نفر§n-13075	role		
+8	به	PREP	NPP	11	null	null	junk	Arg4 	
+9	سرزمين	N	NPP	11	خطه§n-13265	جا§n-12733	location	Arg4 	
+10	حضرموت	N	MOZ	9	null	null	location		
+11	کوچ	N	NVE	12	کوچ§n-10723	رخداد§n-13136	role_intent		
+12	کرده	V	PREDEP	13	null	null	junk		
+13	و	CONJ	VCONJ	20	null	null	junk		
+14	تا	PREP	ADVRB	20	null	null	junk	ArgM_TMP 	
+15	آخر	ADJ	NPREMOD	16	انتهايي§a-1372	مشخصه§n-12756	time		
+16	عمر	N	ADVRB	20	عمر§n-12622	دوره_زماني§n-12603	time	ArgM_TMP 	
+17	در	PREP	NPP	19	null	null	junk	Arg3 	
+18	آنجا	N	POSDEP	17	null	null	junk		
+19	زندگي	N	NVE	20	زندگي§n-13552	رخداد§n-13136	role_intent		
+20	نمودند	V	ROOT	0	زندگي کردن§v-17011	رخداد§n-13136	role_action		
+21	.	PUNC	PUNC	20	null	null	junk		
+roles= 
+	[null= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[کافر§n-20269= کافرين role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[خطه§n-13265=  سرزمين], [null=  حضرموت]]
+time= null
+alternativeTimes= [[نهايت§n-12517=  پايان], [انتهايي§a-1372=  آخر], [عمر§n-12622=  عمر]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [زندگي کردن§v-17011=  نمودند]
+roal_states= [نابودي§n-14609=  نابودي]
+roal_intetns= [کوچ§n-10723=  کوچ, زندگي§n-13552=  زندگي]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newStory*************************************
+newScene*************************************
+
+1	وقتي	N	ADVRB	21	null	null	junk	ArgM_TMP 	
+2	حضرت	N	SBJ	16	null	null	role_state	Arg0 	
+3	ابراهيم	N	MOZ	2	ابراهيم§n-23925	نفر§n-13075	role		
+4	در	PREP	ADVRB	16	null	null	junk	ArgM_LOC 	
+5	سرزمين	N	ADVRB	16	خطه§n-13265	جا§n-12733	location	ArgM_LOC 	
+6	بابل	N	MOZ	5	بابل§n-23431	جا§n-12733	location		
+7	(	PUNC	PUNC	8	null	null	junk		
+8	عراق	N	POSDEP	6	عراق§n-13668	جا§n-12733	location		
+9	کنوني	ADJ	NPOSTMOD	8	null	null	junk		
+10	)	PUNC	PUNC	8	null	null	junk		
+11	مردم	N	PREDEP	12	null	null	junk		
+12	را	POSTP	OBJ	16	null	null	junk	Arg1 	
+13	به	PREP	NPP	15	null	null	junk	Arg3 	
+14	يکتاپرستي	N	NPP	15	يکتاپرستي§n-21598	خصوصيت_رواني§n-12725	role_intent	Arg3 	
+15	دعوت	N	NVE	16	دعوت§n-11510	خبر§n-12766	role_intent		
+16	نمود	V	NCL	1	خواندن§v-8493	رخداد§n-13136	role_action		
+17	،	PUNC	PUNC	16	null	null	junk		
+18	لوط	N	SBJ	21	لوط§n-23932	نفر§n-13075	role	Arg1 Arg0 Arg1 	
+19	نخستين	ADJ	NPREMOD	20	null	null	junk		
+20	مردي	N	MOS	21	آقا§n-13368	نفر§n-13075	role	Arg2 	
+21	بود	V	ROOT	0	null	null	junk		
+22	که	SUBR	NCL	20	null	null	junk		
+23	در	PREP	ADVRB	30	null	null	junk	ArgM_ADV 	
+24	آن	ADJ	NPREMOD	25	null	null	junk		
+25	شرايط	N	ADVRB	30	شرايط§n-12506	null	no	ArgM_ADV 	
+26	سخت	ADJ	NPOSTMOD	25	شرايط§n-12506	مشخصه§n-12756	no		
+27	به	PREP	NPP	29	null	null	junk	Arg3 	
+28	وي	PR	POSDEP	27	null	null	junk		
+29	ايمان	N	NVE	30	ايمان§n-11400	خصوصيت_رواني§n-12725	role_state		
+30	آورد	V	PREDEP	31	null	null	junk		
+31	و	CONJ	VCONJ	36	null	null	junk		
+32	همواره	ADV	ADVRB	36	null	null	junk	ArgM_ADV 	
+33	در	PREP	MOS	36	null	null	junk	Arg2 	
+34	کنار	N	POSDEP	33	null	null	junk		
+35	او	PR	MOZ	34	null	null	junk		
+36	بود	V	PRD	22	null	null	junk		
+roles= 
+	[ابراهيم§n-23925= ابراهيم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= لوط role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آقا§n-13368= مردي role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[خطه§n-13265=  سرزمين], [بابل§n-23431=  بابل], [عراق§n-13668=  عراق]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [خواندن§v-8493=  نمود]
+roal_states= [null=  حضرت, ايمان§n-11400=  ايمان]
+roal_intetns= [يکتاپرستي§n-21598=  يکتاپرستي, دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	سپس	SUBR	ROOT	0	null	null	junk	ArgM_DIS 	
+2	به	PREP	VPP	9	null	null	junk	Arg4 	
+3	سرزمين	N	VPP	9	خطه§n-13265	جا§n-12733	location	Arg4 	
+4	سدوم	N	MOZ	3	null	null	location		
+5	(	PUNC	PUNC	6	null	null	junk		
+6	در	PREP	POSDEP	4	null	null	junk		
+7	اردن	N	POSDEP	4	اردن§n-20306	گروه§n-12753	location		
+8	)	PUNC	PUNC	6	null	null	junk		
+9	آمد	V	PRD	1	null	null	junk		
+10	زيرا	SUBR	AJUCL	9	null	null	junk	ArgM_CAU 	
+11	مردم	N	SBJ	23	null	null	junk	Arg1 	
+12	آن	ADJ	NPREMOD	13	null	null	junk		
+13	منطقه	N	MOZ	11	ناحيه§n-11844	جا§n-12733	location		
+14	غرق	ADJ	MOS	23	null	null	role_state	Arg2 	
+15	در	PREP	AJPP	14	null	null	junk		
+16	انحراف	N	AJPP	14	کجي§n-11590	رخداد§n-13136	role_state		
+17	و	CONJ	NCONJ	16	null	null	junk		
+18	فساد	N	NCONJ	16	فسق§n-10592	رخداد§n-13136	role_state		
+19	و	CONJ	NCONJ	18	null	null	junk		
+20	مخصوصا	ADV	PREDEP	21	null	null	no		
+21	انحراف	N	NCONJ	18	کجي§n-11590	رخداد§n-13136	role_state		
+22	جنسي	ADJ	NPOSTMOD	21	جنسي§a-899	مشخصه§n-12756	role_state		
+23	بودند	V	PRD	10	null	null	junk		
+24	.	PUNC	PUNC	9	null	null	junk		
+
+1	او	PR	SBJ	8	null	null	junk	Arg0 Arg0 Arg0 Arg0 	
+2	درميان	PREP	VPP	8	null	null	no	Arg3 	
+3	قوم	N	POSDEP	2	قوم§n-13461	گروه§n-12753	role		
+4	ش	PR	MOZ	3	لوط§n-23932	نفر§n-13075	role		
+5	30	NUM	NPREMOD	6	null	null	junk		
+6	سال	N	ADVC	8	سال§n-13471	دوره_زماني§n-12603	time	Arg2 	
+7	زندگي	N	NVE	8	زندگي§n-13552	رخداد§n-13136	role_intent		
+8	کرد	V	PREDEP	9	null	null	junk		
+9	و	CONJ	VCONJ	15	null	null	junk		
+10	آن‌ها	PR	OBJ	15	قوم§n-13461	گروه§n-12753	role	Arg1 Arg1 	
+11	را	POSTP	OBJ	15	null	null	junk	Arg1 Arg1 	
+12	به‌سوي	PREP	NPP	14	null	null	no	Arg3 	
+13	خدا	N	POSDEP	12	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+14	دعوت	N	NVE	15	دعوت§n-11510	خبر§n-12766	role_intent		
+15	نمود	V	VCONJ	22	خواندن§v-8493	رخداد§n-13136	role_action		
+16	و	CONJ	VCONJ	22	null	null	junk		
+17	از	PREP	VPP	22	null	null	junk	Arg3 	
+18	عذاب	N	VPP	22	نکبت§n-11559	رخداد§n-13136	no	Arg3 	
+19	الهي	ADJ	NPOSTMOD	18	رباني§a-2083	مشخصه§n-12756	no		
+20	بر	PREP	VPRT	22	null	null	junk		
+21	حذر	N	POSDEP	20	پرهيز§n-10701	مشخصه§n-12756	role_intent		
+22	نمود	V	VCONJ	29	null	null	role_action		
+23	اما	CONJ	VCONJ	29	null	null	junk	ArgM_DIS 	
+24	کمتر	ADV	ADVRB	29	null	null	junk	ArgM_EXT 	
+25	در	PREP	NPP	28	null	null	junk	Arg3 	
+26	آن	ADJ	NPREMOD	27	null	null	junk		
+27	کوردلان	N	NPP	28	null	null	role	Arg3 	
+28	اثر	N	NVE	29	اثرگذاري§n-10445	رخداد§n-13136	no		
+29	گذاشت	V	ROOT	0	اثر گذاشتن§v-16383	رخداد§n-13136	role_action		
+30	.	PUNC	PUNC	29	null	null	junk		
+
+1	لوط	N	SBJ	8	لوط§n-23932	نفر§n-13075	role	Arg0 Arg0 Arg0 	
+2	قوم	N	OBJ	8	قوم§n-13461	گروه§n-12753	role	Arg1 	
+3	خود	PR	MOZ	2	null	null	junk		
+4	را	POSTP	OBJ	8	null	null	junk	Arg1 	
+5	به	PREP	NPP	7	null	null	junk	Arg3 	
+6	خدا	N	NPP	7	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no	Arg3 	
+7	دعوت	N	NVE	8	دعوت§n-11510	خبر§n-12766	role_intent		
+8	کرد	V	PREDEP	9	null	null	junk		
+9	و	CONJ	VCONJ	17	null	null	junk		
+10	آن‌ها	PR	OBJ	17	قوم§n-13461	گروه§n-12753	role	Arg1 	
+11	را	POSTP	OBJ	17	null	null	junk	Arg1 	
+12	از	PREP	VPP	17	null	null	junk	Arg3 	
+13	عذاب	N	VPP	17	نکبت§n-11559	رخداد§n-13136	no	Arg3 	
+14	او	PR	MOZ	13	null	null	junk		
+15	بر	PREP	VPRT	17	null	null	junk		
+16	حذر	N	POSDEP	15	پرهيز§n-10701	مشخصه§n-12756	role_intent		
+17	داشت	V	PREDEP	18	null	null	junk		
+18	و	CONJ	VCONJ	19	null	null	junk		
+19	گفت	V	ROOT	0	null	null	junk		
+20	من	PR	SBJ	25	null	null	junk	Arg1 Arg1 	
+21	فرستاده	N	MOS	25	فرستادن§n-22523	رخداد§n-13136	role_state	Arg2 	
+22	خدا	N	MOZ	21	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+23	به‌سوي	PREP	NPP	21	null	null	no		
+24	شما	PR	POSDEP	23	null	null	junk		
+25	هستم	V	PREDEP	26	null	null	junk		
+26	و	CONJ	VCONJ	32	null	null	junk		
+27	امين	ADJ	MOS	32	null	null	role_state	Arg2 	
+28	در	PREP	AJPP	27	null	null	junk		
+29	تبليغ	N	AJPP	27	تبليغ§n-10749	رخداد§n-13136	role_intent		
+30	رسالت	N	MOZ	29	null	null	no		
+31	او	PR	MOZ	30	null	null	junk		
+32	يم	V	VCL	19	بودن§v-9328	رخداد§n-13136	no		
+33	.	PUNC	PUNC	19	null	null	junk		
+roles= 
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= کوردلان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= لوط role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[خطه§n-13265=  سرزمين], [null=  سدوم], [اردن§n-20306=  اردن], [ناحيه§n-11844=  منطقه]]
+time= null
+alternativeTimes= [[سال§n-13471=  سال]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [خواندن§v-8493=  نمود, null=  نمود, اثر گذاشتن§v-16383=  گذاشت]
+roal_states= [null=  غرق, کجي§n-11590=  انحراف, فسق§n-10592=  فساد, کجي§n-11590=  انحراف, جنسي§a-899=  جنسي, فرستادن§n-22523=  فرستاده, null=  امين]
+roal_intetns= [زندگي§n-13552=  زندگي, دعوت§n-11510=  دعوت, پرهيز§n-10701=  حذر, دعوت§n-11510=  دعوت, پرهيز§n-10701=  حذر, تبليغ§n-10749=  تبليغ]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	ثمره	N	SBJ	6	بر§n-13477	رخداد§n-13136	no	Arg1 	
+2	اين	ADJ	NPREMOD	3	null	null	junk		
+3	ازدواج	N	MOZ	1	مراسم ازدواج§n-11617	رخداد§n-13136	role_action		
+4	چند	UNKNOWN	NPREMOD	5	null	null	junk		
+5	دختر	N	MOS	6	دختر§n-11990	نفر§n-13075	role	Arg2 	
+6	بود	V	PREDEP	7	null	null	junk		
+7	ولي	CONJ	VCONJ	16	null	null	junk	ArgM_DIS 	
+8	اين	ADJ	NPREMOD	9	null	null	junk		
+9	برنامه	N	SBJ	16	برنامه§n-11359	خصوصيت_رواني§n-12725	role_intent	Arg0 	
+10	لوط	N	MOZ	9	لوط§n-23932	نفر§n-13075	role		
+11	هيچ	ADJ	NPREMOD	12	null	null	junk		
+12	تاثيري	N	NVE	16	تاثير§n-11252	مشخصه§n-12756	no		
+13	درميان	PREP	NPP	12	null	null	no	Arg3 	
+14	قوم	N	POSDEP	13	قوم§n-13461	گروه§n-12753	role		
+15	ش	PR	MOZ	14	لوط§n-23932	نفر§n-13075	role		
+16	نگذاشت	V	ROOT	0	اثر گذاشتن§v-16383	رخداد§n-13136	no		
+17	.	PUNC	PUNC	16	null	null	junk		
+
+1	هم‌چنين	ADV	ADVRB	8	null	null	no	ArgM_ADV 	
+2	در	PREP	ADVRB	8	null	null	junk	ArgM_LOC 	
+3	انظار	N	ADVRB	8	نگاه§n-10631	رخداد§n-13136	no	ArgM_LOC 	
+4	عمومي	ADJ	NPOSTMOD	3	null	null	no		
+5	با	PREP	VPP	8	null	null	junk	Arg3 	
+6	يکديگر	PR	VPP	8	قوم§n-13461	گروه§n-12753	role	Arg3 	
+7	لواط	N	NVE	8	لواط§n-16098	null	role_state		
+8	مي‌کردند	V	VCONJ	20	null	null	role_action		
+9	حتي	ADV	ADVRB	20	null	null	junk	ArgM_ADV 	
+10	به	PREP	VPP	20	null	null	junk	Arg3 	
+11	کساني	N	VPP	20	نفر§n-13075	نفر§n-13075	role	Arg3 	
+12	که	SUBR	NCL	11	null	null	junk		
+13	از	PREP	NPP	16	null	null	junk	Arg3 	
+14	ديار	N	NPP	16	خطه§n-13265	جا§n-12733	location	Arg3 	
+15	آنان	PR	MOZ	14	null	null	junk		
+16	عبور	N	NVE	17	گذر§n-13418	رخداد§n-13136	role_intent		
+17	مي‌کردند	V	PRD	12	گذشتن§v-8958	رخداد§n-13136	role_action		
+18	نيز	ADV	ADVRB	20	null	null	junk	ArgM_ADV 	
+19	رحم	N	NVE	20	مرحمت§n-11665	خصوصيت_رواني§n-12725	role_state		
+20	نمي‌کردند	V	ROOT	0	null	null	role_action		
+21	.	PUNC	PUNC	20	null	null	junk		
+roles= 
+	[دختر§n-11990= دختر role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= لوط role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= يکديگر role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[نفر§n-13075= کساني role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[خطه§n-13265=  ديار]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [مراسم ازدواج§n-11617=  ازدواج, null=  مي‌کردند, گذشتن§v-8958=  مي‌کردند, null=  نمي‌کردند]
+roal_states= [لواط§n-16098=  لواط, مرحمت§n-11665=  رحم]
+roal_intetns= [برنامه§n-11359=  برنامه, گذر§n-13418=  عبور]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	چند	ADJ	NPREMOD	2	null	null	junk		
+2	تن	N	SBJ	11	سر§n-10152	اندازه§n-12768	role	Arg0 Arg0 	
+3	از	PREP	NPP	2	null	null	junk		
+4	ملائکه	N	NPP	2	ملک§n-11941	هست§n-12706	role		
+5	براي	PREP	ADVRB	11	null	null	junk	ArgM_GOL 	
+6	عذاب	N	POSDEP	5	نکبت§n-11559	رخداد§n-13136	role_intent		
+7	قوم	N	MOZ	6	قوم§n-13461	گروه§n-12753	role		
+8	لوط	N	MOZ	7	لوط§n-23932	نفر§n-13075	role		
+9	به	PREP	VPP	11	null	null	junk	Arg4 	
+10	زمين	N	VPP	11	زمين§n-13297	شيء§n-12703	location	Arg4 	
+11	آمدند	V	VCONJ	15	آمدن§v-7847	رخداد§n-13136	role_action		
+12	و	CONJ	VCONJ	15	null	null	junk		
+13	به‌سراغ	PREP	VPP	15	null	null	no	Arg4 	
+14	لوط	N	POSDEP	13	لوط§n-23932	نفر§n-13075	role		
+15	رفتند	V	ROOT	0	پوييدن§v-7700	رخداد§n-13136	role_action		
+16	.	PUNC	PUNC	15	null	null	junk		
+
+1	لوط	N	SBJ	9	لوط§n-23932	نفر§n-13075	role	Arg1 	
+2	در	PREP	ADVRB	9	null	null	junk	ArgM_TMP 	
+3	اين	ADJ	NPREMOD	4	null	null	junk		
+4	موقع	N	ADVRB	9	تايم§n-12692	هست§n-12706	time	ArgM_TMP 	
+5	مشغول	ADJ	MOS	9	درگير§a-540	مشخصه§n-12756	role_state	Arg2 	
+6	آب‌ياري	N	NEZ	5	آبياري§n-16639	رخداد§n-13136	role_action		
+7	زراعت	N	MOZ	6	مزرعه داري§n-10647	رخداد§n-13136	role_action		
+8	ش	PR	MOZ	7	لوط§n-23932	نفر§n-13075	role		
+9	بود	V	ROOT	0	null	null	junk		
+10	.	PUNC	PUNC	9	null	null	junk		
+
+1	آن‌ها	PR	SBJ	2	ملک§n-11941	هست§n-12706	role	Arg0 	
+2	گفتند	V	ROOT	0	null	null	junk		
+3	ما	PR	SBJ	5	null	null	junk	Arg1 Arg1 Arg1 	
+4	مسافر	N	MOS	5	مسافر§n-11953	نفر§n-13075	role_state	Arg2 	
+5	يم	V	VCONJ	9	بودن§v-9328	رخداد§n-13136	no		
+6	و	CONJ	VCONJ	9	null	null	junk		
+7	امشب	ADV	ADVRB	9	امشب§r-15240	مشخصه§n-12756	time	ArgM_TMP 	
+8	مايل	ADJ	MOS	9	مايل§a-119	مشخصه§n-12756	role_emotion	Arg2 	
+9	يم	V	VCL	2	بودن§v-16430	رخداد§n-13136	no		
+10	مهمان	N	MOS	12	ميهمان§a-183	مشخصه§n-12756	role_state	Arg2 	
+11	تو	PR	MOZ	10	null	null	junk		
+12	باشيم	V	ACL	8	null	null	junk		
+13	.	PUNC	PUNC	2	null	null	junk		
+
+1	لوط	N	SBJ	13	لوط§n-23932	نفر§n-13075	role	Arg1 Arg0 	
+2	باتوجه‌به	PREP	ADVRB	13	null	null	no	ArgM_ADV 	
+3	انحراف	N	POSDEP	2	کجي§n-11590	رخداد§n-13136	role_state		
+4	قوم	N	MOZ	3	قوم§n-13461	گروه§n-12753	role		
+5	منحرف	ADJ	NPOSTMOD	4	گمراه§a-661	مشخصه§n-12756	role_state		
+6	و	CONJ	AJCONJ	5	null	null	junk		
+7	زشت‌کار	ADJ	AJCONJ	5	null	null	role_state		
+8	ش	PR	MOZ	4	لوط§n-23932	نفر§n-13075	role		
+9	تحت	PREP	VPP	13	null	null	junk	Arg3 	
+10	فشار	N	POSDEP	9	فشار§n-14856	مشخصه§n-12756	role_state		
+11	روحي	ADJ	NPOSTMOD	10	روحي§a-1059	مشخصه§n-12756	role_state		
+12	قرار	N	NVE	13	وضعيت§n-12745	مشخصه§n-12756	no		
+13	گرفت	V	PREDEP	14	null	null	junk		
+14	و	CONJ	VCONJ	23	null	null	junk		
+15	آن‌ها	PR	OBJ	23	ملک§n-11941	هست§n-12706	role	Arg1 	
+16	را	POSTP	OBJ	23	null	null	junk	Arg1 	
+17	از	PREP	AJPP	22	null	null	junk		
+18	برخورد	N	AJPP	22	برخورد§n-14557	رخداد§n-13136	role_intent		
+19	زشت	ADJ	NPOSTMOD	18	نامرغوب§a-132	مشخصه§n-12756	role_state		
+20	قوم	N	MOZ	18	قوم§n-13461	گروه§n-12753	role		
+21	خويش	PR	MOZ	20	null	null	junk		
+22	آگاه	ADJ	MOS	23	مطلع§a-2110	مشخصه§n-12756	role_intent	Arg2 	
+23	کرد	V	ROOT	0	null	null	junk		
+24	.	PUNC	PUNC	23	null	null	junk		
+roles= 
+	[سر§n-10152= تن role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[ملک§n-11941= ملائکه role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= لوط role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[ملک§n-11941= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[زمين§n-13297=  زمين]]
+time= null
+alternativeTimes= [[تايم§n-12692=  موقع], [امشب§r-15240=  امشب]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [آمدن§v-7847=  آمدند, پوييدن§v-7700=  رفتند, آبياري§n-16639=  آب‌ياري, مزرعه داري§n-10647=  زراعت]
+roal_states= [درگير§a-540=  مشغول, مسافر§n-11953=  مسافر, ميهمان§a-183=  مهمان, کجي§n-11590=  انحراف, گمراه§a-661=  منحرف, null=  زشت‌کار, فشار§n-14856=  فشار, روحي§a-1059=  روحي, نامرغوب§a-132=  زشت]
+roal_intetns= [نکبت§n-11559=  عذاب, برخورد§n-14557=  برخورد, مطلع§a-2110=  آگاه]
+roal_emotions= [مايل§a-119=  مايل]
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	اما	CONJ	VCONJ	6	null	null	junk	ArgM_DIS 	
+2	مهمان‌ها	N	SBJ	6	ميهمان§a-183	مشخصه§n-12756	role	Arg1 	
+3	وارد	ADJ	MOS	6	null	null	role_state	Arg2 	
+4	خانه	N	NEZ	3	سرا§n-12809	جا§n-12733	location		
+5	لوط	N	MOZ	4	لوط§n-23932	نفر§n-13075	role		
+6	شدند	V	ROOT	0	null	null	junk		
+7	.	PUNC	PUNC	6	null	null	junk		
+
+1	لوط	N	SBJ	5	لوط§n-23932	نفر§n-13075	role	Arg0 	
+2	از	PREP	VPP	5	null	null	junk	Arg3 	
+3	همسر	N	VPP	5	زوجه§n-12069	نفر§n-13075	role	Arg3 	
+4	ش	PR	MOZ	3	لوط§n-23932	نفر§n-13075	role		
+5	خواست	V	ROOT	0	null	null	junk		
+6	که	SUBR	VCL	5	null	null	junk	Arg1 	
+7	ورود	N	OBJ	15	دخول§n-10411	رخداد§n-13136	no	Arg1 	
+8	مهمان‌ها	N	MOZ	7	ميهمان§a-183	مشخصه§n-12756	role		
+9	را	POSTP	OBJ	15	null	null	junk	Arg1 	
+10	از	PREP	ADVPP	13	null	null	junk		
+11	قوم	N	ADVPP	13	قوم§n-13461	گروه§n-12753	role		
+12	ش	PR	MOZ	11	لوط§n-23932	نفر§n-13075	role		
+13	مخفي	ADV	ADVC	15	ناپيدا§a-1012	مشخصه§n-12756	role_intent	Arg2 	
+14	نگاه	N	NVE	15	null	null	junk		
+15	دارد	V	PRD	6	null	null	junk		
+roles= 
+	[ميهمان§a-183= مهمان‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= لوط role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[زوجه§n-12069= همسر role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[سرا§n-12809=  خانه]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [null=  وارد]
+roal_intetns= [ناپيدا§a-1012=  مخفي]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	اما	CONJ	VCONJ	10	null	null	junk	ArgM_DIS 	
+2	او	PR	SBJ	10	null	null	junk	Arg1 Arg0 Arg0 	
+3	که	SUBR	NCL	2	null	null	junk		
+4	هم‌کيش	ADJ	MOS	6	null	null	role_state	Arg2 	
+5	دشمنان	N	NEZ	4	خصم§n-11695	گروه§n-12753	role		
+6	بود	V	PRD	3	null	null	junk		
+7	به	PREP	VPP	10	null	null	junk	Arg3 	
+8	پشت‌بام	N	VPP	10	پشت بام§n-11102	شيء§n-12703	location	Arg3 	
+9	خانه	N	MOZ	8	سرا§n-12809	جا§n-12733	location		
+10	رفت	V	PREDEP	11	null	null	junk		
+11	و	CONJ	VCONJ	19	null	null	junk	ArgM_DIS 	
+12	با	PREP	ADVRB	19	null	null	junk	ArgM_INS 	
+13	روشن	ADJ	PREDEP	14	روشن§a-70	مشخصه§n-12756	static_object_state		
+14	کردن	N	POSDEP	12	null	null	junk		
+15	آتش	N	MOZ	14	آتش§n-14292	مشخصه§n-12756	static_object		
+16	اوباشان	N	OBJ	19	جک و جونورها§n-11802	گروه§n-12753	role		
+17	را	POSTP	OBJ	19	null	null	junk	Arg1 	
+18	خبر	N	NVE	19	خبر§n-12766	خبر§n-12766	role_intent		
+19	کرد	V	ROOT	0	null	null	junk		
+roles= 
+	[خصم§n-11695= دشمنان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[جک و جونورها§n-11802= اوباشان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [آتش=  آتش§n-14292 object_states=  []]
+location= null
+alternativeLocations= [[پشت بام§n-11102=  پشت‌بام], [سرا§n-12809=  خانه]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [null=  هم‌کيش]
+roal_intetns= [خبر§n-12766=  خبر]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [روشن§a-70=  روشن]
+
+newScene*************************************
+
+1	لوط	N	SBJ	5	لوط§n-23932	نفر§n-13075	role	Arg0 	
+2	به	PREP	NPP	4	null	null	junk	Arg3 	
+3	آن‌ها	PR	NPP	4	جک و جونورها§n-11802	گروه§n-12753	role	Arg3 	
+4	التماس	N	NVE	5	التماس§n-11511	خبر§n-12766	role_state		
+5	کرد	V	ROOT	0	null	null	junk		
+6	که	SUBR	VCL	5	null	null	junk	Arg1 	
+7	دست	N	NVE	13	دست§n-13537	رابطه§n-13628	no		
+8	از	PREP	VPP	13	null	null	junk	Arg3 	
+9	اين	ADJ	NPREMOD	10	null	null	junk		
+10	عمل	N	POSDEP	8	null	null	junk		
+11	کثيف	ADJ	NPOSTMOD	10	کثيف§a-250	مشخصه§n-12756	no		
+12	خود	PR	MOZ	10	null	null	junk		
+13	برداريد	V	PRD	6	منصرف شدن§v-8543	رخداد§n-13136	role_action		
+14	.	PUNC	PUNC	5	null	null	junk		
+
+1	ولي	CONJ	VCONJ	6	null	null	junk	ArgM_DIS 	
+2	قوم	N	SBJ	6	قوم§n-13461	گروه§n-12753	role	Arg0 	
+3	ش	PR	MOZ	2	لوط§n-23932	نفر§n-13075	role		
+4	زير	PREP	VPRT	6	null	null	junk		
+5	بار	N	POSDEP	4	null	null	junk		
+6	نرفتند	V	ROOT	0	null	null	role_action		
+7	.	PUNC	PUNC	6	null	null	junk		
+roles= 
+	[لوط§n-23932= لوط role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[جک و جونورها§n-11802= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [منصرف شدن§v-8543=  برداريد, null=  نرفتند]
+roal_states= [التماس§n-11511=  التماس]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	لوط	N	SBJ	7	لوط§n-23932	نفر§n-13075	role	Arg0 Arg0 	
+2	که	SUBR	NCL	1	null	null	junk		
+3	صحبت	N	OBJ	6	گفتگو§n-11493	رخداد§n-13136	role_intent	Arg1 	
+4	آن‌ها	PR	MOZ	3	ملک§n-11941	هست§n-12706	role		
+5	را	POSTP	OBJ	6	null	null	junk	Arg1 	
+6	شنيد	V	PRD	2	شنيدن§v-7802	رخداد§n-13136	role_action		
+7	خواست	V	ROOT	0	null	null	junk		
+8	که	SUBR	VCL	7	null	null	junk	Arg1 	
+9	آنان	PR	SBJ	14	null	null	junk	Arg0 	
+10	،	PUNC	PUNC	9	null	null	junk		
+11	خود	PR	PREDEP	12	null	null	junk		
+12	را	POSTP	OBJ	14	null	null	junk	Arg1 	
+13	معرفي	N	NVE	14	معرفي§n-14492	رخداد§n-13136	role_intent		
+14	نمايند	V	PRD	8	معرفي کردن§v-7841	رخداد§n-13136	role_action		
+15	،	PUNC	PUNC	7	null	null	junk		
+
+1	آن‌ها	PR	SBJ	7	ملک§n-11941	هست§n-12706	role	Arg0 	
+2	حقيقت	N	OBJ	7	حقيقت§n-10263	مشخصه§n-12756	no	Arg1 	
+3	خود	PR	MOZ	2	null	null	junk		
+4	را	POSTP	OBJ	7	null	null	junk	Arg1 	
+5	به	PREP	VPP	7	null	null	junk	Arg3 	
+6	او	PR	POSDEP	5	null	null	junk		
+7	گفتند	V	ROOT	0	null	null	junk		
+8	.	PUNC	PUNC	7	null	null	junk		
+
+1	لوط	N	SBJ	6	لوط§n-23932	نفر§n-13075	role	Arg0 	
+2	علت	N	OBJ	6	سبب§n-13414	null	no	Arg1 	
+3	حضور	N	MOZ	2	حضور داشتن§n-12393	مشخصه§n-12756	role_state		
+4	شان	PR	MOZ	3	null	null	junk		
+5	را	POSTP	OBJ	6	null	null	junk	Arg1 	
+6	پرسيد	V	ROOT	0	پرسش کردن§v-8136	رخداد§n-13136	role_action		
+
+1	و	CONJ	VCONJ	3	null	null	junk	ArgM_DIS 	
+2	جبرييل	N	SBJ	3	null	null	role	Arg0 	
+3	گفت	V	ROOT	0	null	null	junk		
+4	:	PUNC	PUNC	3	null	null	junk		
+5	ما	PR	SBJ	10	null	null	junk	Arg0 	
+6	براي	PREP	ADVRB	10	null	null	junk	ArgM_GOL 	
+7	هلاکت	N	POSDEP	6	کشت§n-12729	رخداد§n-13136	role_intent		
+8	قوم	N	MOZ	7	قوم§n-13461	گروه§n-12753	role		
+9	ت	PR	MOZ	8	null	null	junk		
+10	آمده‌ايم	V	VCL	3	آمدن§v-7847	رخداد§n-13136	role_action		
+11	.	PUNC	PUNC	3	null	null	junk		
+roles= 
+	[لوط§n-23932= لوط role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[ملک§n-11941= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= جبرييل role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [شنيدن§v-7802=  شنيد, معرفي کردن§v-7841=  نمايند, پرسش کردن§v-8136=  پرسيد, آمدن§v-7847=  آمده‌ايم]
+roal_states= [حضور داشتن§n-12393=  حضور]
+roal_intetns= [گفتگو§n-11493=  صحبت, معرفي§n-14492=  معرفي, کشت§n-12729=  هلاکت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	چيزي	N	SBJ	2	null	null	junk	Arg1 	
+2	نگذشت	V	ROOT	0	گذشتن§v-18384	رخداد§n-13136	role_action		
+3	که	SUBR	VCL	2	null	null	junk		
+4	قوم	N	SBJ	9	قوم§n-13461	گروه§n-12753	role	Arg0 Arg1 	
+5	لوط	N	MOZ	4	لوط§n-23932	نفر§n-13075	role		
+6	درب	N	OBJ	9	درگاه§n-10373	شيء§n-12703	static_object	Arg1 	
+7	خانه	N	MOZ	6	سرا§n-12809	جا§n-12733	location		
+8	را	POSTP	OBJ	9	null	null	junk	Arg1 	
+9	شکسته	V	VCONJ	13	تکه تکه کردن§v-9529	رخداد§n-13136	role_action		
+10	و	CONJ	VCONJ	13	null	null	junk		
+11	وارد	ADJ	MOS	13	null	null	role_state	Arg2 	
+12	منزل	N	NEZ	11	سرا§n-12809	جا§n-12733	location		
+13	شدند	V	PRD	3	null	null	junk		
+14	.	PUNC	PUNC	2	null	null	junk		
+roles= 
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= لوط role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [درب=  درگاه§n-10373 object_states=  []]
+location= null
+alternativeLocations= [[سرا§n-12809=  خانه], [سرا§n-12809=  منزل]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [گذشتن§v-18384=  نگذشت, تکه تکه کردن§v-9529=  شکسته]
+roal_states= [null=  وارد]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	سپس	SUBR	ROOT	0	null	null	junk	ArgM_DIS 	
+2	فرشتگان	N	SBJ	5	ملک§n-11941	هست§n-12706	role	Arg0 	
+3	به	PREP	VPP	5	null	null	junk	Arg3 	
+4	لوط	N	VPP	5	لوط§n-23932	نفر§n-13075	role	Arg3 	
+5	گفتند	V	PRD	1	null	null	junk		
+6	که	SUBR	VCL	5	null	null	junk	Arg1 	
+7	شبانه	ADV	ADVRB	15	شبانه§a-36	مشخصه§n-12756	time	ArgM_TMP 	
+8	با	PREP	ADVRB	15	null	null	junk	ArgM_COM 	
+9	خانواده	N	ADVRB	15	اهل خانه§n-13208	گروه§n-12753	role	ArgM_COM 	
+10	ات	PR	MOZ	9	لوط§n-23932	نفر§n-13075	role		
+11	از	PREP	AJPP	14	null	null	junk		
+12	اين	ADJ	NPREMOD	13	null	null	junk		
+13	شهر	N	AJPP	14	ملک§n-11759	رخداد§n-13136	location		
+14	دور	ADJ	MOS	15	دور§a-2270	مشخصه§n-12756	role_state	Arg2 	
+15	شو	V	VCONJ	22	دور کردن§v-15886	رخداد§n-13136	role_action		
+16	اما	CONJ	VCONJ	22	null	null	junk	ArgM_DIS 	
+17	زن	N	OBJ	22	زوجه§n-12069	نفر§n-13075	role	Arg1 	
+18	ت	PR	MOZ	17	null	null	junk		
+19	را	POSTP	OBJ	22	null	null	junk	Arg1 	
+20	با	PREP	ADVRB	22	null	null	junk	ArgM_COM 	
+21	خود	PR	POSDEP	20	null	null	junk		
+22	نبر	V	PRD	6	بردن§v-7660	رخداد§n-13136	role_action		
+23	که	SUBR	AJUCL	22	null	null	junk	ArgM_CAU 	
+24	او	PR	SBJ	27	null	null	junk	Arg1 	
+25	بايد	UNKNOWN	PRD	23	null	null	junk		
+26	هلاک	ADJ	MOS	27	null	null	role_state	Arg2 	
+27	شود	V	VCL	25	null	null	junk		
+28	.	PUNC	PUNC	5	null	null	junk		
+roles= 
+	[ملک§n-11941= فرشتگان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= لوط role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[اهل خانه§n-13208= خانواده role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[لوط§n-23932= ات role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[زوجه§n-12069= زن role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[ملک§n-11759=  شهر]]
+time= null
+alternativeTimes= [[شبانه§a-36=  شبانه]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [دور کردن§v-15886=  شو, بردن§v-7660=  نبر]
+roal_states= [دور§a-2270=  دور, null=  هلاک]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newStory*************************************
+newScene*************************************
+
+1	يونس	N	SBJ	8	يونس§n-23943	نفر§n-13075	role	Arg1 Arg0 	
+2	(	PUNC	PUNC	3	null	null	junk		
+3	ع	ARAB	POSDEP	1	null	null	junk		
+4	)	PUNC	PUNC	3	null	null	junk		
+5	از	PREP	MOS	8	null	null	junk	Arg2 	
+6	پيامبران	N	MOS	8	رسول§n-15053	نفر§n-13075	role	Arg2 	
+7	بني‌اسراييل	N	MOZ	6	null	null	role		
+8	است	V	ROOT	0	null	null	junk		
+9	که	SUBR	NCL	6	null	null	junk		
+10	بعداز	PREP	ADVRB	13	null	null	no	ArgM_TMP 	
+11	سليمان	N	POSDEP	10	سليمان§n-23934	نفر§n-13075	role		
+12	ظهور	N	NVE	13	ظهور§n-10410	رخداد§n-13136	role_intent		
+13	کرد	V	PRD	9	null	null	junk		
+14	.	PUNC	PUNC	8	null	null	junk		
+
+1	ايشان	PR	SBJ	18	null	null	junk	Arg0 	
+2	به‌خاطر	PREP	ADVRB	18	null	null	no	ArgM_CAU 	
+3	اين	PR	POSDEP	2	null	null	junk		
+4	که	SUBR	NCL	3	null	null	junk		
+5	در	PREP	VPP	9	null	null	junk	Arg3 	
+6	شکم	N	VPP	9	دل§n-11297	رابطه§n-13628	no	Arg3 	
+7	ماهي	N	MOZ	6	ماهي§n-12744	جانور§n-12239	dynamic_object		
+8	قرار	N	NVE	9	null	null	no		
+9	گرفت	V	PRD	4	null	null	junk		
+10	با	PREP	VPP	18	null	null	junk	Arg2 	
+11	لقب	N	VPP	18	لقب§n-13062	null	no	Arg2 	
+12	ذوالنون	N	MOZ	11	null	null	role_state		
+13	(	PUNC	PUNC	14	null	null	junk		
+14	صاحب	N	APP	12	مالک§n-13378	نفر§n-13075	role_state		
+15	الحوت	ARAB	MOZ	14	ماهي§n-12744	جانور§n-12239	dynamic_object		
+16	)	PUNC	PUNC	14	null	null	junk		
+17	ياد	N	NVE	18	null	null	no		
+18	شده‌است	V	ROOT	0	ياد کردن§v-9190	رخداد§n-13136	no		
+19	.	PUNC	PUNC	18	null	null	junk		
+roles= 
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[رسول§n-15053= پيامبران role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= بني‌اسراييل role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[سليمان§n-23934= سليمان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= [ماهي=  ماهي§n-12744 object_actions=  [] object_states=  []][الحوت=  ماهي§n-12744 object_actions=  [] object_states=  []]
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [null=  ذوالنون, مالک§n-13378=  صاحب]
+roal_intetns= [ظهور§n-10410=  ظهور]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	قبر	N	SBJ	12	مدفن§n-10984	جا§n-12733	static_object	Arg1 	
+2	ايشان	PR	MOZ	1	null	null	junk		
+3	در	PREP	VPP	12	null	null	junk	Arg3 	
+4	نزديکي	N	VPP	12	نزديکي§n-11874	جا§n-12733	location	Arg3 	
+5	کوفه	N	MOZ	4	null	null	location		
+6	و	CONJ	PCONJ	3	null	null	junk		
+7	در	PREP	POSDEP	6	null	null	junk		
+8	کنار	N	POSDEP	7	null	null	junk		
+9	رود	N	MOZ	8	رود§n-11932	مشخصه§n-12756	static_object		
+10	فرات	N	MOZ	9	رود فرات§n-24126	مشخصه§n-12756	location		
+11	قرار	N	NVE	12	null	null	no		
+12	دارد	V	ROOT	0	null	null	junk		
+13	.	PUNC	PUNC	12	null	null	junk		
+roles= ]
+dynamic_objs= 
+static_objs= [قبر=  مدفن§n-10984 object_states=  []][رود=  رود§n-11932 object_states=  []]
+location= null
+alternativeLocations= [[نزديکي§n-11874=  نزديکي], [null=  کوفه], [رود فرات§n-24126=  فرات]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	شهر	N	SBJ	16	شهر§n-10272	جا§n-12733	location		
+2	نينوا	N	MOZ	1	null	null	location	Arg1 Arg1 	
+3	در	PREP	NPP	2	null	null	junk		
+4	منطقه	N	NPP	2	منطقه§n-11842	جا§n-12733	location		
+5	موصل	N	MOZ	4	null	null	location		
+6	(	PUNC	PUNC	7	null	null	junk		
+7	در	PREP	POSDEP	5	null	null	junk		
+8	عراق	N	POSDEP	5	عراق§n-13668	جا§n-12733	location		
+9	کنوني	ADJ	NPOSTMOD	8	null	null	junk		
+10	)	PUNC	PUNC	7	null	null	junk		
+11	پايتخت	N	TAM	16	تختگاه§n-13512	جا§n-12733	location	Arg2 	
+12	دولت	N	MOZ	11	هيات دولت§n-13220	مشخصه§n-12756	no		
+13	عاشوريان	N	MOZ	12	null	null	role		
+14	به	PREP	VPRT	16	null	null	junk		
+15	شمار	N	VPRT	16	null	null	no		
+16	مي‌رفت	V	VCONJ	37	به شمار آمدن§v-8084	رخداد§n-13136	no		
+17	(	PUNC	PUNC	18	null	null	junk		
+18	نينوا	N	SBJ	29	null	null	location	Arg1 	
+19	در	PREP	ADVRB	29	null	null	junk	ArgM_TMP 	
+20	آن	ADJ	NPREMOD	21	null	null	junk		
+21	دوران	N	ADVRB	29	دوره§n-10264	دوره_زماني§n-12603	time	ArgM_TMP 	
+22	از	PREP	AJPP	28	null	null	junk		
+23	غني‌ترين	ADJ	NPREMOD	26	غني§a-46	مشخصه§n-12756	static_object_state		
+24	و	CONJ	AJCONJ	23	null	null	junk		
+25	بزرگترين	ADJ	AJCONJ	23	بزرگ§a-2399	مشخصه§n-12756	static_object_state		
+26	شهرهاي	N	AJPP	28	شهر§n-10272	جا§n-12733	location		
+27	مشرق‌زمين	N	MOZ	26	null	null	no		
+28	محسوب	ADJ	MOS	29	محسوب§a-1102	مشخصه§n-12756	no	Arg2 	
+29	مي‌شد	V	POSDEP	2	null	null	no		
+30	)	PUNC	PUNC	29	null	null	junk		
+31	و	CONJ	VCONJ	37	null	null	junk		
+32	داراي	ADJ	MOS	37	null	null	no	Arg2 	
+33	جمعيتي	N	NEZ	32	جمعيت§n-11739	گروه§n-12753	role		
+34	بيش‌از	ADJ	NPREMOD	36	null	null	no		
+35	صدهزار	NUM	NPREMOD	36	null	null	junk		
+36	نفر	N	POSDEP	33	سر§n-10152	اندازه§n-12768	no		
+37	بود	V	ROOT	0	null	null	junk		
+38	.	PUNC	PUNC	37	null	null	junk		
+roles= 
+	[null= عاشوريان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[جمعيت§n-11739= جمعيتي role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[شهر§n-10272=  شهر], [null=  نينوا], [منطقه§n-11842=  منطقه], [null=  موصل], [عراق§n-13668=  عراق], [تختگاه§n-13512=  پايتخت], [شهر§n-10272=  شهرهاي]]
+time= null
+alternativeTimes= [[دوره§n-10264=  دوران]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [غني§a-46=  غني‌ترين, بزرگ§a-2399=  بزرگترين]
+
+newScene*************************************
+
+1	خداوند	N	SBJ	7	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+2	حضرت	N	OBJ	7	null	null	role_state	Arg1 	
+3	يونس	N	MOZ	2	يونس§n-23943	نفر§n-13075	role		
+4	را	POSTP	OBJ	7	null	null	junk	Arg1 	
+5	به‌سوي	PREP	VPP	7	null	null	no	Arg3 	
+6	آنان	PR	POSDEP	5	null	null	junk		
+7	فرستاد	V	ROOT	0	فرستادن§v-7662	رخداد§n-13136	role_action		
+8	.	PUNC	PUNC	7	null	null	junk		
+
+1	او	PR	SBJ	12	null	null	junk	Arg0 	
+2	آن‌ها	PR	OBJ	12	null	null	role	Arg1 	
+3	را	POSTP	OBJ	12	null	null	junk	Arg1 	
+4	به	PREP	NPP	11	null	null	junk	Arg3 	
+5	راه	N	POSDEP	4	null	null	junk		
+6	راست	ADJ	NPOSTMOD	5	راست§a-546	مشخصه§n-12756	no		
+7	و	CONJ	NCONJ	5	null	null	junk		
+8	پرستش	N	NCONJ	5	پرستش§n-10683	رخداد§n-13136	role_intent		
+9	خداي	N	MOZ	8	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role		
+10	يکتا	ADJ	NPOSTMOD	9	بي نظير§a-1870	مشخصه§n-12756	role_state		
+11	دعوت	N	NVE	12	دعوت§n-11510	خبر§n-12766	role_intent		
+12	مي‌نمود	V	VCONJ	19	خواندن§v-8493	رخداد§n-13136	role_action		
+13	اما	CONJ	VCONJ	19	null	null	junk	ArgM_DIS 	
+14	آن‌ها	PR	SBJ	19	null	null	role	Arg0 	
+15	بر	PREP	NPP	18	null	null	junk	Arg3 	
+16	کفر	N	POSDEP	15	null	null	role_intent		
+17	خود	PR	MOZ	16	null	null	junk		
+18	اصرار	N	NVE	19	الحاح§n-14330	رخداد§n-13136	no		
+19	مي‌ورزيدند	V	ROOT	0	اصرار ورزيدن§v-15640	رخداد§n-13136	role_action		
+20	.	PUNC	PUNC	19	null	null	junk		
+roles= 
+	[باري تعالي§n-11940= خداوند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[باري تعالي§n-11940= خداي role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [فرستادن§v-7662=  فرستاد, خواندن§v-8493=  مي‌نمود, اصرار ورزيدن§v-15640=  مي‌ورزيدند]
+roal_states= [null=  حضرت, بي نظير§a-1870=  يکتا]
+roal_intetns= [پرستش§n-10683=  پرستش, دعوت§n-11510=  دعوت, null=  کفر]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	بعداز	PREP	ADVRB	11	null	null	no	ArgM_TMP 	
+2	33	NUM	NPREMOD	3	null	null	junk		
+3	سال	N	MESU	4	عام§n-12653	دوره_زماني§n-12603	time		
+4	دعوت	N	POSDEP	1	دعوت§n-11510	خبر§n-12766	role_intent		
+5	،	PUNC	PUNC	4	null	null	junk		
+6	جز	PREP	SBJ	11	null	null	junk	Arg0 	
+7	2	NUM	NPREMOD	8	null	null	junk		
+8	نفر	N	POSDEP	6	سر§n-10152	اندازه§n-12768	no		
+9	به	PREP	VPP	11	null	null	junk	Arg3 	
+10	او	PR	POSDEP	9	null	null	junk		
+11	نگرويدند	V	ROOT	0	ملحق شدن§v-8974	رخداد§n-13136	role_action		
+12	که	SUBR	NCL	8	null	null	junk		
+13	يکي‌از	ADJ	APREMOD	14	null	null	no		
+14	آن	ADJ	APREMOD	15	null	null	junk		
+15	دو	NUM	SBJ	20	null	null	junk	Arg1 	
+16	دوست	N	MOS	20	دوست§n-13360	نفر§n-13075	role	Arg2 	
+17	قديمي	ADJ	NPOSTMOD	16	null	null	role_state		
+18	ش	PR	MOZ	16	يونس§n-23943	نفر§n-13075	role		
+19	روبيل	N	APP	16	null	null	role	Arg1 	
+20	بود	V	PREDEP	25	null	null	junk		
+21	که	SUBR	NCL	19	null	null	junk		
+22	از	PREP	MOS	24	null	null	junk	Arg2 	
+23	دانشمندان	N	MOS	24	عالم§n-12054	نفر§n-13075	role_state	Arg2 	
+24	بود	V	PRD	21	null	null	junk		
+25	و	CONJ	VCONJ	34	null	null	junk		
+26	ديگري	PR	SBJ	34	null	null	junk	Arg1 	
+27	عابد	N	TAM	34	عابد§n-20709	نفر§n-13075	role_state	Arg2 	
+28	و	CONJ	NCONJ	27	null	null	junk		
+29	زاهدي	N	NCONJ	27	زاهد§n-20473	نفر§n-13075	role_state		
+30	به	PREP	NPP	27	null	null	junk		
+31	نام	N	POSDEP	30	null	null	junk		
+32	تنوخا	N	MOZ	31	null	null	role		
+33	نام	N	NVE	34	null	null	junk		
+34	داشت	V	PRD	12	null	null	junk		
+35	.	PUNC	PUNC	11	null	null	junk		
+
+1	هنگامي	N	ADVRB	8	موقع§n-12614	دوره_زماني§n-12603	time	ArgM_TMP 	
+2	که	SUBR	NCL	1	null	null	junk		
+3	زحمات	N	SBJ	6	مشقت§n-10608	رخداد§n-13136	role_intent	Arg1 	
+4	يونس	N	MOZ	3	يونس§n-23943	نفر§n-13075	role		
+5	بي‌نتيجه	ADV	ADVC	6	به‌دردنخور§a-141	مشخصه§n-12756	no	Arg2 	
+6	ماند	V	PRD	2	بودن§v-16430	رخداد§n-13136	no		
+7	تصميم	N	NVE	8	تصميم گرفتن§n-10446	رخداد§n-13136	role_intent		
+8	گرفت	V	ROOT	0	null	null	junk		
+9	تا	SUBR	VCL	8	null	null	junk	Arg3 	
+10	مردم	N	PREDEP	12	null	null	junk		
+11	ش	PR	MOZ	10	يونس§n-23943	نفر§n-13075	role		
+12	را	POSTP	OBJ	14	null	null	junk	Arg1 	
+13	نفرين	N	NVE	14	نفرين§n-22931	null	no		
+14	کند	V	PRD	9	null	null	junk		
+15	.	PUNC	PUNC	8	null	null	junk		
+
+1	روبيل	N	SBJ	4	null	null	role	Arg0 	
+2	به	PREP	VPP	4	null	null	junk	Arg3 	
+3	او	PR	POSDEP	2	null	null	junk		
+4	گفت	V	ROOT	0	null	null	junk		
+5	که	SUBR	VCL	4	null	null	junk	Arg1 	
+6	اين	ADJ	NPREMOD	7	null	null	junk		
+7	کار	N	OBJ	9	کار§n-12781	رخداد§n-13136	role_intent	Arg1 	
+8	را	POSTP	OBJ	9	null	null	junk	Arg1 	
+9	نکن	V	PRD	5	کار کردن§v-15721	رخداد§n-13136	no		
+10	زيراکه	SUBR	AJUCL	9	null	null	no	ArgM_CAU 	
+11	خداوند	N	SBJ	15	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+12	هلاکت	N	OBJ	15	کشت§n-12729	رخداد§n-13136	role_state	Arg1 	
+13	آن‌ها	PR	MOZ	12	قوم§n-13461	گروه§n-12753	role		
+14	را	POSTP	OBJ	15	null	null	junk	Arg1 	
+15	نمي‌پسندد	V	PRD	10	پسنديدن§v-21834	رخداد§n-13136	no		
+16	،	PUNC	PUNC	4	null	null	junk		
+
+1	درنتيجه	SUBR	ROOT	0	null	null	no	ArgM_DIS 	
+2	يونس	N	SBJ	7	يونس§n-23943	نفر§n-13075	role	Arg0 	
+3	قوم	N	OBJ	7	قوم§n-13461	گروه§n-12753	role	Arg1 	
+4	ش	N	MOZ	3	يونس§n-23943	نفر§n-13075	role		
+5	را	POSTP	OBJ	7	null	null	junk	Arg1 	
+6	نفرين	N	NVE	7	نفرين§n-22931	null	role_intent		
+7	کرد	V	PRD	1	null	null	junk		
+8	.	PUNC	PUNC	7	null	null	junk		
+roles= 
+	[دوست§n-13360= دوست role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[يونس§n-23943= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= روبيل role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= تنوخا role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[باري تعالي§n-11940= خداوند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[قوم§n-13461= قوم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= [[عام§n-12653=  سال], [موقع§n-12614=  هنگامي]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [ملحق شدن§v-8974=  نگرويدند]
+roal_states= [null=  قديمي, عالم§n-12054=  دانشمندان, عابد§n-20709=  عابد, زاهد§n-20473=  زاهدي, کشت§n-12729=  هلاکت]
+roal_intetns= [دعوت§n-11510=  دعوت, مشقت§n-10608=  زحمات, تصميم گرفتن§n-10446=  تصميم, کار§n-12781=  کار, نفرين§n-22931=  نفرين]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	روبيل	N	SBJ	4	null	null	role	Arg0 	
+2	به‌نزد	PREP	VPP	4	null	null	location	Arg4 	
+3	مردم	N	POSDEP	2	null	null	junk		
+4	رفت	V	PREDEP	5	null	null	junk		
+5	و	CONJ	VCONJ	8	null	null	junk		
+6	از	PREP	VPP	8	null	null	junk	Arg3 	
+7	آنان	PR	POSDEP	6	null	null	junk		
+8	خواست	V	ROOT	0	null	null	junk		
+9	تا	SUBR	VCL	8	null	null	junk	Arg1 	
+10	به	PREP	NPP	13	null	null	junk	Arg3 	
+11	درگاه	N	NPP	13	درگاه§n-10373	شيء§n-12703	no	Arg3 	
+12	الهي	ADJ	NPOSTMOD	11	رباني§a-2083	مشخصه§n-12756	role_state		
+13	استغاثه	N	NVE	14	تضرع§n-11512	خبر§n-12766	role_intent		
+14	کنند	V	PREDEP	15	null	null	junk		
+15	و	CONJ	VCONJ	17	null	null	junk		
+16	توبه	N	NVE	17	استغفار§n-17529	مشخصه§n-12756	role_intent		
+17	نمايند	V	VCL	8	نادم شدن§v-21859	رخداد§n-13136	role_action		
+18	.	PUNC	PUNC	8	null	null	junk		
+roles= 
+	[null= روبيل role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[null=  به‌نزد]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [نادم شدن§v-21859=  نمايند]
+roal_states= [رباني§a-2083=  الهي]
+roal_intetns= [تضرع§n-11512=  استغاثه, استغفار§n-17529=  توبه]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	بعداز	PREP	ADVRB	10	null	null	no	ArgM_TMP 	
+2	چند	ADJ	NPREMOD	3	null	null	junk		
+3	وقت	N	POSDEP	1	موقع§n-12614	دوره_زماني§n-12603	time		
+4	يونس	N	SBJ	10	يونس§n-23943	نفر§n-13075	role	Arg0 Arg0 	
+5	جهت	N	ADVRB	10	null	null	junk	ArgM_PRP 	
+6	مشاهده	N	MOZ	5	null	null	role_intent		
+7	عذاب	N	MOZ	6	نکبت§n-11559	رخداد§n-13136	no		
+8	وارد	ADJ	MOS	10	null	null	no	Arg2 	
+9	شهر	N	NEZ	8	شهر§n-10272	جا§n-12733	location		
+10	شد	V	PREDEP	11	null	null	junk		
+11	اما	CONJ	VCONJ	12	null	null	junk		
+12	ديد	V	ROOT	0	رويت کردن§v-8581	رخداد§n-13136	role_action		
+13	که	SUBR	VCL	12	null	null	junk	Arg1 	
+14	اتفاق	N	NVE	16	رخداد§n-13136	رخداد§n-13136	role_intent		
+15	خاصي	ADJ	NPOSTMOD	14	مختص§a-1538	مشخصه§n-12756	no		
+16	نيفتاده	V	PRD	13	پيش آمدن§v-9399	رخداد§n-13136	no		
+17	،	PUNC	PUNC	12	null	null	junk		
+
+1	وقتي	N	ADVRB	23	null	null	junk	ArgM_TMP 	
+2	قضيه	N	OBJ	7	رخداد§n-13136	رخداد§n-13136	no	Arg1 	
+3	را	POSTP	OBJ	7	null	null	junk	Arg1 	
+4	از	PREP	VPP	7	null	null	junk	Arg3 	
+5	يکي‌از	ADJ	NPREMOD	6	null	null	no		
+6	اهالي	N	VPP	7	اهالي§n-11740	گروه§n-12753	role	Arg3 	
+7	پرسيد	V	NCL	1	پرسش کردن§v-8136	رخداد§n-13136	role_action		
+8	مرد	N	SBJ	23	يارو§n-11975	نفر§n-13075	role	Arg0 Arg0 	
+9	که	SUBR	NCL	8	null	null	junk		
+10	او	PR	PREDEP	11	null	null	junk		
+11	را	POSTP	OBJ	12	null	null	junk	Arg1 	
+12	نمي‌شناخت	V	PRD	9	شناختن§v-8761	رخداد§n-13136	role_action		
+13	ماجراي	N	OBJ	23	رخداد§n-13136	رخداد§n-13136	no	Arg3 	
+14	نفرين	N	MOZ	13	نفرين§n-22931	null	no		
+15	يونس	N	MOZ	14	يونس§n-23943	نفر§n-13075	role		
+16	و	CONJ	NCONJ	14	null	null	junk		
+17	توبه	N	NCONJ	14	استغفار§n-17529	مشخصه§n-12756	role_intent		
+18	مردم	N	MOZ	17	null	null	junk		
+19	را	POSTP	OBJ	23	null	null	junk	Arg3 	
+20	براي	PREP	VPP	23	null	null	junk	Arg4 	
+21	ش	PR	POSDEP	20	null	null	role		
+22	توضيح	N	NVE	23	توضيح§n-11475	خبر§n-12766	role_intent		
+23	داد	V	ROOT	0	null	null	junk		
+24	.	PUNC	PUNC	23	null	null	junk		
+
+1	يونس	N	SBJ	7	يونس§n-23943	نفر§n-13075	role	Arg1 Arg0 Arg0 Arg0 	
+2	با	PREP	ADVRB	7	null	null	junk	ArgM_CAU 	
+3	شنيدن	N	ADVRB	7	شنيدن§v-7802	رخداد§n-13136	role_action	ArgM_CAU 	
+4	اين	ADJ	NPREMOD	5	null	null	junk		
+5	خبر	N	MOZ	3	اخبار§n-11470	خبر§n-12766	no		
+6	خشمگين	ADJ	MOS	7	عبوس§a-595	مشخصه§n-12756	role_state	Arg2 	
+7	شد	V	PREDEP	8	null	null	junk		
+roles= 
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[اهالي§n-11740= اهالي role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[يارو§n-11975= مرد role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[شهر§n-10272=  شهر]]
+time= null
+alternativeTimes= [[موقع§n-12614=  وقت]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رويت کردن§v-8581=  ديد, پرسش کردن§v-8136=  پرسيد, شناختن§v-8761=  نمي‌شناخت, شنيدن§v-7802=  شنيدن]
+roal_states= [عبوس§a-595=  خشمگين]
+roal_intetns= [null=  مشاهده, رخداد§n-13136=  اتفاق, استغفار§n-17529=  توبه, توضيح§n-11475=  توضيح]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+8	و	CONJ	VCONJ	16	null	null	junk		
+9	بدون	PREP	ADVRB	16	null	null	junk	ArgM_NEG 	
+10	اذن	N	POSDEP	9	رخصت§n-13708	خبر§n-12766	no		
+11	پروردگار	N	MOZ	10	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role		
+12	ش	PR	MOZ	11	يونس§n-23943	نفر§n-13075	role		
+13	شهر	N	OBJ	16	شهر§n-10272	جا§n-12733	location	Arg1 	
+14	را	POSTP	OBJ	16	null	null	junk	Arg1 	
+15	ترک	N	NVE	16	ترک محل§n-10406	رخداد§n-13136	role_intent		
+16	کرد	V	PREDEP	17	null	null	junk		
+roles= 
+	[باري تعالي§n-11940= پروردگار role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[يونس§n-23943= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[شهر§n-10272=  شهر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= [ترک محل§n-10406=  ترک]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+17	و	CONJ	VCONJ	18	null	null	junk		
+18	رفت	V	ROOT	0	null	null	junk		
+19	تا	SUBR	AJUCL	18	null	null	junk	ArgM_CAU 	
+20	به	PREP	VPP	23	null	null	junk	Arg4 	
+21	کنار	N	POSDEP	20	null	null	junk		
+22	دريايي	N	MOZ	21	دريا§n-16409	جا§n-12733	location		
+23	رسيد	V	PRD	19	null	null	junk		
+24	،	PUNC	PUNC	18	null	null	junk		
+
+1	سوار	ADJ	MOS	4	سوار§n-14163	مشخصه§n-12756	role_intent	Arg2 	
+2	يک	NUM	NPREMOD	3	null	null	junk		
+3	کشتي	N	NEZ	1	کشتي§n-12864	شيء§n-12703	static_object	Arg1 	
+4	شد	V	ROOT	0	null	null	junk		
+5	که	SUBR	NCL	3	null	null	junk		
+6	پر‌از	ADJ	NPREMOD	7	null	null	no		
+7	بار	N	MOS	10	null	null	junk	Arg2 	
+8	و	CONJ	NCONJ	7	null	null	junk		
+9	مسافر	N	NCONJ	7	مسافر§n-11953	نفر§n-13075	role		
+10	بود	V	PRD	5	null	null	junk		
+11	.	PUNC	PUNC	4	null	null	junk		
+roles= 
+	[مسافر§n-11953= مسافر role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [کشتي=  کشتي§n-12864 object_states=  []]
+location= null
+alternativeLocations= [[دريا§n-16409=  دريايي]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= [سوار§n-14163=  سوار]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	کشتي	N	SBJ	4	کشتي§n-12864	شيء§n-12703	static_object	Arg1 	
+2	در‌ميانه	PREP	MOS	4	null	null	no	Arg2 	
+3	راه	N	POSDEP	2	null	null	junk		
+4	بود	V	ROOT	0	null	null	junk		
+5	که	SUBR	AJUCL	4	null	null	junk	ArgM_TMP 	
+6	ناگهان	ADV	ADVRB	12	null	null	junk	ArgM_ADV 	
+7	ماهي	N	SBJ	12	ماهي§n-12744	جانور§n-12239	dynamic_object	Arg0 Arg0 	Ar         g0
+8	بزرگي	ADJ	NPOSTMOD	7	بزرگ§a-384	مشخصه§n-12756	role_state		
+9	جلوي	PREP	OBJ	12	جلو§n-13563	جا§n-12733	no	Arg1 	
+10	ش	PR	POSDEP	9	کشتي§n-12864	شيء§n-12703	static_object		
+11	را	POSTP	OBJ	12	null	null	junk	Arg1 	
+12	گرفت	V	PREDEP	13	null	null	junk		
+13	و	CONJ	VCONJ	18	null	null	junk		
+14	دهان	N	OBJ	18	حفره دهان§n-11272	شيء§n-12703	static_object	Arg1 	
+15	خود	PR	MOZ	14	null	null	junk		
+16	را	POSTP	OBJ	18	null	null	junk	Arg1 	
+17	باز	ADJ	MOS	18	null	null	junk	Arg2 	
+18	کرد	V	PREDEP	19	null	null	junk		
+19	و	CONJ	VCONJ	22	null	null	junk		
+20	طلب	N	NVE	22	طلب§n-19500	رخداد§n-13136	role_intent		
+21	غذا	N	MOZ	20	غذا§n-12714	null	static_object	Arg1 	
+22	نمود	V	PRD	5	طلب کردن§v-8491	رخداد§n-13136	dynamic_object_action		
+23	.	PUNC	PUNC	4	null	null	junk		
+roles= ]
+dynamic_objs= [ماهي=  ماهي§n-12744 object_actions=  [] object_states=  []]
+static_objs= [کشتي=  کشتي§n-12864 object_states=  []][ش=  کشتي§n-12864 object_states=  []][دهان=  حفره دهان§n-11272 object_states=  []][غذا=  غذا§n-12714 object_states=  []]
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [بزرگ§a-384=  بزرگي]
+roal_intetns= [طلب§n-19500=  طلب]
+roal_emotions= []
+dynamic_object_actions= [طلب کردن§v-8491=  نمود]
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	هر	ADJ	NPREMOD	2	null	null	junk		
+2	بار	N	ADVRB	7	null	null	junk	ArgM_TMP 	
+3	قرعه	N	SBJ	7	قرعه§n-23516	null	no	Arg1 	
+4	به	PREP	VPP	7	null	null	junk	Arg3 	
+5	نام	N	POSDEP	4	null	null	junk		
+6	يونس	N	MOZ	5	يونس§n-23943	نفر§n-13075	role		
+7	درآمد	V	ROOT	0	null	null	no		
+roles= 
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+8	درنتيجه	SUBR	AJUCL	7	null	null	no	ArgM_CAU ArgM_DIS 	
+9	او	PR	PREDEP	10	null	null	junk		
+10	را	POSTP	OBJ	14	null	null	junk	Arg1 	
+11	در	PREP	VPP	14	null	null	junk	Arg3 	
+12	درون	N	POSDEP	11	null	null	junk		
+13	دريا	N	MOZ	12	دريا§n-16409	جا§n-12733	location		
+14	انداخته	V	VCONJ	21	انداختن§v-7928	رخداد§n-13136	role_action		
+15	و	CONJ	VCONJ	21	null	null	junk		
+16	ماهي	N	SBJ	21	ماهي§n-12744	جانور§n-12239	dynamic_object	Arg0 Arg0 	
+17	نيز	ADV	ADVRB	21	null	null	junk	ArgM_ADV 	
+18	فوري	ADV	ADVRB	21	فوري§a-2453	مشخصه§n-12756	no	ArgM_TMP 	
+19	او	PR	PREDEP	20	null	null	junk		
+20	را	POSTP	OBJ	21	null	null	junk	Arg1 	
+21	بلعيد	V	VCONJ	26	بلعيدن§v-7697	رخداد§n-13136	dynamic_object_action		
+22	و	CONJ	VCONJ	26	null	null	junk		
+23	به	PREP	VPP	26	null	null	junk	Arg3 	
+24	اعماق	N	VPP	26	ژرفا§n-11831	جا§n-12733	location	Arg3 	
+25	آب	N	MOZ	24	پهنه آب§n-13294	ماده§n-14032	static_object		
+26	بازگشت	V	PRD	8	برگشتن§v-8032	رخداد§n-13136	dynamic_object_action		
+27	.	PUNC	PUNC	7	null	null	junk		
+roles= ]
+dynamic_objs= [ماهي=  ماهي§n-12744 object_actions=  [] object_states=  []]
+static_objs= [آب=  پهنه آب§n-13294 object_states=  []]
+location= null
+alternativeLocations= [[دريا§n-16409=  دريا], [ژرفا§n-11831=  اعماق]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [انداختن§v-7928=  انداخته]
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= [بلعيدن§v-7697=  بلعيد, برگشتن§v-8032=  بازگشت]
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	خداوند	N	SBJ	5	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+2	به	PREP	NPP	4	null	null	junk	Arg3 	
+3	ماهي	N	NPP	4	ماهي§n-12744	جانور§n-12239	dynamic_object	Arg3 	
+4	الهام	N	NVE	5	وحي§n-15103	خصوصيت_رواني§n-12725	role_intent		
+5	نمود	V	ROOT	0	null	null	role_action		
+6	تا	SUBR	VCL	5	null	null	junk	Arg1 	
+7	به	PREP	NPP	9	null	null	junk	Arg3 	
+8	او	PR	POSDEP	7	null	null	junk		
+9	آسيبي	N	NVE	10	لطمه§n-12444	مشخصه§n-12756	role_state		
+10	نرساند	V	VCL	5	آسيب رساندن§v-20940	رخداد§n-13136	dynamic_object_action		
+11	.	PUNC	PUNC	5	null	null	junk		
+
+1	يونس	N	SBJ	14	يونس§n-23943	نفر§n-13075	role	Arg0 Arg0 Arg1 	
+2	چند	ADJ	NPREMOD	3	null	null	junk		
+3	روزي	N	ADVRB	14	روز§n-12632	دوره_زماني§n-12603	time	ArgM_EXT 	
+4	را	UNKNOWN	POSDEP	3	null	null	junk		
+5	در	PREP	ADVRB	14	null	null	junk	ArgM_LOC 	
+6	درون	N	POSDEP	5	null	null	junk		
+7	شکم	N	MOZ	6	دل§n-11297	رابطه§n-13628	no		
+8	ماهي	N	MOZ	7	ماهي§n-12744	جانور§n-12239	dynamic_object		
+9	به	PREP	VPP	14	null	null	junk	Arg3 	
+10	اطاعت	N	VPP	14	تمکين§n-12420	رابطه§n-13628	role_intent	Arg3 	
+11	و	CONJ	NCONJ	10	null	null	junk		
+12	پرستش	N	NCONJ	10	پرستش§n-10683	رخداد§n-13136	role_intent		
+13	خداوند	N	MOZ	10	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role		
+14	پرداخت	V	VCONJ	20	پرداختن§v-19365	رخداد§n-13136	role_action		
+15	و	CONJ	VCONJ	20	null	null	junk		
+16	به	PREP	NPP	19	null	null	junk	Arg3 	
+17	عظمت	N	NPP	19	فرهي§n-11193	مشخصه§n-12756	role_state	Arg3 	
+18	ش	PR	MOZ	17	null	null	no		
+19	اعتراف	N	NVE	20	null	null	role_state		
+20	کرد	V	PREDEP	21	null	null	junk		
+21	و	CONJ	VCONJ	25	null	null	junk		
+22	متوجه	ADJ	MOS	25	متوجه§a-706	مشخصه§n-12756	role_state	Arg2 	
+23	اشتباه	N	NEZ	22	لغزش§n-13117	رخداد§n-13136	role_emotion		
+24	خود	PR	MOZ	23	null	null	junk		
+25	شد	V	ROOT	0	null	null	junk		
+26	.	PUNC	PUNC	25	null	null	junk		
+
+1	خداوند	N	SBJ	7	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 Arg0 	
+2	نيز	ADV	ADVRB	7	null	null	junk	ArgM_ADV 	
+3	توبه	N	OBJ	7	استغفار§n-17529	مشخصه§n-12756	role_intent	Arg1 	
+4	اش	PR	MOZ	3	null	null	junk		
+5	را	POSTP	OBJ	7	null	null	junk	Arg1 	
+6	قبول	ADJ	NVE	7	قبول§a-1553	مشخصه§n-12756	no		
+7	نمود	V	VCONJ	12	قبول کردن§v-7791	رخداد§n-13136	role_action		
+roles= 
+	[باري تعالي§n-11940= خداوند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= [ماهي=  ماهي§n-12744 object_actions=  [] object_states=  []]
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= [[روز§n-12632=  روزي]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [null=  نمود, پرداختن§v-19365=  پرداخت, قبول کردن§v-7791=  نمود]
+roal_states= [لطمه§n-12444=  آسيبي, فرهي§n-11193=  عظمت, null=  اعتراف, متوجه§a-706=  متوجه]
+roal_intetns= [وحي§n-15103=  الهام, تمکين§n-12420=  اطاعت, پرستش§n-10683=  پرستش, استغفار§n-17529=  توبه]
+roal_emotions= [لغزش§n-13117=  اشتباه]
+dynamic_object_actions= [آسيب رساندن§v-20940=  نرساند]
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+8	و	CONJ	VCONJ	12	null	null	junk		
+9	به	PREP	VPP	12	null	null	junk	Arg3 	
+10	ماهي	N	VPP	12	ماهي§n-12744	جانور§n-12239	dynamic_object	Arg3 	
+11	الهام	N	NVE	12	وحي§n-15103	خصوصيت_رواني§n-12725	role_intent		
+12	کرد	V	ROOT	0	null	null	junk		
+13	تا	SUBR	VCL	12	null	null	junk	Arg1 	
+14	او	PR	PREDEP	15	null	null	junk		
+15	را	POSTP	OBJ	18	null	null	junk	Arg1 Arg1 	
+16	به	PREP	VPP	18	null	null	junk	Arg4 	
+17	ساحل	N	VPP	18	ساحل§n-16410	جا§n-12733	location	Arg4 	
+18	ببرد	V	PREDEP	19	بردن§v-7660	رخداد§n-13136	dynamic_object_action		
+roles= ]
+dynamic_objs= [ماهي=  ماهي§n-12744 object_actions=  [] object_states=  []]
+static_objs= 
+location= null
+alternativeLocations= [[ساحل§n-16410=  ساحل]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= [وحي§n-15103=  الهام]
+roal_emotions= []
+dynamic_object_actions= [بردن§v-7660=  ببرد]
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+19	و	CONJ	VCONJ	21	null	null	junk		
+20	رها	ADJ	MOS	21	ول§a-1594	مشخصه§n-12756	role_intent	Arg2 	
+21	سازد	V	VCL	12	رهاندن§v-16679	رخداد§n-13136	dynamic_object_action		
+22	پس	SUBR	AJUCL	21	null	null	junk	ArgM_DIS 	
+23	ماهي	N	SBJ	26	ماهي§n-12744	جانور§n-12239	dynamic_object	Arg0 	
+24	نيز	ADV	ADVRB	26	null	null	junk	ArgM_ADV 	
+25	چنان	PR	OBJ	26	null	null	junk	Arg1 	
+26	کرد	V	PRD	22	null	null	junk		
+27	.	PUNC	PUNC	12	null	null	junk		
+
+1	يونس	N	SBJ	11	يونس§n-23943	نفر§n-13075	role	Arg1 Arg0 	
+2	با	PREP	ADVRB	11	null	null	junk	ArgM_MNR 	
+3	حالي	N	ADVRB	11	احوال§n-13606	مشخصه§n-12756	no	ArgM_MNR 	
+4	گرفته	ADJ	NPOSTMOD	3	null	null	junk		
+5	و	CONJ	AJCONJ	4	null	null	junk		
+6	بيمار	ADJ	AJCONJ	4	بيمار§a-91	مشخصه§n-12756	role_state		
+7	از	PREP	ADVRB	11	null	null	junk	ArgM_LOC 	
+8	شکم	N	ADVRB	11	دل§n-11297	رابطه§n-13628	no	ArgM_LOC 	
+9	ماهي	N	MOZ	8	ماهي§n-12744	جانور§n-12239	dynamic_object		
+10	خارج	ADJ	MOS	11	برون§n-11860	جا§n-12733	location	Arg2 	
+11	شد	V	PREDEP	12	null	null	junk		
+12	و	CONJ	VCONJ	27	null	null	junk		
+13	در	PREP	ADVRB	27	null	null	junk	ArgM_LOC 	
+14	کنار	N	POSDEP	13	null	null	junk		
+15	ساحل	N	MOZ	14	ساحل§n-16410	جا§n-12733	location		
+16	به	PREP	NPP	26	null	null	junk	Arg3 	
+17	سايه	N	NPP	26	سايه§n-14341	مشخصه§n-12756	no	Arg3 	
+18	گياه	N	MOZ	17	گياه§n-12700	جان_دار§n-10393	static_object		
+19	کدوبني	N	MOZ	18	null	null	no		
+20	(	PUNC	PUNC	21	null	null	junk		
+21	گياهي	N	POSDEP	19	گياه§n-12700	جان_دار§n-10393	static_object		
+22	از	PREP	NPP	21	null	null	junk		
+23	قسم	N	NPP	21	صورت§n-11379	خصوصيت_رواني§n-12725	no		
+24	کدو	N	MOZ	23	null	null	static_object		
+25	)	PUNC	PUNC	21	null	null	junk		
+26	تکيه	N	NVE	27	اعتماد§n-13802	مشخصه§n-12756	role_state		
+27	زد	V	ROOT	0	لم دادن§v-8155	رخداد§n-13136	role_action		
+28	،	PUNC	PUNC	27	null	null	junk		
+
+1	او	PR	SBJ	5	null	null	junk	Arg0 Arg0 	
+2	همواره	ADV	ADVRB	5	null	null	junk	ArgM_ADV 	
+3	ذکر	N	OBJ	5	ذکر§n-14656	خصوصيت_رواني§n-12725	role_intent	Arg1 	
+4	خدا	N	MOZ	3	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+5	مي‌گفت	V	ROOT	0	ايراد کردن§v-9365	رخداد§n-13136	role_action		
+6	تا	SUBR	AJUCL	5	null	null	junk	ArgM_TMP 	
+7	سلامتي	N	OBJ	10	سلامت§n-14056	مشخصه§n-12756	role_state	Arg1 	
+8	خود	PR	MOZ	7	null	null	junk		
+9	را	POSTP	OBJ	10	null	null	junk	Arg1 	
+10	بازيافت	V	AJUCL	5	باز يافتن§v-16266	رخداد§n-13136	role_action		
+11	.	PUNC	PUNC	5	null	null	junk		
+
+1	در	PREP	ADVRB	8	null	null	junk	ArgM_TMP 	
+2	اين	ADJ	NPREMOD	3	null	null	junk		
+3	هنگام	N	ADVRB	8	موقع§n-12614	دوره_زماني§n-12603	time	ArgM_TMP 	
+4	يونس	N	SBJ	8	يونس§n-23943	نفر§n-13075	role	Arg1 Arg0 	
+5	متوجه	ADJ	MOS	8	متوجه§a-706	مشخصه§n-12756	role_state	Arg2 	
+6	خطاي	N	NEZ	5	ذنب§n-10598	رخداد§n-13136	role_state		
+7	خود	PR	MOZ	6	null	null	junk		
+8	شد	V	PREDEP	9	null	null	junk		
+9	و	CONJ	VCONJ	17	null	null	junk		
+10	از	PREP	NPP	13	null	null	junk	Arg3 	
+11	درگاه	N	NPP	13	درگاه§n-10373	شيء§n-12703	no	Arg3 	
+12	الهي	ADJ	NPOSTMOD	11	رباني§a-2083	مشخصه§n-12756	role		
+13	تقاضاي	N	NVE	17	خواهش§n-13129	خبر§n-12766	role_state		
+14	عفو	N	MOZ	13	گذشت§n-14958	رخداد§n-13136	role_intent	Arg1 	
+15	و	CONJ	NCONJ	14	null	null	junk		
+16	بخشش	N	NCONJ	14	گذشت§n-14958	رخداد§n-13136	role_intent		
+17	نمود	V	ROOT	0	تقاضا داشتن§v-19252	رخداد§n-13136	role_action		
+18	.	PUNC	PUNC	17	null	null	junk		
+roles= 
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[رباني§a-2083= الهي role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= [ماهي=  ماهي§n-12744 object_actions=  [] object_states=  []]
+static_objs= [گياه=  گياه§n-12700 object_states=  []][گياهي=  گياه§n-12700 object_states=  []][کدو=  null object_states=  []]
+location= null
+alternativeLocations= [[برون§n-11860=  خارج], [ساحل§n-16410=  ساحل]]
+time= null
+alternativeTimes= [[موقع§n-12614=  هنگام]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [لم دادن§v-8155=  زد, ايراد کردن§v-9365=  مي‌گفت, باز يافتن§v-16266=  بازيافت, تقاضا داشتن§v-19252=  نمود]
+roal_states= [بيمار§a-91=  بيمار, اعتماد§n-13802=  تکيه, سلامت§n-14056=  سلامتي, متوجه§a-706=  متوجه, ذنب§n-10598=  خطاي, خواهش§n-13129=  تقاضاي]
+roal_intetns= [ول§a-1594=  رها, ذکر§n-14656=  ذکر, گذشت§n-14958=  عفو, گذشت§n-14958=  بخشش]
+roal_emotions= []
+dynamic_object_actions= [رهاندن§v-16679=  سازد]
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	سپس	SUBR	ROOT	0	null	null	junk	ArgM_DIS 	
+2	به	PREP	NPP	5	null	null	junk	Arg4 	
+3	سمت	N	NPP	5	جانب§n-10268	جا§n-12733	no	Arg4 	
+4	نينوا	N	MOZ	3	null	null	location		
+5	حرکت	N	NVE	6	حرکت§n-15937	رخداد§n-13136	role_intent		
+6	کرد	V	PRD	1	null	null	junk		
+7	.	PUNC	PUNC	6	null	null	junk		
+roles= ]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[null=  نينوا]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= [حرکت§n-15937=  حرکت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	اما	CONJ	VCONJ	5	null	null	junk	ArgM_DIS 	
+2	گوسفندي	N	SBJ	5	گوسفند§n-10819	جانور§n-12239	dynamic_object	Arg0 Arg0 	
+3	به	PREP	VPRT	5	null	null	junk		
+4	زبان	N	VPRT	5	سخن§n-12982	خصوصيت_رواني§n-12725	role_state		
+5	آمد	V	PREDEP	6	null	null	junk		
+6	و	CONJ	VCONJ	8	null	null	junk		
+7	گواهي	N	NVE	8	گواهي§n-14086	خصوصيت_رواني§n-12725	dynamic_object_state		
+8	داد	V	ROOT	0	null	null	junk		
+9	که	SUBR	VCL	8	null	null	junk	Arg1 	
+10	آن	ADJ	NPREMOD	11	null	null	junk		
+11	مرد	N	SBJ	13	يارو§n-11975	نفر§n-13075	role	Arg1 	
+12	يونس	N	MOS	13	يونس§n-23943	نفر§n-13075	role	Arg2 	
+13	است	V	PRD	9	null	null	junk		
+14	.	PUNC	PUNC	8	null	null	junk		
+
+1	چوپان	N	SBJ	3	چوپان§n-20049	نفر§n-13075	role	Arg1 	
+2	متقاعد	ADJ	MOS	3	متقاعد§a-576	مشخصه§n-12756	role_state	Arg2 	
+3	شد	V	ROOT	0	null	null	junk		
+4	که	SUBR	ACL	2	null	null	junk		
+5	اين	ADJ	NPREMOD	6	null	null	junk		
+6	مرد	N	SBJ	8	يارو§n-11975	نفر§n-13075	role_state	Arg1 	
+7	يونس	N	MOS	8	يونس§n-23943	نفر§n-13075	role	Arg2 	
+8	است	V	PRD	4	null	null	junk		
+9	،	PUNC	PUNC	3	null	null	junk		
+roles= 
+	[يارو§n-11975= مرد role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[چوپان§n-20049= چوپان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= [گوسفندي=  گوسفند§n-10819 object_actions=  [] object_states=  []]
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [سخن§n-12982=  زبان, متقاعد§a-576=  متقاعد, يارو§n-11975=  مرد]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= [گواهي§n-14086=  گواهي]
+static_object_states= []
+
+newScene*************************************
+
+1	سريع	ADV	ADVRB	4	اکسپرس§a-18373	مشخصه§n-12756	role_state	ArgM_MNR 	
+2	وارد	ADJ	MOS	4	null	null	no	Arg2 	
+3	شهر	N	NEZ	2	شهر§n-10272	جا§n-12733	location		
+4	شد	V	PREDEP	5	null	null	junk		
+roles= ]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[شهر§n-10272=  شهر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [اکسپرس§a-18373=  سريع]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+5	و	CONJ	VCONJ	12	null	null	junk		
+6	خبر	N	OBJ	12	خبر§n-12766	خبر§n-12766	no	Arg1 	
+7	آمدن	N	MOZ	6	آمدن§v-7847	رخداد§n-13136	role_action		
+8	ش	PR	MOZ	7	يونس§n-23943	نفر§n-13075	role		
+9	را	POSTP	OBJ	12	null	null	junk	Arg1 	
+10	به	PREP	VPP	12	null	null	junk	Arg3 	
+11	مردم	N	POSDEP	10	null	null	junk		
+12	داد	V	ROOT	0	null	null	junk		
+13	.	PUNC	PUNC	12	null	null	junk		
+
+1	مردم	N	SBJ	13	null	null	junk	Arg0 Arg0 Arg0 Arg0 	
+2	که	SUBR	NCL	1	null	null	junk		
+3	هرگز	ADV	ADVRB	8	null	null	junk	ArgM_NEG 	
+4	چنين	N	PREDEP	6	null	null	junk		
+5	خبري	N	MOZ	4	خبر§n-12766	خبر§n-12766	no		
+6	را	POSTP	OBJ	8	null	null	junk	Arg1 	
+7	باور	N	NVE	8	اعتقاد§n-13034	خصوصيت_رواني§n-12725	role_state		
+8	نمي‌کردند	V	PRD	2	باور کردن§v-9412	رخداد§n-13136	role_action		
+9	،	PUNC	PUNC	8	null	null	junk		
+10	چوپان	N	OBJ	13	چوپان§n-20049	نفر§n-13075	role	Arg1 	
+11	را	POSTP	OBJ	13	null	null	junk	Arg1 	
+12	دستگير	ADJ	NVE	13	دستگير§n-16325	مشخصه§n-12756	role_intent		
+13	کرده	V	PREDEP	14	null	null	junk		
+14	و	CONJ	VCONJ	16	null	null	junk		
+15	تصميم	N	NVE	16	تصميم§n-11378	خصوصيت_رواني§n-12725	role_intent		
+16	گرفتند	V	ROOT	0	null	null	junk		
+17	تا	SUBR	VCL	16	null	null	junk	Arg3 	
+18	او	PR	PREDEP	19	null	null	junk		
+19	را	POSTP	OBJ	20	null	null	junk	Arg1 	
+20	بزنند	V	VCL	16	زدن§v-8659	رخداد§n-13136	role_action		
+21	،	PUNC	PUNC	16	null	null	junk		
+
+1	اما	CONJ	VCONJ	5	null	null	junk	ArgM_DIS 	
+2	چوپان	N	SBJ	5	چوپان§n-20049	نفر§n-13075	role	Arg0 	
+3	به	PREP	VPP	5	null	null	junk	Arg3 	
+4	آن‌ها	PR	VPP	5	null	null	role	Arg3 	
+5	گفت	V	ROOT	0	null	null	junk		
+6	که	SUBR	VCL	5	null	null	junk	Arg1 	
+7	من	PR	SBJ	13	null	null	junk	Arg0 	
+8	براي	PREP	NPP	12	null	null	junk		
+9	صدق	N	POSDEP	8	درستي§n-11198	مشخصه§n-12756	no		
+10	گفتار	N	MOZ	9	جمله§n-13125	رخداد§n-13136	role_intent		
+11	م	PR	MOZ	10	چوپان§n-20049	نفر§n-13075	role		
+12	شاهد	N	OBJ	13	شاهد§n-14774	نفر§n-13075	role_state	Arg1 	
+13	دارم	V	PRD	6	null	null	junk		
+14	،	PUNC	PUNC	5	null	null	junk		
+
+1	سپس	SUBR	ROOT	0	null	null	junk	ArgM_DIS 	
+2	همان	ADJ	NPREMOD	3	null	null	junk		
+3	گوسفند	N	SBJ	6	گوسفند§n-10819	جانور§n-12239	dynamic_object	Arg0 	
+4	مجددا	ADV	ADVRB	6	null	null	junk	ArgM_ADV 	
+5	شهادت	N	NVE	6	شهادت§n-15072	خبر§n-12766	dynamic_object_state		
+6	داد	V	PRD	1	null	null	junk		
+7	که	SUBR	VCL	6	null	null	junk	Arg3 	
+8	چوپان	N	SBJ	10	چوپان§n-20049	نفر§n-13075	role	Arg0 	
+9	راست	N	NVE	10	راست§a-546	null	no		
+10	مي‌گويد	V	PRD	7	null	null	no		
+11	.	PUNC	PUNC	1	null	null	junk		
+roles= 
+	[يونس§n-23943= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[چوپان§n-20049= چوپان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[چوپان§n-20049= م role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= [گوسفند=  گوسفند§n-10819 object_actions=  [] object_states=  []]
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [آمدن§v-7847=  آمدن, باور کردن§v-9412=  نمي‌کردند, زدن§v-8659=  بزنند]
+roal_states= [اعتقاد§n-13034=  باور, شاهد§n-14774=  شاهد]
+roal_intetns= [دستگير§n-16325=  دستگير, تصميم§n-11378=  تصميم, جمله§n-13125=  گفتار]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= [شهادت§n-15072=  شهادت]
+static_object_states= []
+
+newScene*************************************
+
+1	مردم	N	SBJ	8	null	null	junk	Arg0 Arg0 Arg0 Arg1 	
+2	پس‌از	PREP	ADVRB	8	null	null	no	ArgM_TMP 	
+3	اين	ADJ	NPREMOD	4	null	null	junk		
+4	ماجرا	N	POSDEP	2	رخداد§n-13136	رخداد§n-13136	no		
+5	به	PREP	VPP	8	null	null	junk	Arg4 	
+6	استقبال	N	VPP	8	استقبال§n-14524	خبر§n-12766	role_intent	Arg4 	
+7	يونس	N	MOZ	6	يونس§n-23943	نفر§n-13075	role		
+8	رفته	V	PREDEP	9	null	null	junk		
+9	و	CONJ	VCONJ	16	null	null	junk		
+10	او	PR	PREDEP	11	null	null	junk		
+11	را	POSTP	OBJ	16	null	null	junk	Arg1 	
+12	با	PREP	ADVRB	16	null	null	junk	ArgM_MNR 	
+13	احترام	N	ADVRB	16	اکرام§n-11419	خصوصيت_رواني§n-12725	role_state	ArgM_MNR 	
+14	وارد	ADJ	MOS	16	null	null	no	Arg2 	
+15	شهر	N	NEZ	14	شهر§n-10272	جا§n-12733	location		
+16	کردند	V	PREDEP	17	null	null	junk		
+17	و	CONJ	VCONJ	21	null	null	junk		
+18	به	PREP	NPP	20	null	null	junk	Arg3 	
+19	او	PR	POSDEP	18	null	null	junk		
+20	ايمان	N	NVE	21	ايمان§n-11400	خصوصيت_رواني§n-12725	role_intent		
+21	آورده	V	PREDEP	22	null	null	junk		
+22	و	CONJ	VCONJ	29	null	null	junk		
+23	سال‌ها	N	ADVRB	29	عام§n-12653	دوره_زماني§n-12603	time	ArgM_EXT 	
+24	تحت	PREP	MOS	29	null	null	junk	Arg2 	
+25	رهبري	N	POSDEP	24	سرجنبان§n-13333	نفر§n-13075	role_state		
+26	و	CONJ	NCONJ	25	null	null	junk		
+27	راهنمايي‌هاي	N	NCONJ	25	هدايت§n-14315	رخداد§n-13136	role_intent		
+28	او	PR	MOZ	25	null	null	junk		
+29	بودند	V	ROOT	0	null	null	junk		
+30	.	PUNC	PUNC	29	null	null	junk		
+roles= 
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[شهر§n-10272=  شهر]]
+time= null
+alternativeTimes= [[عام§n-12653=  سال‌ها]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [اکرام§n-11419=  احترام, سرجنبان§n-13333=  رهبري]
+roal_intetns= [استقبال§n-14524=  استقبال, ايمان§n-11400=  ايمان, هدايت§n-14315=  راهنمايي‌هاي]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newStory*************************************
+newScene*************************************
+
+1	خداوند	N	SBJ	8	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+2	آدم	N	OBJ	8	آدم§n-14705	نفر§n-13075	role	Arg1 	
+3	را	POSTP	OBJ	8	null	null	junk	Arg1 	
+4	بدون	PREP	ADVRB	8	null	null	junk	ArgM_NEG 	
+5	پدر	N	POSDEP	4	والد§n-13357	نفر§n-13075	role		
+6	و	CONJ	NCONJ	5	null	null	junk		
+7	مادر	N	NCONJ	5	مامان§n-13374	نفر§n-13075	role		
+8	آفريد	V	ROOT	0	هست کردن§v-7844	رخداد§n-13136	role_action		
+9	تا	SUBR	AJUCL	8	null	null	junk	ArgM_CAU 	
+10	دليلي	N	MOS	11	برهان§n-10163	خصوصيت_رواني§n-12725	no	Arg2 	
+11	باشد	V	PRD	9	null	null	junk		
+12	بر	PREP	NPP	10	null	null	junk		
+13	قدرت	N	POSDEP	12	توانايي§n-12975	خصوصيت_رواني§n-12725	role_state		
+14	الهي	ADJ	NPOSTMOD	13	رباني§a-2083	مشخصه§n-12756	role_state		
+15	.	PUNC	PUNC	8	null	null	junk		
+
+1	هنگامي	N	ADVRB	23	موقع§n-12614	دوره_زماني§n-12603	time	ArgM_TMP 	
+2	که	SUBR	NCL	1	null	null	junk		
+3	خداوند	N	SBJ	5	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 Arg0 	
+4	اراده	N	NVE	5	خواست§n-11330	رخداد§n-13136	role_intent		
+5	کرد	V	PRD	2	null	null	junk		
+6	تا	SUBR	VCL	5	null	null	junk	Arg1 	
+7	در	PREP	ADVRB	17	null	null	junk	ArgM_LOC 	
+8	زمين	N	ADVRB	17	زمين§n-13297	شيء§n-12703	location	ArgM_LOC 	
+9	خليفه	N	OBJ	17	null	null	role_state	Arg1 Arg1 	
+10	و	CONJ	NCONJ	9	null	null	junk		
+11	نماينده‌اي	N	NCONJ	9	نماينده§n-13652	نفر§n-13075	role_state		
+12	که	SUBR	NCL	9	null	null	junk		
+13	حاکم	N	MOS	15	سلطان§n-13386	نفر§n-13075	role_state	Arg2 	
+14	زمين	N	MOZ	13	زمين§n-13297	شيء§n-12703	location		
+15	باشد	V	PRD	12	null	null	junk		
+16	قرار	N	NVE	17	null	null	role_intent		
+17	دهد	V	PRD	6	null	null	junk		
+18	فرشتگان	N	SBJ	23	ملک§n-11941	خصوصيت_رواني§n-12725	role	Arg1 	
+19	از	PREP	AJPP	22	null	null	junk		
+20	اين	ADJ	NPREMOD	21	null	null	junk		
+21	خبر	N	AJPP	22	اخبار§n-11465	خبر§n-12766	no		
+22	شگفت‌زده	ADJ	MOS	23	شگفت زده§a-1066	مشخصه§n-12756	role_state	Arg2 	
+23	شدند	V	ROOT	0	null	null	junk		
+24	،	PUNC	PUNC	23	null	null	junk		
+
+1	آن‌ها	PR	SBJ	9	null	null	role	Arg0 	
+2	خود	PR	PREDEP	3	null	null	junk		
+3	را	POSTP	OBJ	9	null	null	junk	Arg1 	
+4	به	PREP	AJPP	8	null	null	junk		
+5	جانشيني	N	AJPP	8	جايگزين§a-1588	null	role_intent		
+6	در	PREP	NPP	5	null	null	junk		
+7	زمين	N	NPP	5	زمين§n-13297	شيء§n-12703	location		
+8	سزاوارتر	ADJ	TAM	9	سزاوار§a-701	مشخصه§n-12756	role_state	Arg2 	
+9	مي‌پنداشتند	V	ROOT	0	null	null	role_action		
+10	.	PUNC	PUNC	9	null	null	junk		
+
+1	اما	CONJ	VCONJ	12	null	null	junk	ArgM_DIS 	
+2	خداوند	N	SBJ	12	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+3	با	PREP	ADVRB	12	null	null	junk	ArgM_INS 	
+4	اسرار	N	ADVRB	12	سر§n-13702	خبر§n-12766	no	ArgM_INS 	
+5	غيبي	ADJ	NPOSTMOD	4	غيبي§a-1846	مشخصه§n-12756	no		
+6	که	SUBR	NCL	4	null	null	junk		
+7	بر	PREP	AJPP	9	null	null	junk		
+8	آنان	PR	POSDEP	7	null	null	junk		
+9	پوشيده	ADJ	MOS	10	پوشيده§a-905	مشخصه§n-12756	no	Arg2 	
+10	‌بود	V	PRD	6	بودن§v-9328	رخداد§n-13136	no		
+11	پاسخ	N	NVE	12	پاسخ§n-11519	رخداد§n-13136	role_intent		
+12	داد	V	ROOT	0	null	null	junk		
+13	،	PUNC	PUNC	12	null	null	junk		
+14	خداوند	N	SBJ	17	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+15	چيزي	N	PREDEP	16	null	null	junk		
+16	را	POSTP	OBJ	17	null	null	junk	Arg1 	
+17	مي‌داند	V	VCL	12	دانستن§v-8456	رخداد§n-13136	role_action		
+18	که	SUBR	NCL	15	null	null	junk		
+19	آنان	PR	SBJ	23	null	null	junk	Arg0 	
+20	از	PREP	NPP	22	null	null	junk	Arg3 	
+21	آن	PR	POSDEP	20	null	null	junk		
+22	آگاهي	N	NVE	23	اطلاع§n-11332	خصوصيت_رواني§n-12725	role_state		
+23	ندارند	V	PRD	18	null	null	junk		
+24	.	PUNC	PUNC	12	null	null	junk		
+
+1	پس‌از	PREP	ADVRB	12	null	null	no	ArgM_TMP 	
+2	آفرينش	N	POSDEP	1	ايجاد§n-10642	رخداد§n-13136	role_intent		
+3	آدم	N	MOZ	2	آدم§n-14705	نفر§n-13075	role	Arg0 Arg0 	
+4	(	PUNC	PUNC	5	null	null	junk		
+5	ع	ARAB	POSDEP	3	null	null	no		
+6	)	PUNC	PUNC	5	null	null	junk		
+7	خداوند	N	SBJ	12	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+8	اسما	N	OBJ	12	null	null	no	Arg1 	
+9	را	POSTP	OBJ	12	null	null	junk	Arg1 	
+10	به	PREP	VPP	12	null	null	junk	Arg3 	
+11	او	PR	POSDEP	10	null	null	junk		
+12	آموخت	V	ROOT	0	تدريس کردن§v-9219	رخداد§n-13136	role_action		
+13	تا	SUBR	AJUCL	12	null	null	junk	ArgM_CAU 	
+14	در	PREP	ADVRB	17	null	null	junk	ArgM_LOC 	
+15	زمين	N	ADVRB	17	زمين§n-13297	شيء§n-12703	location	ArgM_LOC 	
+16	توان	N	OBJ	17	بالقوگي§n-12491	خصوصيت_رواني§n-12725	role_state	Arg1 	
+17	يافته	V	PREDEP	18	null	null	junk		
+18	و	CONJ	VCONJ	22	null	null	junk		
+19	از	PREP	AJPP	21	null	null	junk		
+20	آن	PR	POSDEP	19	null	null	junk		
+21	بهره‌مند	ADJ	MOS	22	متمتع§a-17760	مشخصه§n-12756	role_intent	Arg2 	
+22	گردد	V	PRD	13	null	null	junk		
+23	.	PUNC	PUNC	12	null	null	junk		
+roles= 
+	[باري تعالي§n-11940= خداوند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= آدم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[والد§n-13357= پدر role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[مامان§n-13374= مادر role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[ملک§n-11941= فرشتگان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[زمين§n-13297=  زمين]]
+time= null
+alternativeTimes= [[موقع§n-12614=  هنگامي]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [هست کردن§v-7844=  آفريد, null=  مي‌پنداشتند, دانستن§v-8456=  مي‌داند, تدريس کردن§v-9219=  آموخت]
+roal_states= [توانايي§n-12975=  قدرت, رباني§a-2083=  الهي, null=  خليفه, نماينده§n-13652=  نماينده‌اي, سلطان§n-13386=  حاکم, شگفت زده§a-1066=  شگفت‌زده, سزاوار§a-701=  سزاوارتر, اطلاع§n-11332=  آگاهي, بالقوگي§n-12491=  توان]
+roal_intetns= [خواست§n-11330=  اراده, null=  قرار, جايگزين§a-1588=  جانشيني, پاسخ§n-11519=  پاسخ, ايجاد§n-10642=  آفرينش, متمتع§a-17760=  بهره‌مند]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	انسان	N	SBJ	6	انسان§n-13187	گروه§n-12753	role	Arg1 	
+2	در	PREP	ADVRB	6	null	null	junk	ArgM_TMP 	
+3	آغاز	N	ADVRB	6	آغاز§n-13261	دوره_زماني§n-12603	no	ArgM_TMP 	
+4	،	PUNC	PUNC	3	null	null	junk		
+5	خاک	N	MOS	6	خاک§n-12568	ماده§n-14032	static_object	Arg2 Arg1 Arg1 Arg1 Arg1 Arg1 Arg1 	
+6	بوده‌است	V	ROOT	0	بودن§v-9328	رخداد§n-13136	no		
+7	،	PUNC	PUNC	6	null	null	junk		
+8	سپس	SUBR	AJUCL	6	null	null	junk	ArgM_DIS 	
+9	با	PREP	AJPP	11	null	null	junk		
+10	آب	N	AJPP	11	آب§n-12570	ماده§n-14032	static_object		
+11	آميخته	ADJ	MOS	12	چندسيستمي§a-2343	مشخصه§n-12756	no	Arg2 	
+12	‌شده‌است	V	VCONJ	16	مخلوط کردن§v-18868	رخداد§n-13136	no		
+13	و	CONJ	VCONJ	16	null	null	junk		
+14	به‌صورت	PREP	VPP	16	null	null	no	Arg3 	
+15	گل	N	POSDEP	14	گل§n-14235	ماده§n-14032	static_object		
+16	درآمده‌است	V	VCONJ	27	null	null	no		
+17	،	PUNC	PUNC	16	null	null	junk		
+18	و	CONJ	VCONJ	27	null	null	junk		
+19	بعد	ADV	ADVRB	27	null	null	junk	ArgM_ADV 	
+20	به	PREP	NPP	26	null	null	junk	Arg3 	
+21	گل	N	NPP	26	گل§n-14235	ماده§n-14032	static_object_state	Arg3 	
+22	بدبو	ADJ	NPOSTMOD	21	متعفن§a-1052	مشخصه§n-12756	static_object_state		
+23	(	PUNC	PUNC	24	null	null	junk		
+24	لجن	N	APP	21	لجن§n-15930	ماده§n-14032	static_object		
+25	)	PUNC	PUNC	24	null	null	junk		
+26	تبديل	N	NVE	27	تبديل§n-13632	رخداد§n-13136	no		
+27	شده	V	PRD	8	null	null	junk		
+28	،	PUNC	PUNC	27	null	null	junk		
+29	سپس	SUBR	AJUCL	27	null	null	junk	ArgM_DIS 	
+30	حالت	N	OBJ	32	وضعيت§n-12745	مشخصه§n-12756	no	Arg2 	
+31	چسبندگي	N	MOZ	30	null	null	static_object_state		
+32	پيداکرده	V	VCONJ	42	null	null	no		
+33	،	PUNC	PUNC	32	null	null	junk		
+34	و	CONJ	VCONJ	42	null	null	junk		
+35	به	PREP	VPP	38	null	null	junk	Arg3 	
+36	حالت	N	VPP	38	وضعيت§n-12745	مشخصه§n-12756	no	Arg3 	
+37	خشکيده	ADJ	NPOSTMOD	36	خشک§a-60	مشخصه§n-12756	static_object_state		
+38	درآمده	V	VCONJ	42	null	null	no		
+39	و	CONJ	VCONJ	42	null	null	junk		
+40	همچون	PREP	MOS	42	null	null	junk	Arg2 	
+41	سفال	N	POSDEP	40	سفال§n-25736	شيء§n-12703	static_object		
+42	گرديده‌است	V	PRD	29	گرديدن§v-9382	رخداد§n-13136	no		
+43	.	PUNC	PUNC	6	null	null	junk		
+
+1	مرحله	N	SBJ	6	فاز§n-12698	دوره_زماني§n-12603	no	Arg1 	
+2	تکاملي	ADJ	NPOSTMOD	1	تکاملي§a-2457	مشخصه§n-12756	role_intent		
+3	بشر	N	MOZ	1	بشر§n-11988	نفر§n-13075	role		
+4	به	PREP	MOS	6	null	null	junk	Arg2 	
+5	آن	PR	POSDEP	4	null	null	junk		
+6	است	V	ROOT	0	null	null	junk		
+7	که	SUBR	NCL	5	null	null	junk		
+8	روح	N	SBJ	15	روح§n-10348	مسبب§n-13036	no	Arg0 	
+9	انساني	ADJ	NPOSTMOD	8	بشري§a-2045	مشخصه§n-12756	no		
+10	ازجانب	PREP	VPP	15	null	null	no	ArgM_ADV 	
+11	خدا	N	POSDEP	10	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+12	به	PREP	NPP	14	null	null	junk	Arg3 	
+13	او	PR	POSDEP	12	null	null	junk		
+14	دميده	N	NVE	15	null	null	no		
+15	گردد	V	PRD	7	null	null	junk		
+16	،	PUNC	PUNC	6	null	null	junk		
+
+1	خداوند	N	SBJ	5	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+2	به	PREP	NPP	4	null	null	junk	Arg3 	
+3	فرشتگان	N	NPP	4	ملک§n-11941	خصوصيت_رواني§n-12725	role	Arg3 	
+4	فرمان	N	NVE	5	امر§n-11502	رخداد§n-13136	role_intent		
+5	داد	V	SBJ	22	null	null	junk		
+6	که	SUBR	VCL	5	null	null	junk	Arg1 	
+7	به‌عنوان	PREP	ADVRB	20	null	null	no	ArgM_ADV 	
+8	تکريم	N	POSDEP	7	اکرام§n-11419	خصوصيت_رواني§n-12725	role_state		
+9	و	CONJ	NCONJ	8	null	null	junk		
+10	تجليل	N	NCONJ	8	اکرام§n-11419	خصوصيت_رواني§n-12725	role_state		
+11	از	PREP	NPP	8	null	null	junk		
+12	مقام	N	NPP	8	پايگاه اجتماعي§n-12388	مشخصه§n-12756	role_state		
+13	آدم	N	MOZ	12	آدم§n-14705	نفر§n-13075	role		
+14	(	PUNC	PUNC	15	null	null	junk		
+15	ع	ARAB	POSDEP	13	null	null	no		
+16	)	PUNC	PUNC	15	null	null	junk		
+17	او	PR	PREDEP	18	null	null	junk		
+18	را	POSTP	VPP	20	null	null	junk	Arg3 	
+19	سجده	N	NVE	20	سجده§n-25850	رخداد§n-13136	role_state		
+20	کنند	V	PRD	6	null	null	junk		
+21	،	PUNC	PUNC	20	null	null	junk		
+22	يعني	PSUS	ROOT	0	null	null	junk		
+23	خدا	N	VPP	29	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+24	را	PREP	VPP	29	null	null	junk		
+25	سجده	N	OBJ	29	سجده§n-25850	رخداد§n-13136	role_state	Arg1 	
+26	شکر	N	MOZ	25	شکر§n-11536	مشخصه§n-12756	role_intent		
+27	به	PREP	VPRT	29	null	null	junk		
+28	‌جا	ADJ	VPRT	29	null	null	no		
+29	آورند	V	MOS	22	انجام دادن§v-9258	رخداد§n-13136	role_action		
+30	که	SUBR	AJUCL	29	null	null	junk	ArgM_PRP 	
+31	چنين	ADJ	NPREMOD	32	null	null	junk		
+32	موجود	N	OBJ	35	بشر§n-11988	نفر§n-13075	role	Arg1 	
+33	ممتازي	ADJ	NPOSTMOD	32	جان بخش§a-131	مشخصه§n-12756	role_state		
+34	را	POSTP	OBJ	35	null	null	junk	Arg1 	
+35	آفريده‌است	V	PRD	30	هست کردن§v-7844	رخداد§n-13136	role_action		
+36	.	PUNC	PUNC	22	null	null	junk		
+
+1	خداوند	N	SBJ	5	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 Arg0 	
+2	به	PREP	VPP	5	null	null	junk	Arg3 Arg3 	
+3	فرشتگان	N	VPP	5	ملک§n-11941	خصوصيت_رواني§n-12725	role	Arg3 Arg3 	
+4	خطاب	N	NVE	5	خطاب§n-17515	رخداد§n-13136	no		
+5	نمود	V	VCONJ	7	خطاب کردن§v-8472	رخداد§n-13136	role_action		
+6	و	CONJ	VCONJ	7	null	null	junk		
+7	فرمود	V	ROOT	0	ايراد کردن§v-9365	رخداد§n-13136	role_action		
+8	:	PUNC	PUNC	7	null	null	junk		
+9	من	PR	SBJ	13	null	null	junk	Arg0 Arg0 Arg0 	
+10	بشري	N	OBJ	13	بشر§n-11988	نفر§n-13075	role	Arg1 	
+11	از	PREP	ADVRB	13	null	null	junk	ArgM_ADV 	
+12	گل	N	ADVRB	13	گل§n-14235	ماده§n-14032	static_object	ArgM_ADV 	
+13	مي‌آفرينم	V	VCL	7	هست کردن§v-7844	رخداد§n-13136	role_action		
+14	،	PUNC	PUNC	13	null	null	junk		
+15	هنگامي	N	ADVRB	31	موقع§n-12614	دوره_زماني§n-12603	time	ArgM_TMP 	
+16	که	SUBR	NCL	15	null	null	junk		
+17	آن	PR	PREDEP	18	null	null	junk		
+18	را	POSTP	OBJ	20	null	null	junk	Arg1 	
+19	موزون	ADJ	MOS	20	هماهنگ§a-1604	مشخصه§n-12756	role_state	Arg2 	
+20	نمودم	V	VCONJ	27	null	null	role_action		
+21	و	CONJ	VCONJ	27	null	null	junk		
+22	از	PREP	ADVRB	27	null	null	junk	Arg1 	
+23	روح	N	ADVRB	27	روح§n-10348	مسبب§n-13036	no	Arg1 	
+24	خودم	PR	MOZ	23	null	null	junk		
+25	در	PREP	VPP	27	null	null	junk	Arg3 	
+26	آن	PR	POSDEP	25	null	null	junk		
+27	دميدم	V	PRD	16	دميدن§v-8525	رخداد§n-13136	role_action		
+28	بر	PREP	NPP	30	null	null	junk	Arg3 	
+29	آن	PR	POSDEP	28	null	null	junk		
+30	سجده	N	NVE	31	سجده§n-25850	رخداد§n-13136	role_state		
+31	کنيد	V	VCL	13	null	null	junk		
+32	.	PUNC	PUNC	7	null	null	junk		
+
+1	بنابراين	SUBR	ROOT	0	null	null	junk	ArgM_DIS 	
+2	سجده	N	SBJ	8	سجده§n-25850	رخداد§n-13136	role_state	Arg1 	
+3	فرشتگان	N	MOZ	2	ملک§n-11941	خصوصيت_رواني§n-12725	role		
+4	به‌خاطر	PREP	MOS	8	null	null	no	Arg2 	
+5	آن	ADJ	NPREMOD	6	null	null	junk		
+6	روح	N	POSDEP	4	روح§n-10348	مسبب§n-13036	no		
+7	ويژه‌اي	ADJ	NPOSTMOD	6	مختص§a-1538	مشخصه§n-12756	no		
+8	بود	V	PRD	1	null	null	junk		
+9	که	SUBR	NCL	6	null	null	junk		
+10	خداوند	N	SBJ	14	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+11	در	PREP	VPP	14	null	null	junk	Arg3 	
+12	کالبد	N	VPP	14	هيکل§n-12946	شيء§n-12703	no	Arg3 	
+13	بشر	N	MOZ	12	بشر§n-11988	نفر§n-13075	role		
+14	دميد	V	PRD	9	دميدن§v-8525	رخداد§n-13136	role_action		
+15	،	PUNC	PUNC	1	null	null	junk		
+
+1	و	CONJ	VCONJ	8	null	null	junk		
+2	چنين	ADJ	NPREMOD	3	null	null	junk		
+3	روحي	N	SBJ	8	روح§n-10348	مسبب§n-13036	no	Arg0 	
+4	،	PUNC	PUNC	3	null	null	junk		
+5	به	PREP	VPP	8	null	null	junk	Arg3 	
+6	آدم	N	VPP	8	آدم§n-14705	نفر§n-13075	role	Arg3 	
+7	لياقت	N	OBJ	8	مديريت§n-10112	رخداد§n-13136	role_state	Arg1 	
+8	داد	V	ROOT	0	null	null	junk		
+9	تا	SUBR	AJUCL	8	null	null	junk	ArgM_CAU 	
+10	نماينده	N	MOS	14	نماينده§n-13652	نفر§n-13075	role_state	Arg2 	
+11	خدا	N	MOZ	10	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+12	برروي	PREP	NPP	10	null	null	no		
+13	زمين	N	POSDEP	12	زمين§n-13297	شيء§n-12703	location		
+14	شود	V	PRD	9	null	null	junk		
+15	.	PUNC	PUNC	8	null	null	junk		
+
+1	جسم	N	SBJ	15	جسم§n-13293	شيء§n-12703	role	Arg0 	
+2	او	PR	MOZ	1	null	null	junk		
+3	به	PREP	ADVRB	15	null	null	junk	ArgM_ADV 	
+4	‌حکم	N	ADVRB	15	null	null	no	ArgM_ADV 	
+5	مادي	ADJ	PREDEP	6	غيرروحاني§a-1190	مشخصه§n-12756	role_state		
+6	بودن	N	MOZ	4	null	null	junk		
+7	ش	PR	MOZ	6	آدم§n-14705	نفر§n-13075	role		
+8	،	PUNC	PUNC	7	null	null	junk		
+9	او	PR	PREDEP	10	null	null	junk		
+10	را	POSTP	OBJ	15	null	null	junk	Arg1 	
+11	به	PREP	NPP	14	null	null	junk	Arg3 	
+12	امور	N	POSDEP	11	null	null	junk		
+13	منفي	ADJ	NPOSTMOD	12	منفي§a-225	مشخصه§n-12756	role_state		
+14	دعوت	N	NVE	15	دعوت§n-11510	رخداد§n-13136	role_intent		
+15	مي‌کرد	V	VCONJ	29	خواندن§v-8493	رخداد§n-13136	role_action		
+16	و	CONJ	VCONJ	29	null	null	junk		
+17	روح	N	SBJ	29	روح§n-10348	مسبب§n-13036	role	Arg0 	
+18	او	PR	MOZ	17	null	null	junk		
+19	به	PREP	ADVRB	29	null	null	junk	ArgM_ADV 	
+20	‌حکم	N	ADVRB	29	null	null	no	ArgM_ADV 	
+21	ملکوتي	ADJ	PREDEP	22	اخروي§a-1600	مشخصه§n-12756	role_state		
+22	بودن	N	MOZ	20	null	null	junk		
+23	ش	PR	MOZ	22	آدم§n-14705	نفر§n-13075	role		
+24	او	PR	PREDEP	25	null	null	junk		
+25	را	POSTP	OBJ	29	null	null	junk	Arg1 	
+26	به	PREP	VPP	29	null	null	junk	Arg3 	
+27	امور	N	POSDEP	26	null	null	junk		
+28	مثبت	ADJ	NPOSTMOD	27	مثبت§a-226	مشخصه§n-12756	role_state		
+29	فرامي‌خواند	V	ROOT	0	طلبيدن§v-8798	رخداد§n-13136	role_action		
+30	.	PUNC	PUNC	29	null	null	junk		
+
+1	فرشتگان	N	SBJ	12	ملک§n-11941	خصوصيت_رواني§n-12725	role	Arg0 Arg0 Arg0 	
+2	جنبه‌هاي	N	OBJ	12	جهت§n-11382	مشخصه§n-12756	no	Arg1 	
+3	مثبت	ADJ	NPOSTMOD	2	مثبت§a-226	مشخصه§n-12756	role_state		
+4	آدم	N	MOZ	2	آدم§n-14705	نفر§n-13075	role		
+5	(	PUNC	PUNC	6	null	null	junk		
+6	ع	ARAB	POSDEP	4	null	null	no		
+7	)	PUNC	PUNC	6	null	null	junk		
+8	را	POSTP	OBJ	12	null	null	junk	Arg1 	
+9	براساس	PREP	ADVRB	12	null	null	junk	ArgM_ADV 	
+10	فرمان	N	POSDEP	9	امر§n-11502	رخداد§n-13136	role_intent		
+11	خدا	N	MOZ	10	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+12	ديدند	V	VCONJ	19	متوجه شدن§v-9051	رخداد§n-13136	role_action		
+13	و	CONJ	VCONJ	19	null	null	junk		
+14	بدون	PREP	ADVRB	19	null	null	junk	ArgM_NEG 	
+15	چون‌وچرا	N	POSDEP	14	null	null	no		
+16	آدم	N	NPP	18	آدم§n-14705	نفر§n-13075	role	Arg3 	
+17	را	PREP	NPP	18	null	null	junk	Arg3 	
+18	سجده	N	NVE	19	سجده§n-25850	رخداد§n-13136	role_state		
+19	کردند	V	SBJ	21	null	null	junk		
+20	،	PUNC	PUNC	19	null	null	junk		
+21	يعني	PSUS	ROOT	0	null	null	junk		
+22	درحقيقت	N	ADVRB	31	null	null	no	ArgM_ADV 	
+23	خدا	N	NPP	30	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no	Arg3 	
+24	را	PREP	NPP	30	null	null	junk	Arg3 	
+25	در	PREP	ADVRB	31	null	null	junk		
+26	راستاي	N	ADVRB	31	null	null	no		
+27	تجليل	N	MOZ	26	اکرام§n-11419	خصوصيت_رواني§n-12725	role_state		
+28	از	PREP	NPP	27	null	null	junk		
+29	آدم	N	NPP	27	آدم§n-14705	نفر§n-13075	role		
+30	سجده	N	NVE	31	سجده§n-25850	رخداد§n-13136	role_state		
+31	نمودند	V	MOS	21	null	null	role_action		
+32	.	PUNC	PUNC	21	null	null	junk		
+roles= 
+	[انسان§n-13187= انسان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[بشر§n-11988= بشر role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[باري تعالي§n-11940= خداوند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[ملک§n-11941= فرشتگان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= آدم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[بشر§n-11988= موجود role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[بشر§n-11988= بشري role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[جسم§n-13293= جسم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[روح§n-10348= روح role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [خاک=  خاک§n-12568 object_states=  []][آب=  آب§n-12570 object_states=  []][گل=  گل§n-14235 object_states=  []][لجن=  لجن§n-15930 object_states=  []][سفال=  سفال§n-25736 object_states=  []]
+location= null
+alternativeLocations= [[زمين§n-13297=  زمين]]
+time= null
+alternativeTimes= [[موقع§n-12614=  هنگامي]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [انجام دادن§v-9258=  آورند, هست کردن§v-7844=  آفريده‌است, خطاب کردن§v-8472=  نمود, ايراد کردن§v-9365=  فرمود, هست کردن§v-7844=  مي‌آفرينم, null=  نمودم, دميدن§v-8525=  دميدم, دميدن§v-8525=  دميد, خواندن§v-8493=  مي‌کرد, طلبيدن§v-8798=  فرامي‌خواند, متوجه شدن§v-9051=  ديدند, null=  نمودند]
+roal_states= [اکرام§n-11419=  تکريم, اکرام§n-11419=  تجليل, پايگاه اجتماعي§n-12388=  مقام, سجده§n-25850=  سجده, سجده§n-25850=  سجده, جان بخش§a-131=  ممتازي, هماهنگ§a-1604=  موزون, سجده§n-25850=  سجده, سجده§n-25850=  سجده, مديريت§n-10112=  لياقت, نماينده§n-13652=  نماينده, غيرروحاني§a-1190=  مادي, منفي§a-225=  منفي, اخروي§a-1600=  ملکوتي, مثبت§a-226=  مثبت, مثبت§a-226=  مثبت, سجده§n-25850=  سجده, اکرام§n-11419=  تجليل, سجده§n-25850=  سجده]
+roal_intetns= [تکاملي§a-2457=  تکاملي, امر§n-11502=  فرمان, شکر§n-11536=  شکر, دعوت§n-11510=  دعوت, امر§n-11502=  فرمان]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [گل§n-14235=  گل, متعفن§a-1052=  بدبو, null=  چسبندگي, خشک§a-60=  خشکيده]
+
+newScene*************************************
+
+1	خداوند	N	SBJ	3	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 Arg0 Arg0 	
+2	اراده	N	NVE	3	خواست§n-11330	خصوصيت_رواني§n-12725	role_intent		
+3	کرده‌بود	V	ROOT	0	نيت کردن§v-8811	رخداد§n-13136	role_action		
+4	تا	SUBR	VCL	3	null	null	junk	Arg1 	
+5	فرزنداني	N	OBJ	9	بچه§n-13350	نفر§n-13075	role	Arg1 	
+6	به	PREP	VPP	9	null	null	junk	Arg3 	
+7	آدم	N	VPP	9	آدم§n-14705	نفر§n-13075	role	Arg3 	
+8	عطا	N	NVE	9	عطا§n-13615	رخداد§n-13136	no		
+9	کند	V	PREDEP	11	null	null	junk		
+10	،	PUNC	PUNC	9	null	null	junk		
+11	و	CONJ	VCONJ	17	null	null	junk		
+12	نسل	N	OBJ	17	خاندان§n-11730	گروه§n-12753	no	Arg1 	
+13	او	PR	MOZ	12	null	null	junk		
+14	را	POSTP	OBJ	17	null	null	junk	Arg1 	
+15	به	PREP	VPRT	17	null	null	junk		
+16	وجود	N	POSDEP	15	null	null	junk		
+17	آورد	V	PRD	4	null	null	junk		
+18	،	PUNC	PUNC	3	null	null	junk		
+
+1	مشيت	N	SBJ	5	تقدير§n-11574	رخداد§n-13136	no	Arg1 	
+2	او	PR	MOZ	1	null	null	junk		
+3	چنين	N	ADVRB	5	null	null	junk	Arg2 	
+4	قرار	N	NVE	5	وضعيت§n-12745	مشخصه§n-12756	no		
+5	گرفت	V	ROOT	0	null	null	junk		
+6	که	SUBR	NCL	3	null	null	junk		
+7	حضرت	N	SBJ	10	null	null	role_state	Arg0 Arg0 Arg1 	
+8	آدم	N	MOZ	7	آدم§n-14705	نفر§n-13075	role		
+9	همسري	N	OBJ	10	زوجه§n-12069	نفر§n-13075	role	Arg1 	
+10	داشته‌باشد	V	PRD	6	داشتن§v-8512	رخداد§n-13136	no		
+11	تا	SUBR	AJUCL	10	null	null	junk	ArgM_PRP 	
+12	با	PREP	NPP	14	null	null	junk	Arg3 	
+13	او	PR	POSDEP	12	null	null	junk		
+14	ازدواج	N	NVE	15	مراسم ازدواج§n-11617	رخداد§n-13136	role_intent		
+15	نموده	V	VCONJ	21	عروسي کردن§v-7890	رخداد§n-13136	role_action		
+16	و	CONJ	VCONJ	21	null	null	junk		
+17	از	PREP	NPP	20	null	null	junk		
+18	او	PR	POSDEP	17	null	null	junk		
+19	داراي	ADJ	MOS	21	null	null	no	Arg2 	
+20	فرزند	N	NEZ	19	بچه§n-13350	نفر§n-13075	role		
+21	گردد	V	PRD	11	null	null	junk		
+22	.	PUNC	PUNC	5	null	null	junk		
+
+1	خداوند	N	SBJ	11	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 	
+2	حوا	N	OBJ	11	null	null	role	Arg1 	
+3	را	POSTP	OBJ	11	null	null	junk	Arg1 	
+4	از	PREP	VPP	11	null	null	junk	Arg3 	
+5	زيادي	ADJ	NPREMOD	6	بلامصرف§a-17786	مشخصه§n-12756	no		
+6	گل	N	VPP	11	گل§n-14235	ماده§n-14032	static_object	Arg3 	
+7	آدم	N	MOZ	6	آدم§n-14705	نفر§n-13075	role		
+8	(	PUNC	PUNC	9	null	null	junk		
+9	ع	ARAB	POSDEP	7	null	null	no		
+10	)	PUNC	PUNC	9	null	null	junk		
+11	آفريد	V	ROOT	0	هست کردن§v-7844	رخداد§n-13136	role_action		
+12	،	PUNC	PUNC	11	null	null	junk		
+
+1	بنابراين	SUBR	ROOT	0	null	null	junk	ArgM_DIS 	
+2	حوا	N	SBJ	9	null	null	role	Arg1 	
+3	بعداز	PREP	ADVRB	9	null	null	no	ArgM_TMP 	
+4	آفرينش	N	POSDEP	3	ايجاد§n-10642	رخداد§n-13136	role_intent		
+5	آدم	N	MOZ	4	آدم§n-14705	نفر§n-13075	role		
+6	(	PUNC	PUNC	7	null	null	junk		
+7	ع	ARAB	POSDEP	5	null	null	no		
+8	)	PUNC	PUNC	7	null	null	junk		
+9	آفريده‌شده‌است	V	PRD	1	هست کردن§v-7844	رخداد§n-13136	role_action		
+10	.	PUNC	PUNC	1	null	null	junk		
+roles= 
+	[باري تعالي§n-11940= خداوند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[بچه§n-13350= فرزنداني role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= آدم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[زوجه§n-12069= همسري role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[بچه§n-13350= فرزند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= حوا role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [گل=  گل§n-14235 object_states=  []]
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [نيت کردن§v-8811=  کرده‌بود, عروسي کردن§v-7890=  نموده, هست کردن§v-7844=  آفريد, هست کردن§v-7844=  آفريده‌شده‌است]
+roal_states= [null=  حضرت]
+roal_intetns= [خواست§n-11330=  اراده, مراسم ازدواج§n-11617=  ازدواج, ايجاد§n-10642=  آفرينش]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	ولي	CONJ	VCONJ	5	null	null	junk	ArgM_DIS 	
+2	شيطان	N	SBJ	5	شيطان§n-14167	خصوصيت_رواني§n-12725	role	Arg0 Arg0 Arg0 	
+3	به‌سراغ	PREP	VPP	5	null	null	no	Arg4 	
+4	آنان	PR	POSDEP	3	null	null	junk		
+5	آمد	V	PREDEP	6	null	null	junk		
+6	و	CONJ	VCONJ	10	null	null	junk		
+7	آن‌ها	PR	OBJ	10	null	null	role	Arg1 	
+8	را	POSTP	OBJ	10	null	null	junk	Arg1 	
+9	وسوسه	N	NVE	10	null	null	role_intent		
+10	کرد	V	PREDEP	11	null	null	junk		
+11	و	CONJ	VCONJ	20	null	null	junk		
+12	آن‌ها	PR	OBJ	20	null	null	role	Arg1 	
+13	را	POSTP	OBJ	20	null	null	junk	Arg1 	
+14	با	PREP	ADVRB	20	null	null	junk	ArgM_INS 	
+15	فريبکاري	N	ADVRB	20	فريبکاري§n-22960	رخداد§n-13136	role_intent	ArgM_INS 	
+16	از	PREP	VPP	20	null	null	junk	Arg3 	
+17	مقام	N	VPP	20	پايگاه اجتماعي§n-12388	مشخصه§n-12756	role_state	Arg3 	
+18	شان	PR	MOZ	17	null	null	junk		
+19	فرود	N	NVE	20	پايين رفتن§n-12788	رخداد§n-13136	no		
+20	آورد	V	ROOT	0	null	null	junk		
+21	،	PUNC	PUNC	20	null	null	junk		
+
+1	سپس	SUBR	ROOT	0	null	null	junk	ArgM_DIS 	
+2	لباس‌هاي	N	SBJ	9	پوشاک§n-12804	شيء§n-12703	static_object	Arg1 	
+3	کرامت	N	MOZ	2	null	null	static_object_state		
+4	و	CONJ	NCONJ	3	null	null	junk		
+5	احترام	N	NCONJ	3	اکرام§n-11419	خصوصيت_رواني§n-12725	static_object_state		
+6	از	PREP	ADVRB	9	null	null	junk	ArgM_LOC 	
+7	اندام	N	ADVRB	9	اندام§n-18815	رابطه§n-13628	no	ArgM_LOC 	
+8	شان	PR	MOZ	7	null	null	junk		
+9	فروريخت	V	PRD	1	فرو ريختن§v-8869	رخداد§n-13136	no		
+10	،	PUNC	PUNC	1	null	null	junk		
+
+1	و	CONJ	VCONJ	10	null	null	junk	ArgM_DIS 	
+2	آدم	N	SBJ	10	آدم§n-14705	نفر§n-13075	role	Arg0 Arg0 	
+3	و	CONJ	NCONJ	2	null	null	junk		
+4	حوا	N	NCONJ	2	null	null	role		
+5	سريع	ADV	ADVRB	10	اکسپرس§a-18373	مشخصه§n-12756	no	ArgM_ADV 	
+6	به	PREP	NPP	9	null	null	junk	Arg3 	
+7	اشتباه	N	NPP	9	لغزش§n-13117	رخداد§n-13136	role_state	Arg3 	
+8	خود	PR	MOZ	7	null	null	junk		
+9	پي	N	NVE	10	null	null	no		
+10	بردند	V	VCONJ	13	در يافتن§v-16389	رخداد§n-13136	role_action		
+11	و	CONJ	VCONJ	13	null	null	junk		
+12	توبه	N	NVE	13	استغفار§n-17529	مشخصه§n-12756	role_intent		
+13	کردند	V	ROOT	0	null	null	junk		
+roles= 
+	[شيطان§n-14167= شيطان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= آدم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= حوا role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [لباس‌هاي=  پوشاک§n-12804 object_states=  []]
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [در يافتن§v-16389=  بردند]
+roal_states= [پايگاه اجتماعي§n-12388=  مقام, لغزش§n-13117=  اشتباه]
+roal_intetns= [null=  وسوسه, فريبکاري§n-22960=  فريبکاري, استغفار§n-17529=  توبه]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [null=  کرامت, اکرام§n-11419=  احترام]
+
+newScene*************************************
+
+1	ولي	CONJ	VCONJ	10	null	null	junk	ArgM_DIS 	
+2	خداوند	N	SBJ	10	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role	Arg0 Arg0 	
+3	آن‌ها	PR	OBJ	10	null	null	role	Arg1 	
+4	را	POSTP	OBJ	10	null	null	junk	Arg1 	
+5	از	PREP	VPP	10	null	null	junk	Arg3 	
+6	بهشت	N	VPP	10	جنت§n-11846	جا§n-12733	location	Arg3 	
+7	به	PREP	VPP	10	null	null	junk	Arg4 	
+8	زمين	N	VPP	10	زمين§n-13297	شيء§n-12703	location	Arg4 	
+9	فرود	N	NVE	10	پايين رفتن§n-12788	رخداد§n-13136	no		
+10	آورد	V	PREDEP	11	null	null	junk		
+11	و	CONJ	VCONJ	15	null	null	junk		
+12	آن‌ها	PR	OBJ	15	null	null	role	Arg1 	
+13	را	POSTP	OBJ	15	null	null	junk	Arg1 	
+14	آگاه	ADJ	MOS	15	مطلع§a-2110	مشخصه§n-12756	role_intent	Arg2 	
+15	ساخت	V	ROOT	0	کردن§v-8678	رخداد§n-13136	role_action		
+16	که	SUBR	ACL	14	null	null	junk		
+17	بايد	UNKNOWN	PRD	16	null	null	junk		
+18	در	PREP	NPP	20	null	null	junk	Arg3 	
+19	زمين	N	NPP	20	زمين§n-13297	شيء§n-12703	location	Arg3 	
+20	اقامت	N	NVE	21	اقامت کردن§n-10696	رخداد§n-13136	role_intent		
+21	کنند	V	PREDEP	22	null	null	junk		
+22	و	CONJ	VCONJ	26	null	null	junk		
+23	آن	PR	PREDEP	24	null	null	junk		
+24	را	POSTP	OBJ	26	null	null	junk	Arg1 	
+25	آباد	ADJ	MOS	26	null	null	junk	Arg2 	
+26	سازند	V	VCONJ	35	کردن§v-8678	رخداد§n-13136	role_action		
+27	و	CONJ	VCONJ	35	null	null	junk		
+28	تا	PREP	ADVRB	35	null	null	junk	ArgM_EXT 	
+29	پايان	N	ADVRB	35	پايان§n-13269	null	no	ArgM_EXT 	
+30	عمر	N	MOZ	29	عمر§n-12622	دوره_زماني§n-12603	no		
+31	شان	PR	MOZ	30	null	null	junk		
+32	از	PREP	AJPP	34	null	null	junk		
+33	آن	PR	POSDEP	32	null	null	junk		
+34	بهره‌مند	ADJ	MOS	35	متمتع§a-17760	مشخصه§n-12756	no	Arg2 	
+35	شوند	V	VCL	17	null	null	junk		
+36	.	PUNC	PUNC	15	null	null	junk		
+
+1	آدم	N	SBJ	14	آدم§n-14705	نفر§n-13075	role	Arg1 Arg0 	
+2	و	CONJ	NCONJ	1	null	null	junk		
+3	حوا	N	NCONJ	1	null	null	role		
+4	وقتي	N	ADVRB	14	null	null	junk	ArgM_TMP 	
+5	از	PREP	NPP	8	null	null	junk	Arg3 	
+6	بهشت	N	NPP	8	جنت§n-11846	جا§n-12733	location	Arg3 	
+7	دنيا	N	MOZ	6	عالم§n-10090	شيء§n-12703	location		
+8	اخراج	N	NVE	9	اخراج§n-10459	رخداد§n-13136	role_state		
+9	شدند	V	NCL	4	null	null	junk		
+10	در	PREP	VPP	14	null	null	junk	Arg4 	
+11	سرزمين	N	VPP	14	خطه§n-13265	جا§n-12733	location	Arg4 	
+12	مکه	N	MOZ	11	مکه مکرمه§n-23602	جا§n-12733	location		
+13	فرود	N	NVE	14	پايين رفتن§n-12788	رخداد§n-13136	no		
+14	آمدند	V	ROOT	0	فرود آمدن§v-9200	رخداد§n-13136	role_action		
+15	.	PUNC	PUNC	14	null	null	junk		
+roles= 
+	[باري تعالي§n-11940= خداوند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= آن‌ها role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= آدم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= حوا role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[جنت§n-11846=  بهشت], [زمين§n-13297=  زمين], [عالم§n-10090=  دنيا], [خطه§n-13265=  سرزمين], [مکه مکرمه§n-23602=  مکه]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [کردن§v-8678=  ساخت, کردن§v-8678=  سازند, فرود آمدن§v-9200=  آمدند]
+roal_states= [اخراج§n-10459=  اخراج]
+roal_intetns= [مطلع§a-2110=  آگاه, اقامت کردن§n-10696=  اقامت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	حضرت	N	SBJ	10	null	null	role	Arg0 	
+2	آدم	N	MOZ	1	آدم§n-14705	نفر§n-13075	role		
+3	بر	PREP	VPP	10	null	null	junk	Arg4 	
+4	کوه	N	POSDEP	3	کوه§n-13301	شيء§n-12703	location		
+5	صفا	N	MOZ	4	صفا§n-15080	شيء§n-12703	no		
+6	در	PREP	NPP	4	null	null	junk		
+7	کنار	N	POSDEP	6	null	null	junk		
+8	کعبه	N	MOZ	7	کعبه§n-13717	ساختار§n-12875	location		
+9	هبوط	N	NVE	10	هبوط§n-11628	رخداد§n-13136	role_state		
+10	کرد	V	PREDEP	29	null	null	junk		
+11	ازاين‌رو	SUBR	AJUCL	10	null	null	no	ArgM_DIS 	
+12	آن	PR	PREDEP	13	null	null	junk		
+13	را	POSTP	OBJ	16	null	null	junk	Arg3 	
+14	کوه	N	TAM	16	کوه§n-13301	شيء§n-12703	location	Arg2 	
+15	صفا	N	MOZ	14	صفا§n-15080	شيء§n-12703	no		
+16	گويند	V	PRD	11	null	null	junk		
+17	که	SUBR	NCL	15	null	null	junk		
+18	آدم	N	SBJ	28	آدم§n-14705	نفر§n-13075	role	Arg1 	
+19	صفي	N	MOZ	18	null	null	role_state		
+20	..ا	N	MOZ	19	null	null	no		
+21	(	PUNC	PUNC	22	null	null	junk		
+22	برگزيده	N	APP	19	منتخب§n-11356	رخداد§n-13136	role_state		
+23	خدا	N	MOZ	22	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no		
+24	)	PUNC	PUNC	22	null	null	junk		
+25	در	PREP	AJPP	27	null	null	junk		
+26	آنجا	N	POSDEP	25	null	null	junk		
+27	وارد	ADJ	MOS	28	null	null	no	Arg2 	
+28	شد	V	PRD	17	null	null	junk		
+roles= 
+	[null= حضرت role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= آدم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[کوه§n-13301=  کوه], [کعبه§n-13717=  کعبه]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [هبوط§n-11628=  هبوط, null=  صفي, منتخب§n-11356=  برگزيده]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+29	و	CONJ	VCONJ	45	null	null	junk		
+30	حضرت	N	SBJ	45	null	null	role	Arg0 Arg0 	
+31	حوا	N	MOZ	30	null	null	role		
+32	بر	PREP	VPP	45	null	null	junk	Arg4 	
+33	بالاي	N	POSDEP	32	رو§n-11887	جا§n-12733	location		
+34	کوه	N	MOZ	33	کوه§n-13301	شيء§n-12703	location		
+35	مروه	N	MOZ	34	null	null	location		
+36	(	PUNC	PUNC	37	null	null	junk		
+37	يعني	PSUS	NCL	35	null	null	junk		
+38	زن	N	MOS	37	خانم§n-12070	نفر§n-13075	role_state		
+39	که	SUBR	NCL	38	null	null	junk		
+40	منظور	N	SBJ	42	هدف§n-11403	خصوصيت_رواني§n-12725	no	Arg1 	
+41	حوا	N	MOS	42	null	null	role	Arg2 	
+42	است	V	PRD	39	null	null	junk		
+43	)	PUNC	PUNC	37	null	null	junk		
+44	فرود	N	NVE	45	پايين رفتن§n-12788	رخداد§n-13136	no		
+45	آمد	V	PREDEP	46	null	null	junk		
+46	و	CONJ	VCONJ	50	null	null	junk		
+47	در	PREP	NPP	49	null	null	junk	Arg3 	
+48	آن	PR	POSDEP	47	null	null	junk		
+49	سکونت	N	NVE	50	اقامت کردن§n-10696	رخداد§n-13136	role_intent		
+50	نمود	V	ROOT	0	سکونت کردن§v-9334	رخداد§n-13136	role_action		
+51	.	PUNC	PUNC	50	null	null	junk		
+roles= 
+	[null= حضرت role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= حوا role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[رو§n-11887=  بالاي], [کوه§n-13301=  کوه], [null=  مروه]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [سکونت کردن§v-9334=  نمود]
+roal_states= [خانم§n-12070=  زن]
+roal_intetns= [اقامت کردن§n-10696=  سکونت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	آدم	N	SBJ	6	آدم§n-14705	نفر§n-13075	role	Arg0 Arg0 Arg0 	
+2	چهل	NUM	NPREMOD	3	null	null	junk		
+3	شبانه‌روز	N	ADVRB	6	24ساعت§n-12634	دوره_زماني§n-12603	time	ArgM_EXT 	
+4	به	PREP	VPP	6	null	null	junk	Arg3 	
+5	سجده	N	VPP	6	سجده§n-25850	رخداد§n-13136	role_state	Arg3 	
+6	پرداخت	V	VCONJ	12	پرداختن§v-19365	رخداد§n-13136	role_action		
+7	و	CONJ	VCONJ	12	null	null	junk		
+8	از	PREP	VPP	12	null	null	junk	Arg3 	
+9	فراق	N	VPP	12	انفکاک§n-10076	مشخصه§n-12756	role_emotion	Arg3 	
+10	بهشت	N	MOZ	9	جنت§n-11846	جا§n-12733	location		
+11	گريه	N	NVE	12	گريه§n-15717	خصوصيت_رواني§n-12725	role_state		
+12	کرد	V	PREDEP	13	null	null	junk		
+13	و	CONJ	VCONJ	18	null	null	junk		
+14	به	PREP	NPP	17	null	null	junk	Arg3 	
+15	گناه	N	NPP	17	ذنب§n-10598	رخداد§n-13136	role_state	Arg3 	
+16	خود	PR	MOZ	15	null	null	junk		
+17	اقرار	N	NVE	18	اقرار§n-22419	null	no		
+18	نمود	V	ROOT	0	null	null	role_action		
+19	،	PUNC	PUNC	18	null	null	junk		
+roles= 
+	[آدم§n-14705= آدم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[جنت§n-11846=  بهشت]]
+time= null
+alternativeTimes= [[24ساعت§n-12634=  شبانه‌روز]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [پرداختن§v-19365=  پرداخت, null=  نمود]
+roal_states= [سجده§n-25850=  سجده, گريه§n-15717=  گريه, ذنب§n-10598=  گناه]
+roal_intetns= []
+roal_emotions= [انفکاک§n-10076=  فراق]
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	به	PREP	ADVRB	6	null	null	junk	ArgM_ADV 	
+2	فرمان	N	ADVRB	6	امر§n-11505	رخداد§n-13136	role_intent	ArgM_ADV 	
+3	خداوند	N	MOZ	2	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role		
+4	آدم	N	SBJ	6	آدم§n-14705	نفر§n-13075	role	Arg0 Arg0 	
+5	مامور	ADJ	MOS	6	مامور§a-2105	مشخصه§n-12756	role_state	Arg2 	
+6	گشت	V	ROOT	0	مامور کردن§v-15650	رخداد§n-13136	no		
+7	تا	SUBR	AJUCL	6	null	null	junk	ArgM_PRP 	
+8	ميراث	N	OBJ	23	ارث§n-10427	رخداد§n-13136	no	Arg1 	
+9	نبوت	N	MOZ	8	null	null	no		
+10	و	CONJ	NCONJ	9	null	null	junk		
+11	گنجينه	N	NCONJ	9	گنجينه§n-15773	شيء§n-12703	no		
+12	دانش	N	MOZ	11	شناخت§n-12727	خصوصيت_رواني§n-12725	no		
+13	الهي	ADJ	NPOSTMOD	12	رباني§a-2083	مشخصه§n-12756	role_state		
+14	خود	PR	MOZ	12	null	null	junk		
+15	را	POSTP	OBJ	23	null	null	junk	Arg1 	
+16	نزد	PREP	VPP	23	محضر§n-10120	جا§n-12733	location	Arg3 	
+17	فرزند	N	POSDEP	16	بچه§n-13350	نفر§n-13075	role		
+18	کوچک	ADJ	NPOSTMOD	17	جوان§a-82	مشخصه§n-12756	role_state		
+19	ش	PR	MOZ	17	آدم§n-14705	نفر§n-13075	role		
+20	هابيل	N	APP	17	null	نفر§n-13075	role		
+21	به	PREP	VPRT	23	null	null	junk		
+22	وديعه	N	VPRT	23	null	null	no		
+23	نهد	V	AJUCL	6	null	null	role_action		
+24	.	PUNC	PUNC	6	null	null	junk		
+roles= 
+	[باري تعالي§n-11940= خداوند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= آدم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[بچه§n-13350= فرزند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= هابيل role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [null=  نهد]
+roal_states= [مامور§a-2105=  مامور, رباني§a-2083=  الهي, جوان§a-82=  کوچک]
+roal_intetns= [امر§n-11505=  فرمان]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	آدم	N	SBJ	6	آدم§n-14705	نفر§n-13075	role	Arg0 Arg0 	
+2	در	PREP	VPP	6	null	null	junk	Arg3 	
+3	بستر	N	VPP	6	بالين§n-10323	شيء§n-12703	no	Arg3 	
+4	رحلت	N	MOZ	3	مرگ§n-20636	مشخصه§n-12756	role_state		
+5	قرار	N	NVE	6	null	null	no		
+6	گرفت	V	PREDEP	7	null	null	junk		
+7	و	CONJ	VCONJ	25	null	null	junk		
+8	در	PREP	ADVRB	25	null	null	junk	ArgM_ADV 	
+9	حالي	N	ADVRB	25	null	null	no	ArgM_ADV 	
+10	‌که	SUBR	NCL	9	null	null	no		
+11	زبان	N	SBJ	21	زبان§n-13978	شيء§n-12703	no	Arg1 	
+12	ش	PR	MOZ	11	آدم§n-14705	نفر§n-13075	role		
+13	به	PREP	AJPP	20	null	null	junk		
+14	يکتايي	N	AJPP	20	وحدانيت§n-23336	مشخصه§n-12756	role_state		
+15	خداوند	N	MOZ	14	باري تعالي§n-11940	خصوصيت_رواني§n-12725	role		
+16	و	CONJ	NCONJ	14	null	null	junk		
+17	شکر	N	NCONJ	14	شکر§n-11536	مشخصه§n-12756	role_intent		
+18	و	CONJ	NCONJ	17	null	null	junk		
+19	سپاس	N	NCONJ	17	شکر§n-11536	مشخصه§n-12756	role_intent		
+20	مشغول	ADJ	MOS	21	درگير§a-540	مشخصه§n-12756	role_state	Arg2 	
+21	بود	V	PRD	10	null	null	junk		
+22	به	PREP	VPP	25	null	null	junk	Arg3 	
+23	رحمت	N	VPP	25	موهبت الهي§n-12481	مشخصه§n-12756	role_state	Arg3 	
+24	حق	N	MOZ	23	null	null	junk		
+25	پيوست	V	ROOT	0	پيوستن§v-7523	رخداد§n-13136	role_action		
+26	.	PUNC	PUNC	25	null	null	junk		
+roles= 
+	[آدم§n-14705= آدم role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[آدم§n-14705= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[باري تعالي§n-11940= خداوند role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [پيوستن§v-7523=  پيوست]
+roal_states= [مرگ§n-20636=  رحلت, وحدانيت§n-23336=  يکتايي, درگير§a-540=  مشغول, موهبت الهي§n-12481=  رحمت]
+roal_intetns= [شکر§n-11536=  شکر, شکر§n-11536=  سپاس]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
+1	شيث	N	SBJ	6	حضرت شيث§n-23941	نفر§n-13075	role	Arg0 Arg0 Arg0 Arg0 Arg0 Arg0 Arg0 	
+2	پدر	N	OBJ	6	والد§n-13357	نفر§n-13075	role	Arg1 Arg1 	
+3	ش	PR	MOZ	2	حضرت شيث§n-23941	نفر§n-13075	role		
+4	را	POSTP	OBJ	6	null	null	junk	Arg1 Arg1 	
+5	غسل	N	NVE	6	غسل§n-16171	null	role_intent		
+6	داد	V	PREDEP	7	null	null	junk		
+7	و	CONJ	VCONJ	9	null	null	junk		
+8	کفن	N	NVE	9	null	null	role_intent		
+9	کرد	V	PREDEP	10	null	null	junk		
+10	و	CONJ	VCONJ	14	null	null	junk		
+11	بر	PREP	ADVRB	14	null	null	junk	ArgM_GOL 	
+12	او	PR	POSDEP	11	null	null	junk		
+13	نماز	N	NVE	14	نماز§n-20660	رخداد§n-13136	role_intent		
+14	خواند	V	VCONJ	17	null	null	role_action		
+15	و	CONJ	VCONJ	17	null	null	junk		
+16	دفن	N	NVE	17	خاکسپاري§n-11616	رخداد§n-13136	role_intent		
+17	کرد	V	PREDEP	18	null	null	junk		
+roles= 
+	[حضرت شيث§n-23941= شيث role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[والد§n-13357= پدر role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[حضرت شيث§n-23941= ش role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [null=  خواند]
+roal_states= []
+roal_intetns= [غسل§n-16171=  غسل, null=  کفن, نماز§n-20660=  نماز, خاکسپاري§n-11616=  دفن]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+roles= ]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+

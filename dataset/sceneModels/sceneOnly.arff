@@ -1,0 +1,1403 @@
+sentece number is 46
+newStory*************************************
+newScene*************************************
+
++++برادر added to SceneModel as Role.
+
++++آن‌ها added to SceneModel as Role.
+
++++بنيامين added to SceneModel as Role.
+
+---SceneModel has this [برادر§n-14090= برادر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[برادر§n-14090= برادر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= بنيامين role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [والد§n-13357=  پدري, مامان§n-13374=  مادري]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++يوسف added to SceneModel as Role.
+
++++برادران added to SceneModel as Role.
+
+---SceneModel has this [null= بنيامين role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[برادر§n-14090= برادر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= بنيامين role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [والد§n-13357=  پدري, مامان§n-13374=  مادري, جوان§a-82=  کوچکتر]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++alternativeTime [سال§n-13471=  سال] added to SceneModel.
+
+roles= 
+	[برادر§n-14090= برادر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= بنيامين role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= [[سال§n-13471=  سال]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [زندگي§n-13552=  زندگي]
+roal_states= [والد§n-13357=  پدري, مامان§n-13374=  مادري, جوان§a-82=  کوچکتر]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
++++alternativeTime [شب§n-12642=  شب] added to SceneModel.
+
+roles= 
+	[برادر§n-14090= برادر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= بنيامين role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= [[سال§n-13471=  سال], [شب§n-12642=  شب]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [زندگي§n-13552=  زندگي, ديدن§v-9138=  ديد]
+roal_states= [والد§n-13357=  پدري, مامان§n-13374=  مادري, جوان§a-82=  کوچکتر]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++alternativeTime [صبح§n-12638=  صبح] added to SceneModel.
+
++++alternativeLocation [محضر§n-10120=  نزد] added to SceneModel.
+
++++پدر added to SceneModel as Role.
+
++++ستاره added to SceneModel as Static_object.
+
++++خورشيد added to SceneModel as Static_object.
+
++++ماه added to SceneModel as Static_object.
+
++++م added to SceneModel as Role.
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= م role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [ستاره§n-14529=  ستاره object_states=  []][null=  خورشيد object_states=  []][null=  ماه object_states=  []]
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= [[صبح§n-12638=  صبح]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رويت کردن§v-8581=  ديدم, null=  مي‌کنند]
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [سجده§n-25850=  سجده]
+
+
++++حضرت added to SceneModel as Role.
+
++++يعقوب added to SceneModel as Role.
+
++++برادران added to SceneModel as Role.
+
++++ش added to SceneModel as Role.
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= م role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= حضرت role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [ستاره§n-14529=  ستاره object_states=  []][null=  خورشيد object_states=  []][null=  ماه object_states=  []]
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= [[صبح§n-12638=  صبح]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رويت کردن§v-8581=  ديدم, null=  مي‌کنند, افشاء کردن§v-7543=  نکند]
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [سجده§n-25850=  سجده]
+
+
+---SceneModel has this [يوسف§n-23957= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
++++alternativeTime [فردا§n-12611=  آينده] added to SceneModel.
+
+---SceneModel has this [يوسف§n-23957= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= م role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= حضرت role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [ستاره§n-14529=  ستاره object_states=  []][null=  خورشيد object_states=  []][null=  ماه object_states=  []]
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= [[صبح§n-12638=  صبح], [فردا§n-12611=  آينده]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رويت کردن§v-8581=  ديدم, null=  مي‌کنند, افشاء کردن§v-7543=  نکند, کردن§v-8678=  ساخت, سر فرود آوردن§v-8964=  مي‌نهند]
+roal_states= [شخصيت§n-11163=  شخصيتي, null=  برجسته]
+roal_intetns= [گويا§a-268=  روشن]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [سجده§n-25850=  سجده]
+
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= م role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= حضرت role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [ستاره§n-14529=  ستاره object_states=  []][null=  خورشيد object_states=  []][null=  ماه object_states=  []]
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= [[صبح§n-12638=  صبح], [فردا§n-12611=  آينده]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رويت کردن§v-8581=  ديدم, null=  مي‌کنند, افشاء کردن§v-7543=  نکند, کردن§v-8678=  ساخت, سر فرود آوردن§v-8964=  مي‌نهند, تدريس کردن§v-9219=  مي‌آموزد]
+roal_states= [شخصيت§n-11163=  شخصيتي, null=  برجسته, null=  پيامبري]
+roal_intetns= [گويا§a-268=  روشن]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [سجده§n-25850=  سجده]
+
+
++++يوسف added to SceneModel as Role.
+
+---SceneModel has this [يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= م role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= حضرت role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [ستاره§n-14529=  ستاره object_states=  []][null=  خورشيد object_states=  []][null=  ماه object_states=  []]
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= [[صبح§n-12638=  صبح], [فردا§n-12611=  آينده]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رويت کردن§v-8581=  ديدم, null=  مي‌کنند, افشاء کردن§v-7543=  نکند, کردن§v-8678=  ساخت, سر فرود آوردن§v-8964=  مي‌نهند, تدريس کردن§v-9219=  مي‌آموزد, رويت کردن§v-8581=  ديدن]
+roal_states= [شخصيت§n-11163=  شخصيتي, null=  برجسته, null=  پيامبري, برتري§n-11247=  امتياز, null=  عظمت]
+roal_intetns= [گويا§a-268=  روشن]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [سجده§n-25850=  سجده]
+
+
++++alternativeTime [آتيه§n-13503=  آينده] added to SceneModel.
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= م role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= حضرت role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [ستاره§n-14529=  ستاره object_states=  []][null=  خورشيد object_states=  []][null=  ماه object_states=  []]
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= [[صبح§n-12638=  صبح], [فردا§n-12611=  آينده], [آتيه§n-13503=  آينده]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رويت کردن§v-8581=  ديدم, null=  مي‌کنند, افشاء کردن§v-7543=  نکند, کردن§v-8678=  ساخت, سر فرود آوردن§v-8964=  مي‌نهند, تدريس کردن§v-9219=  مي‌آموزد, رويت کردن§v-8581=  ديدن]
+roal_states= [شخصيت§n-11163=  شخصيتي, null=  برجسته, null=  پيامبري, برتري§n-11247=  امتياز, null=  عظمت, null=  درخشاني]
+roal_intetns= [گويا§a-268=  روشن]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [سجده§n-25850=  سجده]
+
+
+---SceneModel has this [برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= م role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= حضرت role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [ستاره§n-14529=  ستاره object_states=  []][null=  خورشيد object_states=  []][null=  ماه object_states=  []]
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= [[صبح§n-12638=  صبح], [فردا§n-12611=  آينده], [آتيه§n-13503=  آينده]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رويت کردن§v-8581=  ديدم, null=  مي‌کنند, افشاء کردن§v-7543=  نکند, کردن§v-8678=  ساخت, سر فرود آوردن§v-8964=  مي‌نهند, تدريس کردن§v-9219=  مي‌آموزد, رويت کردن§v-8581=  ديدن, پذيرفتن§v-9413=  پذيرفتند]
+roal_states= [شخصيت§n-11163=  شخصيتي, null=  برجسته, null=  پيامبري, برتري§n-11247=  امتياز, null=  عظمت, null=  درخشاني]
+roal_intetns= [گويا§a-268=  روشن]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [سجده§n-25850=  سجده]
+
+newScene*************************************
+
++++alternativeTime [روز§n-12632=  روزها] added to SceneModel.
+
++++alternativeLocation [محضر§n-10120=  نزد] added to SceneModel.
+
++++پدر added to SceneModel as Role.
+
+---SceneModel has this [والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
++++يوسف added to SceneModel as Role.
+
++++alternativeLocation [صحرا§n-16714=  صحرا] added to SceneModel.
+
++++يعقوب added to SceneModel as Role.
+
++++آن‌ها added to SceneModel as Role.
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد], [صحرا§n-16714=  صحرا]]
+time= null
+alternativeTimes= [[روز§n-12632=  روزها]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [آمدن§v-7847=  آمدند, بردن§v-7660=  ببرند, جواب دادن§v-8114=  نمي‌داد]
+roal_states= []
+roal_intetns= [همراه§n-10369=  همراه, مثبت§a-219=  مثبت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+---SceneModel has this [والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
++++alternativeLocation [دشت§n-13308=  دشت] added to SceneModel.
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد], [صحرا§n-16714=  صحرا], [دشت§n-13308=  دشت]]
+time= null
+alternativeTimes= [[روز§n-12632=  روزها]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [آمدن§v-7847=  آمدند, بردن§v-7660=  ببرند, جواب دادن§v-8114=  نمي‌داد, null=  مي‌دارد, اعتماد داشتن§v-9414=  نمي‌کني, بردن§v-7660=  ببريم, پرداختن§v-19365=  بپردازد]
+roal_states= [null=  شادماني]
+roal_intetns= [همراه§n-10369=  همراه, مثبت§a-219=  مثبت, دور§a-2270=  دور, بازي§n-13574=  بازي]
+roal_emotions= [اعتماد§n-11208=  اطمينان]
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++گرگ added to SceneModel as Dynamic_object.
+
+roles= 
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= [گرگ§n-19212=  گرگ object_actions=  [] object_states=  []]
+static_objs= 
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد], [صحرا§n-16714=  صحرا], [دشت§n-13308=  دشت]]
+time= null
+alternativeTimes= [[روز§n-12632=  روزها]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [آمدن§v-7847=  آمدند, بردن§v-7660=  ببرند, جواب دادن§v-8114=  نمي‌داد, null=  مي‌دارد, اعتماد داشتن§v-9414=  نمي‌کني, بردن§v-7660=  ببريم, پرداختن§v-19365=  بپردازد, بودن§v-16430=  خواهيم‌بود]
+roal_states= [null=  شادماني, خسارت‌ديده§a-657=  زيانکاران]
+roal_intetns= [همراه§n-10369=  همراه, مثبت§a-219=  مثبت, دور§a-2270=  دور, بازي§n-13574=  بازي]
+roal_emotions= [اعتماد§n-11208=  اطمينان]
+dynamic_object_actions= [خوردن§v-7695=  بخورد]
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++آن‌ها added to SceneModel as Role.
+
++++يعقوب added to SceneModel as Role.
+
+roles= 
+	[برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [ظهور کردن§v-21725=  گشت, پرداختن§v-19365=  پرداختند]
+roal_states= []
+roal_intetns= [انتقامجويي§n-22853=  انتقام‌جويي]
+roal_emotions= [عناد§n-11662=  کينه‌هاي, رشکيني§n-10600=  حسادت]
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+---SceneModel has this [برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[برادر§n-14090= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يعقوب§n-23940= يعقوب role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [ظهور کردن§v-21725=  گشت, پرداختن§v-19365=  پرداختند, null=  نمي‌توانست]
+roal_states= [سياست§n-10530=  آزار]
+roal_intetns= [انتقامجويي§n-22853=  انتقام‌جويي]
+roal_emotions= [عناد§n-11662=  کينه‌هاي, رشکيني§n-10600=  حسادت]
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++يوسف added to SceneModel as Role.
+
++++alternativeLocation [چاه§n-16033=  چاه] added to SceneModel.
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[چاه§n-16033=  چاه]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= [تکال§n-22841=  توکل]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++برادران added to SceneModel as Role.
+
++++پيراهن added to SceneModel as Static_object.
+
++++يوسف added to SceneModel as Role.
+
++++خون added to SceneModel as Static_object.
+
++++بزغاله added to SceneModel as Dynamic_object.
+
++++alternativeLocation [محضر§n-10120=  نزد] added to SceneModel.
+
++++پدر added to SceneModel as Role.
+
++++گرگ added to SceneModel as Dynamic_object.
+
+roles= 
+	[برادر§n-14090= برادران role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[والد§n-13357= پدر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= [بزغاله§n-25938=  بزغاله object_actions=  [] object_states=  []][گرگ§n-19212=  گرگ object_actions=  [] object_states=  []]
+static_objs= [پيرهن§n-11108=  پيراهن object_states=  []][خون§n-11279=  خون object_states=  []]
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [null=  کرده‌بودند]
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= [شکار کردن§v-7672=  ساخت]
+dynamic_object_states= []
+static_object_states= [لجن‌آلود§a-249=  آلوده]
+
+newScene*************************************
+
++++يوسف added to SceneModel as Role.
+
++++alternativeTime [روشنايي روز§n-12637=  روز] added to SceneModel.
+
++++alternativeTime [شب§n-12643=  شب] added to SceneModel.
+
++++alternativeLocation [چاه§n-16033=  چاه] added to SceneModel.
+
++++کارواني added to SceneModel as Role.
+
++++alternativeLocation [مصر§n-20196=  مصر] added to SceneModel.
+
++++آب added to SceneModel as Static_object.
+
++++چاهي added to SceneModel as Static_object.
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[قافله§n-14002= کارواني role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [آب شرب§n-14289=  آب object_states=  []][چاه§n-16033=  چاهي object_states=  []]
+location= null
+alternativeLocations= [[چاه§n-16033=  چاه], [مصر§n-20196=  مصر]]
+time= null
+alternativeTimes= [[روشنايي روز§n-12637=  روز], [شب§n-12643=  شب]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [پوييدن§v-7700=  مي‌رفتند, آمدن§v-7847=  آمدند]
+roal_states= [جريحه§n-10523=  خستگي]
+roal_intetns= [رفع§n-14718=  رفع]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++آن‌ها added to SceneModel as Role.
+
+---SceneModel has this [آب شرب§n-14289=  آب object_states=  []] Static_object before!
++++پسري added to SceneModel as Role.
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[قافله§n-14002= کارواني role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[افله§n-14002= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[پسر§n-13367= پسري role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [آب شرب§n-14289=  آب object_states=  []][چاه§n-16033=  چاهي object_states=  []]
+location= null
+alternativeLocations= [[چاه§n-16033=  چاه], [مصر§n-20196=  مصر]]
+time= null
+alternativeTimes= [[روشنايي روز§n-12637=  روز], [شب§n-12643=  شب]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [پوييدن§v-7700=  مي‌رفتند, آمدن§v-7847=  آمدند, به چشم خوردن§v-8071=  افتاد]
+roal_states= [جريحه§n-10523=  خستگي, null=  ماه‌چهره]
+roal_intetns= [رفع§n-14718=  رفع]
+roal_emotions= [مسرور§a-115=  خوشحال]
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++alternativeLocation [مصر§n-20196=  مصر] added to SceneModel.
+
+roles= ]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[مصر§n-20196=  مصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [فروختن§v-7667=  فروختند]
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++کسي added to SceneModel as Role.
+
++++يوسف added to SceneModel as Role.
+
++++وزير added to SceneModel as Role.
+
++++پادشاه added to SceneModel as Role.
+
+---SceneModel has this [مصر§n-20196=  مصر] AlternativeLocation before!
+
+roles= 
+	[نفر§n-13075= کسي role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[وزير§n-12032= وزير role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[سلطان§n-13386= پادشاه role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[مصر§n-20196=  مصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [فروختن§v-7667=  فروختند, خريدن§v-7668=  خريد]
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++عزيز added to SceneModel as Role.
+
++++alternativeLocation [مصر§n-20196=  مصر] added to SceneModel.
+
++++همسر added to SceneModel as Role.
+
++++ش added to SceneModel as Role.
+
++++فرزند added to SceneModel as Role.
+
++++يوسف added to SceneModel as Role.
+
+roles= 
+	[وزير§n-12032= عزيز role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[زوجه§n-12069= همسر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[وزير§n-12032= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[بچه§n-13350= فرزند role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[مصر§n-20196=  مصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [بي بهره§a-562=  محروم]
+roal_intetns= [پرورش§n-10180=  تربيت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++يوسف added to SceneModel as Role.
+
++++زليخا added to SceneModel as Role.
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [رسيدگي§n-12629=  بلوغ, زيبايي§n-19694=  زيبايي]
+roal_intetns= []
+roal_emotions= [محب§a-1077=  عاشق, null=  دلداده]
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++alternativeTime [روز§n-12632=  روزها] added to SceneModel.
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
++++alternativeLocation [سرا§n-12809=  خانه] added to SceneModel.
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[سرا§n-12809=  خانه]]
+time= null
+alternativeTimes= [[روز§n-12632=  روزها]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [جستن§v-8367=  يافت, تدارک ديدن§v-8233=  کرده‌ام]
+roal_states= [رسيدگي§n-12629=  بلوغ, زيبايي§n-19694=  زيبايي, مهيا§a-2354=  آماده]
+roal_intetns= []
+roal_emotions= [محب§a-1077=  عاشق, null=  دلداده]
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++درب added to SceneModel as Static_object.
+
++++زليخا added to SceneModel as Role.
+
++++پيراهن added to SceneModel as Static_object.
+
++++يوسف added to SceneModel as Role.
+
+---SceneModel has this [پيرهن§n-11108=  پيراهن object_states=  []] Static_object before!
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [درگاه§n-10373=  درب object_states=  []][پيرهن§n-11108=  پيراهن object_states=  []]
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [پاره§a-2389=  پاره]
+
+
++++همسر added to SceneModel as Role.
+
+---SceneModel has this [null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[مرد زندگي§n-13369= همسر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [درگاه§n-10373=  درب object_states=  []][پيرهن§n-11108=  پيراهن object_states=  []]
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رسيدن§v-8613=  رسيد, رويت کردن§v-8581=  نمود]
+roal_states= []
+roal_intetns= [null=  مشاهده]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [پاره§a-2389=  پاره]
+
+
++++عزيز added to SceneModel as Role.
+
++++alternativeLocation [مصر§n-20196=  مصر] added to SceneModel.
+
+---SceneModel has this [پيرهن§n-11108=  پيراهن object_states=  []] Static_object before!
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [پيرهن§n-11108=  پيراهن object_states=  []] Static_object before!
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[مرد زندگي§n-13369= همسر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[وزير§n-12032= عزيز role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [درگاه§n-10373=  درب object_states=  []][پيرهن§n-11108=  پيراهن object_states=  []]
+location= null
+alternativeLocations= [[مصر§n-20196=  مصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رسيدن§v-8613=  رسيد, رويت کردن§v-8581=  نمود, ديدن§v-9138=  ديد]
+roal_states= []
+roal_intetns= [null=  مشاهده]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [پاره§a-2389=  پاره, پاره§a-2389=  پاره]
+
+
++++همسر added to SceneModel as Role.
+
++++ش added to SceneModel as Role.
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[مرد زندگي§n-13369= همسر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[وزير§n-12032= عزيز role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[عيال§n-12059= همسر role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[مرد زندگي§n-13369= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [درگاه§n-10373=  درب object_states=  []][پيرهن§n-11108=  پيراهن object_states=  []]
+location= null
+alternativeLocations= [[مصر§n-20196=  مصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [رسيدن§v-8613=  رسيد, رويت کردن§v-8581=  نمود, ديدن§v-9138=  ديد, رو کردن§v-8630=  نمود]
+roal_states= [زنانه§a-868=  زنانه]
+roal_intetns= [null=  مشاهده, null=  مکر]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [پاره§a-2389=  پاره, پاره§a-2389=  پاره]
+
+newScene*************************************
+
++++زليخا added to SceneModel as Role.
+
++++زنان added to SceneModel as Role.
+
++++alternativeLocation [کاخ§n-10991=  قصر] added to SceneModel.
+
++++يوسف added to SceneModel as Role.
+
++++آن‌ها added to SceneModel as Role.
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[زوجه§n-12069= زنان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[کاخ§n-10991=  قصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [طراحي کردن§v-9745=  کشيد]
+roal_states= [شيک§a-2189=  اشراف‌زاده]
+roal_intetns= [فکر§n-13030=  نقشه‌اي, دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+---SceneModel has this [زوجه§n-12069= زنان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [کاخ§n-10991=  قصر] AlternativeLocation before!
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[زوجه§n-12069= زنان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[کاخ§n-10991=  قصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [طراحي کردن§v-9745=  کشيد, خواندن§v-8493=  نمود]
+roal_states= [شيک§a-2189=  اشراف‌زاده, اجرا کردن§n-10404=  اجراي, شيک§a-2189=  اشرافي, غني§a-46=  متمکن, ملک§n-11759=  شهر]
+roal_intetns= [فکر§n-13030=  نقشه‌اي, دعوت§n-11510=  دعوت, فکر§n-13030=  نقشه, ضيافت§n-13150=  مهماني, دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++کنيزان added to SceneModel as Role.
+
++++مهمان‌ها added to SceneModel as Role.
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[زوجه§n-12069= زنان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= کنيزان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمان‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[کاخ§n-10991=  قصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [طراحي کردن§v-9745=  کشيد, خواندن§v-8493=  نمود]
+roal_states= [شيک§a-2189=  اشراف‌زاده, اجرا کردن§n-10404=  اجراي, شيک§a-2189=  اشرافي, غني§a-46=  متمکن, ملک§n-11759=  شهر]
+roal_intetns= [فکر§n-13030=  نقشه‌اي, دعوت§n-11510=  دعوت, فکر§n-13030=  نقشه, ضيافت§n-13150=  مهماني, دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++پذيرايي‌کنندگان added to SceneModel as Role.
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[زوجه§n-12069= زنان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= کنيزان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمان‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= پذيرايي‌کنندگان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[کاخ§n-10991=  قصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [طراحي کردن§v-9745=  کشيد, خواندن§v-8493=  نمود]
+roal_states= [شيک§a-2189=  اشراف‌زاده, اجرا کردن§n-10404=  اجراي, شيک§a-2189=  اشرافي, غني§a-46=  متمکن, ملک§n-11759=  شهر]
+roal_intetns= [فکر§n-13030=  نقشه‌اي, دعوت§n-11510=  دعوت, فکر§n-13030=  نقشه, ضيافت§n-13150=  مهماني, دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+---SceneModel has this [null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
++++دست added to SceneModel as Static_object.
+
++++مهمانان added to SceneModel as Role.
+
++++چاقويي added to SceneModel as Static_object.
+
++++پرتقال‌ها added to SceneModel as Static_object.
+
++++پوست added to SceneModel as Static_object.
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[زوجه§n-12069= زنان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= کنيزان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمان‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= پذيرايي‌کنندگان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمانان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [يد§n-13538=  دست object_states=  []][چاقو§n-11016=  چاقويي object_states=  []][null=  پرتقال‌ها object_states=  []][پوسه§n-12555=  پوست object_states=  []]
+location= null
+alternativeLocations= [[کاخ§n-10991=  قصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [طراحي کردن§v-9745=  کشيد, خواندن§v-8493=  نمود, پوست کندن§v-18563=  بگيرند]
+roal_states= [شيک§a-2189=  اشراف‌زاده, اجرا کردن§n-10404=  اجراي, شيک§a-2189=  اشرافي, غني§a-46=  متمکن, ملک§n-11759=  شهر]
+roal_intetns= [فکر§n-13030=  نقشه‌اي, دعوت§n-11510=  دعوت, فکر§n-13030=  نقشه, ضيافت§n-13150=  مهماني, دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+---SceneModel has this [null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[زوجه§n-12069= زنان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= کنيزان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمان‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= پذيرايي‌کنندگان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمانان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [يد§n-13538=  دست object_states=  []][چاقو§n-11016=  چاقويي object_states=  []][null=  پرتقال‌ها object_states=  []][پوسه§n-12555=  پوست object_states=  []]
+location= null
+alternativeLocations= [[کاخ§n-10991=  قصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [طراحي کردن§v-9745=  کشيد, خواندن§v-8493=  نمود, پوست کندن§v-18563=  بگيرند, بريدن§v-7724=  بريدند]
+roal_states= [شيک§a-2189=  اشراف‌زاده, اجرا کردن§n-10404=  اجراي, شيک§a-2189=  اشرافي, غني§a-46=  متمکن, ملک§n-11759=  شهر, وجاهت§n-11176=  جمال, زيبايي§n-19694=  زيبايي, null=  حيرت‌زده]
+roal_intetns= [فکر§n-13030=  نقشه‌اي, دعوت§n-11510=  دعوت, فکر§n-13030=  نقشه, ضيافت§n-13150=  مهماني, دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+---SceneModel has this [null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[زوجه§n-12069= زنان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= کنيزان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمان‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= پذيرايي‌کنندگان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمانان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [يد§n-13538=  دست object_states=  []][چاقو§n-11016=  چاقويي object_states=  []][null=  پرتقال‌ها object_states=  []][پوسه§n-12555=  پوست object_states=  []]
+location= null
+alternativeLocations= [[کاخ§n-10991=  قصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [طراحي کردن§v-9745=  کشيد, خواندن§v-8493=  نمود, پوست کندن§v-18563=  بگيرند, بريدن§v-7724=  بريدند]
+roal_states= [شيک§a-2189=  اشراف‌زاده, اجرا کردن§n-10404=  اجراي, شيک§a-2189=  اشرافي, غني§a-46=  متمکن, ملک§n-11759=  شهر, وجاهت§n-11176=  جمال, زيبايي§n-19694=  زيبايي, null=  حيرت‌زده, رسوا§a-1790=  رسوا]
+roal_intetns= [فکر§n-13030=  نقشه‌اي, دعوت§n-11510=  دعوت, فکر§n-13030=  نقشه, ضيافت§n-13150=  مهماني, دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+roles= 
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[زوجه§n-12069= زنان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= کنيزان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمان‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= پذيرايي‌کنندگان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= مهمانان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= [يد§n-13538=  دست object_states=  []][چاقو§n-11016=  چاقويي object_states=  []][null=  پرتقال‌ها object_states=  []][پوسه§n-12555=  پوست object_states=  []]
+location= null
+alternativeLocations= [[کاخ§n-10991=  قصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [طراحي کردن§v-9745=  کشيد, خواندن§v-8493=  نمود, پوست کندن§v-18563=  بگيرند, بريدن§v-7724=  بريدند]
+roal_states= [شيک§a-2189=  اشراف‌زاده, اجرا کردن§n-10404=  اجراي, شيک§a-2189=  اشرافي, غني§a-46=  متمکن, ملک§n-11759=  شهر, وجاهت§n-11176=  جمال, زيبايي§n-19694=  زيبايي, null=  حيرت‌زده, رسوا§a-1790=  رسوا]
+roal_intetns= [فکر§n-13030=  نقشه‌اي, دعوت§n-11510=  دعوت, فکر§n-13030=  نقشه, ضيافت§n-13150=  مهماني, دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++يوسف added to SceneModel as Role.
+
++++زليخا added to SceneModel as Role.
+
++++خاندان added to SceneModel as Role.
+
++++ش added to SceneModel as Role.
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[طايفه§n-20062= خاندان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [صادر کردن§v-8772=  نمودند]
+roal_states= [بي گناه§a-839=  بي‌گناه, سرشکستگي§n-12472=  ننگ, ناآزاد§a-604=  زنداني]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++alternativeTime [null=  مدتي] added to SceneModel.
+
++++alternativeLocation [حبسگاه§n-14859=  زندان] added to SceneModel.
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[طايفه§n-20062= خاندان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[حبسگاه§n-14859=  زندان]]
+time= null
+alternativeTimes= [[null=  مدتي]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [صادر کردن§v-8772=  نمودند, رويا ديدن§v-8482=  ديدند]
+roal_states= [بي گناه§a-839=  بي‌گناه, سرشکستگي§n-12472=  ننگ, ناآزاد§a-604=  زنداني]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++آن‌ها added to SceneModel as Role.
+
+---SceneModel has this [null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [حبسگاه§n-14859=  زندان] AlternativeLocation before!
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[طايفه§n-20062= خاندان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[حبسگاه§n-14859=  زندان]]
+time= null
+alternativeTimes= [[null=  مدتي]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [صادر کردن§v-8772=  نمودند, رويا ديدن§v-8482=  ديدند]
+roal_states= [بي گناه§a-839=  بي‌گناه, سرشکستگي§n-12472=  ننگ, ناآزاد§a-604=  زنداني, ول§a-1594=  آزاد, مجازات§n-13887=  مجازات]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
++++کسي added to SceneModel as Role.
+
++++alternativeTime [null=  آينده] added to SceneModel.
+
+---SceneModel has this [حبسگاه§n-14859=  زندان] AlternativeLocation before!
+
++++م added to SceneModel as Role.
+
++++پادشاه added to SceneModel as Role.
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= زليخا role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[طايفه§n-20062= خاندان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= ش role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= آن‌ها role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= کسي role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= م role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[سلطان§n-13386= پادشاه role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[حبسگاه§n-14859=  زندان]]
+time= null
+alternativeTimes= [[null=  مدتي], [null=  آينده]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [صادر کردن§v-8772=  نمودند, رويا ديدن§v-8482=  ديدند]
+roal_states= [بي گناه§a-839=  بي‌گناه, سرشکستگي§n-12472=  ننگ, ناآزاد§a-604=  زنداني, ول§a-1594=  آزاد, مجازات§n-13887=  مجازات, ول§a-1594=  آزاد]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++alternativeTime [شب§n-12643=  شبي] added to SceneModel.
+
++++alternativeTime [شب§n-12643=  شب‌ها] added to SceneModel.
+
++++پادشاه added to SceneModel as Role.
+
++++alternativeLocation [مصر§n-20196=  مصر] added to SceneModel.
+
+roles= 
+	[سلطان§n-13386= پادشاه role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[مصر§n-20196=  مصر]]
+time= null
+alternativeTimes= [[شب§n-12643=  شبي], [شب§n-12643=  شب‌ها]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [ديدن§v-9138=  ديد]
+roal_states= [آشفته§a-475=  آشفته]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
++++جواني added to SceneModel as Role.
+
++++alternativeTime [مدت§n-12613=  مدتي] added to SceneModel.
+
++++alternativeLocation [حبسگاه§n-14859=  زندان] added to SceneModel.
+
++++alternativeLocation [محضر§n-10120=  نزد] added to SceneModel.
+
++++يوسف added to SceneModel as Role.
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [سلطان§n-13386= پادشاه role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
++++کسي added to SceneModel as Role.
+
+roles= 
+	[سلطان§n-13386= پادشاه role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[جوان§n-14402= جواني role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[null= کسي role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[مصر§n-20196=  مصر], [حبسگاه§n-14859=  زندان], [محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= [[شب§n-12643=  شبي], [شب§n-12643=  شب‌ها], [مدت§n-12613=  مدتي]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [ديدن§v-9138=  ديد, null=  مي‌تواند]
+roal_states= [آشفته§a-475=  آشفته]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++جوان added to SceneModel as Role.
+
++++alternativeLocation [محضر§n-10120=  نزد] added to SceneModel.
+
++++پادشاه added to SceneModel as Role.
+
++++يوسف added to SceneModel as Role.
+
+roles= 
+	[جوان§n-14402= جوان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[سلطان§n-13386= پادشاه role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+
+---SceneModel has this [سلطان§n-13386= پادشاه role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
+---SceneModel has this [يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []] Role before!
+
++++alternativeLocation [کاخ§n-10991=  قصر] added to SceneModel.
+
+roles= 
+	[جوان§n-14402= جوان role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[سلطان§n-13386= پادشاه role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[محضر§n-10120=  نزد], [کاخ§n-10991=  قصر]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [فرو رفتن§v-8868=  فرورفت, در يافتن§v-16389=  برد, خواندن§v-8493=  نمايند]
+roal_states= [بينش§n-16834=  درايت, عقل§n-11204=  هوش, امر§n-11505=  دستور]
+roal_intetns= [دعوت§n-11510=  دعوت]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene*************************************
+
++++يوسف added to SceneModel as Role.
+
++++alternativeLocation [حبسگاه§n-14859=  زندان] added to SceneModel.
+
++++م added to SceneModel as Role.
+
+roles= 
+	[يوسف§n-23957= يوسف role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]
+	[يوسف§n-23957= م role_actions=  [] role_goals=    [] role_emotions= [] role_moods=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[حبسگاه§n-14859=  زندان]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= [خارج شدن§v-8450=  نمي‌روم, افترا زدن§v-7924=  زده‌اند, بري کردن§v-9027=  نمايند]
+roal_states= [بي بهره§a-1580=  مبرا]
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []

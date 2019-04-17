@@ -1,3 +1,7 @@
 eclipse.preferences.version=1
+encoding//src/model/SceneModel.java=UTF-8
 encoding//src/model/Word.java=UTF-8
-encoding//src/userInterface/UI.java=UTF-8
+encoding//src/sceneElement/SceneElement.java=UTF-8
+encoding//src/sceneReasoner/SceneReasoner.java=UTF-8
+encoding//src/userInterface/Dashboard.java=UTF-8
+encoding//src/userInterface/LearningUI.java=UTF-8
