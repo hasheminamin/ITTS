@@ -1,8 +1,11 @@
 package model;
 
 import ir.ac.itrc.qqa.semantic.util.MyError;
+import sceneElement.SceneElement;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Set;
 
 public class StoryModel {
 	
@@ -32,5 +35,92 @@ public class StoryModel {
 			newScene.story = this;
 		}		
 	}
+	
+	public ArrayList<Word> calculateMultiSemanticTagWords(){
+		if(scenes == null || scenes.size() == 0)
+			return null;
+		
+		ArrayList<Word> multiSemTagwords = new ArrayList<Word>();
+		
+		for(SceneModel scn:scenes) {
+			ArrayList<Word> wrds = scn.calculateMultiSemanticTagWords();
+			if(wrds != null)
+				multiSemTagwords.addAll(scn.calculateMultiSemanticTagWords());
+		}
+		
+		return multiSemTagwords;
+	}
+	
+	public ArrayList<Word> calculateWronglyPredictedWords(){
+		if(scenes == null || scenes.size() == 0)
+			return null;
+		
+		ArrayList<Word> wronglyPredictedwords = new ArrayList<Word>();
+		
+		for(SceneModel scn:scenes) {
+			
+			ArrayList<Word> wrds = scn.calculateWronglyPredictedWords();
+			
+			if(wrds != null)
+				wronglyPredictedwords.addAll(wrds);
+		}
+		
+		return wronglyPredictedwords;
+	}
 
+	public ArrayList<Word> calculateTruelyPredicatedWords(){
+		if(scenes == null || scenes.size() == 0)
+			return null;
+		
+		ArrayList<Word> truelyPredictedwords = new ArrayList<Word>();
+		
+		for(SceneModel scn:scenes) {
+			
+			ArrayList<Word> wrds = scn.calculateTruelyPredictedWords();
+			
+			if(wrds != null)
+				truelyPredictedwords.addAll(wrds);
+		}
+		
+		return truelyPredictedwords;
+	}
+	
+	public int calculateRepeatedWords(){
+		if(scenes == null || scenes.size() == 0)
+			return 0;
+		
+		int sceneIndex = 0;		
+		int repeatedWords = 0;
+		
+		for(SceneModel scn:scenes) {
+			
+			sceneIndex++;
+			 
+			Hashtable<SceneElement, ArrayList<SceneElement>> sceneRepeatedWrds = scn.repeatedSceneElements;
+			
+			if(sceneRepeatedWrds != null) {
+			
+				Set<SceneElement> scneKetSet = sceneRepeatedWrds.keySet();
+					
+				for (SceneElement keyElem:scneKetSet) {
+					
+					ArrayList<SceneElement> repList = sceneRepeatedWrds.get(keyElem);
+					
+					for(SceneElement rep: repList) {
+						
+						repeatedWords++;						
+	
+						print("this \'" + keyElem._name + "=" + keyElem._node_name + "\' and these \'" + rep._name + "=" + rep._node_name + "\' are repeated in secene" + sceneIndex);		
+					}
+				}
+			}
+		}
+		return repeatedWords;
+	}
+	
+	private void print(String toPrint){
+		System.out.println(toPrint);		
+	}
+
+	
 }

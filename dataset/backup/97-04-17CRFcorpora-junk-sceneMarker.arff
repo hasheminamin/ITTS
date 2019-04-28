@@ -30,8 +30,6 @@
 8	بود	V	ROOT	0	null	null	junk	Y	بودن.15	_
 9	.	PUNC	PUNC	8	null	null	junk	_	_	_
 
-#scene#......
-
 1	او	PR	SBJ	6	null	null	junk	_	_	Arg0
 2	حدود	PREP	ADVC	6	اندازه§n-13756	مشخصه§n-12756	no	_	_	Arg2
 3	110	NUM	NPREMOD	4	null	null	junk	_	_	_
@@ -53,7 +51,6 @@
 11	ديد	V	PRD	6	ديدن§v-9138	رخداد§n-13136	role_action	Y	ديدن.47	_	_
 12	.	PUNC	PUNC	5	null	null	junk	_	_	_	_
 
-#story#......
 #scene#......
 
 1	صبح	N	ADVRB	4	صبح§n-12638	دوره_زماني§n-12603	time	_	_	ArgM_TMP	_	_	_

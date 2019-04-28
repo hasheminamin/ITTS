@@ -244,20 +244,32 @@ public class SceneElement {
 }
 
 	/**
-	 * this method assessed the equality of two sceneElement based on the equality of their inner Node object.
+	 * this method assessed the equality of two sceneElement based on the equality of
+	 * their _name and their _node or _node_name.
 	 * @param sceneElement
 	 * @return
-	 */
+	 */	
 	public boolean equals(SceneElement sceneElement) {
 		if(sceneElement == null)
 			return false;
 		
-		if(this._name != null && this._name.equalsIgnoreCase(sceneElement._name) && this._node != null && this._node.equalsRelaxed(sceneElement._node))
-			return true;
-		
-		if(this._name != null && this._name.equalsIgnoreCase(sceneElement._name) && this._node_name != null && this._node_name.equalsIgnoreCase(sceneElement._node_name))
-			return true;
-		
+		if(this._name != null && this._name.equalsIgnoreCase(sceneElement._name)){			
+			if(this._node != null) {
+				if(this._node.equalsRelaxed(sceneElement._node))
+					return true;
+			}
+			else//if(this._node == null) 
+				if(sceneElement._node == null)
+					return true;
+			
+			if(this._node_name != null) {
+				if(this._node_name.equalsIgnoreCase(sceneElement._node_name))
+					return true;
+			}
+			else //this._node_name == null
+				if(sceneElement._node_name == null)
+					return true;
+		}
 		return false;
 	}
 	

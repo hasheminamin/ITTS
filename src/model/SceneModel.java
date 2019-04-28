@@ -5,6 +5,7 @@ import ir.ac.itrc.qqa.semantic.util.Common;
 import ir.ac.itrc.qqa.semantic.util.MyError;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 import enums.ScenePart;
 import sceneElement.*;
@@ -14,7 +15,9 @@ public class SceneModel {
 	public StoryModel story = null;
 	
 	public ArrayList<SentenceModel> sentences = new ArrayList<SentenceModel>();
-				
+	
+	public Hashtable<SceneElement, ArrayList<SceneElement>> repeatedSceneElements = new Hashtable<SceneElement, ArrayList<SceneElement>>();
+					
 	private ArrayList<Role> roles = new ArrayList<Role>();	
 	
 	private ArrayList<StaticObject> static_objects = new ArrayList<StaticObject>();
@@ -539,13 +542,24 @@ public class SceneModel {
 		if(role != null)
 			if(!hasRole(role)){
 				this.roles.add(role);
-				print("+++" + role._name + " added to SceneModel as Role.\n");
+//				print("+++" + role._name + " added to SceneModel as Role.\n");
 			}
 			else{
-				print("---" + "SceneModel Merged this " + role + " with the the equal role it had before!\n");
+				print("---" + "SceneModel Merged this " + role + " with the the equal role it had before!\n");				
 				Role thisRole = getRole(role);
-				if(thisRole != null)
+				
+				if(thisRole != null) {
 					thisRole.mergeWith(role);
+					
+					ArrayList<SceneElement> repList = null;
+					
+					if(repeatedSceneElements.containsKey(thisRole))
+						repList = repeatedSceneElements.get(thisRole);						
+					else
+						repList = new ArrayList<SceneElement>();
+					repList.add(role);
+					repeatedSceneElements.put(thisRole, repList);					
+				}
 			}
 	}
 	
@@ -563,13 +577,24 @@ public class SceneModel {
 		if(static_object != null)
 			if(!hasStatic_object(static_object)){
 				this.static_objects.add(static_object);
-				print("+++" + static_object._name + " added to SceneModel as Static_object.\n");
+//				print("+++" + static_object._name + " added to SceneModel as Static_object.\n");
 			}
 			else{
 				print("---" + "SceneModel Merged this " + static_object + " with the the equal Static_object it had before!");
 				StaticObject thisStatic_obj = getStatic_object(static_object);
-				if(thisStatic_obj != null)
+				if(thisStatic_obj != null) {
 					thisStatic_obj.mergeWith(static_object);
+					
+					ArrayList<SceneElement> repList = null;
+					
+					if(repeatedSceneElements.containsKey(thisStatic_obj))
+						repList = repeatedSceneElements.get(thisStatic_obj);						
+					else
+						repList = new ArrayList<SceneElement>();
+					repList.add(static_object);
+					
+					repeatedSceneElements.put(thisStatic_obj, repList);
+				}
 			}
 	}
 	
@@ -586,13 +611,23 @@ public class SceneModel {
 		if(dynamic_object != null)
 			if(!hasDynamic_object(dynamic_object)){
 				this.dynamic_objescts.add(dynamic_object);
-				print("+++" + dynamic_object._name + " added to SceneModel as Dynamic_object.\n");
+//				print("+++" + dynamic_object._name + " added to SceneModel as Dynamic_object.\n");
 			}
 			else{
 				print("---" + "SceneModel Merged this " + dynamic_object + " with the the equal Dynamic_object it had before!");
 				DynamicObject thisDyn_obj = getDynamic_object(dynamic_object);
-				if(thisDyn_obj != null)
+				if(thisDyn_obj != null) {
 					thisDyn_obj.mergeWith(dynamic_object);
+
+					ArrayList<SceneElement> repList = null;
+					
+					if(repeatedSceneElements.containsKey(thisDyn_obj))
+						repList = repeatedSceneElements.get(thisDyn_obj);						
+					else
+						repList = new ArrayList<SceneElement>();
+					repList.add(dynamic_object);
+					repeatedSceneElements.put(thisDyn_obj, repList);
+				}
 			}
 	}
 
@@ -609,14 +644,24 @@ public class SceneModel {
 		if(scene_goal != null)
 			if(!hasScene_goal(scene_goal)){
 				this.scene_goals.add(scene_goal);
-				print("+++" + scene_goal._name + " added to SceneModel as Scene_goal.\n");
+//				print("+++" + scene_goal._name + " added to SceneModel as Scene_goal.\n");
 			}
 			else{
 				print("---" + "SceneModel Merged this " + scene_goal + " with the the equal Scene_goal it had before!");
 
 				SceneGoal thisScene_goal = getScene_goal(scene_goal);
-				if(thisScene_goal != null)
-					thisScene_goal.mergeWith(scene_goal);			
+				if(thisScene_goal != null) {
+					thisScene_goal.mergeWith(scene_goal);
+					
+					ArrayList<SceneElement> repList = null;
+					
+					if(repeatedSceneElements.containsKey(thisScene_goal))
+						repList = repeatedSceneElements.get(thisScene_goal);						
+					else
+						repList = new ArrayList<SceneElement>();
+					repList.add(scene_goal);
+					repeatedSceneElements.put(thisScene_goal, repList);
+				}
 			}
 	}
 		
@@ -633,14 +678,24 @@ public class SceneModel {
 		if(scene_emotion != null)
 			if(!hasScene_emotion(scene_emotion)){
 				this.scene_emotions.add(scene_emotion);
-				print("+++" + scene_emotion._name + " added to SceneModel as Scene_emotion.\n");
+//				print("+++" + scene_emotion._name + " added to SceneModel as Scene_emotion.\n");
 			}
 			else{
 				print("---" + "SceneModel Merged this " + scene_emotion + " with the the equal Scene_emotion it had before!");
 
 				SceneEmotion thisScene_emotion = getScene_emotion(scene_emotion);
-				if(thisScene_emotion != null)
+				if(thisScene_emotion != null) {
 					thisScene_emotion.mergeWith(scene_emotion);
+					
+					ArrayList<SceneElement> repList = null;
+					
+					if(repeatedSceneElements.containsKey(thisScene_emotion))
+						repList = repeatedSceneElements.get(thisScene_emotion);						
+					else
+						repList = new ArrayList<SceneElement>();
+					repList.add(scene_emotion);
+					repeatedSceneElements.put(thisScene_emotion, repList);
+				}
 			}
 	}
 	
@@ -657,14 +712,24 @@ public class SceneModel {
 			
 			if(!hasAlternativeLocation(location)){
 				alternativeLocations.add(location);
-				print("+++" + "alternativeLocation " + location + " added to SceneModel.\n");
+//				print("+++" + "alternativeLocation " + location + " added to SceneModel.\n");
 			}
 			else{
 				print("---" + "SceneModel Merged this " + location + "  with the the equal AlternativeLocation it had before!");
 				
 				Location thisAltLoc = getAlternativeLocation(location);
-				if(thisAltLoc != null)
+				if(thisAltLoc != null) {
 					thisAltLoc.mergeWith(location);
+										
+					ArrayList<SceneElement> repList = null;
+					
+					if(repeatedSceneElements.containsKey(thisAltLoc))
+						repList = repeatedSceneElements.get(thisAltLoc);						
+					else
+						repList = new ArrayList<SceneElement>();
+					repList.add(location);
+					repeatedSceneElements.put(thisAltLoc, repList);
+				}
 			}
 		}		
 	}
@@ -678,14 +743,24 @@ public class SceneModel {
 			
 			if(!hasAlternativeTime(time)){
 				alternativeTimes.add(time);
-				print("+++" + "alternativeTime " + time + " added to SceneModel.\n");
+//				print("+++" + "alternativeTime " + time + " added to SceneModel.\n");
 			}
 			else{
 				print("---" + "SceneModel Merged this " + time + " with the equal AlternativeTime  it had before!");
 							
 				Time thisAltTime = getAlternativeTime(time);
-				if(thisAltTime != null)
+				if(thisAltTime != null) {
 					thisAltTime.mergeWith(time);
+					
+					ArrayList<SceneElement> repList = null;
+					
+					if(repeatedSceneElements.containsKey(thisAltTime))
+						repList = repeatedSceneElements.get(thisAltTime);						
+					else
+						repList = new ArrayList<SceneElement>();
+					repList.add(time);
+					repeatedSceneElements.put(thisAltTime, repList);
+				}
 			}
 		}			
 	}
@@ -772,7 +847,7 @@ public class SceneModel {
 	public boolean hasRole(Role role) {
 		if(role == null)
 			return false;
-		
+				
 		for(Role rl:this.roles)
 			if(rl.equals(role))
 				return true;
@@ -1059,6 +1134,74 @@ public class SceneModel {
 	}
 	public void addStaticObjectState(StaticObjectState objectState){
 		static_object_states.add(objectState);	
+	}
+	
+	public ArrayList<Word> calculateMultiSemanticTagWords(){
+		if(sentences == null || sentences.size() == 0)
+			return null;
+		
+		ArrayList<Word> multiSemTagwords = new ArrayList<Word>();
+		
+		for(SentenceModel sent:sentences) {
+			
+			ArrayList<Word> wrds = sent.calculateMultiSemanticTagWords();
+			
+			if(wrds != null)
+				multiSemTagwords.addAll(wrds);
+		}
+		
+		return multiSemTagwords;
+	}
+	
+	public ArrayList<Word> calculateWronglyPredictedWords(){
+		if(sentences == null || sentences.size() == 0)
+			return null;
+		
+		ArrayList<Word> wronglyPredictedwords = new ArrayList<Word>();
+		
+		for(SentenceModel sent:sentences) {
+			
+			ArrayList<Word> wrds = sent.calculateWronglyPredictedWords();
+			
+			if(wrds != null)
+				wronglyPredictedwords.addAll(wrds);
+		}
+		
+		return wronglyPredictedwords;
+	}
+	
+	public ArrayList<Word> calculateTruelyPredictedWords(){
+		if(sentences == null || sentences.size() == 0)
+			return null;
+		
+		ArrayList<Word> truelyPredictedwords = new ArrayList<Word>();
+		
+		for(SentenceModel sent:sentences) {
+			
+			ArrayList<Word> wrds = sent.calculateTruelyPredictedWords();
+			
+			if(wrds != null)
+				truelyPredictedwords.addAll(wrds);
+		}
+		
+		return truelyPredictedwords;
+	}
+	
+	public ArrayList<Word> calculateReapeatedWords(){
+		if(sentences == null || sentences.size() == 0)
+			return null;
+		
+		ArrayList<Word> repeatedWords = new ArrayList<Word>();
+		
+		for(SentenceModel sent:sentences) {
+			
+			ArrayList<Word> wrds = sent.calculateTruelyPredictedWords();
+			
+			if(wrds != null)
+				repeatedWords.addAll(wrds);
+		}
+		
+		return repeatedWords;
 	}
 
 }

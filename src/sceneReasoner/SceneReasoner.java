@@ -5,6 +5,7 @@ import ir.ac.itrc.qqa.semantic.util.MyError;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+
 import sceneElement.DynamicObject;
 import sceneElement.DynamicObjectState;
 import sceneElement.Location;
@@ -115,11 +116,21 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 		}
 	}
 	
+	/**
+	 * this method read each word of each sentence for every scene of every story and based 
+	 * on its _sceneElement allocated that word to the corresponding part of sceneModel.
+	 * when adding a SceneElement to a SceneModel if the _name and _node or _node_name 
+	 * of a sceneElement be equal, SceneModel assumed they are equal and merges them 
+	 * into each other.  
+	 * @param allStories
+	 */
 	public void arrangeSceneModelsElements(ArrayList<StoryModel> allStories) {
 		
 		try{
-			PrintWriter writer = new PrintWriter("dataset/story2Scenes.arff","utf-8");
+			PrintWriter writer = new PrintWriter("dataset/98-02-07story2Scenes.arff","utf-8");
 					
+			int wordNum = 0;
+			
 			for(StoryModel storyModel: allStories){
 				
 				print("newStory*************************************");
@@ -136,6 +147,7 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 						writer.write("\n");
 						
 						for(Word word: sentence.getWords()){
+							wordNum++;
 							
 							print("" + word);
 							writer.write(word + "\n");
@@ -173,6 +185,7 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 									SceneGoal sceneGoal = new SceneGoal(sceneModel, word._wordName, word);
 									sceneModel.addScene_goal(sceneGoal);
 									break;
+									
 								case ROLE_ACTION:
 									RoleAction roleAction = new RoleAction(sceneModel,  word._wordName, word);
 									sceneModel.addRoleAction(roleAction);
@@ -208,11 +221,13 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 						}
 						
 	//					print("" + sceneModel + "\n");
-					}	
+					}
+//					print("wordNum up to now: " + wordNum);
 					print("" + sceneModel + "\n");
 					writer.write("" + sceneModel + "\n\n");
 				}
 			}
+			print("total wordNum: " + wordNum);
 			writer.close();
 		}
 		catch(Exception e){
@@ -323,7 +338,104 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 			}
 		}
 	}
+
+
+	public ArrayList<Word> calculateMultiSemanticTagWords(ArrayList<StoryModel> allStories){
+		if(allStories == null || allStories.size() == 0)
+			return null;
+		
+		ArrayList<Word> multiSemTagwords = new ArrayList<Word>();
+		
+		int index = 0;
+//		print("\nWords with multi semantic Tags:");
+		
+		int duplacateNum = 0;
+		
+		for(StoryModel stry:allStories) {
+			
+			ArrayList<Word> strMultiSemTagWrds = stry.calculateMultiSemanticTagWords();
+			
+				if(strMultiSemTagWrds != null) {
+				
+					for(Word wrd:strMultiSemTagWrds) {
+						index++;
+//						print(index + ": " + wrd._wordName + " " + wrd._semanticTags + " ||| " + wrd._predictedSceneElements.toString());						
+						duplacateNum += wrd._semanticTags.size();
+					}
+					
+					multiSemTagwords.addAll(strMultiSemTagWrds);
+			}
+		}
+		print("\nWords with multi semantic Tags: " + index);
+		print("\nDataset records with multi semantic Tags: " + duplacateNum);
+		
+		return multiSemTagwords;
+	}
 	
+	public ArrayList<Word> calculateWronglyPredictedWords(ArrayList<StoryModel> allStories){
+		if(allStories == null || allStories.size() == 0)
+			return null;
+		
+		ArrayList<Word> wronglyPredictedWords = new ArrayList<Word>();
+		
+		int index = 0;
+//		print("\nwrongly predicted words:");
+		
+		for(StoryModel stry:allStories) {
+			ArrayList<Word> wrds = stry.calculateWronglyPredictedWords();
+			
+			if(wrds != null) {
+				
+				for(@SuppressWarnings("unused") Word wrd:wrds) {
+					index++;
+//					print(index + ": " + wrd._wordName + " " + wrd._sceneElement + " ||| " + wrd._predictedSceneElements.toString());
+					
+				}
+			
+				wronglyPredictedWords.addAll(wrds);
+			}
+		}
+		
+		print("\nwrongly predicated words num: " + index);
+		
+		return wronglyPredictedWords;
+	}
+	
+	public ArrayList<Word> calculateTruelyPredictedWords(ArrayList<StoryModel> allStories){
+		if(allStories == null || allStories.size() == 0)
+			return null;
+		
+		ArrayList<Word> truelyPredicatedWords = new ArrayList<Word>();
+		
+		int index = 0;
+				
+		for(StoryModel stry:allStories) {
+			ArrayList<Word> wrds = stry.calculateTruelyPredicatedWords();
+			if(wrds != null) {
+				
+				for(@SuppressWarnings("unused") Word wrd:wrds) {
+					index++;
+//					print(index + ": " + wrd + " ||| " + wrd._predictedSceneElements.toString());					
+				}
+	
+				truelyPredicatedWords.addAll(wrds);
+			}
+		}
+		
+		print("\ntruely predicated words num: " + index);
+		
+		return truelyPredicatedWords;
+	}
+	
+	public void calculateRepeatedWords(ArrayList<StoryModel> allStories){
+		
+		if(allStories == null || allStories.size() == 0)
+			return;
+					
+		for(StoryModel stry:allStories)			
+			stry.calculateRepeatedWords();		
+				
+	}
 	
 	private void print(String toPrint){
 		System.out.println(toPrint);		

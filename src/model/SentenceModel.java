@@ -132,6 +132,45 @@ public class SentenceModel {
 		this.NLSentence = NL.trim();
 	}
 	
+	public ArrayList<Word> calculateMultiSemanticTagWords(){
+		if(_words == null || _words.size() == 0)
+			return null;
+		
+		ArrayList<Word> multiSemTagwords = new ArrayList<Word>();
+		
+		for(Word wrd:_words)
+			if(wrd.hasMultiSemanticTag())
+				multiSemTagwords.add(wrd);
+			
+		return multiSemTagwords;
+	}
+	
+	public ArrayList<Word> calculateWronglyPredictedWords(){
+		if(_words == null || _words.size() == 0)
+			return null;
+		
+		ArrayList<Word> wronglyPredictedWords = new ArrayList<Word>();
+		
+		for(Word wrd:_words)
+			if(!wrd.get_isTruelyPredicted())
+				wronglyPredictedWords.add(wrd);
+			
+		return wronglyPredictedWords;
+	}
+	
+	public ArrayList<Word> calculateTruelyPredictedWords(){
+		if(_words == null || _words.size() == 0)
+			return null;
+		
+		ArrayList<Word> truelyPredictedWords = new ArrayList<Word>();
+		
+		for(Word wrd:_words)
+			if(wrd.get_isTruelyPredicted())
+				truelyPredictedWords.add(wrd);
+			
+		return truelyPredictedWords;
+	}
+	
 	@Override
 	public String toString() {
 		return NLSentence;

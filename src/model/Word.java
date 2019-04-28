@@ -72,6 +72,17 @@ public class Word {
 	public ScenePart _sceneElement = null;
 	
 	/**
+	 * the sceneElements predicted for this Word object by LearningModel for each _SemanticTag.
+	 */
+	public ArrayList<ScenePart> _predictedSceneElements = new ArrayList<ScenePart>();
+			
+	/**
+	 * determines if the defined and predicted sceneElements of this Word object are the same or not?
+	 */
+	@SuppressWarnings("unused")
+	private boolean _isTruelyPredicated = false;
+	
+	/**
 	 * this Word Semantic-Role-Label tags.
 	 */
 	public ArrayList<SemanticTag> _semanticTags = new ArrayList<SemanticTag>();
@@ -212,8 +223,8 @@ public class Word {
 	
 	public void set_sceneElement(String sceneElem) {
 		
-		if(_semanticTags == null)
-			_semanticTags = new ArrayList<SemanticTag>();
+//!!!	if(_semanticTags == null)
+//			_semanticTags = new ArrayList<SemanticTag>();
 			
 		if(sceneElem != null && !sceneElem.equals("") && !sceneElem.equals("-") && !sceneElem.equals("_"))
 			this._sceneElement = ScenePart.fromString(sceneElem);
@@ -222,6 +233,23 @@ public class Word {
 			MyError.error("bad sceneElement name " + sceneElem);	
 	}
 	
+	public void add_predictedSceneElement(String predictedSceneElem) {
+		
+		if(_predictedSceneElements == null)
+			_predictedSceneElements = new ArrayList<ScenePart>();
+		
+		if(predictedSceneElem != null && !predictedSceneElem.equals("") && !predictedSceneElem.equals("-") && !predictedSceneElem.equals("_"))
+			_predictedSceneElements.add(ScenePart.fromString(predictedSceneElem));
+		else			
+			MyError.error("bad sceneElement name " + predictedSceneElem + " is predicted!");
+		
+		checkIfItIsTruelyPredicted();		
+	}
+	
+	public void set_isTruelyPredicted(boolean _isTruelyPredicted) {
+		this._isTruelyPredicated = _isTruelyPredicted;
+	}
+		
 	/**
 	 * this methods sets the semanticTags of the current word and returns the start index of the non semanticTag element in the parts array.
 	 * it escapes these String too: "Y" and "ديدن.47"
@@ -281,6 +309,13 @@ public class Word {
 		return false;
 	}
 	
+	public boolean hasMultiSemanticTag() {
+		if(_semanticTags != null && _semanticTags.size() > 1)
+			return true;
+				
+		return false;
+	}
+	
 	public boolean hasSemaniticTag(SemanticTag semTag) {
 		if(semTag == null)
 			return false;
@@ -294,12 +329,50 @@ public class Word {
 		return false;
 	}
 	
+	public SemanticTag getFirstSemanticTag() {
+		if(_semanticTags != null || _semanticTags.size() > 0)
+			return _semanticTags.get(0);
+				
+		return null;
+	}
+	
 	public String get_semanticTagsStr(){
 		String semStr = "";
 		if(_semanticTags != null)
 			for(SemanticTag st: _semanticTags)
 				semStr += st.toString() + " ";		
 		return semStr;
+	}
+	
+	public boolean get_isTruelyPredicted() {
+		this._isTruelyPredicated = checkIfItIsTruelyPredicted();
+		return this._isTruelyPredicated;
+	}
+	
+	public boolean checkIfItIsTruelyPredicted() {
+		if(_predictedSceneElements == null || _predictedSceneElements.size() == 0)
+			return false;
+		
+		boolean flag = false;
+		
+		for(ScenePart sp:_predictedSceneElements)
+			if(_sceneElement != sp) {
+				this.set_isTruelyPredicted(false);
+				flag = true;
+				break;
+			}
+		if(!flag)
+			this.set_isTruelyPredicted(true);
+		
+		return _isTruelyPredicated;
+	}
+	
+	public String get_predictedSceneElementsStr(){
+		String predStr = "";
+		if(_predictedSceneElements != null &&  _predictedSceneElements.size() != 0)
+			for(ScenePart scPrt: _predictedSceneElements)
+				predStr += scPrt.toString() + " ";		
+		return predStr;
 	}
 	
 	/**
@@ -312,6 +385,7 @@ public class Word {
 	public ArrayList<String> getWordDatasetStrs(){
 		
 		ArrayList<String> strs = new ArrayList<String>();
+		
 		if(_semanticTags == null || _semanticTags.size() == 0)
 			strs.add(_gPOS + " " + _syntaxTag + " null " + _super_wsd_name + " " + _sceneElement.toString().toLowerCase());
 					
@@ -385,9 +459,13 @@ public class Word {
 		rs += "\t";
 		if(_semanticTags != null) rs += get_semanticTagsStr();
 		else rs += "%%%%";
-		rs += "\t";
-		if(_referenceWordNum != null) rs += _referenceWordNum;
+//		rs += "\t";
+//		if(_referenceWordNum != null) rs += _referenceWordNum;
 //		rs += "\n";
+		rs += "||| ";
+		if(_predictedSceneElements != null && _predictedSceneElements.size() != 0)
+			rs += get_predictedSceneElementsStr();
+		else rs += "%%%%";
 		return rs;
  	}
  	 
@@ -500,5 +578,5 @@ public class Word {
 				return false;
 	
 		return true;
-	} 	 
+	}	 	 
 }
