@@ -85,6 +85,7 @@ public class StoryModel {
 		return truelyPredictedwords;
 	}
 	
+	@SuppressWarnings("unused")
 	public int calculateRepeatedWords(){
 		if(scenes == null || scenes.size() == 0)
 			return 0;
@@ -106,18 +107,17 @@ public class StoryModel {
 					
 					ArrayList<SceneElement> repList = sceneRepeatedWrds.get(keyElem);
 					
-					for(SceneElement rep: repList) {
-						
-						repeatedWords++;						
-	
-						print("this \'" + keyElem._name + "=" + keyElem._node_name + "\' and these \'" + rep._name + "=" + rep._node_name + "\' are repeated in secene" + sceneIndex);		
-					}
+					repeatedWords += repList.size();
+									
+//					print("this \'" + keyElem._name + "=" + keyElem._node_name + "\' and these \'(" + repList.get(0)._name + "=" + repList.get(0)._node_name + ")*" + repList.size() + "\' are repeated in secene" + sceneIndex);		
+					
 				}
 			}
 		}
 		return repeatedWords;
 	}
 	
+	@SuppressWarnings("unused")
 	private void print(String toPrint){
 		System.out.println(toPrint);		
 	}

@@ -84,8 +84,8 @@ public class DynamicObject extends SceneElement{
 				if(objStat._mainWord != null && objStat._mainWord.equals(objectState_word))
 					return objStat;
 				
-				if(objStat.getWords() != null && objStat.getWords().size() > 0)
-					for(Word osWord: objStat.getWords())
+				if(objStat.getOtherWords() != null && objStat.getOtherWords().size() > 0)
+					for(Word osWord: objStat.getOtherWords())
 						if(osWord.equals(objectState_word))
 							return objStat;
 			}
@@ -119,8 +119,8 @@ public class DynamicObject extends SceneElement{
 				if(oa._mainWord != null && oa._mainWord.equals(objectAction_word))
 					return oa;
 			
-				if(oa.getWords() != null && oa.getWords().size() > 0)
-					for(Word raWrd: oa.getWords())
+				if(oa.getOtherWords() != null && oa.getOtherWords().size() > 0)
+					for(Word raWrd: oa.getOtherWords())
 						if(raWrd.equals(objectAction_word))
 							return oa;
 			}
@@ -157,9 +157,9 @@ public class DynamicObject extends SceneElement{
 				System.out.println(this._name + " DynamicObject Merged this " + state + " DynamicObjectState with the the equal DynamicObjectState it had before!\n");
 				exist.mergeWith(state);
 			}
-			else if(state.getWords() != null){
+			else if(state.getOtherWords() != null){
 				
-				for(Word raWord: state.getWords()){
+				for(Word raWord: state.getOtherWords()){
 					exist = getObject_state(raWord);
 					if(exist != null){
 						System.out.println(this._name + " DynamicObject Merged this " + state + " DynamicObjectState with the the equal DynamicObjectState it had before!\n");
@@ -198,9 +198,9 @@ public class DynamicObject extends SceneElement{
 				System.out.println(this._name + " DynamicObject Merged this " + action + " ObjectAction with the the equal ObjectAction it had before!\n");
 				exist.mergeWith(action);
 			}
-			else if(action.getWords() != null){
+			else if(action.getOtherWords() != null){
 				
-				for(Word raWord: action.getWords()){
+				for(Word raWord: action.getOtherWords()){
 					exist = getObject_action(raWord);
 					if(exist != null){
 						System.out.println(this._name + " DynamicObject Merged this " + action + " ObjectAction with the the equal ObjectAction it had before!\n");

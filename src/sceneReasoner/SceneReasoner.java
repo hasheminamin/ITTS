@@ -21,6 +21,7 @@ import sceneElement.StaticObject;
 import sceneElement.StaticObjectState;
 import sceneElement.Time;
 import enums.ScenePart;
+import enums.POS;
 import model.SceneModel;
 import model.SentenceModel;
 import model.StoryModel;
@@ -28,93 +29,150 @@ import model.Word;
 
 public class SceneReasoner {
 
-	
-public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
+	/**
+	 * It is assumed that referent are at most in two past scene not more! 	
+	 * @param allStories
+	 */
+	public void arrangeWordReferences(ArrayList<StoryModel> allStories, POS anaphoraPOS) {
+			
+			int pronounIndex = 0;
 		
-		for(StoryModel storyModel: allStories){
-			
-//			print("newStory*************************************");
-			
-			for(int sceneIndex = 0; sceneIndex < storyModel.scenes.size(); sceneIndex++){
-				SceneModel sceneModel = storyModel.scenes.get(sceneIndex);
+			for(StoryModel storyModel: allStories){
 				
-//				print("newScene*************************************");
+	//			print("newStory*************************************");
 				
-				for(int sentenceIndex = 0; sentenceIndex <sceneModel.sentences.size(); sentenceIndex++){
-					SentenceModel sentence = sceneModel.sentences.get(sentenceIndex);
-
-//					print("");
+				for(int sceneIndex = 0; sceneIndex < storyModel.scenes.size(); sceneIndex++){
+					SceneModel sceneModel = storyModel.scenes.get(sceneIndex);
 					
-					for(Word word: sentence.getWords()){
+	//				print("newScene*************************************");
+					
+					for(int sentenceIndex = 0; sentenceIndex <sceneModel.sentences.size(); sentenceIndex++){
 						
-						if(word.hasReferenceWordPath()){
+						SentenceModel sentence = sceneModel.sentences.get(sentenceIndex);
+	
+	//					print("");
+						
+						for(Word word: sentence.getWords()){
 							
-							String path = "";
-							
-							String refWordNum = "";
-							
-							for(char c:word._referenceWordNum.toCharArray()){
-								if(Character.isDigit(c))
-									refWordNum += c;
-								else
-									path += c;
-							}
-							
-							SceneModel referecneScene = sceneModel;
-							SentenceModel referenceSentence = sentence;
-							int referenceWordNumber = Integer.parseInt(refWordNum);
-							
-							boolean inPastScene = false;
-							
-							if(path.equals(""))
-								referenceWordNumber = Integer.parseInt(refWordNum);							
-							else{
-								if(path.contains("*")){
-									inPastScene = true;
-									referecneScene = storyModel.scenes.get(sceneIndex - 1);
-									path = path.replace("*", "");
+							if(word.hasReferenceWordPath()){
+								
+								if(anaphoraPOS != null)
+									if(word._gPOS != anaphoraPOS)
+										continue;
+								
+								pronounIndex++;
+								
+//								print(word + "");
+								
+								String path = "";
+								
+								String refWordNum = "";
+								
+								for(char c:word._referenceWordNum.toCharArray()){
 									
+									if(Character.isDigit(c))
+										refWordNum += c;
+									else
+										path += c;
+								}
+								
+								SceneModel referecneScene = sceneModel;
+								SentenceModel referenceSentence = sentence;
+								int referenceWordNumber = Integer.parseInt(refWordNum);
+								
+								boolean inPastScene = false;
+								
+								if(path.equals(""))
+									referenceWordNumber = Integer.parseInt(refWordNum);							
+								else{
 									if(path.contains("*")){
-										referecneScene = storyModel.scenes.get(sceneIndex - 2);
-										path = path.replace("*", "");
+										inPastScene = true;
+										if( (sceneIndex-1) < storyModel.scenes.size())
+											referecneScene = storyModel.scenes.get(sceneIndex - 1);
+										else
+											MyError.error("this is the first scene of the story, and has no past scene!");
+	
+										int starIndex = path.indexOf("*");
+										
+										if(starIndex + 1 < path.length())
+											path = path.substring(0, starIndex) + path.substring(starIndex+1, path.length());
+										else
+											path = path.substring(0, starIndex);
+										
+										if(path.contains("*")){
+											if((sceneIndex - 2) < storyModel.scenes.size())
+												referecneScene = storyModel.scenes.get(sceneIndex - 2);
+											else
+												MyError.error("this is the second scene of the story, and has not 2 scene before!");
+	
+											
+											starIndex = path.indexOf("*");
+											
+											if(starIndex + 1 < path.length())
+												path = path.substring(0, starIndex) + path.substring(starIndex+1, path.length());
+											else
+												path = path.substring(0, starIndex);
+										}
+										if(path.contains("*")){
+											
+											if((sceneIndex - 3) < storyModel.scenes.size())
+												referecneScene = storyModel.scenes.get(sceneIndex - 3);
+											else
+												MyError.error("this is the third scene of the story, and has not 3 scene before!");
+											
+											starIndex = path.indexOf("*");
+											
+											if(starIndex + 1 < path.length())
+												path = path.substring(0, starIndex) + path.substring(starIndex+1, path.length());
+											else
+												path = path.substring(0, starIndex);
+										}									
+									}
+									
+									if(path.contains("-")){
+										
+										int refIndex = 0;
+										if(inPastScene)
+											refIndex = referecneScene.sentences.size() - path.length();
+										else
+											refIndex = sentenceIndex - path.length();
+										
+										if(refIndex >= 0 && refIndex < referecneScene.sentences.size())
+											referenceSentence = referecneScene.sentences.get(refIndex);
+										else
+											MyError.error("the referenceWordNumber " + path + " for word " + word._wordName +  " dose not exist in this scene sentences!\nfor sentence " + sentence);										
+									}
+									else if(path.contains("+")){
+										
+										if(inPastScene)
+											
+										MyError.error("how can reference word be placed in next sentences of the scene before!");
+											
+										int refIndex = sentenceIndex + path.length();
+										
+										if(refIndex >= 0 && refIndex < referecneScene.sentences.size())
+											referenceSentence = referecneScene.sentences.get(refIndex);
+										else
+											MyError.error("the referenceWordNumber " + path + " for word " + word._wordName +  " dose not exist in this scene sentences!\nfor sentence " + sentence);									
 									}
 								}
 								
-								if(path.contains("-")){
-									
-									int refIndex = 0;
-									if(inPastScene)
-										refIndex = referecneScene.sentences.size() - path.length();
-									else
-										refIndex = sentenceIndex - path.length();
-									
-									if(refIndex >= 0 && refIndex < referecneScene.sentences.size())
-										referenceSentence = referecneScene.sentences.get(refIndex);
-									else
-										MyError.error("the referenceWordNumber " + path + " for word " + word._wordName +  " dose not exist in this scene sentences!\nfor sentence " + sentence);										
-								}
-								else if(path.contains("+")){
-									
-									if(inPastScene)
-										
-									MyError.error("how can reference word be placed in next sentences of the scene before!");
-										
-									int refIndex = sentenceIndex + path.length();
-									
-									if(refIndex >= 0 && refIndex < referecneScene.sentences.size())
-										referenceSentence = referecneScene.sentences.get(refIndex);
-									else
-										MyError.error("the referenceWordNumber " + path + " for word " + word._wordName +  " dose not exist in this scene sentences!\nfor sentence " + sentence);									
-								}
-							}
-															
-							word.set_referenceWord(referenceSentence.getWord(referenceWordNumber));
-						}						
+								Word referent = referenceSentence.getWord(referenceWordNumber);		
+								
+								word.set_referenceWord(referent);
+								
+								if(referent == null)
+									print("%%%%%%%%%%%%%%%%%%\nreferent of \'" + word + "\' is null");
+//								print("referent:" + referent + "\n");
+							}						
+						}
 					}
 				}
 			}
+			
+			print("Total number of words with \'" + anaphoraPOS + "\' POS which have referent are: " + pronounIndex);
+			
 		}
-	}
 	
 	/**
 	 * this method read each word of each sentence for every scene of every story and based 
@@ -130,16 +188,18 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 			PrintWriter writer = new PrintWriter("dataset/98-02-07story2Scenes.arff","utf-8");
 					
 			int wordNum = 0;
-			
+						
 			for(StoryModel storyModel: allStories){
+				
+				int sceneIndex = 0;
 				
 				print("newStory*************************************");
 				writer.write("newStory*************************************\n");
 				
 				for(SceneModel sceneModel:storyModel.scenes){
 					
-					print("newScene*************************************");
-					writer.write("newScene*************************************\n");
+					print("newScene"+ (++sceneIndex) + "*************************************");
+					writer.write("newScene"+ sceneIndex +"*************************************\n");
 					
 					for(SentenceModel sentence: sceneModel.sentences){
 							
@@ -149,7 +209,7 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 						for(Word word: sentence.getWords()){
 							wordNum++;
 							
-							print("" + word);
+//							print("" + word);
 							writer.write(word + "\n");
 							
 							ScenePart scenePart = word._sceneElement;
@@ -234,6 +294,41 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 			print("" + e);
 		}
 	}
+
+	public void printForGoldSceneModel(ArrayList<StoryModel> allStories) {
+	
+		try{
+			PrintWriter writer = new PrintWriter("dataset/98-02-10GoldPrimarySceneModel.arff","utf-8");
+					
+			for(StoryModel storyModel: allStories){
+				
+				int sceneIndex = -1;
+
+				writer.write("newStory*************************************\n");
+				
+				for(SceneModel sceneModel:storyModel.scenes){
+					
+					sceneIndex++;
+					
+					writer.write("newScene"+ sceneIndex +"*************************************\n");
+					
+//					for(SentenceModel sentence: sceneModel.sentences){
+//								
+//						writer.write("\n");
+//						
+//						for(Word word: sentence.getWords())
+//							writer.write(word + "\n");
+//					}
+					
+					writer.write("" + sceneModel.toStringForGoldSceneModel() + "\n\n");
+				}
+			}			
+			writer.close();
+		}
+		catch(Exception e){
+			print("" + e);
+		}
+	}
 	
 	public void completeSceneModelsElements(ArrayList<StoryModel> allStories) {
 		
@@ -267,10 +362,10 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 							}							
 						}
 					}
-					if(roleAction.getWords() == null || roleAction.getWords().size() == 0)
+					if(roleAction.getOtherWords() == null || roleAction.getOtherWords().size() == 0)
 						continue;
 										
-					for(Word roleActionWord: roleAction.getWords()){
+					for(Word roleActionWord: roleAction.getOtherWords()){
 					
 						if(roleActionWord._referenceWord == null)
 							continue;
@@ -338,7 +433,6 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 			}
 		}
 	}
-
 
 	public ArrayList<Word> calculateMultiSemanticTagWords(ArrayList<StoryModel> allStories){
 		if(allStories == null || allStories.size() == 0)
@@ -431,10 +525,13 @@ public void arrangeWordReferences(ArrayList<StoryModel> allStories) {
 		
 		if(allStories == null || allStories.size() == 0)
 			return;
-					
+		
+		int totalRepeatedWords = 0;			
+		
 		for(StoryModel stry:allStories)			
-			stry.calculateRepeatedWords();		
+			totalRepeatedWords += stry.calculateRepeatedWords();		
 				
+		print("\nThe number of words which are repeated in all scenes are: " + totalRepeatedWords);
 	}
 	
 	private void print(String toPrint){

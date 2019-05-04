@@ -299,7 +299,10 @@ public class Word {
 	
 	public void set_referenceWord(Word referenceWord){
 		
-		this._referenceWord = referenceWord;		
+		this._referenceWord = referenceWord;
+		
+		this.mergeWith(referenceWord, true);
+		
 	}
 	
 	public boolean hasReferenceWordPath(){
@@ -459,8 +462,8 @@ public class Word {
 		rs += "\t";
 		if(_semanticTags != null) rs += get_semanticTagsStr();
 		else rs += "%%%%";
-//		rs += "\t";
-//		if(_referenceWordNum != null) rs += _referenceWordNum;
+		rs += "\t";
+		if(_referenceWordNum != null) rs += _referenceWordNum;
 //		rs += "\n";
 		rs += "||| ";
 		if(_predictedSceneElements != null && _predictedSceneElements.size() != 0)
@@ -480,8 +483,13 @@ public class Word {
 	 * called Word is null it is replaced with the newWord Word.
 	 * only newWord _semanticTags are added to called Word _semantic_tags. 
 	 * @param newWord the Word is to be merged with this Word.
+	 * @param excludeSemanticTag if this parameter is true, the _semanticTags will not be merged.
 	 */
-	public void mergeWith(Word newWord){
+	public void mergeWith(Word newWord, boolean excludeSemanticTag){
+		
+//		print("newWord to merge: " + newWord);
+//		print("word Itself:      " + this);		
+		
 		if(newWord == null)
 			return;
 		
@@ -513,26 +521,28 @@ public class Word {
 			if(newWord._wsd != null)
 				_wsd = newWord._wsd;
 		
-		if(_wsd_name == null || _wsd_name.equals(""))
-			if(newWord._wsd_name != null && !newWord._wsd_name.equals(""))
+		if(_wsd_name == null || _wsd_name.equals("") || _wsd_name.equalsIgnoreCase("null"))
+			if(newWord._wsd_name != null && !newWord._wsd_name.equals("") && !newWord._wsd_name.equalsIgnoreCase("null"))
 				_wsd_name = newWord._wsd_name;
 		
-		if(_super_wsd_name == null || _super_wsd_name.equals(""))
-			if(newWord._super_wsd_name != null && !newWord._super_wsd_name.equals(""))
+		if(_super_wsd_name == null || _super_wsd_name.equals("") || _super_wsd_name.equalsIgnoreCase("null"))
+			if(newWord._super_wsd_name != null && !newWord._super_wsd_name.equals("") && !newWord._super_wsd_name.equalsIgnoreCase("null"))
 				_super_wsd_name = newWord._super_wsd_name;
 
 		if(_sceneElement == null || _sceneElement == ScenePart.JUNK || _sceneElement == ScenePart.NO)
-			if(newWord._sceneElement  != null && newWord._sceneElement != ScenePart.JUNK && newWord._sceneElement == ScenePart.NO)
+			if(newWord._sceneElement  != null && newWord._sceneElement != ScenePart.JUNK && newWord._sceneElement != ScenePart.NO)
 				_sceneElement = newWord._sceneElement;
 			
 		if(_semanticTags == null)
 			_semanticTags = new ArrayList<SemanticTag>();
 
-		if(newWord._semanticTags != null){
-			for(SemanticTag nSemTag: newWord._semanticTags)
-				this._semanticTags.add(nSemTag);
-				
-		}		
+		if(!excludeSemanticTag)		
+			if(newWord._semanticTags != null)
+				for(SemanticTag nSemTag: newWord._semanticTags)
+					this._semanticTags.add(nSemTag);				
+			
+		
+//		print("word after merge: " + this + "\n");
 	}		
 	
 	public boolean equals(Word word){

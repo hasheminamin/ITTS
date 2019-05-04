@@ -76,8 +76,8 @@ public class StaticObject extends SceneElement {
 				if(objStat._mainWord != null && objStat._mainWord.equals(objectState_word))
 					return objStat;
 				
-				if(objStat.getWords() != null && objStat.getWords().size() > 0)
-					for(Word osWord: objStat.getWords())
+				if(objStat.getOtherWords() != null && objStat.getOtherWords().size() > 0)
+					for(Word osWord: objStat.getOtherWords())
 						if(osWord.equals(objectState_word))
 							return objStat;
 			}
@@ -113,9 +113,9 @@ public class StaticObject extends SceneElement {
 				System.out.println(this._name + " StaticObject Merged this " + state + " StaticObjectState with the the equal StaticObjectState it had before!\n");
 				exist.mergeWith(state);
 			}
-			else if(state.getWords() != null){
+			else if(state.getOtherWords() != null){
 				
-				for(Word raWord: state.getWords()){
+				for(Word raWord: state.getOtherWords()){
 					exist = getObject_state(raWord);
 					if(exist != null){
 						System.out.println(this._name + " StaticObject Merged this " + state + " StaticObjectState with the the equal StaticObjectState it had before!\n");

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
+import enums.POS;
 import enums.ScenePart;
 import model.SceneModel;
 import model.Word;
@@ -27,7 +28,7 @@ public class SceneElement {
 	/**
 	 * if this SceneElement has more that one word, the extra words are placed in _extraWords array. 
 	 */
-	private ArrayList<Word> _words;
+	private ArrayList<Word> _otherWords;
 	
 	public Node _node = null;	
 	
@@ -87,11 +88,11 @@ public class SceneElement {
 			this._mainWord = words.get(0);
 			index = 1;
 		}
-		if(this._words == null)
-			this._words = new ArrayList<Word>();
+		if(this._otherWords == null)
+			this._otherWords = new ArrayList<Word>();
 		
 		for(;index < words.size(); index++)
-			this._words.add(words.get(index));			
+			this._otherWords.add(words.get(index));			
 	}
 	
 	public void addWord(Word word){
@@ -101,10 +102,10 @@ public class SceneElement {
 		if(this._mainWord == null)
 			this._mainWord = word;
 		else{
-			if(this._words == null)
-				this._words = new ArrayList<Word>();
+			if(this._otherWords == null)
+				this._otherWords = new ArrayList<Word>();
 		
-			this._words.add(word);
+			this._otherWords.add(word);
 		}
 	}
 	
@@ -116,13 +117,13 @@ public class SceneElement {
 		return _node;
 	}
 	
-	public ArrayList<Word> getWords(){
-		return _words;
+	public ArrayList<Word> getOtherWords(){
+		return _otherWords;
 	}
 	
 	
 	public boolean hasMoreThanOneWord(){
-		if(_words != null && _words.size() > 0)
+		if(_otherWords != null && _otherWords.size() > 0)
 			return true;
 		return false;
 	}
@@ -233,8 +234,8 @@ public class SceneElement {
 	
 	ArrayList<String> elementStrs = new ArrayList<String>();
 
-	if(_words != null)
-		for(Word wrd:_words)
+	if(_otherWords != null)
+		for(Word wrd:_otherWords)
 			if(wrd.getWordDatasetStrs() != null)
 				elementStrs.addAll(wrd.getWordDatasetStrs());
 
@@ -246,6 +247,8 @@ public class SceneElement {
 	/**
 	 * this method assessed the equality of two sceneElement based on the equality of
 	 * their _name and their _node or _node_name.
+	 * if the _main_word of this SceneELement is PR (a pronoun) the equality of their
+	 * _node_name means they are equal.
 	 * @param sceneElement
 	 * @return
 	 */	
@@ -270,6 +273,16 @@ public class SceneElement {
 				if(sceneElement._node_name == null)
 					return true;
 		}
+		
+		if((this._mainWord != null && this._mainWord._gPOS == POS.PR) || (sceneElement._mainWord != null && sceneElement._mainWord._gPOS == POS.PR))
+			if(this._node_name != null) {
+				if(this._node_name.equalsIgnoreCase(sceneElement._node_name))
+					return true;
+			}
+			else //this._node_name == null
+				if(sceneElement._node_name == null)
+					return true;
+		
 		return false;
 	}
 	
@@ -295,18 +308,18 @@ public class SceneElement {
 		if(this._name == null || this._name.equals(""))
 			if(element._name != null && !element._name.equals(""))
 				this._name = element._name;
-		
+				
 		if(this._mainWord == null && element._mainWord != null)
 			this._mainWord = element._mainWord;
-		
-		if(this._words == null)
-			this._words = new ArrayList<Word>();
+				
+		if(this._otherWords == null)
+			this._otherWords = new ArrayList<Word>();
 		
 		if(element._mainWord != null)
-			this._words.add(element._mainWord);
+			this._otherWords.add(element._mainWord);
 		
-		if(element._words != null && element._words.size() > 0)
-			this._words.addAll(element._words);		
+		if(element._otherWords != null && element._otherWords.size() > 0)
+			this._otherWords.addAll(element._otherWords);		
 		
 		if(this._node == null && element._node != null)
 			this._node = element._node;

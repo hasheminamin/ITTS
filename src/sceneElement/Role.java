@@ -72,8 +72,8 @@ public class Role extends SceneElement{
 				if(ra._mainWord != null && ra._mainWord.equals(roleAction_word))
 					return ra;
 			
-				if(ra.getWords() != null && ra.getWords().size() > 0)
-					for(Word raWrd: ra.getWords())
+				if(ra.getOtherWords() != null && ra.getOtherWords().size() > 0)
+					for(Word raWrd: ra.getOtherWords())
 						if(raWrd.equals(roleAction_word))
 							return ra;
 			}
@@ -106,8 +106,8 @@ public class Role extends SceneElement{
 				if(re._mainWord != null && re._mainWord.equals(roleEmotion_word))
 					return re;
 			
-				if(re.getWords() != null && re.getWords().size() > 0)
-					for(Word reWrd: re.getWords())
+				if(re.getOtherWords() != null && re.getOtherWords().size() > 0)
+					for(Word reWrd: re.getOtherWords())
 						if(reWrd.equals(roleEmotion_word))
 					return re;
 			}
@@ -140,8 +140,8 @@ public class Role extends SceneElement{
 				if(ri._mainWord != null && ri._mainWord.equals(roleIntent_word))
 					return ri;
 			
-				if(ri.getWords() != null && ri.getWords().size() > 0)
-					for(Word raWrd: ri.getWords())
+				if(ri.getOtherWords() != null && ri.getOtherWords().size() > 0)
+					for(Word raWrd: ri.getOtherWords())
 						if(raWrd.equals(roleIntent_word))
 					return ri;
 			}
@@ -174,8 +174,8 @@ public class Role extends SceneElement{
 				if(rs._mainWord != null && rs._mainWord.equals(roleState_word))
 					return rs;
 			
-				if(rs.getWords() != null && rs.getWords().size() > 0)
-					for(Word raWrd: rs.getWords())
+				if(rs.getOtherWords() != null && rs.getOtherWords().size() > 0)
+					for(Word raWrd: rs.getOtherWords())
 						if(raWrd.equals(roleState_word))
 					return rs;
 			}
@@ -243,9 +243,9 @@ public class Role extends SceneElement{
 				print(this._name + " role Merged this " + role_action + " RoleAction with the the equal roleAction it had before!\n");
 				exist.mergeWith(role_action);
 			}
-			else if(role_action.getWords() != null){
+			else if(role_action.getOtherWords() != null){
 				
-				for(Word raWord: role_action.getWords()){
+				for(Word raWord: role_action.getOtherWords()){
 					exist = getRole_action(raWord);
 					if(exist != null){
 						print(this._name + " role Merged this " + role_action + " RoleAction with the the equal roleAction it had before!\n");
@@ -284,9 +284,9 @@ public class Role extends SceneElement{
 				print(this._name + " role Merged this " + role_emotion + " RoleEmotion with the the equal roleAEmotion it had before!\n");
 				exist.mergeWith(role_emotion);
 			}
-			else if(role_emotion.getWords() != null){
+			else if(role_emotion.getOtherWords() != null){
 				
-				for(Word reWord: role_emotion.getWords()){
+				for(Word reWord: role_emotion.getOtherWords()){
 					exist = getRole_emotion(reWord);
 					if(exist != null){
 						print(this._name + " role Merged this " + role_emotion + " RoleEmotion with the the equal roleEmotion it had before!\n");
@@ -324,9 +324,9 @@ public class Role extends SceneElement{
 				print(this._name + " role Merged this " + role_intent + " RoleIntent with the the equal roleIntent it had before!\n");
 				exist.mergeWith(role_intent);
 			}
-			else if(role_intent.getWords() != null){
+			else if(role_intent.getOtherWords() != null){
 				
-				for(Word riWord: role_intent.getWords()){
+				for(Word riWord: role_intent.getOtherWords()){
 					exist = getRole_intent(riWord);
 					if(exist != null){
 						print(this._name + " role Merged this " + role_intent + " RoleIntent with the the equal roleIntent it had before!\n");
@@ -364,9 +364,9 @@ public class Role extends SceneElement{
 				print(this._name + " role Merged this " + role_state + " RoleState with the the equal roleState it had before!\n");
 				exist.mergeWith(role_state);
 			}
-			else if(role_state.getWords() != null){
+			else if(role_state.getOtherWords() != null){
 				
-				for(Word rsWord: role_state.getWords()){
+				for(Word rsWord: role_state.getOtherWords()){
 					exist = getRole_state(rsWord);
 					if(exist != null){
 						print(this._name + " role Merged this " + role_state + " RoleState with the the equal roleState it had before!\n");

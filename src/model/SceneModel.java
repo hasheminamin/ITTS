@@ -159,8 +159,8 @@ public class SceneModel {
 			if(rl._mainWord != null && rl._mainWord.equals(roleWord))
 				return rl;
 			
-			if(rl.getWords() != null && rl.getWords().size() > 0)
-				for(Word wrd: rl.getWords())
+			if(rl.getOtherWords() != null && rl.getOtherWords().size() > 0)
+				for(Word wrd: rl.getOtherWords())
 					if(wrd.equals(roleWord))
 						return rl;
 		}
@@ -206,8 +206,8 @@ public class SceneModel {
 			if(stat._mainWord != null && stat._mainWord.equals(static_objectWord))
 				return stat;
 			
-			if(stat.getWords() != null && stat.getWords().size() > 0)
-				for(Word wrd: stat.getWords())
+			if(stat.getOtherWords() != null && stat.getOtherWords().size() > 0)
+				for(Word wrd: stat.getOtherWords())
 					if(wrd.equals(static_objectWord))
 						return stat;
 		}
@@ -253,8 +253,8 @@ public class SceneModel {
 			if(dyn._mainWord != null && dyn._mainWord.equals(dynamic_objectWord))
 				return dyn;
 			
-			if(dyn.getWords() != null && dyn.getWords().size() > 0)
-				for(Word wrd: dyn.getWords())
+			if(dyn.getOtherWords() != null && dyn.getOtherWords().size() > 0)
+				for(Word wrd: dyn.getOtherWords())
 					if(wrd.equals(dynamic_objectWord))
 						return dyn;
 		}
@@ -848,9 +848,12 @@ public class SceneModel {
 		if(role == null)
 			return false;
 				
-		for(Role rl:this.roles)
+		
+		for(int roleIndex = this.roles.size() - 1; roleIndex >= 0; roleIndex--) {
+			Role rl = this.roles.get(roleIndex);
 			if(rl.equals(role))
 				return true;
+		}
 		return false;
 	}
 	
@@ -1082,7 +1085,7 @@ public class SceneModel {
 
 	@Override
 	public String toString() {
-		String st = "roles= "; 
+		String st = "roles= ["; 
 		for (Role r : this.roles)
 			st += "\n" + "\t" + r;
 		st += "]";
@@ -1106,6 +1109,111 @@ public class SceneModel {
 		st+= "\nroal_action= " + roleActions;
 		st+= "\nroal_states= " + roleStates;
 		st+= "\nroal_intetns= " + roleIntents;
+		st+= "\nroal_emotions= " + roleEmotions;
+		st+= "\ndynamic_object_actions= " + object_actions;
+		st+= "\ndynamic_object_states= " + dynamic_object_states;
+		st+= "\nstatic_object_states= " + static_object_states;
+				
+		return st;
+	}
+	
+	public String toStringForGoldSceneModel() {
+		String st = "roles= ["; 
+		for (Role r : this.roles) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.getOtherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st += "\nDynamicObjects= ["; 
+		for (DynamicObject r : this.dynamic_objescts) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.getOtherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		
+		st += "\nStaticObjects= ["; 
+		for (StaticObject r : this.static_objects) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.getOtherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st += "\nlocation= " + location;
+		st += "\nalternativeLocations= [";
+				
+		for (Location r : this.alternativeLocations) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.getOtherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st+= "\ntime= " + time +
+		"\nalternativeTimes= " + alternativeTimes +
+		"\nscene_goals= " + scene_goals + 
+		"\nscene_emotions= " + scene_emotions + "]\n";
+		
+
+		st+= "\nroal_action= [";
+
+		for (RoleAction r : this.roleActions) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.getOtherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st+= "\nroal_states= [";
+		
+		for (RoleState r : this.roleStates) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.getOtherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st+= "\nroal_intents= [";
+		
+		for (RoleIntent r : this.roleIntents) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.getOtherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
 		st+= "\nroal_emotions= " + roleEmotions;
 		st+= "\ndynamic_object_actions= " + object_actions;
 		st+= "\ndynamic_object_states= " + dynamic_object_states;

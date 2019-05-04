@@ -1,0 +1,162 @@
+newStory*************************************
+newScene1*************************************
+
+1	يونس	N	SBJ	8	يونس§n-23943	نفر§n-13075	role	Arg1 Arg0 	||| ROLE ROLE 
+2	(	PUNC	PUNC	3	null	null	junk		||| JUNK 
+3	ع	ARAB	POSDEP	1	null	null	junk		||| NO 
+4	)	PUNC	PUNC	3	null	null	junk		||| JUNK 
+5	از	PREP	MOS	8	null	null	junk	Arg2 	||| JUNK 
+6	پيامبران	N	MOS	8	رسول§n-15053	نفر§n-13075	role	Arg2 	||| ROLE 
+7	بني‌اسراييل	N	MOZ	6	null	null	role		||| ROLE 
+8	است	V	ROOT	0	null	null	junk		||| JUNK 
+9	که	SUBR	NCL	6	null	null	junk		||| JUNK 
+10	بعداز	PREP	ADVRB	13	null	null	no	ArgM_TMP 	||| NO 
+11	سليمان	N	POSDEP	10	سليمان§n-23934	نفر§n-13075	role		||| ROLE 
+12	ظهور	N	NVE	13	ظهور§n-10410	رخداد§n-13136	role_intent		||| ROLE_INTENT 
+13	کرد	V	PRD	9	null	null	junk		||| JUNK 
+14	.	PUNC	PUNC	8	null	null	junk		||| JUNK 
+
+1	ايشان	PR	SBJ	18	يونس§n-23943	نفر§n-13075	role	Arg0 	-1||| JUNK 
+2	به‌خاطر	PREP	ADVRB	18	null	null	no	ArgM_CAU 	||| NO 
+3	اين	PR	POSDEP	2	null	null	junk		5||| JUNK 
+4	که	SUBR	NCL	3	null	null	junk		||| JUNK 
+5	در	PREP	VPP	9	null	null	junk	Arg3 	||| JUNK 
+6	شکم	N	VPP	9	دل§n-11297	رابطه§n-13628	no	Arg3 	||| NO 
+7	ماهي	N	MOZ	6	ماهي§n-12744	جانور§n-12239	dynamic_object		||| DYNAMIC_OBJECT 
+8	قرار	N	NVE	9	null	null	no		||| NO 
+9	گرفت	V	PRD	4	null	null	junk		||| JUNK 
+10	با	PREP	VPP	18	null	null	junk	Arg2 	||| JUNK 
+11	لقب	N	VPP	18	لقب§n-13062	null	no	Arg2 	||| NO 
+12	ذوالنون	N	MOZ	11	null	null	role_state		||| ROLE_STATE 
+13	(	PUNC	PUNC	14	null	null	junk		||| JUNK 
+14	صاحب	N	APP	12	مالک§n-13378	نفر§n-13075	role_state		||| ROLE_STATE 
+15	الحوت	ARAB	MOZ	14	ماهي§n-12744	جانور§n-12239	dynamic_object		||| NO 
+16	)	PUNC	PUNC	14	null	null	junk		||| JUNK 
+17	ياد	N	NVE	18	null	null	no		||| NO 
+18	شده‌است	V	ROOT	0	ياد کردن§v-9190	رخداد§n-13136	no		||| ROLE_ACTION 
+19	.	PUNC	PUNC	18	null	null	junk		||| JUNK 
+roles= 
+	[يونس§n-23943= يونس role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[رسول§n-15053= پيامبران role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[null= بني‌اسراييل role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[سليمان§n-23934= سليمان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= [ماهي=  ماهي§n-12744 object_actions=  [] object_states=  []][الحوت=  ماهي§n-12744 object_actions=  [] object_states=  []]
+static_objs= 
+location= null
+alternativeLocations= []
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= [null=  ذوالنون, مالک§n-13378=  صاحب]
+roal_intetns= [ظهور§n-10410=  ظهور]
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene2*************************************
+
+1	قبر	N	SBJ	12	مدفن§n-10984	جا§n-12733	static_object	Arg1 	||| LOCATION 
+2	ايشان	PR	MOZ	1	يونس§n-23943	نفر§n-13075	role		*--1||| JUNK 
+3	در	PREP	VPP	12	null	null	junk	Arg3 	||| JUNK 
+4	نزديکي	N	VPP	12	نزديکي§n-11874	جا§n-12733	location	Arg3 	||| LOCATION 
+5	کوفه	N	MOZ	4	null	null	location		||| LOCATION 
+6	و	CONJ	PCONJ	3	null	null	junk		||| JUNK 
+7	در	PREP	POSDEP	6	null	null	junk		||| JUNK 
+8	کنار	N	POSDEP	7	null	null	junk		||| JUNK 
+9	رود	N	MOZ	8	رود§n-11932	مشخصه§n-12756	static_object		||| LOCATION 
+10	فرات	N	MOZ	9	رود فرات§n-24126	مشخصه§n-12756	location		||| LOCATION 
+11	قرار	N	NVE	12	null	null	no		||| NO 
+12	دارد	V	ROOT	0	null	null	junk		||| JUNK 
+13	.	PUNC	PUNC	12	null	null	junk		||| JUNK 
+roles= 
+	[يونس§n-23943= ايشان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= [قبر=  مدفن§n-10984 object_states=  []][رود=  رود§n-11932 object_states=  []]
+location= null
+alternativeLocations= [[نزديکي§n-11874=  نزديکي], [null=  کوفه], [رود فرات§n-24126=  فرات]]
+time= null
+alternativeTimes= []
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= []
+
+newScene3*************************************
+
+1	شهر	N	SBJ	16	شهر§n-10272	جا§n-12733	location		||| LOCATION 
+2	نينوا	N	MOZ	1	null	null	location	Arg1 Arg1 	||| LOCATION STATIC_OBJECT 
+3	در	PREP	NPP	2	null	null	junk		||| JUNK 
+4	منطقه	N	NPP	2	منطقه§n-11842	جا§n-12733	location		||| LOCATION 
+5	موصل	N	MOZ	4	null	null	location		||| LOCATION 
+6	(	PUNC	PUNC	7	null	null	junk		||| JUNK 
+7	در	PREP	POSDEP	5	null	null	junk		||| JUNK 
+8	عراق	N	POSDEP	5	عراق§n-13668	جا§n-12733	location		||| LOCATION 
+9	کنوني	ADJ	NPOSTMOD	8	null	null	junk		||| JUNK 
+10	)	PUNC	PUNC	7	null	null	junk		||| JUNK 
+11	پايتخت	N	TAM	16	تختگاه§n-13512	جا§n-12733	location	Arg2 	||| LOCATION 
+12	دولت	N	MOZ	11	هيات دولت§n-13220	مشخصه§n-12756	no		||| ROLE_STATE 
+13	عاشوريان	N	MOZ	12	null	null	role		||| ROLE 
+14	به	PREP	VPRT	16	null	null	junk		||| JUNK 
+15	شمار	N	VPRT	16	null	null	no		||| NO 
+16	مي‌رفت	V	VCONJ	37	به شمار آمدن§v-8084	رخداد§n-13136	no		||| ROLE_ACTION 
+17	(	PUNC	PUNC	18	null	null	junk		||| JUNK 
+18	نينوا	N	SBJ	29	null	null	location	Arg1 	||| NO 
+19	در	PREP	ADVRB	29	null	null	junk	ArgM_TMP 	||| JUNK 
+20	آن	ADJ	NPREMOD	21	null	null	junk		||| JUNK 
+21	دوران	N	ADVRB	29	دوره§n-10264	دوره_زماني§n-12603	time	ArgM_TMP 	||| TIME 
+22	از	PREP	AJPP	28	null	null	junk		||| JUNK 
+23	غني‌ترين	ADJ	NPREMOD	26	غني§a-46	مشخصه§n-12756	static_object_state		||| ROLE_STATE 
+24	و	CONJ	AJCONJ	23	null	null	junk		||| JUNK 
+25	بزرگترين	ADJ	AJCONJ	23	بزرگ§a-2399	مشخصه§n-12756	static_object_state		||| STATIC_OBJECT_STATE 
+26	شهرهاي	N	AJPP	28	شهر§n-10272	جا§n-12733	location		||| LOCATION 
+27	مشرق‌زمين	N	MOZ	26	null	null	no		||| JUNK 
+28	محسوب	ADJ	MOS	29	محسوب§a-1102	مشخصه§n-12756	no	Arg2 	||| ROLE_STATE 
+29	مي‌شد	V	POSDEP	2	null	null	no		||| JUNK 
+30	)	PUNC	PUNC	29	null	null	junk		||| JUNK 
+31	و	CONJ	VCONJ	37	null	null	junk		||| JUNK 
+32	داراي	ADJ	MOS	37	null	null	no	Arg2 	||| NO 
+33	جمعيتي	N	NEZ	32	جمعيت§n-11739	گروه§n-12753	role		||| ROLE 
+34	بيش‌از	ADJ	NPREMOD	36	null	null	no		||| JUNK 
+35	صدهزار	NUM	NPREMOD	36	null	null	junk		||| JUNK 
+36	نفر	N	POSDEP	33	سر§n-10152	اندازه§n-12768	no		||| TIME 
+37	بود	V	ROOT	0	null	null	junk		||| JUNK 
+38	.	PUNC	PUNC	37	null	null	junk		||| JUNK 
+roles= 
+	[null= عاشوريان role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]
+	[جمعيت§n-11739= جمعيتي role_actions=  [] role_intents=    [] role_emotions= [] role_state=    []]]
+dynamic_objs= 
+static_objs= 
+location= null
+alternativeLocations= [[شهر§n-10272=  شهر], [null=  نينوا], [منطقه§n-11842=  منطقه], [null=  موصل], [عراق§n-13668=  عراق], [تختگاه§n-13512=  پايتخت], [شهر§n-10272=  شهرهاي]]
+time= null
+alternativeTimes= [[دوره§n-10264=  دوران]]
+scene_goals= []
+scene_emotions= []]
+
+roal_action= []
+roal_states= []
+roal_intetns= []
+roal_emotions= []
+dynamic_object_actions= []
+dynamic_object_states= []
+static_object_states= [غني§a-46=  غني‌ترين, بزرگ§a-2399=  بزرگترين]
+
+newScene4*************************************
+
+1	خداوند	N	SBJ	7	باري تعالي§n-11940	خصوصيت_رواني§n-12725	no	Arg0 	||| ROLE 
+2	حضرت	N	OBJ	7	null	null	role_state	Arg1 	||| ROLE_STATE 
+3	يونس	N	MOZ	2	يونس§n-23943	نفر§n-13075	role		||| ROLE 
+4	را	POSTP	OBJ	7	null	null	junk	Arg1 	||| JUNK 
+5	به‌سوي	PREP	VPP	7	null	null	no	Arg3 	||| NO 
+6	آنان	PR	POSDEP	5	جمعيت§n-11739	گروه§n-12753	role		*-33||| JUNK 
+7	فرستاد	V	ROOT	0	فرست

@@ -5,6 +5,9 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
+import com.sun.xml.internal.ws.client.dispatch.DataSourceDispatch;
+
+import enums.POS;
 import sceneElement.DynamicObject;
 import sceneElement.DynamicObjectState;
 import sceneElement.Role;
@@ -385,7 +388,7 @@ public class LearningUI {
 	
 	public static void main(String[] args){		
 		print("بسم الله الرحمن الرحیم و توکلت علی الله");
-		
+				
 		ArrayList<StoryModel> allStories = Dashboard.importInputCorpora(Dashboard.inputCorporaPath);
 		
 		Dashboard.importSystemOutput(Dashboard.inputSystemOutpurPath, allStories);
@@ -395,12 +398,14 @@ public class LearningUI {
 //		Dashboard.sceneReasoner.calculateWronglyPredictedWords(allStories);
 		
 //		Dashboard.sceneReasoner.calculateTruelyPredictedWords(allStories);
-		
-//		Dashboard.sceneReasoner.arrangeWordReferences(allStories);
+	
+		Dashboard.sceneReasoner.arrangeWordReferences(allStories, POS.PR);
 		
 		Dashboard.sceneReasoner.arrangeSceneModelsElements(allStories);
 		
 		Dashboard.sceneReasoner.calculateRepeatedWords(allStories);
+		
+		Dashboard.sceneReasoner.printForGoldSceneModel(allStories);
 
 //		Dashboard.sceneReasoner.completeSceneModelsElements(allStories);
 		
