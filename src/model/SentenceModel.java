@@ -23,18 +23,28 @@ public class SentenceModel {
 	 */
 	private ArrayList<Word> _words = new ArrayList<Word>();
 	
+	/**
+	 * Phrases of this sentence.
+	 */
+	private ArrayList<Phrase> _phrases = new ArrayList<Phrase>();
+	
+	
 	public SentenceModel(){
 		this._words = new ArrayList<Word>();
 	}
 	
 	public SentenceModel(SceneModel scene){
 		this._words = new ArrayList<Word>();
-		this._scene = scene;		
+		this._scene = scene;
+		
+		arrangeWords();
 	}
 	
 	public SentenceModel(ArrayList<Word> words, SceneModel scene){
 		this._words = words;
 		this._scene = scene;
+		
+		arrangeWords();
 	}
 	
 	/**
@@ -91,6 +101,29 @@ public class SentenceModel {
 		return null;
 	}
 	
+	public Word getVerb(){
+		if(!Common.isEmpty(_words))
+			for(Word wrd:_words)
+				if(wrd != null && wrd.isVerb())
+					return wrd;
+					
+		MyError.error("This sentence has no verb!: " + this);
+		return null;
+	}
+	
+	private ArrayList<Word> getWordsWithSourceNumber(int number) {
+		
+		ArrayList<Word> allStartingWords = new ArrayList<Word>();		
+		
+		if(_words != null)
+			for(Word wrd:_words)
+				if(wrd != null && wrd._srcOfSynTag_number == number)
+					allStartingWords.add(wrd);
+			
+		return allStartingWords;
+	}
+	
+	
 //	public Word getWord(SemanticTag semanticTag){
 //		if(semanticTag == null)
 //			return null;
@@ -119,6 +152,90 @@ public class SentenceModel {
 		else if(newWord._sentece != this){
 			MyError.error("\n!!!! change in sentence of a word from " + newWord._sentece + " to " + this + " for \"" + newWord + "\" word.\n");
 			newWord._sentece = this;
+		}		
+	}
+	
+	private void addPhrase(Phrase new_phrase){
+		if(_phrases == null)
+			_phrases = new ArrayList<Phrase>();
+		
+		if(new_phrase != null){
+			_phrases.add(new_phrase);
+			new_phrase._senteceModel = this;
+		}
+	}	
+	
+	@SuppressWarnings("unused")
+	private boolean removePhrase(Phrase phrase){
+		if(phrase == null)
+			return false;
+		
+		if(_phrases == null){
+			phrase._senteceModel = null;
+			return true;
+		}
+		
+		if(_phrases.contains(phrase)){
+			phrase._senteceModel = null;
+			_phrases.remove(phrase);
+			return true;
+		}
+		return false;
+	}
+	
+	private void makePhrases(Word phraseHead, ArrayList<Word> phraseWords){
+		if(phraseHead == null)
+			return;		
+		
+		if(!phraseWords.contains(phraseHead))
+			phraseWords.add(phraseHead);
+		
+		ArrayList<Word> fromThis = getWordsWithSourceNumber(phraseHead._number);
+		
+		if(Common.isEmpty(fromThis))
+			return;
+		
+		for(Word ph_w:fromThis){
+			
+			if(ph_w.isAdjective()){
+				System.out.println("\nfirst here in makePhrase!");
+				phraseHead.addAdjective(ph_w);
+			}
+			else if(ph_w.isMozaf_elaih()){
+				System.out.println("\nfirst here in makePhrase!");
+				phraseHead.addMozaf_elaih(ph_w);
+			}
+			
+			makePhrases(ph_w, phraseWords);
+		}
+	}
+	
+	private void arrangeWords(){
+		Word verb = getVerb();
+		
+		if(verb == null)
+			return;
+		
+		int root_num = verb._number;
+		
+		ArrayList<Word> phraseHeads = getWordsWithSourceNumber(root_num);
+			
+		if(Common.isEmpty(phraseHeads))
+			return;
+					
+		//------------ detect and generate phrases in this sentence ------------
+		
+		for(Word ph_h:phraseHeads){
+			
+			ArrayList<Word> phraseWords = new ArrayList<Word>();
+			
+			makePhrases(ph_h, phraseWords);
+			
+			Phrase ph = new Phrase(ph_h, phraseWords);
+			
+			this.addPhrase(ph);
+			
+			print(""+ ph);
 		}		
 	}
 	

@@ -2,6 +2,10 @@ package sceneReasoner;
 
 import ir.ac.itrc.qqa.semantic.util.MyError;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -15,6 +19,7 @@ import sceneElement.RoleAction;
 import sceneElement.RoleEmotion;
 import sceneElement.RoleIntent;
 import sceneElement.RoleState;
+import sceneElement.SceneElement;
 import sceneElement.SceneEmotion;
 import sceneElement.SceneGoal;
 import sceneElement.StaticObject;
@@ -185,7 +190,8 @@ public class SceneReasoner {
 	public void arrangeSceneModelsElements(ArrayList<StoryModel> allStories) {
 		
 		try{
-			PrintWriter writer = new PrintWriter("dataset/98-02-07story2Scenes.arff","utf-8");
+//			PrintWriter writer = new PrintWriter("dataset/98-02-17story2Scenes.arff","utf-8");
+			PrintWriter writer = new PrintWriter("dataset/98-02-22story2ScenesWithWords.arff","utf-8");
 					
 			int wordNum = 0;
 						
@@ -193,17 +199,18 @@ public class SceneReasoner {
 				
 				int sceneIndex = 0;
 				
-				print("newStory*************************************");
+//				print("newStory*************************************");
 				writer.write("newStory*************************************\n");
 				
 				for(SceneModel sceneModel:storyModel.scenes){
 					
-					print("newScene"+ (++sceneIndex) + "*************************************");
+//					print("newScene"+ (sceneIndex) + "*************************************");
 					writer.write("newScene"+ sceneIndex +"*************************************\n");
+					sceneIndex++;
 					
 					for(SentenceModel sentence: sceneModel.sentences){
 							
-						print("");
+//						print("");
 						writer.write("\n");
 						
 						for(Word word: sentence.getWords()){
@@ -283,8 +290,8 @@ public class SceneReasoner {
 	//					print("" + sceneModel + "\n");
 					}
 //					print("wordNum up to now: " + wordNum);
-					print("" + sceneModel + "\n");
-					writer.write("" + sceneModel + "\n\n");
+//					print("" + sceneModel + "\n");
+					writer.write("" + sceneModel.toStringForGoldSceneModel() + "\n\n");
 				}
 			}
 			print("total wordNum: " + wordNum);
@@ -295,10 +302,10 @@ public class SceneReasoner {
 		}
 	}
 
-	public void printForGoldSceneModel(ArrayList<StoryModel> allStories) {
+	public void printForGoldSceneModel(ArrayList<StoryModel> allStories, String printFileName) {
 	
 		try{
-			PrintWriter writer = new PrintWriter("dataset/98-02-10GoldPrimarySceneModel.arff","utf-8");
+			PrintWriter writer = new PrintWriter(printFileName, "utf-8");
 					
 			for(StoryModel storyModel: allStories){
 				
@@ -362,10 +369,10 @@ public class SceneReasoner {
 							}							
 						}
 					}
-					if(roleAction.getOtherWords() == null || roleAction.getOtherWords().size() == 0)
+					if(roleAction.get_otherWords() == null || roleAction.get_otherWords().size() == 0)
 						continue;
 										
-					for(Word roleActionWord: roleAction.getOtherWords()){
+					for(Word roleActionWord: roleAction.get_otherWords()){
 					
 						if(roleActionWord._referenceWord == null)
 							continue;
@@ -531,7 +538,812 @@ public class SceneReasoner {
 		for(StoryModel stry:allStories)			
 			totalRepeatedWords += stry.calculateRepeatedWords();		
 				
-		print("\nThe number of words which are repeated in all scenes are: " + totalRepeatedWords);
+		print("\nThe number of words which are repeated in all scenes are: " + totalRepeatedWords + "\n");
+	}
+	
+	public ArrayList<StoryModel> readGoldStoryModels(String goldStoryModelsFilename) {
+		
+		BufferedReader goldModelStream = null;
+		
+		ArrayList<StoryModel> goldStoryModels = new ArrayList<>();
+		
+		try
+		{
+			goldModelStream = new BufferedReader(new InputStreamReader(new FileInputStream(goldStoryModelsFilename), "utf-8"));
+		}
+		catch(Exception e)
+		{
+			print("Error opening \'" + goldStoryModelsFilename + "\' for reading input corpora!");
+			e.printStackTrace();
+		}
+		
+		ArrayList<String> goldModelLines = new ArrayList<String>();
+		
+		try {		
+			
+			String line = goldModelStream.readLine();			
+			
+			while (line != null)
+			{	
+				goldModelLines.add(line);
+				line = goldModelStream.readLine();		
+			}
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		
+		StoryModel currentStory = null;
+		SceneModel currentScene = null;
+		
+		int storyNumber = 0;
+		int sceneNumber = 0;
+		int wordNumber = 0;
+		
+		String line = null;
+		
+		for(int lineIndex = 0; lineIndex < goldModelLines.size();)
+		{				
+			line = goldModelLines.get(lineIndex);
+		
+			if (line == null)
+				break;
+						
+			if (line.startsWith("newStory")){ // beginning of new story in the goldStoryModelsFile
+							
+				currentStory = new StoryModel();
+				goldStoryModels.add(currentStory);
+				
+				storyNumber++;
+//				print("newStory" + storyNumber + "*************************************");
+				
+				lineIndex++;
+				continue;
+			}
+
+			if (line.startsWith("newScene")){ // beginning of new scene in the goldStoryModelsFile
+				
+				sceneNumber++;
+				
+				if(currentStory != null){
+
+					currentScene = new SceneModel(currentStory);
+					currentStory.addScene(currentScene);								
+				}
+				else
+					MyError.error("currentStory should not be null!!!");					
+//				print("newScene"+ sceneNumber +"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+//				print("goldModel wordsNumbers up to now" + wordNumber);
+				lineIndex++;
+				continue;
+			}
+			
+			if(currentScene == null) {
+				MyError.error("currentScene should not be null!!!");
+				lineIndex++;
+				continue;
+			}
+			
+			if(line.equals(""))
+				lineIndex++;
+			
+			if(line.startsWith("roles")){
+									
+				ArrayList<SceneElement> roleElems = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.ROLE, currentScene);
+				
+				if(roleElems == null || roleElems.size() == 0)
+					continue;
+								
+				for(SceneElement rlElm:roleElems) {
+					lineIndex += rlElm.getWordNumbers();
+					Role nRole = new Role(currentScene,rlElm.getName(), rlElm._mainWord);
+					nRole.addWord(rlElm.get_otherWords());
+					currentScene.addRole(nRole);
+					wordNumber += rlElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("DynamicObjects")){
+				
+				ArrayList<SceneElement> dynObjElems = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.DYNAMIC_OBJECT, currentScene);
+				
+				if(dynObjElems == null || dynObjElems.size() == 0)
+					continue;
+								
+				for(SceneElement dynElm:dynObjElems) {
+					lineIndex += dynElm.getWordNumbers();
+					DynamicObject nDynObj = new DynamicObject(currentScene,dynElm.getName(), dynElm._mainWord);
+					nDynObj.addWord(dynElm.get_otherWords());
+					currentScene.addDynamic_object(nDynObj);
+					wordNumber += dynElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("StaticObjects")){
+				
+				ArrayList<SceneElement> statObjElems = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.STATIC_OBJECT, currentScene);
+				
+				if(statObjElems == null || statObjElems.size() == 0)
+					continue;
+								
+				for(SceneElement staElm:statObjElems) {
+					lineIndex += staElm.getWordNumbers();
+					StaticObject nStatObj = new StaticObject(currentScene,staElm.getName(), staElm._mainWord);
+					nStatObj.addWord(staElm.get_otherWords());
+					currentScene.addStatic_object(nStatObj);
+					wordNumber += staElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("location")){
+				
+				ArrayList<SceneElement> location = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.LOCATION, currentScene);
+				
+				if(location == null || location.size() == 0)
+					continue;
+								
+				for(SceneElement locElm:location) {
+					lineIndex += locElm.getWordNumbers();
+					Location nLoc = new Location(currentScene,locElm.getName(), locElm._mainWord);
+					nLoc.addWord(locElm.get_otherWords());
+					currentScene.setLocation(nLoc);
+					wordNumber += locElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("alternativeLocations")){
+				
+				ArrayList<SceneElement> altLocs = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.LOCATION, currentScene);
+				
+				if(altLocs == null || altLocs.size() == 0)
+					continue;
+								
+				for(SceneElement locElm:altLocs) {
+					lineIndex += locElm.getWordNumbers();
+					Location nLoc = new Location(currentScene,locElm.getName(), locElm._mainWord);
+					nLoc.addWord(locElm.get_otherWords());
+					currentScene.addAlternativeLocation(nLoc);
+					wordNumber += locElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("time")){
+				
+				ArrayList<SceneElement> time = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.TIME, currentScene);
+				
+				if(time == null || time.size() == 0)
+					continue;
+								
+				for(SceneElement timElm:time) {
+					lineIndex += timElm.getWordNumbers();
+					Time nTime = new Time(currentScene,timElm.getName(), timElm._mainWord);
+					nTime.addWord(timElm.get_otherWords());
+					currentScene.setTime(nTime);
+					wordNumber += timElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("alternativeTimes")){
+				
+				ArrayList<SceneElement> time = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.TIME, currentScene);
+				
+				if(time == null || time.size() == 0)
+					continue;
+								
+				for(SceneElement timElm:time) {
+					lineIndex += timElm.getWordNumbers();
+					Time nTime = new Time(currentScene,timElm.getName(), timElm._mainWord);
+					nTime.addWord(timElm.get_otherWords());
+					currentScene.addAlternativeTime(nTime);
+					wordNumber += timElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("scene_goals")){
+				
+				ArrayList<SceneElement> sceGols = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.SCENE_GOAL, currentScene);
+				
+				if(sceGols == null || sceGols.size() == 0)
+					continue;
+								
+				for(SceneElement scGolElm:sceGols) {
+					lineIndex += scGolElm.getWordNumbers();
+					SceneGoal nScGol = new SceneGoal(currentScene,scGolElm.getName(), scGolElm._mainWord);
+					nScGol.addWord(scGolElm.get_otherWords());
+					currentScene.addScene_goal(nScGol);
+					wordNumber += scGolElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("scene_emotions")){
+				
+				ArrayList<SceneElement> sceEmos = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.SCENE_EMOTION, currentScene);
+				
+				if(sceEmos == null || sceEmos.size() == 0)
+					continue;
+								
+				for(SceneElement scEmoElm:sceEmos) {
+					lineIndex += scEmoElm.getWordNumbers();
+					SceneEmotion nScEmo = new SceneEmotion(currentScene,scEmoElm.getName(), scEmoElm._mainWord);
+					nScEmo.addWord(scEmoElm.get_otherWords());
+					currentScene.addScene_emotion(nScEmo);
+					wordNumber += scEmoElm.getWordNumbers();
+				}					
+			}				
+			if(line.startsWith("role_actions")){
+				
+				ArrayList<SceneElement> rolActs = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.ROLE_ACTION, currentScene);
+				
+				if(rolActs == null || rolActs.size() == 0)
+					continue;
+								
+				for(SceneElement rolActElm:rolActs) {
+					lineIndex += rolActElm.getWordNumbers();
+					RoleAction nRolAct = new RoleAction(currentScene,rolActElm.getName(), rolActElm._mainWord);
+					nRolAct.addWord(rolActElm.get_otherWords());
+					currentScene.addRoleAction(nRolAct);
+					wordNumber += rolActElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("role_states")){
+				
+				ArrayList<SceneElement> rolstats = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.ROLE_STATE, currentScene);
+				
+				if(rolstats == null || rolstats.size() == 0)
+					continue;
+								
+				for(SceneElement rolStatElm:rolstats) {
+					lineIndex += rolStatElm.getWordNumbers();
+					RoleState nRolStat = new RoleState(currentScene,rolStatElm.getName(), rolStatElm._mainWord);
+					nRolStat.addWord(rolStatElm.get_otherWords());
+					currentScene.addRoleState(nRolStat);
+					wordNumber += rolStatElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("role_intents")){
+				
+				ArrayList<SceneElement> rolsIntents = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.ROLE_INTENT, currentScene);
+				
+				if(rolsIntents == null || rolsIntents.size() == 0)
+					continue;
+								
+				for(SceneElement rolIntElm:rolsIntents) {
+					lineIndex += rolIntElm.getWordNumbers();
+					RoleIntent nRolInt = new RoleIntent(currentScene,rolIntElm.getName(), rolIntElm._mainWord);
+					nRolInt.addWord(rolIntElm.get_otherWords());
+					currentScene.addRoleIntent(nRolInt);
+					wordNumber += rolIntElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("role_emotions")){
+				
+				ArrayList<SceneElement> rolEmos = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.ROLE_EMOTION, currentScene);
+				
+				if(rolEmos == null || rolEmos.size() == 0)
+					continue;
+								
+				for(SceneElement rolEmoElm:rolEmos) {
+					lineIndex += rolEmoElm.getWordNumbers();
+					RoleEmotion nRolEmo = new RoleEmotion(currentScene,rolEmoElm.getName(), rolEmoElm._mainWord);
+					nRolEmo.addWord(rolEmoElm.get_otherWords());
+					currentScene.addRoleEmotion(nRolEmo);
+					wordNumber += rolEmoElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("dynamic_object_actions")){
+				
+				ArrayList<SceneElement> dynObjActs = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.DYNAMIC_OBJECT_ACTION, currentScene);
+				
+				if(dynObjActs == null || dynObjActs.size() == 0)						
+					continue;
+								
+				for(SceneElement dynActElm:dynObjActs) {
+					lineIndex += dynActElm.getWordNumbers();
+					DynamicObjectAction nDynAct = new DynamicObjectAction(currentScene,dynActElm.getName(), dynActElm._mainWord);
+					nDynAct.addWord(dynActElm.get_otherWords());
+					currentScene.addObjectAction(nDynAct);
+					wordNumber += dynActElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("dynamic_object_states")){
+				
+				ArrayList<SceneElement> dynObjStats = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.DYNAMIC_OBJECT_STATE, currentScene);
+				
+				if(dynObjStats == null || dynObjStats.size() == 0)						
+					continue;
+								
+				for(SceneElement dynStatElm:dynObjStats) {
+					lineIndex += dynStatElm.getWordNumbers();
+					DynamicObjectState nDynStat = new DynamicObjectState(currentScene,dynStatElm.getName(), dynStatElm._mainWord);
+					nDynStat.addWord(dynStatElm.get_otherWords());
+					currentScene.addDynamicObjectState(nDynStat);
+					wordNumber += dynStatElm.getWordNumbers();
+				}					
+			}
+			if(line.startsWith("static_object_states")){
+				
+				ArrayList<SceneElement> statObjStats = generateSceneElements(goldModelLines, ++lineIndex, ScenePart.STATIC_OBJECT_STATE, currentScene);
+				
+				if(statObjStats == null || statObjStats.size() == 0)						
+					continue;
+								
+				for(SceneElement staStatElm:statObjStats) {
+					lineIndex += staStatElm.getWordNumbers();
+					StaticObjectState nstaStat = new StaticObjectState(currentScene,staStatElm.getName(), staStatElm._mainWord);
+					nstaStat.addWord(staStatElm.get_otherWords());
+					currentScene.addStaticObjectState(nstaStat);
+					wordNumber += staStatElm.getWordNumbers();
+				}
+			}				
+		}
+		print("Gold StoryModels story-num: " + storyNumber +" scene-num: " + sceneNumber + " word-num:" + wordNumber);
+		print("583 (junk words) + 200 (no words) " + wordNumber + " (words in gold StoryModels) - 77 (PR words which was calculated twice) = " + (583 + 200 + wordNumber - 77));
+		return goldStoryModels;
+	}
+	
+	private ArrayList<SceneElement> generateSceneElements(ArrayList<String> goldModelLines, Integer lineIndex, ScenePart scenePart, SceneModel currentScene) {
+		
+//		print(scenePart + ":");
+		
+		if(goldModelLines == null || lineIndex < 0 || lineIndex >= goldModelLines.size() || scenePart == null)
+			return null;
+		
+		ArrayList<SceneElement> sceneElems = new ArrayList<SceneElement>();
+
+		//[1	يونس	N	SBJ	8	يونس§n-23943	نفر§n-13075	role	Arg1 Arg0 	||| ROLE ROLE ]
+		String line = goldModelLines.get(lineIndex);
+				
+		while(line.startsWith("\t")) {
+			
+//			print(line);
+					
+			String wordLine = line.substring((line.indexOf("[") + 1), line.indexOf("|||"));
+						
+			Word currentWord = new Word(wordLine, null);
+						
+			String predicLine = line.substring((line.indexOf("|||") + 3), (line.length()-2));
+			
+			String[] parts = predicLine.split("(\t)+");
+			if(parts != null)
+				for(String pat:parts)
+					currentWord.add_predictedSceneElement(pat.trim());
+						
+			if(line.startsWith("\t\t\t")) {//it means it is an equal
+				
+			 	SceneElement lastScenElem = sceneElems.get(sceneElems.size() - 1);
+				lastScenElem.addWord(currentWord);
+			}
+			else {
+				
+				SceneElement scELem = new SceneElement(currentScene, currentWord._wordName, scenePart, currentWord);
+				
+				sceneElems.add(scELem);			
+			}
+			
+			lineIndex++;
+			
+			line = goldModelLines.get(lineIndex);
+		}
+//		print("here");
+		return sceneElems;
+	}
+	
+	public void correct_main_otherWordsPlaces(ArrayList<StoryModel> goldStoryModels) {
+		if(goldStoryModels == null || goldStoryModels.size() == 0)
+			return;
+		
+		for(StoryModel storyModel: goldStoryModels){
+			
+			@SuppressWarnings("unused")
+			int sceneIndex = 0;
+			
+//			print("newStory*************************************");
+			
+			for(SceneModel sceneModel:storyModel.scenes){
+				
+//				print("newScene"+ (++sceneIndex) + "*************************************");
+				
+				if(sceneModel.getRoles() != null)					
+					for(Role r:sceneModel.getRoles()) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}				
+				if(sceneModel.getDynamic_objects() != null)					
+					for(DynamicObject r:sceneModel.getDynamic_objects()) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}
+				if(sceneModel.getStatic_objects() != null)					
+					for(StaticObject r:sceneModel.getStatic_objects()) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}							
+					
+				if(sceneModel.getLocation() != null) {					
+					Location r = sceneModel.getLocation(); 
+					if(r._mainWord._gPOS == POS.PR)
+						if(r.get_otherWords() != null) {
+							
+							ArrayList<Word> newOtherWords = new ArrayList<>();
+							
+							boolean flag = false;
+							
+							for(Word ow:r.get_otherWords())
+								if(ow._gPOS != POS.PR) {
+									if(!flag) {
+										Word swapWord = r._mainWord;
+										r._mainWord = ow;
+										r._name = ow._wordName;
+										flag = true;
+										newOtherWords.add(swapWord);
+									}
+									else
+										newOtherWords.add(ow);
+								}
+								else
+									newOtherWords.add(ow);
+							r.set_otherWords(newOtherWords);
+						}							
+				}
+				if(sceneModel.getAlternativeLocations() != null)					
+					for(Location r:sceneModel.getAlternativeLocations()) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}	
+				if(sceneModel.getTime() != null) {					
+					Time r = sceneModel.getTime(); 
+					if(r._mainWord._gPOS == POS.PR)
+						if(r.get_otherWords() != null) {
+							
+							ArrayList<Word> newOtherWords = new ArrayList<>();
+							
+							boolean flag = false;
+							
+							for(Word ow:r.get_otherWords())
+								if(ow._gPOS != POS.PR) {
+									if(!flag) {
+										Word swapWord = r._mainWord;
+										r._mainWord = ow;
+										r._name = ow._wordName;
+										flag = true;
+										newOtherWords.add(swapWord);
+									}
+									else
+										newOtherWords.add(ow);
+								}
+								else
+									newOtherWords.add(ow);
+							r.set_otherWords(newOtherWords);
+						}
+				}
+				if(sceneModel.getAlternativeTimes() != null)					
+					for(Time r:sceneModel.getAlternativeTimes()) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}
+				if(sceneModel.getScene_goals() != null)					
+					for(SceneGoal r:sceneModel.getScene_goals()) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}							
+				if(sceneModel.getScene_emotions() != null)					
+					for(SceneEmotion r:sceneModel.getScene_emotions()) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}
+				if(sceneModel.roleActions != null)					
+					for(RoleAction r:sceneModel.roleActions) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}
+				if(sceneModel.roleStates != null)					
+					for(RoleState r:sceneModel.roleStates) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}							
+				if(sceneModel.roleIntents != null)					
+					for(RoleIntent r:sceneModel.roleIntents) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}							
+				if(sceneModel.roleEmotions != null)					
+					for(RoleEmotion r:sceneModel.roleEmotions) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}		
+				if(sceneModel.object_actions != null)					
+					for(DynamicObjectAction r:sceneModel.object_actions) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}
+				if(sceneModel.dynamic_object_states != null)					
+					for(DynamicObjectState r:sceneModel.dynamic_object_states) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}				
+				if(sceneModel.static_object_states != null)					
+					for(StaticObjectState r:sceneModel.static_object_states) 
+						if(r._mainWord._gPOS == POS.PR)
+							if(r.get_otherWords() != null) {
+								
+								ArrayList<Word> newOtherWords = new ArrayList<>();
+								
+								boolean flag = false;
+								
+								for(Word ow:r.get_otherWords())
+									if(ow._gPOS != POS.PR) {
+										if(!flag) {
+											Word swapWord = r._mainWord;
+											r._mainWord = ow;
+											r._name = ow._wordName;
+											flag = true;
+											newOtherWords.add(swapWord);
+										}
+										else
+											newOtherWords.add(ow);
+									}
+									else
+										newOtherWords.add(ow);
+								r.set_otherWords(newOtherWords);
+							}							
+					
+					
+			}
+//			print("here");
+		}		
 	}
 	
 	private void print(String toPrint){

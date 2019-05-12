@@ -41,15 +41,15 @@ public class Dashboard {
 //	public static String inputCorporaPath = "dataset/98-02-03CRFcorpora-junk-sceneMarker-corrections-corr-test-sync2.arff";
 //	public static String inputCorporaPath = "dataset/98-02-03CRFcorpora-junk-sceneMarker-corrections-corr-test-sync2.arff";
 //	public static String inputCorporaPath = "dataset/98-02-08CRFcorpora-junk-sceneMarker-corrections-corr-test-sync2-PRcorrect.arff";
-	public static String inputCorporaPath = "dataset/98-02-09CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect.arff";
-	
-	
-	
+//	public static String inputCorporaPath = "dataset/98-02-09CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect.arff";
+	public static String inputCorporaPath = "dataset/98-02-18CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect.arff";
+		
 //	public static String inputSystemOutpurPath = "dataset/97-12-21out.arff";
 	public static String inputSystemOutpurPath = "dataset/98-02-05out.arff";
 	
 	public static SceneReasoner sceneReasoner = new SceneReasoner(); 
-	
+	public static String goldModelfile = "evaluationFiles/98-02-16GoldPrimarySceneModel.arff";
+	public static String goldModelCorrectedfile = "evaluationFiles/98-02-16GoldPrimarySceneModelCorrected.arff";
 
 	public static ArrayList<StoryModel> importInputCorpora(String corporaFilename)
 	{

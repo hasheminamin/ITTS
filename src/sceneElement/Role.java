@@ -72,8 +72,8 @@ public class Role extends SceneElement{
 				if(ra._mainWord != null && ra._mainWord.equals(roleAction_word))
 					return ra;
 			
-				if(ra.getOtherWords() != null && ra.getOtherWords().size() > 0)
-					for(Word raWrd: ra.getOtherWords())
+				if(ra.get_otherWords() != null && ra.get_otherWords().size() > 0)
+					for(Word raWrd: ra.get_otherWords())
 						if(raWrd.equals(roleAction_word))
 							return ra;
 			}
@@ -106,8 +106,8 @@ public class Role extends SceneElement{
 				if(re._mainWord != null && re._mainWord.equals(roleEmotion_word))
 					return re;
 			
-				if(re.getOtherWords() != null && re.getOtherWords().size() > 0)
-					for(Word reWrd: re.getOtherWords())
+				if(re.get_otherWords() != null && re.get_otherWords().size() > 0)
+					for(Word reWrd: re.get_otherWords())
 						if(reWrd.equals(roleEmotion_word))
 					return re;
 			}
@@ -140,8 +140,8 @@ public class Role extends SceneElement{
 				if(ri._mainWord != null && ri._mainWord.equals(roleIntent_word))
 					return ri;
 			
-				if(ri.getOtherWords() != null && ri.getOtherWords().size() > 0)
-					for(Word raWrd: ri.getOtherWords())
+				if(ri.get_otherWords() != null && ri.get_otherWords().size() > 0)
+					for(Word raWrd: ri.get_otherWords())
 						if(raWrd.equals(roleIntent_word))
 					return ri;
 			}
@@ -174,8 +174,8 @@ public class Role extends SceneElement{
 				if(rs._mainWord != null && rs._mainWord.equals(roleState_word))
 					return rs;
 			
-				if(rs.getOtherWords() != null && rs.getOtherWords().size() > 0)
-					for(Word raWrd: rs.getOtherWords())
+				if(rs.get_otherWords() != null && rs.get_otherWords().size() > 0)
+					for(Word raWrd: rs.get_otherWords())
 						if(raWrd.equals(roleState_word))
 					return rs;
 			}
@@ -243,9 +243,9 @@ public class Role extends SceneElement{
 				print(this._name + " role Merged this " + role_action + " RoleAction with the the equal roleAction it had before!\n");
 				exist.mergeWith(role_action);
 			}
-			else if(role_action.getOtherWords() != null){
+			else if(role_action.get_otherWords() != null){
 				
-				for(Word raWord: role_action.getOtherWords()){
+				for(Word raWord: role_action.get_otherWords()){
 					exist = getRole_action(raWord);
 					if(exist != null){
 						print(this._name + " role Merged this " + role_action + " RoleAction with the the equal roleAction it had before!\n");
@@ -284,9 +284,9 @@ public class Role extends SceneElement{
 				print(this._name + " role Merged this " + role_emotion + " RoleEmotion with the the equal roleAEmotion it had before!\n");
 				exist.mergeWith(role_emotion);
 			}
-			else if(role_emotion.getOtherWords() != null){
+			else if(role_emotion.get_otherWords() != null){
 				
-				for(Word reWord: role_emotion.getOtherWords()){
+				for(Word reWord: role_emotion.get_otherWords()){
 					exist = getRole_emotion(reWord);
 					if(exist != null){
 						print(this._name + " role Merged this " + role_emotion + " RoleEmotion with the the equal roleEmotion it had before!\n");
@@ -324,9 +324,9 @@ public class Role extends SceneElement{
 				print(this._name + " role Merged this " + role_intent + " RoleIntent with the the equal roleIntent it had before!\n");
 				exist.mergeWith(role_intent);
 			}
-			else if(role_intent.getOtherWords() != null){
+			else if(role_intent.get_otherWords() != null){
 				
-				for(Word riWord: role_intent.getOtherWords()){
+				for(Word riWord: role_intent.get_otherWords()){
 					exist = getRole_intent(riWord);
 					if(exist != null){
 						print(this._name + " role Merged this " + role_intent + " RoleIntent with the the equal roleIntent it had before!\n");
@@ -364,9 +364,9 @@ public class Role extends SceneElement{
 				print(this._name + " role Merged this " + role_state + " RoleState with the the equal roleState it had before!\n");
 				exist.mergeWith(role_state);
 			}
-			else if(role_state.getOtherWords() != null){
+			else if(role_state.get_otherWords() != null){
 				
-				for(Word rsWord: role_state.getOtherWords()){
+				for(Word rsWord: role_state.get_otherWords()){
 					exist = getRole_state(rsWord);
 					if(exist != null){
 						print(this._name + " role Merged this " + role_state + " RoleState with the the equal roleState it had before!\n");

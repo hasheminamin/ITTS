@@ -94,6 +94,9 @@ public class SceneElement {
 		for(;index < words.size(); index++)
 			this._otherWords.add(words.get(index));			
 	}
+	public void set_otherWords(ArrayList<Word> otherWords) {
+		this._otherWords = otherWords;
+	}
 	
 	public void addWord(Word word){
 		if(word == null)
@@ -109,6 +112,14 @@ public class SceneElement {
 		}
 	}
 	
+	public void addWord(ArrayList<Word> words) {
+		if(words == null)
+			return;
+		
+		for(Word wrd:words)		
+			this.addWord(wrd);		
+	}
+	
 	public String getName() {
 		return _name;
 	}
@@ -117,10 +128,29 @@ public class SceneElement {
 		return _node;
 	}
 	
-	public ArrayList<Word> getOtherWords(){
+	public ArrayList<Word> get_otherWords(){
 		return _otherWords;
 	}
 	
+	public ArrayList<Word> getAllWords(){
+		ArrayList<Word> allWords = new ArrayList<Word>();
+		
+		if(_mainWord != null)
+			allWords.add(_mainWord);
+		if(_otherWords != null)
+			allWords.addAll(_otherWords);
+		
+		return allWords;
+	}
+	
+	public int getWordNumbers() {
+		int num = 0;
+		if(_mainWord != null)
+			num++;
+		if(_otherWords != null)
+			num += _otherWords.size();
+		return num;
+	}
 	
 	public boolean hasMoreThanOneWord(){
 		if(_otherWords != null && _otherWords.size() > 0)

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import com.sun.xml.internal.ws.client.dispatch.DataSourceDispatch;
 
 import enums.POS;
+import evaluation.Evaluator;
 import sceneElement.DynamicObject;
 import sceneElement.DynamicObjectState;
 import sceneElement.Role;
@@ -18,6 +19,7 @@ import sceneElement.StaticObject;
 import sceneElement.StaticObjectState;
 import model.SceneModel;
 import model.StoryModel;
+import model.Word;
 
 @SuppressWarnings("unused")
 public class LearningUI {
@@ -384,6 +386,34 @@ public class LearningUI {
 //		
 //	}
 //		
+	public static void evaluate(ArrayList<StoryModel> allStories) {
+		
+		/**these 4 line were for producing the "gold StoryModels" and are produced based on the allStories produced after
+		 * ArrayList<StoryModel> allStories = Dashboard.importInputCorpora(Dashboard.inputCorporaPath);
+		 * Dashboard.importSystemOutput(Dashboard.inputSystemOutpurPath, allStories);
+		 * Dashboard.sceneReasoner.arrangeWordReferences(allStories, POS.PR);
+		 * Dashboard.sceneReasoner.arrangeSceneModelsElements(allStories);
+		 */
+		/*
+		Dashboard.sceneReasoner.printForGoldSceneModel(allStories, Dashboard.goldModelfile);
+		
+		ArrayList<StoryModel> goldStoryModels = Dashboard.sceneReasoner.readGoldStoryModels(Dashboard.goldModelfile);
+		
+		Dashboard.sceneReasoner.correct_main_otherWordsPlaces(goldStoryModels);
+		
+		Dashboard.sceneReasoner.printForGoldSceneModel(goldStoryModels, Dashboard.goldModelCorrectedfile);
+		*/
+
+		//the file "Dashboard.goldModelCorrectedfile" contain the gold StoryModels and can be imported for evaluation.
+		ArrayList<StoryModel> goldStoryModels = Dashboard.sceneReasoner.readGoldStoryModels(Dashboard.goldModelCorrectedfile);
+		
+		Evaluator evaluator = new Evaluator(goldStoryModels);
+		
+		evaluator.evaluateAllSceneElementPrimaryAllocation(allStories);
+		
+		evaluator.evaluateAllSceneElementNonRedundancyDetection(allStories);
+
+	}
 			
 	
 	public static void main(String[] args){		
@@ -403,10 +433,10 @@ public class LearningUI {
 		
 		Dashboard.sceneReasoner.arrangeSceneModelsElements(allStories);
 		
-		Dashboard.sceneReasoner.calculateRepeatedWords(allStories);
+//		Dashboard.sceneReasoner.calculateRepeatedWords(allStories);
 		
-		Dashboard.sceneReasoner.printForGoldSceneModel(allStories);
-
+		evaluate(allStories);		
+		
 //		Dashboard.sceneReasoner.completeSceneModelsElements(allStories);
 		
 //		produceRoleActionDataset(allStories);		

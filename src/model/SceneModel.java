@@ -152,20 +152,20 @@ public class SceneModel {
 	}
 	
 	public Role getRole(Word roleWord){
-		if(roleWord == null)
-			return null;
+		if(roleWord == null || this.roles == null)
+			return null;		
 		
 		for(Role rl:this.roles){
 			if(rl._mainWord != null && rl._mainWord.equals(roleWord))
 				return rl;
 			
-			if(rl.getOtherWords() != null && rl.getOtherWords().size() > 0)
-				for(Word wrd: rl.getOtherWords())
+			if(rl.get_otherWords() != null && rl.get_otherWords().size() > 0)
+				for(Word wrd: rl.get_otherWords())
 					if(wrd.equals(roleWord))
 						return rl;
 		}
 		
-		MyError.error("this SceneModel has no Role with such a " + roleWord._wordName + " Word.");
+//		MyError.error("this SceneModel has no Role with such a " + roleWord._wordName + " Word.");
 		return null;
 	}
 	
@@ -198,7 +198,7 @@ public class SceneModel {
 	}
 	
 	public StaticObject getStatic_object(Word static_objectWord){
-		if(static_objectWord == null)
+		if(static_objectWord == null || this.static_objects == null)
 			return null;
 		
 		for(StaticObject stat:this.static_objects){
@@ -206,8 +206,8 @@ public class SceneModel {
 			if(stat._mainWord != null && stat._mainWord.equals(static_objectWord))
 				return stat;
 			
-			if(stat.getOtherWords() != null && stat.getOtherWords().size() > 0)
-				for(Word wrd: stat.getOtherWords())
+			if(stat.get_otherWords() != null && stat.get_otherWords().size() > 0)
+				for(Word wrd: stat.get_otherWords())
 					if(wrd.equals(static_objectWord))
 						return stat;
 		}
@@ -245,7 +245,7 @@ public class SceneModel {
 	}
 
 	public DynamicObject getDynamic_object(Word dynamic_objectWord){
-		if(dynamic_objectWord == null)
+		if(dynamic_objectWord == null || this.dynamic_objescts == null)
 			return null;
 		
 		for(DynamicObject dyn:this.dynamic_objescts){
@@ -253,8 +253,8 @@ public class SceneModel {
 			if(dyn._mainWord != null && dyn._mainWord.equals(dynamic_objectWord))
 				return dyn;
 			
-			if(dyn.getOtherWords() != null && dyn.getOtherWords().size() > 0)
-				for(Word wrd: dyn.getOtherWords())
+			if(dyn.get_otherWords() != null && dyn.get_otherWords().size() > 0)
+				for(Word wrd: dyn.get_otherWords())
 					if(wrd.equals(dynamic_objectWord))
 						return dyn;
 		}
@@ -1117,12 +1117,12 @@ public class SceneModel {
 		return st;
 	}
 	
-	public String toStringForGoldSceneModel() {
+	public String toStringForGoldSceneModel() {		
 		String st = "roles= ["; 
 		for (Role r : this.roles) {
 			st += "\n" + "\t[" + r._mainWord + "]";
 			
-			ArrayList<Word> otherWords = r.getOtherWords();
+			ArrayList<Word> otherWords = r.get_otherWords();
 			
 			if(otherWords != null && otherWords.size() != 0)
 				for(Word ow:otherWords)
@@ -1134,7 +1134,7 @@ public class SceneModel {
 		for (DynamicObject r : this.dynamic_objescts) {
 			st += "\n" + "\t[" + r._mainWord + "]";
 			
-			ArrayList<Word> otherWords = r.getOtherWords();
+			ArrayList<Word> otherWords = r.get_otherWords();
 			
 			if(otherWords != null && otherWords.size() != 0)
 				for(Word ow:otherWords)
@@ -1147,7 +1147,7 @@ public class SceneModel {
 		for (StaticObject r : this.static_objects) {
 			st += "\n" + "\t[" + r._mainWord + "]";
 			
-			ArrayList<Word> otherWords = r.getOtherWords();
+			ArrayList<Word> otherWords = r.get_otherWords();
 			
 			if(otherWords != null && otherWords.size() != 0)
 				for(Word ow:otherWords)
@@ -1155,13 +1155,25 @@ public class SceneModel {
 		}
 		st += "]";
 		
-		st += "\nlocation= " + location;
+		st += "\nlocation= [";
+		if(location != null) {
+			st+= "\n" + "\t[" + location._mainWord + "]";			
+				
+			ArrayList<Word> otherWords = location.get_otherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}		
+		st += "]";
+		
+				
 		st += "\nalternativeLocations= [";
 				
 		for (Location r : this.alternativeLocations) {
 			st += "\n" + "\t[" + r._mainWord + "]";
 			
-			ArrayList<Word> otherWords = r.getOtherWords();
+			ArrayList<Word> otherWords = r.get_otherWords();
 			
 			if(otherWords != null && otherWords.size() != 0)
 				for(Word ow:otherWords)
@@ -1169,18 +1181,60 @@ public class SceneModel {
 		}
 		st += "]";
 		
-		st+= "\ntime= " + time +
-		"\nalternativeTimes= " + alternativeTimes +
-		"\nscene_goals= " + scene_goals + 
-		"\nscene_emotions= " + scene_emotions + "]\n";
+		st += "\ntime= [";
+		if(time != null) {
+			st += "\n" + "\t[" + time._mainWord + "]";		
+		
+			ArrayList<Word> otherWords = time.get_otherWords();
+		
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";		
+				
+		st += "\nalternativeTimes= [";
+		for (Time r : this.alternativeTimes) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.get_otherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st += "\nscene_goals= [";
+		for (SceneGoal r : this.scene_goals) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.get_otherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st += "\nscene_emotions= [";
+		for (SceneEmotion r : this.scene_emotions) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.get_otherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
 		
 
-		st+= "\nroal_action= [";
-
+		st+= "\nrole_actions= [";
 		for (RoleAction r : this.roleActions) {
 			st += "\n" + "\t[" + r._mainWord + "]";
 			
-			ArrayList<Word> otherWords = r.getOtherWords();
+			ArrayList<Word> otherWords = r.get_otherWords();
 			
 			if(otherWords != null && otherWords.size() != 0)
 				for(Word ow:otherWords)
@@ -1188,12 +1242,11 @@ public class SceneModel {
 		}
 		st += "]";
 		
-		st+= "\nroal_states= [";
-		
+		st+= "\nrole_states= [";		
 		for (RoleState r : this.roleStates) {
 			st += "\n" + "\t[" + r._mainWord + "]";
 			
-			ArrayList<Word> otherWords = r.getOtherWords();
+			ArrayList<Word> otherWords = r.get_otherWords();
 			
 			if(otherWords != null && otherWords.size() != 0)
 				for(Word ow:otherWords)
@@ -1201,12 +1254,11 @@ public class SceneModel {
 		}
 		st += "]";
 		
-		st+= "\nroal_intents= [";
-		
+		st+= "\nrole_intents= [";		
 		for (RoleIntent r : this.roleIntents) {
 			st += "\n" + "\t[" + r._mainWord + "]";
 			
-			ArrayList<Word> otherWords = r.getOtherWords();
+			ArrayList<Word> otherWords = r.get_otherWords();
 			
 			if(otherWords != null && otherWords.size() != 0)
 				for(Word ow:otherWords)
@@ -1214,10 +1266,53 @@ public class SceneModel {
 		}
 		st += "]";
 		
-		st+= "\nroal_emotions= " + roleEmotions;
-		st+= "\ndynamic_object_actions= " + object_actions;
-		st+= "\ndynamic_object_states= " + dynamic_object_states;
-		st+= "\nstatic_object_states= " + static_object_states;
+		st+= "\nrole_emotions= [";				
+		for (RoleEmotion r : this.roleEmotions) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.get_otherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st+= "\ndynamic_object_actions= [";		
+		for (DynamicObjectAction r : this.object_actions) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.get_otherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st+= "\ndynamic_object_states= [";		
+		for (DynamicObjectState r : this.dynamic_object_states) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.get_otherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
+		
+		st+= "\nstatic_object_states= [";		
+		for (StaticObjectState r : this.static_object_states) {
+			st += "\n" + "\t[" + r._mainWord + "]";
+			
+			ArrayList<Word> otherWords = r.get_otherWords();
+			
+			if(otherWords != null && otherWords.size() != 0)
+				for(Word ow:otherWords)
+					st += "\n" + "\t\t\t[" + ow + "]";
+		}
+		st += "]";
 				
 		return st;
 	}
@@ -1243,6 +1338,29 @@ public class SceneModel {
 	public void addStaticObjectState(StaticObjectState objectState){
 		static_object_states.add(objectState);	
 	}
+	
+	public ArrayList<RoleAction> getRoleActions(){
+		return roleActions;
+	}
+	public ArrayList<RoleState> getRoleStates(){
+		return roleStates;
+	}
+	public ArrayList<RoleIntent> getRoleIntents(){
+		return roleIntents;
+	}
+	public ArrayList<RoleEmotion> getRoleEmotions(){
+		return roleEmotions;
+	}
+	public ArrayList<DynamicObjectAction> getObjectActions(){
+		return object_actions;
+	}
+	public ArrayList<DynamicObjectState> getDynamicObjectStates(){
+		return dynamic_object_states;	
+	}
+	public ArrayList<StaticObjectState> getStaticObjectStates(){
+		return static_object_states;	
+	}
+	
 	
 	public ArrayList<Word> calculateMultiSemanticTagWords(){
 		if(sentences == null || sentences.size() == 0)

@@ -2,6 +2,7 @@ package model;
 
 import ir.ac.itrc.qqa.semantic.enums.DependencyRelationType;
 import ir.ac.itrc.qqa.semantic.kb.Node;
+import ir.ac.itrc.qqa.semantic.util.Common;
 import ir.ac.itrc.qqa.semantic.util.MyError;
 
 import java.util.ArrayList;
@@ -23,6 +24,11 @@ public class Word {
 	 * senteceModel which this Word belongs to.
 	 */
 	public SentenceModel _sentece;
+	
+	/**
+	 * Phrase which this Word belongs to.
+	 */
+	public Phrase _phrase;
 	
 	/**
 	 * number of this Word object in sentence.
@@ -102,6 +108,16 @@ public class Word {
 	 * this is the word that is the main reference of this word.
 	 */
 	public Word _referenceWord = null;
+	
+	/**
+	 * The adjectives of this Word. 
+	 */
+	private ArrayList<Word> adjectives;
+	
+	/**
+	 * The mozaf_elaih of this Word. 
+	 */	
+	private ArrayList<Word> mozaf_elaih;
 
 	/**
 	 * This constructor gets an input string in the format 
@@ -305,6 +321,75 @@ public class Word {
 		
 	}
 	
+	//-------------------- is part --------------------------
+	
+		/**
+		 * checks weather this Word object _syntaxTag is SBJ or not?
+		 * @return
+		 */
+		public boolean isSubject(){
+			if(_syntaxTag == DependencyRelationType.SBJ)
+				return true;
+			return false;		
+		}
+		
+		/**
+		 * checks weather this Word object _syntaxTag is OBJ or not?
+		 * @return
+		 */
+		public boolean isObject(){
+			if(_syntaxTag == DependencyRelationType.OBJ)
+				return true;
+			return false;		
+		}
+		
+		/**
+		 * checks weather this Word object _syntaxTag is MOS or not?
+		 * @return
+		 */
+		public boolean isMosnad(){
+			if(_syntaxTag == DependencyRelationType.MOS)
+				return true;
+			return false;		
+		}
+		
+		/**
+		 * checks weather this Word object _syntaxTag is VERB or not?
+		 * @return
+		 */
+		public boolean isVerb(){
+			if(_syntaxTag == DependencyRelationType.ROOT || _srcOfSynTag_number == 0)
+				return true;
+			return false;		
+		}
+		
+		/**
+		 * checks weather this Word object _syntaxTag is ADVERB or not?
+		 * ADVRB: to constraint verbs, nouns, adjectives or ...
+		 * NADV: prepositional complements of nouns
+		 * ADVC: adverbial complements of verbs
+		 * AVCONJ: adverbs with equal positions
+		 * @return
+		 */
+		public boolean isAdverb(){
+			if(_syntaxTag == DependencyRelationType.ADVRB || _syntaxTag == DependencyRelationType.NADV ||
+					_syntaxTag == DependencyRelationType.ADVC || _syntaxTag == DependencyRelationType.AVCONJ) // || maybe DependenctRelationType.VPP
+				return true;
+			return false;		
+		}
+		
+		public boolean isAdjective(){
+			if(_gPOS == POS.ADJ || _syntaxTag == DependencyRelationType.NPREMOD || _syntaxTag == DependencyRelationType.NPOSTMOD)
+				return true;
+			return false;
+		}
+		
+		public boolean isMozaf_elaih(){
+			if(_syntaxTag == DependencyRelationType.MOZ)
+				return true;
+			return false;
+		}
+	
 	public boolean hasReferenceWordPath(){
 		if(_referenceWordNum != null && !_referenceWordNum.equalsIgnoreCase(""))
 			if(_referenceWordNum.matches(".*\\d+.*"))
@@ -332,6 +417,32 @@ public class Word {
 		return false;
 	}
 	
+	//-------------------- getter part --------------------------
+	
+	public ArrayList<Word> getAdjectives() {
+		return adjectives;
+	}
+ 	 
+ 	public Word getAdjective(Node adj_node){
+		if(!Common.isEmpty(adjectives))
+			for(Word adj:adjectives)
+				if(adj._wsd != null && adj._wsd.equalsRelaxed(adj_node))
+					return adj;
+		return null;		
+	}
+	
+	public ArrayList<Word> getMozaf_elaih() {
+		return mozaf_elaih;
+	}
+	
+	public Word getMozaf_elaih(Node moz_node){
+		if(!Common.isEmpty(mozaf_elaih))
+			for(Word moz:mozaf_elaih)
+				if(moz._wsd != null && moz._wsd.equalsRelaxed(moz_node))
+					return moz;
+		return null;		
+	}
+	
 	public SemanticTag getFirstSemanticTag() {
 		if(_semanticTags != null || _semanticTags.size() > 0)
 			return _semanticTags.get(0);
@@ -343,9 +454,99 @@ public class Word {
 		String semStr = "";
 		if(_semanticTags != null)
 			for(SemanticTag st: _semanticTags)
-				semStr += st.toString() + " ";		
+				semStr += st.toString() + "\t";		
 		return semStr;
 	}
+	
+	//-------------------- add part -----------------------------
+	 
+	 	/**
+	 	 * 
+	 	 * @param adj
+	 	 * @return an integer, 1 means adj added, 0 means the Word own adjective has merged with adj, and -1 means nothing happened! 
+	 	 */
+	 	public int addAdjective(Word adj){
+	 		if(adj == null)
+	 			return -1;
+	 		
+	 		if(adjectives == null)
+	 			adjectives = new ArrayList<Word>();
+	 		
+	 		if(!hasAdjective(adj._wsd)){
+	 			System.out.println(adj._wsd + " adj added to " + this._wordName + "\n");
+	 			adjectives.add(adj);
+	 			return 1;
+	 		}
+	 		else{
+	 			System.out.println(this._wordName + " has this " + adj._wsd + " adj before! so they will merge \n");
+	 			
+	 			Word oldAdj = getAdjective(adj._wsd);
+	 			
+	 			if(oldAdj != null){
+	 				oldAdj.mergeWith(adj);			
+	 				return 0;
+	 			}
+	 			return -1;
+	 		}
+	 	}
+	 	/**
+	 	 * 
+	 	 * @param moz
+	 	 * @return  an integer, 1 means moz added, 0 means the Word own mozaf_elaih has merged with moz, and -1 means nothing happened!
+	 	 */
+	 	public int addMozaf_elaih(Word moz){
+	 		if(moz == null)
+	 			return -1;
+	 		
+	 		if(mozaf_elaih == null)
+	 			mozaf_elaih = new ArrayList<Word>();
+	 		
+	 		if(!hasMozaf_elaih(moz._wsd)){
+	 			System.out.println(moz._wsd + " mozaf added to " + this._wordName + "\n");
+	 			mozaf_elaih.add(moz);
+	 			return 1;
+	 		}
+	 		else{
+	 			System.out.println(this._wordName + " has this " + moz._wsd + " mozaf before! so they will merge \n");
+	 			
+	 			Word oldMoz = getMozaf_elaih(moz._wsd);
+	 			
+	 			if(oldMoz != null){
+	 				oldMoz.mergeWith(moz);			
+	 				return 0;
+	 			}					
+	 			return -1;
+	 		}
+	 	}
+	 	 
+	 	//-------------------- has part -----------------------------
+	 	
+	 	public boolean hasAnyAdjectives(){
+			return !Common.isEmpty(adjectives);
+		}
+		
+		public boolean hasAdjective(Node adj_node){
+			if(!Common.isEmpty(adjectives))
+				for(Word adj:adjectives)
+					if(adj._wsd != null && adj._wsd.equalsRelaxed(adj_node))
+						return true;
+			return false;		
+		}
+		
+		public boolean hasAnyMozaf_elaihs(){
+			return !Common.isEmpty(mozaf_elaih);
+		}
+		
+		public boolean hasMozaf_elaih(Node moz_node){
+			if(!Common.isEmpty(mozaf_elaih))
+				for(Word moz:mozaf_elaih)
+					if(moz._wsd != null && moz._wsd.equalsRelaxed(moz_node))
+						return true;
+			return false;		
+		}
+		
+	 	//-------------------- end of part --------------------------
+		
 	
 	public boolean get_isTruelyPredicted() {
 		this._isTruelyPredicated = checkIfItIsTruelyPredicted();
@@ -374,7 +575,7 @@ public class Word {
 		String predStr = "";
 		if(_predictedSceneElements != null &&  _predictedSceneElements.size() != 0)
 			for(ScenePart scPrt: _predictedSceneElements)
-				predStr += scPrt.toString() + " ";		
+				predStr += scPrt.toString() + "\t";		
 		return predStr;
 	}
 	
@@ -476,6 +677,17 @@ public class Word {
 	private void print(String s){
 		System.out.println(s);
 	}
+ 	
+ 	/**
+	 * this method merges called Word with the input Word, newWord.
+	 * in merging the called Word is main, it means that only when a parameter in 
+	 * called Word is null it is replaced with the newWord Word.
+	 * newWord _semanticTags will not add to called Word _semantic_tags. 
+	 * @param newWord the Word is to be merged with this Word. 
+	 */
+	public void mergeWith(Word newWord){
+		mergeWith(newWord, true);
+	}
 
  	/**
 	 * this method merges called Word with the input Word, newWord.
@@ -545,12 +757,22 @@ public class Word {
 //		print("word after merge: " + this + "\n");
 	}		
 	
+	/** 
+	 * this method checks the equality of two words based on the equality of their
+	 * _sentence, _number, _wordName, _gPOS, _syntaxTag, _srcOfSynTag_number, _wsd,
+	 * _wsd_name, _srcOfSynTag_number, _sceneElement and _semanticTags.
+	 *  in other words _referenceWordNum, _referenceWordNum, _predictedSceneElements and _isTruelyPredicated
+	 *  are not checked for equality.
+	 * 
+	 * @param word
+	 * @return
+	 */
 	public boolean equals(Word word){
 		if(word == null)
 			return false;
 		
-		if(this._sentece != word._sentece)
-			return false;
+//		if(this._sentece != word._sentece)
+//			return false;
 					
 		if(this._number != word._number)
 			return false;
@@ -581,7 +803,6 @@ public class Word {
 			
 		if(this._semanticTags == null && (word._semanticTags != null || word._semanticTags.size() > 0))
 			return false;
-
 		
 		for(SemanticTag nSemTag: word._semanticTags)
 			if(!word.hasSemaniticTag(nSemTag))
