@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/evaluation/Evaluator.java=UTF-8
 encoding//src/model/SceneModel.java=UTF-8
+encoding//src/model/SentenceModel.java=UTF-8
 encoding//src/model/Word.java=UTF-8
 encoding//src/sceneElement/SceneElement.java=UTF-8
 encoding//src/sceneReasoner/SceneReasoner.java=UTF-8

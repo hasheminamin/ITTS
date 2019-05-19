@@ -235,6 +235,7 @@ public class Role extends SceneElement{
 		if(!hasRole_action(role_action)){
 			this.role_actions.add(role_action);
 			print("RoleAction " + role_action + " added to " + this._name);
+			role_action.set_owningRole(this);
 			return role_action;
 		}
 		else{			
@@ -242,6 +243,7 @@ public class Role extends SceneElement{
 			if(exist != null){				
 				print(this._name + " role Merged this " + role_action + " RoleAction with the the equal roleAction it had before!\n");
 				exist.mergeWith(role_action);
+				exist.set_owningRole(this);
 			}
 			else if(role_action.get_otherWords() != null){
 				
@@ -250,6 +252,7 @@ public class Role extends SceneElement{
 					if(exist != null){
 						print(this._name + " role Merged this " + role_action + " RoleAction with the the equal roleAction it had before!\n");
 						exist.mergeWith(role_action);
+						exist.set_owningRole(this);
 						break;
 					}
 				}
@@ -276,6 +279,7 @@ public class Role extends SceneElement{
 		if(!hasRole_emotion(role_emotion)){
 			this.role_emotions.add(role_emotion);
 			print("RoleEmotion " + role_emotion + " added to " + this._name);
+			role_emotion.set_owningRole(this);			
 			return role_emotion;
 		}
 		else{
@@ -283,6 +287,7 @@ public class Role extends SceneElement{
 			if(exist != null){				
 				print(this._name + " role Merged this " + role_emotion + " RoleEmotion with the the equal roleAEmotion it had before!\n");
 				exist.mergeWith(role_emotion);
+				exist.set_owningRole(this);
 			}
 			else if(role_emotion.get_otherWords() != null){
 				
@@ -291,10 +296,11 @@ public class Role extends SceneElement{
 					if(exist != null){
 						print(this._name + " role Merged this " + role_emotion + " RoleEmotion with the the equal roleEmotion it had before!\n");
 						exist.mergeWith(role_emotion);
+						exist.set_owningRole(this);
 						break;
 					}
 				}
-			}
+			}			
 			return exist;			
 		}	
 	}
@@ -316,6 +322,7 @@ public class Role extends SceneElement{
 		if(!hasRole_intent(role_intent)){
 			this.role_intents.add(role_intent);
 			System.out.println("RoleIntent " + role_intent + " added to " + this._name);
+			role_intent.set_owningRole(this);
 			return role_intent;
 		}
 		else{
@@ -323,6 +330,7 @@ public class Role extends SceneElement{
 			if(exist != null){				
 				print(this._name + " role Merged this " + role_intent + " RoleIntent with the the equal roleIntent it had before!\n");
 				exist.mergeWith(role_intent);
+				exist.set_owningRole(this);
 			}
 			else if(role_intent.get_otherWords() != null){
 				
@@ -331,10 +339,12 @@ public class Role extends SceneElement{
 					if(exist != null){
 						print(this._name + " role Merged this " + role_intent + " RoleIntent with the the equal roleIntent it had before!\n");
 						exist.mergeWith(role_intent);
+						exist.set_owningRole(this);
 						break;
 					}
 				}
 			}
+			
 			return exist;
 		}		
 	}
@@ -346,7 +356,7 @@ public class Role extends SceneElement{
 	 * @param role_state to be added to this Role.
 	 * @return the added RoleState.
 	 */
-	public RoleState addRole_State(RoleState role_state){
+	public RoleState addRole_state(RoleState role_state){
 		if(role_state == null)
 			return null;
 		
@@ -355,6 +365,7 @@ public class Role extends SceneElement{
 			
 		if(!hasRole_state(role_state)){
 			this.role_states.add(role_state);
+			role_state.owningRole = this;
 			System.out.println("RoleState " + role_state + " added to " + this._name);
 			return role_state;
 		}
@@ -363,6 +374,7 @@ public class Role extends SceneElement{
 			if(exist != null){				
 				print(this._name + " role Merged this " + role_state + " RoleState with the the equal roleState it had before!\n");
 				exist.mergeWith(role_state);
+				exist.set_owningRole(this);
 			}
 			else if(role_state.get_otherWords() != null){
 				
@@ -371,6 +383,7 @@ public class Role extends SceneElement{
 					if(exist != null){
 						print(this._name + " role Merged this " + role_state + " RoleState with the the equal roleState it had before!\n");
 						exist.mergeWith(role_state);
+						exist.set_owningRole(this);
 						break;
 					}
 				}
@@ -419,7 +432,7 @@ public class Role extends SceneElement{
 			this.addRole_emotion(re);	
 		
 		for(RoleState rm:role.getRole_states())
-			this.addRole_State(rm);
+			this.addRole_state(rm);
 	}
 	
 	private void print(String str){

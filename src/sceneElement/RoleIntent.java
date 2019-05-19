@@ -9,6 +9,8 @@ import ir.ac.itrc.qqa.semantic.kb.Node;
 public class RoleIntent extends SceneElement {
 	
 	protected boolean merged_in_child = false;
+
+	public Role owningRole = null;
 	
 	public RoleIntent(SceneModel scene, String name, Word word) {
 		super(scene, name, ScenePart.ROLE_INTENT, word);
@@ -34,8 +36,18 @@ public class RoleIntent extends SceneElement {
 		}
 				
 		if(roleIntent == null)
-			return;
+			return;		
 		
+		if(owningRole == null && roleIntent.owningRole != null)
+			owningRole = roleIntent.owningRole;
+		
+	}
+		
+	public void set_owningRole(Role owningRole) {
+		if(owningRole == null)
+			return;
+		this.owningRole = owningRole;
+//		owningRole.addRole_intent(this);
 	}
 
 }

@@ -85,9 +85,9 @@ public class Phrase {
 	
 	@Override
 	public String toString() {
-		String str = "Phrase with head: " + _headWord + " \n";
+		String str = "head: " + _headWord._wordName + " words: ";
 		for(Word w:_words)
-			str += w + "  ";
+			str += w._wordName + "  ";
 		str += " size: " + size;
 		return str;
 	}

@@ -7,7 +7,7 @@ import ir.ac.itrc.qqa.semantic.kb.Node;
 
 public class DynamicObjectAction extends SceneElement {
 
-	private DynamicObject actor = null;
+	private DynamicObject owningDynamicObject = null;
 	
 	protected boolean merged_in_child = false;
 	
@@ -23,12 +23,12 @@ public class DynamicObjectAction extends SceneElement {
 		super(scene, name, ScenePart.DYNAMIC_OBJECT_ACTION, node);		
 	}
 
-	public DynamicObject getActor() {
-		return actor;
+	public DynamicObject get_owningDynamicObject() {
+		return owningDynamicObject;
 	}
 
-	public void setActor(DynamicObject actor) {
-		this.actor = actor;
+	public void set_owningDynamicObject(DynamicObject owningDynamicObject) {
+		this.owningDynamicObject = owningDynamicObject;
 	}
 
 	public void mergeDynamicObjectActionWith(DynamicObjectAction dynObjAction) {
@@ -42,8 +42,8 @@ public class DynamicObjectAction extends SceneElement {
 		if(dynObjAction == null)
 			return;
 		
-		if(this.actor == null && dynObjAction.actor != null)
-				this.actor = dynObjAction.actor;
+		if(this.owningDynamicObject == null && dynObjAction.owningDynamicObject != null)
+				this.owningDynamicObject = dynObjAction.owningDynamicObject;
 	}
 
 }

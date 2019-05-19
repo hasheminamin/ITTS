@@ -435,7 +435,13 @@ public class LearningUI {
 		
 //		Dashboard.sceneReasoner.calculateRepeatedWords(allStories);
 		
-		evaluate(allStories);		
+//		evaluate(allStories);		
+		
+		Dashboard.sceneReasoner.arrangeWordReferences(allStories, null);//all referents will be set.
+		
+//		Dashboard.sceneReasoner.allocateRoleStates(allStories);
+		
+		Dashboard.sceneReasoner.allocateRoleActions(allStories);
 		
 //		Dashboard.sceneReasoner.completeSceneModelsElements(allStories);
 		

@@ -9,6 +9,8 @@ public class RoleState extends SceneElement {
 	
 	protected boolean merged_in_child = false;
 	
+	public Role owningRole = null;
+	
 	public RoleState(SceneModel scene, String name, Word word){
 		super(scene, name, ScenePart.ROLE_STATE, word);			
 	}
@@ -19,6 +21,15 @@ public class RoleState extends SceneElement {
 	
 	public RoleState(SceneModel scene, String name, Node node) {
 		super(scene, name, ScenePart.ROLE_STATE, node);
+	}
+	
+	public void set_owningRole(Role owningRole) {
+		
+		if(owningRole == null)
+			return;
+		
+		this.owningRole = owningRole;
+//		owningRole.addRole_state(this);
 	}
 
 	public void mergeRoleStateWith(RoleState roleState) {
@@ -32,5 +43,7 @@ public class RoleState extends SceneElement {
 		if(roleState == null)
 			return;
 		
+		if(owningRole == null && roleState.owningRole != null)
+			owningRole = roleState.owningRole;		
 	}
 }

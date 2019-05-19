@@ -7,6 +7,8 @@ import enums.ScenePart;
 
 public class DynamicObjectState extends SceneElement {
 	
+	private DynamicObject owningDynamicObject = null;
+	
 	protected boolean merged_in_child = false;
 	
 	public DynamicObjectState(SceneModel scene, String name, Word word) {
@@ -19,6 +21,14 @@ public class DynamicObjectState extends SceneElement {
 
 	public DynamicObjectState(SceneModel scene, String name, Node node) {
 		super(scene, name, ScenePart.DYNAMIC_OBJECT_STATE, node);
+	}
+	
+	public DynamicObject get_owningDynamicObject() {
+		return owningDynamicObject;
+	}
+
+	public void set_owningDynamicObject(DynamicObject owningDynamicObject) {
+		this.owningDynamicObject = owningDynamicObject;
 	}
 
 	public void mergeDynamicObjectStateWith(DynamicObjectState dynObjState) {

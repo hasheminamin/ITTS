@@ -23,7 +23,7 @@ public class Word {
 	/**
 	 * senteceModel which this Word belongs to.
 	 */
-	public SentenceModel _sentece;
+	public SentenceModel _sentence;
 	
 	/**
 	 * Phrase which this Word belongs to.
@@ -85,7 +85,6 @@ public class Word {
 	/**
 	 * determines if the defined and predicted sceneElements of this Word object are the same or not?
 	 */
-	@SuppressWarnings("unused")
 	private boolean _isTruelyPredicated = false;
 	
 	/**
@@ -110,15 +109,36 @@ public class Word {
 	public Word _referenceWord = null;
 	
 	/**
+	 * the verb assigned to this Word (as subject)
+	 */
+	private Word verb;
+	
+	/**
+	 * if this Word is a verb, this parameter contains its subjects.
+	 */
+	private ArrayList<Word> subjects;
+	
+	/**
 	 * The adjectives of this Word. 
 	 */
 	private ArrayList<Word> adjectives;
 	
 	/**
+	 * The mosoof of this Word. 
+	 */
+	private Word mosoof;
+		
+	/**
 	 * The mozaf_elaih of this Word. 
 	 */	
 	private ArrayList<Word> mozaf_elaih;
 
+	/**
+	 * The Mozaf of this Word. 
+	 */
+	private Word mozaf;
+	
+	
 	/**
 	 * This constructor gets an input string in the format 
 	 * "4	برادر	N	OBJ	5	برادر§n-14090	نفر§n-13075	role	_	_	Arg1	_"
@@ -136,7 +156,7 @@ public class Word {
 			MyError.error("Bad sentence information format " + wStr + " parts-num " + parts.length);
 			return;
 		}
-		this._sentece = sentence;
+		this._sentence = sentence;
 		
 		this.set_number(parts[0].trim());
 		
@@ -178,7 +198,7 @@ public class Word {
 	
 	public Word(SentenceModel senteceModel, int number, String wordName, POS gPOS, DependencyRelationType syntaxTag, int srcOfSynTag_number, Node wsd, String wsd_name, String super_wsd_name, ScenePart sceneElement) {
 		super();
-		this._sentece = senteceModel;
+		this._sentence = senteceModel;
 		this._number = number;
 		this._wordName = wordName;
 		this._gPOS = gPOS;
@@ -354,7 +374,17 @@ public class Word {
 		}
 		
 		/**
-		 * checks weather this Word object _syntaxTag is VERB or not?
+		 * checks weather this Word _syntaxTag is ROOT or its _srcOfSynTag_number is 0?
+		 * @return
+		 */
+		public boolean isRootVerb(){
+			if(_syntaxTag == DependencyRelationType.ROOT || _srcOfSynTag_number == 0)
+				return true;
+			return false;		
+		}
+		
+		/**
+		 * checks weather this Word object _syntaxTag is V; it means it is a verb or not?
 		 * @return
 		 */
 		public boolean isVerb(){
@@ -419,26 +449,50 @@ public class Word {
 	
 	//-------------------- getter part --------------------------
 	
+	public Word getVerb() {
+		return verb;
+	}
+	
+	public Word getMosoof() {
+		return mosoof;
+	}
+	
+	public ArrayList<Word> getSubjects() {
+		return subjects;
+	}
+	
+	public Word getSubject(String sbj_node_name){
+		if(!Common.isEmpty(subjects))
+			for(Word sbj:subjects)
+				if(sbj._wsd_name != null && sbj._wsd_name.equals(sbj_node_name))
+					return sbj;
+		return null;		
+	}
+	
 	public ArrayList<Word> getAdjectives() {
 		return adjectives;
 	}
  	 
- 	public Word getAdjective(Node adj_node){
+ 	public Word getAdjective(String adj_node_name){
 		if(!Common.isEmpty(adjectives))
 			for(Word adj:adjectives)
-				if(adj._wsd != null && adj._wsd.equalsRelaxed(adj_node))
+				if(adj._wsd_name != null && adj._wsd_name.equals(adj_node_name))
 					return adj;
 		return null;		
 	}
 	
+ 	public Word getMozaf() {
+ 		return mozaf;
+ 	}
+ 	
 	public ArrayList<Word> getMozaf_elaih() {
 		return mozaf_elaih;
 	}
 	
-	public Word getMozaf_elaih(Node moz_node){
+	public Word getMozaf_elaih(String moz_node_name){
 		if(!Common.isEmpty(mozaf_elaih))
 			for(Word moz:mozaf_elaih)
-				if(moz._wsd != null && moz._wsd.equalsRelaxed(moz_node))
+				if(moz._wsd_name != null && moz._wsd_name.equals(moz_node_name))
 					return moz;
 		return null;		
 	}
@@ -459,7 +513,38 @@ public class Word {
 	}
 	
 	//-------------------- add part -----------------------------
-	 
+	/**
+ 	 * 
+ 	 * @param sbj
+ 	 * @return an integer, 1 means adj added, 0 means the Word own adjective has merged with adj, and -1 means nothing happened! 
+ 	 */
+ 	public int addSubject(Word sbj){
+ 		if(sbj == null)
+ 			return -1;
+ 		
+ 		sbj.verb = this;
+ 		
+ 		if(subjects == null)
+ 			subjects = new ArrayList<Word>();
+ 		
+ 		if(!hasSubject(sbj._wsd_name)){
+// 			print(sbj._wsd + " sbj added to " + this._wordName + "\n");
+ 			subjects.add(sbj);
+ 			return 1;
+ 		}
+ 		else{
+// 			print(this._wordName + " has this " + sbj._wsd + " sbj before! so they will merge \n");
+ 			
+ 			Word oldSbj = getSubject(sbj._wsd_name);
+ 			
+ 			if(oldSbj != null){
+ 				oldSbj.mergeWith(sbj);			
+ 				return 0;
+ 			}
+ 			return -1;
+ 		}
+ 	}
+	
 	 	/**
 	 	 * 
 	 	 * @param adj
@@ -469,18 +554,20 @@ public class Word {
 	 		if(adj == null)
 	 			return -1;
 	 		
+	 		adj.mosoof = this;
+	 		
 	 		if(adjectives == null)
 	 			adjectives = new ArrayList<Word>();
 	 		
-	 		if(!hasAdjective(adj._wsd)){
-	 			System.out.println(adj._wsd + " adj added to " + this._wordName + "\n");
+	 		if(!hasAdjective(adj._wsd_name)){
+//	 			print(adj._wsd + " adj added to " + this._wordName + "\n");
 	 			adjectives.add(adj);
 	 			return 1;
 	 		}
 	 		else{
-	 			System.out.println(this._wordName + " has this " + adj._wsd + " adj before! so they will merge \n");
+//	 			print(this._wordName + " has this " + adj._wsd + " adj before! so they will merge \n");
 	 			
-	 			Word oldAdj = getAdjective(adj._wsd);
+	 			Word oldAdj = getAdjective(adj._wsd_name);
 	 			
 	 			if(oldAdj != null){
 	 				oldAdj.mergeWith(adj);			
@@ -498,18 +585,20 @@ public class Word {
 	 		if(moz == null)
 	 			return -1;
 	 		
+	 		moz.mozaf = this;
+	 		
 	 		if(mozaf_elaih == null)
 	 			mozaf_elaih = new ArrayList<Word>();
 	 		
-	 		if(!hasMozaf_elaih(moz._wsd)){
-	 			System.out.println(moz._wsd + " mozaf added to " + this._wordName + "\n");
+	 		if(!hasMozaf_elaih(moz._wsd_name)){
+//	 			print(moz._wsd + " mozaf added to " + this._wordName + "\n");
 	 			mozaf_elaih.add(moz);
 	 			return 1;
 	 		}
 	 		else{
-	 			System.out.println(this._wordName + " has this " + moz._wsd + " mozaf before! so they will merge \n");
+//	 			print(this._wordName + " has this " + moz._wsd + " mozaf before! so they will merge \n");
 	 			
-	 			Word oldMoz = getMozaf_elaih(moz._wsd);
+	 			Word oldMoz = getMozaf_elaih(moz._wsd_name);
 	 			
 	 			if(oldMoz != null){
 	 				oldMoz.mergeWith(moz);			
@@ -521,14 +610,26 @@ public class Word {
 	 	 
 	 	//-------------------- has part -----------------------------
 	 	
+	 	public boolean hasAnySubjects(){
+			return !Common.isEmpty(subjects);
+		}
+	 			
+	 	public boolean hasSubject(String sbj_node_name){
+			if(!Common.isEmpty(subjects))
+				for(Word sbj:subjects)
+					if(sbj._wsd_name != null && sbj._wsd_name.equals(sbj_node_name))
+						return true;
+			return false;		
+		}
+	 	
 	 	public boolean hasAnyAdjectives(){
 			return !Common.isEmpty(adjectives);
 		}
-		
-		public boolean hasAdjective(Node adj_node){
+	 	
+		public boolean hasAdjective(String adj_node_name){
 			if(!Common.isEmpty(adjectives))
 				for(Word adj:adjectives)
-					if(adj._wsd != null && adj._wsd.equalsRelaxed(adj_node))
+					if(adj._wsd_name != null && adj._wsd_name.equals(adj_node_name))
 						return true;
 			return false;		
 		}
@@ -537,10 +638,10 @@ public class Word {
 			return !Common.isEmpty(mozaf_elaih);
 		}
 		
-		public boolean hasMozaf_elaih(Node moz_node){
+		public boolean hasMozaf_elaih(String moz_node_name){
 			if(!Common.isEmpty(mozaf_elaih))
 				for(Word moz:mozaf_elaih)
-					if(moz._wsd != null && moz._wsd.equalsRelaxed(moz_node))
+					if(moz._wsd_name != null && moz._wsd_name.equals(moz_node_name))
 						return true;
 			return false;		
 		}
@@ -705,9 +806,9 @@ public class Word {
 		if(newWord == null)
 			return;
 		
-		if(_sentece == null)
-			if(newWord._sentece != null)
-				_sentece = newWord._sentece;
+		if(_sentence == null)
+			if(newWord._sentence != null)
+				_sentence = newWord._sentence;
 					
 		if(_number < 0)
 			if(newWord._number >= 0)

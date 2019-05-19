@@ -149,6 +149,7 @@ public class DynamicObject extends SceneElement{
 		if(!hasObject_state(state)){
 			this.object_states.add(state);
 			System.out.println("DynamicObjectState " + state + " added to " + this._name);
+			state.set_owningDynamicObject(this);
 			return state;
 		}
 		else{
@@ -156,6 +157,7 @@ public class DynamicObject extends SceneElement{
 			if(exist != null){				
 				System.out.println(this._name + " DynamicObject Merged this " + state + " DynamicObjectState with the the equal DynamicObjectState it had before!\n");
 				exist.mergeWith(state);
+				exist.set_owningDynamicObject(this);
 			}
 			else if(state.get_otherWords() != null){
 				
@@ -164,6 +166,7 @@ public class DynamicObject extends SceneElement{
 					if(exist != null){
 						System.out.println(this._name + " DynamicObject Merged this " + state + " DynamicObjectState with the the equal DynamicObjectState it had before!\n");
 						exist.mergeWith(state);
+						exist.set_owningDynamicObject(this);
 						break;
 					}
 				}
@@ -190,6 +193,7 @@ public class DynamicObject extends SceneElement{
 		if(!hasObject_action(action)){
 			this.object_actions.add(action);
 			System.out.println("ObjectAction " + action + " added to " + this._name);
+			action.set_owningDynamicObject(this);
 			return action;
 		}
 		else{
@@ -197,6 +201,7 @@ public class DynamicObject extends SceneElement{
 			if(exist != null){				
 				System.out.println(this._name + " DynamicObject Merged this " + action + " ObjectAction with the the equal ObjectAction it had before!\n");
 				exist.mergeWith(action);
+				exist.set_owningDynamicObject(this);
 			}
 			else if(action.get_otherWords() != null){
 				
@@ -205,10 +210,12 @@ public class DynamicObject extends SceneElement{
 					if(exist != null){
 						System.out.println(this._name + " DynamicObject Merged this " + action + " ObjectAction with the the equal ObjectAction it had before!\n");
 						exist.mergeWith(action);
+						exist.set_owningDynamicObject(this);
 						break;
 					}
 				}
 			}
+			
 			return exist;
 		}
 	

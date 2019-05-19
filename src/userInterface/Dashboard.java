@@ -42,7 +42,9 @@ public class Dashboard {
 //	public static String inputCorporaPath = "dataset/98-02-03CRFcorpora-junk-sceneMarker-corrections-corr-test-sync2.arff";
 //	public static String inputCorporaPath = "dataset/98-02-08CRFcorpora-junk-sceneMarker-corrections-corr-test-sync2-PRcorrect.arff";
 //	public static String inputCorporaPath = "dataset/98-02-09CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect.arff";
-	public static String inputCorporaPath = "dataset/98-02-18CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect.arff";
+//	public static String inputCorporaPath = "dataset/98-02-18CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect.arff";
+//	public static String inputCorporaPath = "dataset/98-02-23CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS.arff";
+	public static String inputCorporaPath = "dataset/98-02-25CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA.arff";
 		
 //	public static String inputSystemOutpurPath = "dataset/97-12-21out.arff";
 	public static String inputSystemOutpurPath = "dataset/98-02-05out.arff";
@@ -214,11 +216,16 @@ public class Dashboard {
 					for(int sentenceIndex = 0; currentScene.sentences != null && sentenceIndex < currentScene.sentences.size(); sentenceIndex++) {
 					
 						SentenceModel currentSentence = currentScene.sentences.get(sentenceIndex);
-											
+																	
 						if(currentSentence == null) {
 							MyError.error("current Sentence should not be null!!!");
 							continue;
 						}
+						
+						print("\n----" + currentSentence);
+						
+						currentSentence.arrangeNounPhraseAsLarge();
+//						currentSentence.arrangeNounPhraseAsSmall();
 						
 						if(currentWord != null) {//it is the last word of the past sentence
 							

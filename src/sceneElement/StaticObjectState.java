@@ -7,6 +7,7 @@ import enums.ScenePart;
 
 public class StaticObjectState extends SceneElement {
 	
+	private StaticObject owningStaticObject = null;
 	protected boolean merged_in_child = false;
 	
 	public StaticObjectState(SceneModel scene, String name, Word word) {
@@ -19,6 +20,14 @@ public class StaticObjectState extends SceneElement {
 
 	public StaticObjectState(SceneModel scene, String name, Node node) {
 		super(scene, name, ScenePart.STATIC_OBJECT_STATE, node);
+	}
+	
+	public StaticObject get_owningStaticObject() {
+		return owningStaticObject;
+	}
+
+	public void set_owningStaticObject(StaticObject actor) {
+		this.owningStaticObject = actor;
 	}
 
 	public void mergeStaticObjectStateWith(StaticObjectState statObjState) {

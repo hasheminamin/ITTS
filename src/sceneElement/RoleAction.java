@@ -7,7 +7,7 @@ import ir.ac.itrc.qqa.semantic.kb.Node;
 
 public class RoleAction extends SceneElement {
 	
-	private Role actor = null;
+	public Role owningRole = null;
 	
 	private RoleEmotion emotion_in_action = null;
 	
@@ -27,10 +27,13 @@ public class RoleAction extends SceneElement {
 		super(scene, name, ScenePart.ROLE_ACTION, node);		
 	}
 	
-	public void setActor(Role actor) {
-		this.actor = actor;
-		System.out.println("Role " + actor._name + " added to this RoleAction " + this);
+	public void set_owningRole(Role owningRole) {
+		if(owningRole == null)
+			return;
+		this.owningRole = owningRole;
+//		owningRole.addRole_action(this);
 	}
+	
 	
 	public void setEmotion_in_action(RoleEmotion emotion_in_action) {
 		this.emotion_in_action = emotion_in_action;
@@ -38,10 +41,6 @@ public class RoleAction extends SceneElement {
 	
 	public void setState_in_action(RoleState state_in_action) {
 		this.state_in_action = state_in_action;
-	}
-	
-	public Role getActor() {
-		return actor;
 	}
 	
 	public RoleEmotion getEmotion_in_action() {
@@ -69,8 +68,11 @@ public class RoleAction extends SceneElement {
 		if(roleAction == null)
 			return;
 		
-		if(actor == null && roleAction.actor != null)
-			actor = roleAction.actor;
+		if(owningRole == null && roleAction.owningRole != null)
+			owningRole = roleAction.owningRole;
+		
+//		if(actor == null && roleAction.actor != null)
+//			actor = roleAction.actor;
 		
 		if(emotion_in_action == null && roleAction.emotion_in_action != null)
 			emotion_in_action = roleAction.emotion_in_action;

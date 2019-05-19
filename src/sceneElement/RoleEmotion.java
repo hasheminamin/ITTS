@@ -8,6 +8,8 @@ import ir.ac.itrc.qqa.semantic.kb.Node;
 public class RoleEmotion extends SceneElement {
 
 	protected boolean merged_in_child = false;
+	
+	public Role owningRole = null;
 
 	public RoleEmotion(SceneModel scene, String name, Word word) {
 		super(scene, name, ScenePart.ROLE_EMOTION, word);
@@ -33,7 +35,18 @@ public class RoleEmotion extends SceneElement {
 		}
 				
 		if(roleEmotion == null)
-			return;		
+			return;
+		
+		if(owningRole == null && roleEmotion.owningRole != null)
+			owningRole = roleEmotion.owningRole;
+		
+	}
+	
+	public void set_owningRole(Role owningRole) {
+		if(owningRole == null)
+			return;
+		this.owningRole = owningRole;
+//		owningRole.addRole_emotion(this);
 	}
 
 }

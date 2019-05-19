@@ -438,14 +438,14 @@ public class SceneModel {
 		return null;
 	}
 	
-	public Word getWord(Node word_node) {
+	public Word getWord(String word_node_name) {
 		ArrayList<SentenceModel> sents = getSentences();
 		
 		Word desired_word = null;
 		
 		if(!Common.isEmpty(sents)){
 			for(SentenceModel sent:sents){
-				desired_word = sent.getWord(word_node);
+				desired_word = sent.getWord(null, word_node_name);
 				
 				if(desired_word != null)
 					return desired_word;
@@ -504,7 +504,7 @@ public class SceneModel {
 			return null;
 		
 		for(SentenceModel sentence:this.sentences){
-			Word wrd = sentence.getWord(sceneElement._node);
+			Word wrd = sentence.getWord(sceneElement._node, sceneElement._node_name);
 			if(wrd != null)
 				return wrd;
 		}
@@ -581,7 +581,9 @@ public class SceneModel {
 			}
 			else{
 				print("---" + "SceneModel Merged this " + static_object + " with the the equal Static_object it had before!");
+				
 				StaticObject thisStatic_obj = getStatic_object(static_object);
+				
 				if(thisStatic_obj != null) {
 					thisStatic_obj.mergeWith(static_object);
 					
@@ -615,7 +617,9 @@ public class SceneModel {
 			}
 			else{
 				print("---" + "SceneModel Merged this " + dynamic_object + " with the the equal Dynamic_object it had before!");
+				
 				DynamicObject thisDyn_obj = getDynamic_object(dynamic_object);
+				
 				if(thisDyn_obj != null) {
 					thisDyn_obj.mergeWith(dynamic_object);
 

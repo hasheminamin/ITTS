@@ -105,6 +105,7 @@ public class StaticObject extends SceneElement {
 		if(!hasObject_state(state)){
 			this.object_states.add(state);
 			System.out.println("StaticObjectState " + state + " added to " + this._name);
+			state.set_owningStaticObject(this);
 			return state;
 		}
 		else{
@@ -112,6 +113,7 @@ public class StaticObject extends SceneElement {
 			if(exist != null){				
 				System.out.println(this._name + " StaticObject Merged this " + state + " StaticObjectState with the the equal StaticObjectState it had before!\n");
 				exist.mergeWith(state);
+				exist.set_owningStaticObject(this);
 			}
 			else if(state.get_otherWords() != null){
 				
@@ -120,10 +122,12 @@ public class StaticObject extends SceneElement {
 					if(exist != null){
 						System.out.println(this._name + " StaticObject Merged this " + state + " StaticObjectState with the the equal StaticObjectState it had before!\n");
 						exist.mergeWith(state);
+						exist.set_owningStaticObject(this);
 						break;
 					}
 				}
 			}
+			
 			return exist;			
 		}
 	
