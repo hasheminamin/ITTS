@@ -122,6 +122,17 @@ public class SceneModel {
 			return sentences.size();
 		return 0;
 	}
+	
+	public SentenceModel getPastSentence(SentenceModel currentSentence) {
+		if(currentSentence == null || sentences == null || sentences.size() == 0)
+			return null;
+		
+		for(int i = 0; i < sentences.size(); i++)
+			if(sentences.get(i) != null && sentences.get(i).equals(currentSentence) && (i-1) >= 0)
+				return sentences.get(i-1);
+			
+		return null;
+	}
 
 	public ArrayList<Role> getRoles() {
 		return roles;

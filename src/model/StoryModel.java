@@ -36,6 +36,33 @@ public class StoryModel {
 		}		
 	}
 	
+	public SentenceModel getPastSentence(SentenceModel currentSentence) {
+		
+		if(currentSentence == null)
+			return null;	
+		
+		for(int sceneIndex = 0; sceneIndex < this.scenes.size(); sceneIndex++) {
+			
+			SceneModel curScene = this.scenes.get(sceneIndex);
+					
+			for(int sentIndex = 0; sentIndex < curScene.sentences.size(); sentIndex++) {
+				
+				SentenceModel curSent = curScene.sentences.get(sentIndex);
+				
+				if(curSent != null && curSent.equals(currentSentence) && (sentIndex-1) >= 0)
+					return curScene.sentences.get(sentIndex - 1);
+				
+				else if(curSent != null && curSent.equals(currentSentence) && (sentIndex - 1 < 0) && (sceneIndex - 1) >= 0) {
+					SceneModel pastScene = this.scenes.get(sceneIndex - 1);
+					
+					if(pastScene != null && pastScene.sentences != null && pastScene.sentences.size() != 0)
+						return pastScene.sentences.get(pastScene.sentences.size() - 1);
+				}
+			}
+		}
+		return null;
+	}
+	
 	public ArrayList<Word> calculateMultiSemanticTagWords(){
 		if(scenes == null || scenes.size() == 0)
 			return null;

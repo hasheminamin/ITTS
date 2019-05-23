@@ -1,0 +1,80 @@
+>>>>>>>>>>---------- allocation of RoleActions ----------<<<<<<<<<<
+RoleAction خواندن§v-8493=  مي‌نمود added to يونس
+RoleAction اصرار ورزيدن§v-15640=  مي‌ورزيدند added to يونس
+RoleAction ملحق شدن§v-8974=  نگرويدند added to ديگري
+))))))))))))))))))))) not allocated: نفرین کردن§v-18658=  کند
+RoleAction گفتن§v-7774=  گفت added to روبيل
+RoleAction انجام دادن§v-21737=  نکن added to روبيل
+RoleAction نفرین کردن§v-18658=  کرد added to او
+RoleAction پوییدن§v-7700=  رفت added to روبيل
+RoleAction null=  خواست added to روبيل
+RoleAction یاری خواستن§v-20679=  کنند added to روبيل
+RoleAction نادم شدن§v-21859=  نمايند added to روبيل
+RoleAction وارد شدن§v-8510=  شد added to يونس
+RoleAction رويت کردن§v-8581=  ديد added to يونس
+RoleAction پرسش کردن§v-8136=  پرسيد added to مرد
+RoleAction شناختن§v-8761=  نمي‌شناخت added to مرد
+RoleAction null=  داد added to مرد
+RoleAction شنيدن§v-7802=  شنيدن added to يونس
+))))))))))))))))))))) not allocated: ترک کردن§v-16309=  کرد
+))))))))))))))))))))) not allocated: پوییدن§v-7700=  رفت
+))))))))))))))))))))) not allocated: رسیدن§v-8613=  رسيد
+))))))))))))))))))))) not allocated: سوار شدن§v-8721=  شد
+))))))))))))))))))))) not allocated: انداختن§v-7928=  انداخته
+RoleAction پرداختن§v-19365=  پرداخت added to او
+RoleAction مقر آمدن§v-22066=  کرد added to او
+RoleAction خارج شدن§v-8450=  شد added to يونس
+RoleAction لم دادن§v-8155=  زد added to يونس
+RoleAction ايراد کردن§v-9365=  مي‌گفت added to يونس
+RoleAction باز يافتن§v-16266=  بازيافت added to يونس
+RoleAction تقاضا داشتن§v-19252=  نمود added to يونس
+))))))))))))))))))))) not allocated: روانه شدن§v-8643=  کرد
+))))))))))))))))))))) not allocated: وارد شدن§v-8510=  شد
+))))))))))))))))))))) not allocated: خبر دادن§v-15754=  داد
+RoleAction باور کردن§v-9412=  نمي‌کردند added to مردم
+RoleAction اسیر کردن§v-8991=  کرده added to مردم
+RoleAction تصمیم گرفتن§v-16866=  گرفتند added to مردم
+RoleAction زدن§v-8659=  بزنند added to مردم
+RoleAction گفتن§v-7774=  گفت added to چوپان
+RoleAction پوییدن§v-7700=  رفته added to مردم
+RoleAction null=  کردند added to مردم
+RoleAction null=  مي‌پنداشتند added to فرشتگان
+))))))))))))))))))))) not allocated: null=  کنند
+))))))))))))))))))))) not allocated: انجام دادن§v-9258=  آورند
+))))))))))))))))))))) not allocated: null=  کنيد
+RoleAction متوجه شدن§v-9051=  ديدند added to فرشتگان
+RoleAction null=  کردند added to فرشتگان
+RoleAction null=  نمودند added to فرشتگان
+))))))))))))))))))))) not allocated: عروسي کردن§v-7890=  نموده
+RoleAction در يافتن§v-16389=  بردند added to آنان
+RoleAction null=  کردند added to آنان
+))))))))))))))))))))) not allocated: کردن§v-8678=  سازند
+RoleAction معزول شدن§v-8026=  شدند added to آن‌ها
+RoleAction فرود آمدن§v-9200=  آمدند added to آن‌ها
+RoleAction null=  کرد added to آدم
+RoleAction وارد شدن§v-8510=  شد added to آدم
+))))))))))))))))))))) not allocated: فرود آمدن§v-9200=  آمد
+))))))))))))))))))))) not allocated: سکونت کردن§v-9334=  نمود
+RoleAction پرداختن§v-19365=  پرداخت added to آدم
+RoleAction زار زار کردن§v-8977=  کرد added to آدم
+RoleAction مقر آمدن§v-22066=  نمود added to آدم
+RoleAction null=  نهد added to آدم
+RoleAction جا گرفتن§v-8898=  گرفت added to آدم
+RoleAction پيوستن§v-7523=  پيوست added to آدم
+RoleAction null=  داد added to شيث
+RoleAction null=  کرد added to شيث
+RoleAction null=  خواند added to شيث
+))))))))))))))))))))) not allocated: قرار گرفتن§v-19953=  نشست
+))))))))))))))))))))) not allocated: تدريس کردن§v-9219=  آموخت
+))))))))))))))))))))) not allocated: ابلاغ کردن§v-9622=  کرد
+
+all RoleActionNumbers: 71
+Self sbj RoleActionNumbers: 13 which 13 are correct: 100.0
+All sbjs RoleActionNumbers: 39 which 31 are correct: 79.48717948717949
+allocated RoleActionNumbers: 52
+non-allocated RoleActionNumbers: 19
+
+correct allocations: 44 and fault allocations: 8 from: 52 allocations.
+correct alloation in allocated RoleActions: 84.61538461538461%
+correct alloation in all RoleStates: 61.97183098591549%
+الحمدلله رب العالمین

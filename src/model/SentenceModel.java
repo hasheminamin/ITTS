@@ -106,24 +106,60 @@ public class SentenceModel {
 		return null;
 	}
 	
-	public Word getRootVerb(){
+	/**
+	 * return the Word in a sentence which has ROOT as _syntaxTag or 0 as _srcOfSynTag_number
+	 * @return
+	 */
+	public Word getRootWord(){
 		if(!Common.isEmpty(_words))
 			for(Word wrd:_words)
-				if(wrd != null && wrd.isRootVerb())
+				if(wrd != null && wrd.isRootWord())
 					return wrd;
 					
 		MyError.error("This sentence has no verb!: " + this);
 		return null;
 	}
 	
-	public Word getSubject(){
+	/**
+	 * return all Words in a sentence which has V as _gPOS
+	 * @return
+	 */
+	public ArrayList<Word> getAllVerbs(){
+		
+		ArrayList<Word> allVerbs = new ArrayList<Word>();
+		
+		if(!Common.isEmpty(_words))
+			for(Word wrd:_words)
+				if(wrd != null && wrd.isVerb())
+					allVerbs.add(wrd);
+				
+		return allVerbs;
+	}
+	
+//	public Word getSubject(){
+//		if(!Common.isEmpty(_words))
+//			for(Word wrd:_words)
+//				if(wrd != null && wrd.isSubject())
+//					return wrd;
+//					
+//		MyError.error("This sentence has no Subject!: " + this);
+//		return null;
+//	}
+	
+	/**
+	 * return all Words in a sentence which has SBJ as _syntaxTag
+	 * @return
+	 */
+	public ArrayList<Word> getAllSubjects(){
+		
+		ArrayList<Word> allSbjs = new ArrayList<Word>();
+		
 		if(!Common.isEmpty(_words))
 			for(Word wrd:_words)
 				if(wrd != null && wrd.isSubject())
-					return wrd;
-					
-		MyError.error("This sentence has no Subject!: " + this);
-		return null;
+					allSbjs.add(wrd);
+				
+		return allSbjs;
 	}
 	
 	public boolean hasSubject(){
@@ -145,6 +181,36 @@ public class SentenceModel {
 					allStartingWords.add(wrd);
 			
 		return allStartingWords;
+	}
+	
+	public Word getVerbWithOutSourceNumber(){
+		if(Common.isEmpty(_words))
+			return null;
+			
+		for(Word wrd:_words)			
+			if(wrd._srcOfSynTag_number > _words.get(_words.size() - 1)._number)
+				if(wrd.isVerb())
+					return wrd;
+				else {
+					ArrayList<Word> startingWords = getWordsWithSourceNumber(wrd._number);
+					if(!Common.isEmpty(startingWords))
+						for(Word start:startingWords)
+							if(start.isVerb())
+								return start;					
+				}
+		for(Word wrd:_words)
+			if(wrd._srcOfSynTag_number < _words.get(0)._number)
+				if(wrd.isVerb())
+					return wrd;
+				else {
+					ArrayList<Word> startingWords = getWordsWithSourceNumber(wrd._number);
+					if(!Common.isEmpty(startingWords))
+						for(Word start:startingWords)
+							if(start.isVerb())
+								return start;					
+				}
+		
+		return null;
 	}
 	
 	
@@ -207,6 +273,25 @@ public class SentenceModel {
 		return false;
 	}
 	
+	private void assignWordToWord(Word root, Word dependent) {
+		if(root == null ||dependent == null)
+			return;
+		
+		if(dependent.isAdjective()){
+//			print("\nfirst here in makePhrase!");
+			root.addAdjective(dependent);
+		}
+		else if(dependent.isMozaf_elaih()){
+//			print("\nfirst here in makePhrase!");
+			root.addMozaf_elaih(dependent);
+		}
+		else if(dependent.isSubject()) {
+			root.addSubject(dependent);
+		}
+		else if(dependent.isObject())
+			root.addObject(dependent);
+	}
+	
 	private void makePhrases(Word phraseHead, ArrayList<Word> phraseWords){
 		if(phraseHead == null)
 			return;		
@@ -221,21 +306,11 @@ public class SentenceModel {
 		
 		for(Word ph_w:fromThis){
 			
-			if(ph_w.isAdjective()){
-//				print("\nfirst here in makePhrase!");
-				phraseHead.addAdjective(ph_w);
-			}
-			else if(ph_w.isMozaf_elaih()){
-//				print("\nfirst here in makePhrase!");
-				phraseHead.addMozaf_elaih(ph_w);
-			}
-			else if(ph_w.isSubject()) {
-				phraseHead.addSubject(ph_w);
-			}
-			
+			assignWordToWord(phraseHead, ph_w);
+							
 			makePhrases(ph_w, phraseWords);
 		}
-	}
+	}	
 	
 	/**
 	 * this method generates phrases for each noun-phrase which is depended to main verb or
@@ -243,24 +318,38 @@ public class SentenceModel {
 	 * noun-phrase in this method are very small. 
 	 */
 	public void arrangeNounPhraseAsSmall(){
-		Word verb = getRootVerb();
+		Word root = getRootWord();
 		
-		if(verb == null)
-			return;
+		if(root == null) {
+			root = getVerbWithOutSourceNumber();
+			if(root == null)
+				return;	
+		}			
 		
-		int root_num = verb._number;
+		int root_num = root._number;
 
-		print("root: " + verb._wordName);
+		print("root: " + root._wordName);
 		
 		ArrayList<Word> phraseHeads = getWordsWithSourceNumber(root_num);
-			
+				
 		if(Common.isEmpty(phraseHeads))
 			return;
+		
+		ArrayList<Word> rootOfPhraseHeads = new ArrayList<Word>();
+		
+		for(@SuppressWarnings("unused") Word h:phraseHeads)
+			rootOfPhraseHeads.add(root);
+		
 					
 		//------------ detect and generate phrases in this sentence ------------
 		
 		while(!phraseHeads.isEmpty()) {
+			
 			Word ph_h = phraseHeads.remove(0);
+			Word rootOfPh_h = rootOfPhraseHeads.remove(0);
+			
+			
+			assignWordToWord(rootOfPh_h, ph_h);
 				
 			ArrayList<Word> phraseWords = new ArrayList<Word>();
 			
@@ -276,8 +365,12 @@ public class SentenceModel {
 					
 					ArrayList<Word> subPhraseHeads = getWordsWithSourceNumber(ph_w._number);
 					
-					if(!Common.isEmpty(subPhraseHeads))
-						phraseHeads.addAll(subPhraseHeads);					
+					if(!Common.isEmpty(subPhraseHeads)) {
+						phraseHeads.addAll(subPhraseHeads);
+						
+						for(@SuppressWarnings("unused") Word h:subPhraseHeads)
+							rootOfPhraseHeads.add(ph_w);
+					}
 					
 					delimIndex = index;
 					index++;
@@ -295,19 +388,22 @@ public class SentenceModel {
 			
 			print(""+ ph);			
 		}
-	}
-	
+	}	
+			
 	/**
 	 * this method generates phrases for each noun-phrase which is depended to main verb.
 	 * noun-phrase in this method are very large. 
 	 */
 	public void arrangeNounPhraseAsLarge(){
-		Word verb = getRootVerb();
+		Word root = getRootWord();
 		
-		if(verb == null)
-			return;
+		if(root == null) {
+			root = getVerbWithOutSourceNumber();
+			if(root == null)
+				return;			
+		}
 		
-		int root_num = verb._number;
+		int root_num = root._number;
 		
 		ArrayList<Word> phraseHeads = getWordsWithSourceNumber(root_num);
 			
@@ -317,6 +413,8 @@ public class SentenceModel {
 		//------------ detect and generate phrases in this sentence ------------
 			
 		for(Word ph_h:phraseHeads){
+			
+			assignWordToWord(root, ph_h);
 				
 			ArrayList<Word> phraseWords = new ArrayList<Word>();
 			

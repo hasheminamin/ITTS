@@ -366,7 +366,7 @@ public class Role extends SceneElement{
 		if(!hasRole_state(role_state)){
 			this.role_states.add(role_state);
 			role_state.owningRole = this;
-			System.out.println("RoleState " + role_state + " added to " + this._name);
+//			System.out.println("RoleState " + role_state + " added to " + this._name);
 			return role_state;
 		}
 		else{

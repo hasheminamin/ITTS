@@ -119,6 +119,11 @@ public class Word {
 	private ArrayList<Word> subjects;
 	
 	/**
+	 * if this Word is a verb, this parameter contains its objects.
+	 */
+	private ArrayList<Word> objects;
+	
+	/**
 	 * The adjectives of this Word. 
 	 */
 	private ArrayList<Word> adjectives;
@@ -377,7 +382,7 @@ public class Word {
 		 * checks weather this Word _syntaxTag is ROOT or its _srcOfSynTag_number is 0?
 		 * @return
 		 */
-		public boolean isRootVerb(){
+		public boolean isRootWord(){
 			if(_syntaxTag == DependencyRelationType.ROOT || _srcOfSynTag_number == 0)
 				return true;
 			return false;		
@@ -388,7 +393,7 @@ public class Word {
 		 * @return
 		 */
 		public boolean isVerb(){
-			if(_syntaxTag == DependencyRelationType.ROOT || _srcOfSynTag_number == 0)
+			if(_gPOS == POS.V)
 				return true;
 			return false;		
 		}
@@ -469,6 +474,18 @@ public class Word {
 		return null;		
 	}
 	
+	public ArrayList<Word> getObjects() {
+		return objects;
+	}
+	
+	public Word getObject(String obj_node_name){
+		if(!Common.isEmpty(objects))
+			for(Word obj:objects)
+				if(obj._wsd_name != null && obj._wsd_name.equals(obj_node_name))
+					return obj;
+		return null;		
+	}
+	
 	public ArrayList<Word> getAdjectives() {
 		return adjectives;
 	}
@@ -516,7 +533,7 @@ public class Word {
 	/**
  	 * 
  	 * @param sbj
- 	 * @return an integer, 1 means adj added, 0 means the Word own adjective has merged with adj, and -1 means nothing happened! 
+ 	 * @return an integer, 1 means sbj added, 0 means the Word own subject has merged with sbj, and -1 means nothing happened! 
  	 */
  	public int addSubject(Word sbj){
  		if(sbj == null)
@@ -544,111 +561,157 @@ public class Word {
  			return -1;
  		}
  	}
+ 	
+ 	/**
+ 	 * 
+ 	 * @param obj
+ 	 * @return an integer, 1 means obj added, 0 means the Word own object has merged with obj, and -1 means nothing happened! 
+ 	 */
+ 	public int addObject(Word obj){
+ 		if(obj == null)
+ 			return -1;
+ 		
+ 		obj.verb = this;
+ 		
+ 		if(objects == null)
+ 			objects = new ArrayList<Word>();
+ 		
+ 		if(!hasSubject(obj._wsd_name)){
+// 			print(obj._wsd + " obj added to " + this._wordName + "\n");
+ 			objects.add(obj);
+ 			return 1;
+ 		}
+ 		else{
+// 			print(this._wordName + " has this " + obj._wsd + " obj before! so they will merge \n");
+ 			
+ 			Word oldObj = getObject(obj._wsd_name);
+ 			
+ 			if(oldObj != null){
+ 				oldObj.mergeWith(obj);			
+ 				return 0;
+ 			}
+ 			return -1;
+ 		}
+ 	}
+
 	
-	 	/**
-	 	 * 
-	 	 * @param adj
-	 	 * @return an integer, 1 means adj added, 0 means the Word own adjective has merged with adj, and -1 means nothing happened! 
-	 	 */
-	 	public int addAdjective(Word adj){
-	 		if(adj == null)
-	 			return -1;
-	 		
-	 		adj.mosoof = this;
-	 		
-	 		if(adjectives == null)
-	 			adjectives = new ArrayList<Word>();
-	 		
-	 		if(!hasAdjective(adj._wsd_name)){
+ 	/**
+ 	 * 
+ 	 * @param adj
+ 	 * @return an integer, 1 means adj added, 0 means the Word own adjective has merged with adj, and -1 means nothing happened! 
+ 	 */
+ 	public int addAdjective(Word adj){
+ 		if(adj == null)
+ 			return -1;
+ 		
+ 		adj.mosoof = this;
+ 		
+ 		if(adjectives == null)
+ 			adjectives = new ArrayList<Word>();
+ 		
+ 		if(!hasAdjective(adj._wsd_name)){
 //	 			print(adj._wsd + " adj added to " + this._wordName + "\n");
-	 			adjectives.add(adj);
-	 			return 1;
-	 		}
-	 		else{
+ 			adjectives.add(adj);
+ 			return 1;
+ 		}
+ 		else{
 //	 			print(this._wordName + " has this " + adj._wsd + " adj before! so they will merge \n");
-	 			
-	 			Word oldAdj = getAdjective(adj._wsd_name);
-	 			
-	 			if(oldAdj != null){
-	 				oldAdj.mergeWith(adj);			
-	 				return 0;
-	 			}
-	 			return -1;
-	 		}
-	 	}
-	 	/**
-	 	 * 
-	 	 * @param moz
-	 	 * @return  an integer, 1 means moz added, 0 means the Word own mozaf_elaih has merged with moz, and -1 means nothing happened!
-	 	 */
-	 	public int addMozaf_elaih(Word moz){
-	 		if(moz == null)
-	 			return -1;
-	 		
-	 		moz.mozaf = this;
-	 		
-	 		if(mozaf_elaih == null)
-	 			mozaf_elaih = new ArrayList<Word>();
-	 		
-	 		if(!hasMozaf_elaih(moz._wsd_name)){
+ 			
+ 			Word oldAdj = getAdjective(adj._wsd_name);
+ 			
+ 			if(oldAdj != null){
+ 				oldAdj.mergeWith(adj);			
+ 				return 0;
+ 			}
+ 			return -1;
+ 		}
+ 	}
+ 	
+ 	/**
+ 	 * 
+ 	 * @param moz
+ 	 * @return  an integer, 1 means moz added, 0 means the Word own mozaf_elaih has merged with moz, and -1 means nothing happened!
+ 	 */
+ 	public int addMozaf_elaih(Word moz){
+ 		if(moz == null)
+ 			return -1;
+ 		
+ 		moz.mozaf = this;
+ 		
+ 		if(mozaf_elaih == null)
+ 			mozaf_elaih = new ArrayList<Word>();
+ 		
+ 		if(!hasMozaf_elaih(moz._wsd_name)){
 //	 			print(moz._wsd + " mozaf added to " + this._wordName + "\n");
-	 			mozaf_elaih.add(moz);
-	 			return 1;
-	 		}
-	 		else{
+ 			mozaf_elaih.add(moz);
+ 			return 1;
+ 		}
+ 		else{
 //	 			print(this._wordName + " has this " + moz._wsd + " mozaf before! so they will merge \n");
+ 			
+ 			Word oldMoz = getMozaf_elaih(moz._wsd_name);
+ 			
+ 			if(oldMoz != null){
+ 				oldMoz.mergeWith(moz);			
+ 				return 0;
+ 			}					
+ 			return -1;
+ 		}
+ 	}
+ 	 
+ 	//-------------------- has part -----------------------------
+ 	
+ 	public boolean hasAnySubjects(){
+		return !Common.isEmpty(subjects);
+	}
 	 			
-	 			Word oldMoz = getMozaf_elaih(moz._wsd_name);
+ 	public boolean hasSubject(String sbj_node_name){
+		if(!Common.isEmpty(subjects))
+			for(Word sbj:subjects)
+				if(sbj._wsd_name != null && sbj._wsd_name.equals(sbj_node_name))
+					return true;
+		return false;		
+	}
+ 	
+ 	public boolean hasAnyObjects(){
+		return !Common.isEmpty(objects);
+	}
 	 			
-	 			if(oldMoz != null){
-	 				oldMoz.mergeWith(moz);			
-	 				return 0;
-	 			}					
-	 			return -1;
-	 		}
-	 	}
-	 	 
-	 	//-------------------- has part -----------------------------
-	 	
-	 	public boolean hasAnySubjects(){
-			return !Common.isEmpty(subjects);
-		}
-	 			
-	 	public boolean hasSubject(String sbj_node_name){
-			if(!Common.isEmpty(subjects))
-				for(Word sbj:subjects)
-					if(sbj._wsd_name != null && sbj._wsd_name.equals(sbj_node_name))
-						return true;
-			return false;		
-		}
-	 	
-	 	public boolean hasAnyAdjectives(){
-			return !Common.isEmpty(adjectives);
-		}
-	 	
-		public boolean hasAdjective(String adj_node_name){
-			if(!Common.isEmpty(adjectives))
-				for(Word adj:adjectives)
-					if(adj._wsd_name != null && adj._wsd_name.equals(adj_node_name))
-						return true;
-			return false;		
-		}
-		
-		public boolean hasAnyMozaf_elaihs(){
-			return !Common.isEmpty(mozaf_elaih);
-		}
-		
-		public boolean hasMozaf_elaih(String moz_node_name){
-			if(!Common.isEmpty(mozaf_elaih))
-				for(Word moz:mozaf_elaih)
-					if(moz._wsd_name != null && moz._wsd_name.equals(moz_node_name))
-						return true;
-			return false;		
-		}
-		
-	 	//-------------------- end of part --------------------------
-		
+ 	public boolean hasObject(String obj_node_name){
+		if(!Common.isEmpty(objects))
+			for(Word obj:objects)
+				if(obj._wsd_name != null && obj._wsd_name.equals(obj_node_name))
+					return true;
+		return false;		
+	}
+ 	
+ 	public boolean hasAnyAdjectives(){
+		return !Common.isEmpty(adjectives);
+	}
+ 	
+	public boolean hasAdjective(String adj_node_name){
+		if(!Common.isEmpty(adjectives))
+			for(Word adj:adjectives)
+				if(adj._wsd_name != null && adj._wsd_name.equals(adj_node_name))
+					return true;
+		return false;		
+	}
 	
+	public boolean hasAnyMozaf_elaihs(){
+		return !Common.isEmpty(mozaf_elaih);
+	}
+	
+	public boolean hasMozaf_elaih(String moz_node_name){
+		if(!Common.isEmpty(mozaf_elaih))
+			for(Word moz:mozaf_elaih)
+				if(moz._wsd_name != null && moz._wsd_name.equals(moz_node_name))
+					return true;
+		return false;		
+	}
+	
+ 	//-------------------- end of part --------------------------
+	
+
 	public boolean get_isTruelyPredicted() {
 		this._isTruelyPredicated = checkIfItIsTruelyPredicted();
 		return this._isTruelyPredicated;

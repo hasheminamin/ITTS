@@ -1,5 +1,6 @@
 package sceneReasoner;
 
+import ir.ac.itrc.qqa.semantic.enums.DependencyRelationType;
 import ir.ac.itrc.qqa.semantic.util.Common;
 import ir.ac.itrc.qqa.semantic.util.MyError;
 
@@ -1352,17 +1353,8 @@ public class SceneReasoner {
 	/**
 	 * only _mainWord of RoleStates are assessed to find the allocated Role.
 	 * because almost all of RoleStates just have one Word; _mainWord; and 
-	 * their _otherWords list is empty.
+	 * their _otherWords list is empty.  
 	 * 
-	 * TODO: check non-allocated RoleState in order to discover new rule to allocate.
-	 * 
-	 * TODO: correct later!
-	 * در این مرجله چون میخواهیم که تست کنیم که کدوم روش برای پیدا کردن تخصیص بهتر جواب میده. در هر لول با جواب اصلی که در
-	 * _referenceWord
-	 * هست مقایسه کردیم که ببینیم جواب درست بوده یا نه. 
-	 * والا که باید این مقایسه ها رو برداریم چون فرض بر این نیست که جواب درست رو در 
-	 * _referenceWord
-	 * داریم!!!
 	 * @param allStories
 	 */
 	public void allocateRoleStates(ArrayList<StoryModel> allStories) {
@@ -1374,9 +1366,17 @@ public class SceneReasoner {
 
 		int allRoleStateNums = 0;
 		int adjRoleStateNums = 0;
-		int mozRoleStateNums = 0;
+		int corAdjRoleStateNums = 0;
 		int mosnadRoleStateNums = 0;
+		int corMosnadRoleStateNums = 0;		
+		int mozRoleStateNums = 0;		
+		int corMozafRoleStateNums = 0;
+		int mozElaRoleStateNums = 0;
+		int corMozafElaRoleStateNums = 0;
+		int NVERoleStateNums = 0;
+		int corNVERoleStateNums = 0;
 		int chainRoleStateNums = 0;
+		int corChainRoleStateNums = 0;
 		int correctAllocationNUms = 0;
 		int faultAllocationNUms = 0;
 		int nonAllocatedNUms = 0;
@@ -1391,8 +1391,273 @@ public class SceneReasoner {
 				
 				for(RoleState roleState: currentSceneModel.roleStates){
 					 
-					print(roleState._mainWord._sentence + "");
-					print("\nRoleState: " + roleState);
+//					print(roleState._mainWord._sentence + "");
+//					print("\nRoleState: " + roleState);
+					
+					allRoleStateNums++;
+					
+					Word roleStateWord = roleState._mainWord;
+					
+					if(roleStateWord == null || roleStateWord._sentence == null) {
+						MyError.error("null Word or SentenceMocel for RoleState!!!");
+						nonAllocatedNUms++;
+						continue;					
+					}
+					
+					Word roleWord = null;					
+					
+					if(roleStateWord.isAdjective() && roleStateWord.getMosoof() != null) {
+						
+						Word tempWord = roleStateWord.getMosoof();
+						
+						if(tempWord._sceneElement == ScenePart.ROLE) {
+							roleWord = tempWord;
+//							print("111111111111111111111 Adj referent role: " + roleWord._wordName);
+							adjRoleStateNums++;							
+							
+							if(roleWord.equals(roleStateWord._referenceWord))
+								corAdjRoleStateNums++;
+							
+						}						
+					}
+					//if it is not allocated yet.
+					if(roleWord == null) {
+					
+						if(roleStateWord.hasAnyMozaf_elaihs()) {
+							
+							ArrayList<Word> mozaf_elaihs = roleStateWord.getMozaf_elaih();
+							
+							for(Word me: mozaf_elaihs)
+								
+								if(me._sceneElement == ScenePart.ROLE) {									
+									roleWord = me;							
+//									print("222222222222222222222 Moz referent role: " + roleWord._wordName);
+									
+									mozRoleStateNums++;
+									
+									if(roleWord.equals(roleStateWord._referenceWord))
+										corMozafRoleStateNums++;
+									
+									break;
+							}						
+						}
+					}
+					//if it is not allocated yet.
+					if(roleWord == null) {
+					
+						if(roleStateWord.isMozaf_elaih()) {
+																				
+							Word mozaf = roleStateWord.getMozaf();
+															
+							if(mozaf != null && mozaf._sceneElement == ScenePart.ROLE) {									
+								roleWord = mozaf;					
+//								print("333333333333333333333 Moz_elaih referent role: " + roleWord._wordName);															
+								mozElaRoleStateNums++;
+								
+								if(roleWord.equals(roleStateWord._referenceWord))
+									corMozafElaRoleStateNums++;
+							}
+						}
+					}
+					//if it is not allocated yet.
+					if(roleWord == null) {
+						if(roleStateWord.isMosnad()) {
+							
+							SentenceModel RSsent = roleStateWord._sentence;
+							
+							ArrayList<Word> allSbjs = RSsent.getAllSubjects();
+							
+							if(allSbjs != null)
+								for(Word sbj:allSbjs)
+									if(sbj != null && sbj._sceneElement == ScenePart.ROLE) {
+										roleWord = sbj;
+//										print("444444444444444444444 Mosnad referent role: " + roleWord._wordName);
+										mosnadRoleStateNums++;
+										
+										if(roleWord.equals(roleStateWord._referenceWord))
+											corMosnadRoleStateNums++;
+										
+										break;
+									}
+						}
+					}	
+					//if it is not allocated yet.
+					if(roleWord == null) {
+						if(roleStateWord._syntaxTag == DependencyRelationType.NVE) {
+							
+//							print(roleStateWord + "");
+							
+							Word verb = roleStateWord._sentence.getWord(roleStateWord._srcOfSynTag_number);
+							
+							
+							
+							if(verb != null && verb.getObjects() != null) {
+								
+								for(Word obj:verb.getObjects()) {
+									if(obj != null && obj._sceneElement == ScenePart.ROLE) {
+										roleWord = obj;										
+//										print("555555555555555555555 NVE OBJ referent role: " + roleWord._wordName);
+										NVERoleStateNums++;
+										
+										if(roleWord.equals(roleStateWord._referenceWord))
+											corNVERoleStateNums++;
+										break;										
+									}
+								}								
+							}
+							
+							if(roleWord == null && verb != null && verb.getSubjects() != null) {
+								
+								for(Word sbj:verb.getSubjects()) {
+									if(sbj != null && sbj._sceneElement == ScenePart.ROLE) {
+										roleWord = sbj;										
+//										print("555555555555555555555 NVE Self SBJ referent role: " + roleWord._wordName);
+										NVERoleStateNums++;
+										
+										if(roleWord.equals(roleStateWord._referenceWord))
+											corNVERoleStateNums++;
+										break;										
+									}
+								}								
+							}
+							
+							if(roleWord == null && roleStateWord._sentence.getAllSubjects() != null) {
+							
+								for(Word sbj:roleStateWord._sentence.getAllSubjects()) {
+									
+									if(sbj != null && sbj._sceneElement == ScenePart.ROLE) {
+										roleWord = sbj;										
+//										print("555555555555555555555 NVE All SBJ referent role: " + roleWord._wordName);
+										NVERoleStateNums++;
+										
+										if(roleWord.equals(roleStateWord._referenceWord))
+											corNVERoleStateNums++;
+										break;										
+									}
+								}								
+							}
+						}
+					}
+					//if it is not allocated yet.
+					if(roleWord == null) {
+					
+						Phrase rsPhrase = roleStateWord._phrase;							
+						
+						if(rsPhrase != null && rsPhrase.get_words() != null && rsPhrase.get_words().size() != 0) {
+							
+//							print("RoleState _phrase: " + rsPhrase);
+							
+							for(Word phW:rsPhrase.get_words()) {									
+							
+								if(phW._sceneElement == ScenePart.ROLE) {
+									roleWord = phW;
+									chainRoleStateNums++;
+//									print("666666666666666666666 chain referent role: " + roleWord._wordName);
+																																					
+									if(roleWord.equals(roleStateWord._referenceWord))
+										corChainRoleStateNums++;
+									
+									break;
+								}
+							}
+						}
+					}			
+					
+					if(roleWord != null) {
+						
+						Role role = currentSceneModel.getRole(roleWord);
+						
+						if(role != null) {
+							role.addRole_state(roleState);
+//							roleState.set_owningRole(role);
+						}							
+					}
+					
+					//TODO: these line and all ifs which checks roleStateWord._referenceWord must be deleted!
+					//these are only for checking phase
+					if(roleWord != null && roleWord.equals(roleStateWord._referenceWord)) {
+						correctAllocationNUms++;
+//							print("##################### correct allocation for " + roleStateWord._wordName + " role: " + roleWord._wordName);
+//							print("referent role: " + roleWord._wordName);
+					}
+					else if(roleWord != null) {
+						faultAllocationNUms++;
+//							print("===================== fault allocation for " + roleStateWord._wordName + " role: " + roleWord._wordName);
+//							print("referent role: " + roleWord._wordName);
+					}
+					else {
+						nonAllocatedNUms++;
+//						print("))))))))))))))))))))) not allocated: " + roleState);
+					}					
+				}
+			}
+		}
+		
+		print("\nall RoleStateNumbers: " + allRoleStateNums);
+		print("Adj RoleStateNumbers: " + adjRoleStateNums + " which " + corAdjRoleStateNums + " are correct: " + ((corAdjRoleStateNums*1.0*100)/adjRoleStateNums));
+		print("Moz RoleStateNumbers: " + mozRoleStateNums + " which " + corMozafRoleStateNums + " are correct: " + ((corMozafRoleStateNums*1.0*100)/mozRoleStateNums));
+		print("MozEla RoleStateNumbers: " + mozElaRoleStateNums + " which " + corMozafElaRoleStateNums + " are correct: " + ((corMozafElaRoleStateNums*1.0*100)/mozElaRoleStateNums));
+		print("Mosnad RoleStateNumbers: " + mosnadRoleStateNums  + " which " + corMosnadRoleStateNums + " are correct: " + ((corMosnadRoleStateNums*1.0*100)/mosnadRoleStateNums));
+		print("NVE RoleStateNumbers: " + NVERoleStateNums  + " which " + corNVERoleStateNums + " are correct: " + ((corNVERoleStateNums*1.0*100)/NVERoleStateNums));
+		print("chain RoleStateNumbers: " + chainRoleStateNums + " which " + corChainRoleStateNums + " are correct: " + ((corChainRoleStateNums*1.0*100)/chainRoleStateNums));
+		int allocatedNums = adjRoleStateNums + mozRoleStateNums + mozElaRoleStateNums + mosnadRoleStateNums + NVERoleStateNums +chainRoleStateNums;
+		print("allocated RoleStateNumbers: " + allocatedNums);		
+		print("non-allocated RoleStateNumbers: " + nonAllocatedNUms);		
+		print("\ncorrect allocations: " + correctAllocationNUms + " and fault allocations: " + faultAllocationNUms + " from: " + allocatedNums + " allocations.");
+		print("correct alloation in allocated RoleStates: " + ((correctAllocationNUms*1.0)/(correctAllocationNUms+faultAllocationNUms))*100 + "%");
+		print("correct alloation in all RoleStates: " + ((correctAllocationNUms*1.0)/allRoleStateNums)*100 + "%");
+		
+	}
+
+	/**
+	 * only _mainWord of RoleStates are assessed to find the allocated Role.
+	 * because almost all of RoleStates just have one Word; _mainWord; and 
+	 * their _otherWords list is empty.
+	 * 
+	 * 	در این مرجله چون میخواهیم که تست کنیم که کدوم روش برای پیدا کردن تخصیص بهتر جواب میده. در هر لول با جواب اصلی که در
+	 * _referenceWord
+	 * هست مقایسه کردیم که ببینیم جواب درست بوده یا نه. 
+	 * والا که باید این مقایسه ها رو برداریم چون فرض بر این نیست که جواب درست رو در 
+	 * _referenceWord
+	 * داریم!!!
+	 * @param allStories
+	 */	
+	public void allocateRoleStatesWithChecking(ArrayList<StoryModel> allStories) {
+		
+		print("\n>>>>>>>>>>---------- allocation of RoleStates ----------<<<<<<<<<<");
+		
+		if(Common.isEmpty(allStories))
+			return;
+
+		int allRoleStateNums = 0;
+		int adjRoleStateNums = 0;
+		int corAdjRoleStateNums = 0;
+		int mosnadRoleStateNums = 0;
+		int corMosnadRoleStateNums = 0;		
+		int mozRoleStateNums = 0;		
+		int corMozafRoleStateNums = 0;
+		int mozElaRoleStateNums = 0;
+		int corMozafElaRoleStateNums = 0;
+		int NVERoleStateNums = 0;
+		int corNVERoleStateNums = 0;		
+		int chainRoleStateNums = 0;
+		int corChainRoleStateNums = 0;
+		int correctAllocationNUms = 0;
+		int faultAllocationNUms = 0;
+		int nonAllocatedNUms = 0;
+		
+		for(StoryModel storyModel: allStories){
+			
+//			print("newStory*************************************");
+			
+			for(SceneModel currentSceneModel:storyModel.scenes){
+				
+//				print("newScene*************************************");
+				
+				for(RoleState roleState: currentSceneModel.roleStates){
+					 
+//					print(roleState._mainWord._sentence + "");
+//					print("\nRoleState: " + roleState);
 					
 					allRoleStateNums++;
 					
@@ -1414,6 +1679,9 @@ public class SceneReasoner {
 							roleWord = tempWord;							
 //							print("$$$$$$$$$$$$$$$$$$$$$ Adj referent role: " + roleWord._wordName);
 							adjRoleStateNums++;
+							
+							if(roleWord.equals(roleStateWord._referenceWord))
+								corAdjRoleStateNums++;
 						}						
 					}
 					//it is not allocated or it has a fault allocation!
@@ -1428,22 +1696,110 @@ public class SceneReasoner {
 									roleWord = me;							
 //									print(">>>>>>>>>>>>>>>>>>>>> Moz referent role: " + roleWord._wordName);
 									mozRoleStateNums++;
+																		
+									if(roleWord.equals(roleStateWord._referenceWord))
+										corMozafRoleStateNums++;
+									
 									break;
 							}						
 						}
 					}
 					//it is not allocated or it has a fault allocation!
 					if(roleWord == null || (roleWord != null && !roleWord.equals(roleStateWord._referenceWord))) {
-						if(roleStateWord.isMosnad()) {
-							SentenceModel RSsent = roleStateWord._sentence;
-							Word sbj = RSsent.getSubject();
-							if(sbj != null && sbj._sceneElement == ScenePart.ROLE) {
-								roleWord = sbj;
-								print("********************* Mosnad referent role: " + roleWord._wordName);
-								mosnadRoleStateNums++;
+					
+						if(roleStateWord.isMozaf_elaih()) {
+							
+							print(roleStateWord + "");
+							
+							Word mozaf = roleStateWord.getMozaf();
+															
+							if(mozaf != null && mozaf._sceneElement == ScenePart.ROLE) {									
+								roleWord = mozaf;					
+//								print("333333333333333333333 Moz_elaih referent role: " + roleWord._wordName);															
+								mozElaRoleStateNums++;
+								
+								if(roleWord.equals(roleStateWord._referenceWord))
+									corMozafElaRoleStateNums++;
 							}
 						}
+					}
+					//it is not allocated or it has a fault allocation!
+					if(roleWord == null || (roleWord != null && !roleWord.equals(roleStateWord._referenceWord))) {
+						if(roleStateWord.isMosnad()) {
+							
+							SentenceModel RSsent = roleStateWord._sentence;
+							
+							ArrayList<Word> allSbjs = RSsent.getAllSubjects();
+							
+							if(allSbjs != null)
+								for(Word sbj:allSbjs)
+									if(sbj != null && sbj._sceneElement == ScenePart.ROLE) {
+										roleWord = sbj;
+//										print("********************* Mosnad referent role: " + roleWord._wordName);
+										mosnadRoleStateNums++;
+										
+										if(roleWord.equals(roleStateWord._referenceWord))
+											corMosnadRoleStateNums++;
+										
+										break;
+									}
+						}
 					}						
+					//it is not allocated or it has a fault allocation!
+					if(roleWord == null || (roleWord != null && !roleWord.equals(roleStateWord._referenceWord))) {
+						if(roleStateWord._syntaxTag == DependencyRelationType.NVE) {
+							
+//							print(roleStateWord + "");
+							
+							Word verb = roleStateWord._sentence.getWord(roleStateWord._srcOfSynTag_number);
+														
+							if(verb != null && verb.getObjects() != null) {
+								
+								for(Word obj:verb.getObjects()) {
+									if(obj != null && obj._sceneElement == ScenePart.ROLE) {
+										roleWord = obj;										
+//										print("555555555555555555555 NVE OBJ referent role: " + roleWord._wordName);
+										NVERoleStateNums++;
+										
+										if(roleWord.equals(roleStateWord._referenceWord))
+											corNVERoleStateNums++;
+										break;										
+									}
+								}								
+							}
+							
+							if(roleWord == null && verb != null && verb.getSubjects() != null) {
+								
+								for(Word sbj:verb.getSubjects()) {
+									if(sbj != null && sbj._sceneElement == ScenePart.ROLE) {
+										roleWord = sbj;										
+//										print("555555555555555555555 NVE Self SBJ referent role: " + roleWord._wordName);
+										NVERoleStateNums++;
+										
+										if(roleWord.equals(roleStateWord._referenceWord))
+											corNVERoleStateNums++;
+										break;										
+									}
+								}								
+							}
+							
+							if(roleWord == null && roleStateWord._sentence.getAllSubjects() != null) {
+							
+								for(Word sbj:roleStateWord._sentence.getAllSubjects()) {
+									
+									if(sbj != null && sbj._sceneElement == ScenePart.ROLE) {
+										roleWord = sbj;										
+//										print("555555555555555555555 NVE All SBJ referent role: " + roleWord._wordName);
+										NVERoleStateNums++;
+										
+										if(roleWord.equals(roleStateWord._referenceWord))
+											corNVERoleStateNums++;
+										break;										
+									}
+								}								
+							}
+						}
+					}
 					//it is not allocated or it has a fault allocation!
 					if(roleWord == null || (roleWord != null && !roleWord.equals(roleStateWord._referenceWord))) {
 					
@@ -1451,14 +1807,18 @@ public class SceneReasoner {
 						
 						if(rsPhrase != null && rsPhrase.get_words() != null && rsPhrase.get_words().size() != 0) {
 							
-//								print("RoleState _phrase: " + rsPhrase);
+//							print("RoleState _phrase: " + rsPhrase);
 							
 							for(Word phW:rsPhrase.get_words()) {									
 							
 								if(phW._sceneElement == ScenePart.ROLE) {
 									roleWord = phW;
 									chainRoleStateNums++;
-//										print("@@@@@@@@@@@@@@@@@@@@@ chain referent role: " + roleWord._wordName);
+//									print("@@@@@@@@@@@@@@@@@@@@@ chain referent role: " + roleWord._wordName);
+									
+									if(roleWord.equals(roleStateWord._referenceWord))
+										corChainRoleStateNums++;
+									
 									break;
 								}
 							}
@@ -1472,17 +1832,18 @@ public class SceneReasoner {
 //							roleState.set_owningRole(role);
 						}							
 					}
+					
 					//TODO: these line and all ifs which checks roleStateWord._referenceWord must be deleted!
 					//these are only for checking phase
 					if(roleWord != null && roleWord.equals(roleStateWord._referenceWord)) {
 						correctAllocationNUms++;
-							print("##################### correct allocation for " + roleStateWord._wordName + " role: " + roleWord._wordName);
-//							print("@@@@@@@@@@@@@@@@@@@@@ referent role: " + roleWord._wordName);
+//							print("##################### correct allocation for " + roleStateWord._wordName + " role: " + roleWord._wordName);
+//							print("referent role: " + roleWord._wordName);
 					}
 					else if(roleWord != null) {
 						faultAllocationNUms++;
-							print("===================== fault allocation for " + roleStateWord._wordName + " role: " + roleWord._wordName);
-//							print("@@@@@@@@@@@@@@@@@@@@@ referent role: " + roleWord._wordName);
+//							print("===================== fault allocation for " + roleStateWord._wordName + " role: " + roleWord._wordName);
+//							print("referent role: " + roleWord._wordName);
 					}
 					else {
 						nonAllocatedNUms++;
@@ -1493,17 +1854,21 @@ public class SceneReasoner {
 		}
 		
 		print("\nall RoleStateNumbers: " + allRoleStateNums);
-		print("Adj RoleStateNumbers: " + adjRoleStateNums);
-		print("Moz RoleStateNumbers: " + mozRoleStateNums);
-		print("Mosnad RoleStateNumbers: " + mosnadRoleStateNums);
-		print("chain RoleStateNumbers: " + chainRoleStateNums);
-		print("allocated RoleStateNumbers: " + (adjRoleStateNums+mozRoleStateNums+chainRoleStateNums+mosnadRoleStateNums));
+		print("Adj RoleStateNumbers: " + adjRoleStateNums + " which " + corAdjRoleStateNums + " are correct: " + ((corAdjRoleStateNums*1.0*100)/adjRoleStateNums));
+		print("Moz RoleStateNumbers: " + mozRoleStateNums + " which " + corMozafRoleStateNums + " are correct: " + ((corMozafRoleStateNums*1.0*100)/mozRoleStateNums));
+		print("MozEla RoleStateNumbers: " + mozElaRoleStateNums + " which " + corMozafElaRoleStateNums + " are correct: " + ((corMozafElaRoleStateNums*1.0*100)/mozElaRoleStateNums));
+		print("Mosnad RoleStateNumbers: " + mosnadRoleStateNums  + " which " + corMosnadRoleStateNums + " are correct: " + ((corMosnadRoleStateNums*1.0*100)/mosnadRoleStateNums));
+		print("NVE RoleStateNumbers: " + NVERoleStateNums  + " which " + corNVERoleStateNums + " are correct: " + ((corNVERoleStateNums*1.0*100)/NVERoleStateNums));
+		print("chain RoleStateNumbers: " + chainRoleStateNums + " which " + corChainRoleStateNums + " are correct: " + ((corChainRoleStateNums*1.0*100)/chainRoleStateNums));
+		int allocatedNums = adjRoleStateNums + mozRoleStateNums + mozElaRoleStateNums + mosnadRoleStateNums + NVERoleStateNums +chainRoleStateNums;
+		print("allocated RoleStateNumbers: " + allocatedNums);		
 		print("non-allocated RoleStateNumbers: " + nonAllocatedNUms);		
-		print("\ncorrect allocations: " + correctAllocationNUms + " and fault allocations: " + faultAllocationNUms + " from: " + (adjRoleStateNums + mozRoleStateNums + chainRoleStateNums + mosnadRoleStateNums) + " allocations.");
+		print("\ncorrect allocations: " + correctAllocationNUms + " and fault allocations: " + faultAllocationNUms + " from: " + allocatedNums + " allocations.");
 		print("correct alloation in allocated RoleStates: " + ((correctAllocationNUms*1.0)/(correctAllocationNUms+faultAllocationNUms))*100 + "%");
 		print("correct alloation in all RoleStates: " + ((correctAllocationNUms*1.0)/allRoleStateNums)*100 + "%");
 		
 	}
+
 	
 	/**
 	 * only _mainWord of RoleActions are assessed to find the allocated Role.
@@ -1518,10 +1883,14 @@ public class SceneReasoner {
 			return;
 
 		int allRoleActionNums = 0;
-		int sbjRoleActionNums = 0;
-//		int mozRoleStateNums = 0;
-//		int mosnadRoleStateNums = 0;
-//		int chainRoleStateNums = 0;
+		int selfSbjRoleActionNums = 0;
+		int corSelfSbjRoleActionNums = 0;
+		int selfPhraseSbjRoleActionNums = 0;
+		int corSelfPhraseSbjRoleActionNums = 0;		
+		int allSbjCurrRoleActionNums = 0;		
+		int corAllSbjCurrRoleActionNums = 0;
+		int allSbjPastRoleActionNums = 0;
+		int corAllSbjPastRoleActionNums = 0;
 		int correctAllocationNUms = 0;
 		int faultAllocationNUms = 0;
 		int nonAllocatedNums = 0;
@@ -1550,80 +1919,342 @@ public class SceneReasoner {
 					}
 					
 					Word roleWord = null;
+					
+					if(roleActionWord.isVerb() && roleActionWord.getSubjects() != null && roleActionWord.getSubjects().size() != 0) {
+						
+						ArrayList<Word> allSbjs = roleActionWord.getSubjects();
+						
+						if(allSbjs != null)							
+							for(Word sbj:allSbjs)
+								
+								if(sbj != null && sbj._sceneElement == ScenePart.ROLE) {
+							
+									roleWord = sbj;									
+									print("111111111111111111111 self Sbj referent role: " + roleWord._wordName);
+									selfSbjRoleActionNums++;
+									
+									if(roleWord.equals(roleActionWord._referenceWord))
+										corSelfSbjRoleActionNums++;
+									
+									break;
+								}
+								else {
+									if(sbj != null && sbj._phrase != null) {
+										
+										ArrayList<Word> phraseWords = sbj._phrase.get_words();
+										
+										if(phraseWords == null)
+											continue;
+										
+										for(Word ph_w: phraseWords)
+											if(ph_w != null && ph_w._sceneElement == ScenePart.ROLE) {
+												
+												roleWord = ph_w;												
+//												print("222222222222222222222 phrase Self Sbj referent role: " + roleWord._wordName);
+												
+												selfPhraseSbjRoleActionNums++;
+												
+												if(roleWord.equals(roleActionWord._referenceWord))
+													corSelfPhraseSbjRoleActionNums++;
+												
+												break;	
+											}										
+									}									
+								}				
+					}
+					
 					SentenceModel owningSentence = roleActionWord._sentence;
 					
-					//TODO: subject must be assigned to words of type Verb not sentence. 
-					
-					if(owningSentence != null && owningSentence.hasSubject()) {
-						
-						Word sbjWord = owningSentence.getSubject();
-						
-						if(sbjWord != null && sbjWord._sceneElement == ScenePart.ROLE) {
+					//if it is not allocated yet.
+					if(roleWord == null) {
+											
+						if(owningSentence != null && owningSentence.hasSubject()) { 						
 							
-							roleWord = sbjWord;
-//							print("********************* Sbj referent role: " + roleWord._wordName);
-							sbjRoleActionNums++;							
+							ArrayList<Word> allSbjWords = owningSentence.getAllSubjects();
+							
+							if(allSbjWords != null)
+								for(Word sbjWord:allSbjWords)						
+								
+									if(sbjWord != null && sbjWord._sceneElement == ScenePart.ROLE) {
+										
+										roleWord = sbjWord;
+//										print("333333333333333333333 allSbjs currSent referent role: " + roleWord._wordName);
+																				
+										allSbjCurrRoleActionNums++;
+																				
+										if(roleWord.equals(roleActionWord._referenceWord))
+											corAllSbjCurrRoleActionNums++;
+																				
+										break;
+									}							
 						}
-					}						
-//					//it is not allocated or it has a fault allocation!
-//					if(roleWord == null || (roleWord != null && !roleWord.equals(roleActionWord._referenceWord))) {
-//					
-//						Phrase rsPhrase = roleActionWord._phrase;							
-//						
-//						if(rsPhrase != null && rsPhrase.get_words() != null && rsPhrase.get_words().size() != 0) {
-//							
-////								print("RoleState _phrase: " + rsPhrase);
-//							
-//							for(Word phW:rsPhrase.get_words()) {									
-//							
-//								if(phW._sceneElement == ScenePart.ROLE) {
-//									roleWord = phW;
-////									chainRoleStateNums++;
-////										print("@@@@@@@@@@@@@@@@@@@@@ chain referent role: " + roleWord._wordName);
-//									break;
-//								}
-//							}
-//						}
-//					}			
+					}
+					//if it is not allocated yet.
+					if(roleWord == null) {
+						
+							SentenceModel pastSent = currentSceneModel.getPastSentence(owningSentence);
+							
+							if(pastSent == null || !pastSent.hasSubject())
+								pastSent = storyModel.getPastSentence(owningSentence);
+							
+							if(pastSent != null && pastSent.hasSubject()){
+								
+								ArrayList<Word> allSbjWords = pastSent.getAllSubjects();
+								
+								if(allSbjWords != null)
+									for(Word sbjWord:allSbjWords)						
+									
+										if(sbjWord != null && sbjWord._sceneElement == ScenePart.ROLE) {
+											
+											roleWord = sbjWord;
+//											print("444444444444444444444 allSbjs pastSent referent role: " + roleWord._wordName);
+																						
+											allSbjPastRoleActionNums++;
+																					
+											if(roleWord.equals(roleActionWord._referenceWord))
+												corAllSbjPastRoleActionNums++;
+																					
+											break;
+										}		
+							}							
+					}
 					
 					if(roleWord != null) {
 						Role role = currentSceneModel.getRole(roleWord);
+
 						if(role != null) {
 							role.addRole_action(roleAction);
 //							roleAction.set_owningRole(role);
 						}
 					}
-					//TODO: these line and all ifs which checks roleStateWord._referenceWord must be deleted!
+					
+					//TODO: these line and all ifs which checks roleActionWord._referenceWord must be deleted!
 					//these are only for checking phase					
 					if(roleWord != null && roleWord.equals(roleActionWord._referenceWord)) {
 						correctAllocationNUms++;
-							print("##################### correct allocation for " + roleActionWord._wordName + " role: " + roleWord._wordName);
-							print("referent role: " + roleWord._wordName);
+						print("##################### correct allocation for " + roleActionWord._wordName + " role: " + roleWord._wordName);					
 					}
 					else if(roleWord != null) {
 						faultAllocationNUms++;
-							print("===================== fault allocation for " + roleActionWord._wordName + " role: " + roleWord._wordName);
-							print("referent role: " + roleWord._wordName);
+						print("===================== fault allocation for " + roleActionWord._wordName + " role: " + roleWord._wordName);							
 					}
 					else {
 						nonAllocatedNums++;
-	//					print("))))))))))))))))))))) not allocated: " + roleState);
-					}
-					
+//						print("))))))))))))))))))))) not allocated: " + roleAction);
+					}					
 				}
 			}
-		}
+		}		
 		
 		print("\nall RoleActionNumbers: " + allRoleActionNums);
-		print("Sbj RoleActionNumbers: " + sbjRoleActionNums);
-//		print("Moz RoleActionNumbers: " + mozRoleStateNums);
-//		print("Mosnad RoleActionNumbers: " + mosnadRoleStateNums);
-//		print("chain RoleActionNumbers: " + chainRoleStateNums);
-		print("allocated RoleActionNumbers: " + (sbjRoleActionNums));//+mozRoleStateNums+chainRoleStateNums+mosnadRoleStateNums));
+		print("Self sbj RoleActionNumbers: " + selfSbjRoleActionNums + " which " + corSelfSbjRoleActionNums + " are correct: " + ((corSelfSbjRoleActionNums*1.0*100)/selfSbjRoleActionNums));
+		print("Self phrase sbj RoleActionNumbers: " + selfPhraseSbjRoleActionNums + " which " + corSelfPhraseSbjRoleActionNums + " are correct: " + ((corSelfPhraseSbjRoleActionNums*1.0*100)/selfPhraseSbjRoleActionNums));
+		print("All sbjs of currentSent RoleActionNumbers: " + allSbjCurrRoleActionNums + " which " + corAllSbjCurrRoleActionNums + " are correct: " + ((corAllSbjCurrRoleActionNums*1.0*100)/allSbjCurrRoleActionNums));
+		print("All sbjs of pastSent RoleActionNumbers: " + allSbjPastRoleActionNums + " which " + corAllSbjPastRoleActionNums + " are correct: " + ((corAllSbjPastRoleActionNums*1.0*100)/allSbjPastRoleActionNums));
+		int allocatedNum = selfSbjRoleActionNums + selfPhraseSbjRoleActionNums + allSbjCurrRoleActionNums + allSbjPastRoleActionNums;
+		print("allocated RoleActionNumbers: " + allocatedNum);
 		print("non-allocated RoleActionNumbers: " + nonAllocatedNums);		
-		print("\ncorrect allocations: " + correctAllocationNUms + " and fault allocations: " + faultAllocationNUms + " from: " + (sbjRoleActionNums) + /* mozRoleStateNums + chainRoleStateNums + mosnadRoleStateNums) + */ " allocations.");
+		print("\ncorrect allocations: " + correctAllocationNUms + " and fault allocations: " + faultAllocationNUms + " from: " + allocatedNum + " allocations.");
 		print("correct alloation in allocated RoleActions: " + ((correctAllocationNUms*1.0)/(correctAllocationNUms+faultAllocationNUms))*100 + "%");
-		print("correct alloation in all RoleStates: " + ((correctAllocationNUms*1.0)/allRoleActionNums)*100 + "%");
+		print("correct alloation in all RoleAction: " + ((correctAllocationNUms*1.0)/allRoleActionNums)*100 + "%");
+		
+	}
+	
+	/**
+	 * only _mainWord of RoleActions are assessed to find the allocated Role.
+	 * because almost all of RoleActions just have one Word; _mainWord; and 
+	 * their _otherWords list is empty.
+	 *  
+	 * در این مرجله چون میخواهیم که تست کنیم که کدوم روش برای پیدا کردن تخصیص بهتر جواب میده. در هر لول با جواب اصلی که در
+	 * _referenceWord
+	 * هست مقایسه کردیم که ببینیم جواب درست بوده یا نه. 
+	 * والا که باید این مقایسه ها رو برداریم چون فرض بر این نیست که جواب درست رو در 
+	 * _referenceWord
+	 * داریم!!!
+	 */
+	public void allocateRoleActionsWithChecking(ArrayList<StoryModel> allStories) {
+			
+			print("\n>>>>>>>>>>---------- allocation of RoleActions ----------<<<<<<<<<<");
+			
+			if(Common.isEmpty(allStories))
+				return;
+	
+			int allRoleActionNums = 0;
+			int selfSbjRoleActionNums = 0;
+			int corSelfSbjRoleActionNums = 0;
+			int selfPhraseSbjRoleActionNums = 0;
+			int corSelfPhraseSbjRoleActionNums = 0;		
+			int allSbjCurrRoleActionNums = 0;		
+			int corAllSbjCurrRoleActionNums = 0;
+			int allSbjPastRoleActionNums = 0;
+			int corAllSbjPastRoleActionNums = 0;
+			int correctAllocationNUms = 0;
+			int faultAllocationNUms = 0;
+			int nonAllocatedNums = 0;
+			
+			for(StoryModel storyModel: allStories){
+				
+	//				print("newStory*************************************");
+				
+				for(SceneModel currentSceneModel:storyModel.scenes){
+					
+	//					print("newScene*************************************");
+					
+					for(RoleAction roleAction: currentSceneModel.roleActions){
+						 
+	//						print(roleAction._mainWord._sentece + "");
+//						print("\nRoleAction: " + roleAction);
+						
+						allRoleActionNums++;
+						
+						Word roleActionWord = roleAction._mainWord;
+						
+						if(roleActionWord == null) {
+							MyError.error("null Word for RoleAction!!!");
+							nonAllocatedNums++;
+							continue;					
+						}
+						
+						Word roleWord = null;
+						
+						if(roleActionWord.isVerb() && roleActionWord.getSubjects() != null && roleActionWord.getSubjects().size() != 0) {
+							
+							ArrayList<Word> allSbjs = roleActionWord.getSubjects();
+							
+							if(allSbjs != null)							
+								for(Word sbj:allSbjs)
+									
+									if(sbj != null && sbj._sceneElement == ScenePart.ROLE) {
+								
+										roleWord = sbj;									
+//										print("111111111111111111111 self Sbj referent role: " + roleWord._wordName);
+										selfSbjRoleActionNums++;
+										
+										if(roleWord.equals(roleActionWord._referenceWord))
+											corSelfSbjRoleActionNums++;
+										
+										break;
+									}
+									else {
+										if(sbj != null && sbj._phrase != null) {
+											
+											ArrayList<Word> phraseWords = sbj._phrase.get_words();
+											
+											if(phraseWords == null)
+												continue;
+											
+											for(Word ph_w: phraseWords)
+												if(ph_w != null && ph_w._sceneElement == ScenePart.ROLE) {
+													
+													roleWord = ph_w;												
+//													print("222222222222222222222 phrase Self Sbj referent role: " + roleWord._wordName);
+													
+													selfPhraseSbjRoleActionNums++;
+													
+													if(roleWord.equals(roleActionWord._referenceWord))
+														corSelfPhraseSbjRoleActionNums++;
+													
+													break;	
+												}										
+										}									
+									}				
+						}
+						
+						SentenceModel owningSentence = roleActionWord._sentence;
+						
+						//it is not allocated or it has a fault allocation!
+						if(roleWord == null || (roleWord != null && !roleWord.equals(roleActionWord._referenceWord))) {
+												
+							if(owningSentence != null && owningSentence.hasSubject()) { 						
+								
+								ArrayList<Word> allSbjWords = owningSentence.getAllSubjects();
+								
+								if(allSbjWords != null)
+									for(Word sbjWord:allSbjWords)						
+									
+										if(sbjWord != null && sbjWord._sceneElement == ScenePart.ROLE) {
+											
+											roleWord = sbjWord;
+//											print("333333333333333333333 allSbjs currSent referent role: " + roleWord._wordName);
+																					
+											allSbjCurrRoleActionNums++;
+																					
+											if(roleWord.equals(roleActionWord._referenceWord))
+												corAllSbjCurrRoleActionNums++;
+																					
+											break;
+										}							
+							}
+						}
+						//it is not allocated or it has a fault allocation!
+						if(roleWord == null || (roleWord != null && !roleWord.equals(roleActionWord._referenceWord))) {
+							
+								SentenceModel pastSent = currentSceneModel.getPastSentence(owningSentence);
+								
+								if(pastSent == null || !pastSent.hasSubject())
+									pastSent = storyModel.getPastSentence(owningSentence);
+								
+								if(pastSent != null && pastSent.hasSubject()){
+									
+									ArrayList<Word> allSbjWords = pastSent.getAllSubjects();
+									
+									if(allSbjWords != null)
+										for(Word sbjWord:allSbjWords)						
+										
+											if(sbjWord != null && sbjWord._sceneElement == ScenePart.ROLE) {
+												
+												roleWord = sbjWord;
+//												print("444444444444444444444 allSbjs pastSent referent role: " + roleWord._wordName);
+																							
+												allSbjPastRoleActionNums++;
+																						
+												if(roleWord.equals(roleActionWord._referenceWord))
+													corAllSbjPastRoleActionNums++;
+																						
+												break;
+											}		
+								}							
+						}			
+						
+						if(roleWord != null) {
+							Role role = currentSceneModel.getRole(roleWord);
+	
+							if(role != null) {
+								role.addRole_action(roleAction);
+	//								roleAction.set_owningRole(role);
+							}
+						}
+						
+						//TODO: these line and all ifs which checks roleActionWord._referenceWord must be deleted!
+						//these are only for checking phase					
+						if(roleWord != null && roleWord.equals(roleActionWord._referenceWord)) {
+							correctAllocationNUms++;
+//							print("##################### correct allocation for " + roleActionWord._wordName + " role: " + roleWord._wordName);					
+						}
+						else if(roleWord != null) {
+							faultAllocationNUms++;
+//							print("===================== fault allocation for " + roleActionWord._wordName + " role: " + roleWord._wordName);							
+						}
+						else {
+							nonAllocatedNums++;
+//							print("))))))))))))))))))))) not allocated: " + roleAction);
+						}					
+					}
+				}
+			}
+
+		
+		print("\nall RoleActionNumbers: " + allRoleActionNums);
+		print("Self sbj RoleActionNumbers: " + selfSbjRoleActionNums + " which " + corSelfSbjRoleActionNums + " are correct: " + ((corSelfSbjRoleActionNums*1.0*100)/selfSbjRoleActionNums));
+		print("Self phrase sbj RoleActionNumbers: " + selfPhraseSbjRoleActionNums + " which " + corSelfPhraseSbjRoleActionNums + " are correct: " + ((corSelfPhraseSbjRoleActionNums*1.0*100)/selfPhraseSbjRoleActionNums));
+		print("All sbjs of currentSent RoleActionNumbers: " + allSbjCurrRoleActionNums + " which " + corAllSbjCurrRoleActionNums + " are correct: " + ((corAllSbjCurrRoleActionNums*1.0*100)/allSbjCurrRoleActionNums));
+		print("All sbjs of pastSent RoleActionNumbers: " + allSbjPastRoleActionNums + " which " + corAllSbjPastRoleActionNums + " are correct: " + ((corAllSbjPastRoleActionNums*1.0*100)/allSbjPastRoleActionNums));
+		int allocatedNum = selfSbjRoleActionNums + selfPhraseSbjRoleActionNums + allSbjCurrRoleActionNums + allSbjPastRoleActionNums;
+		print("allocated RoleActionNumbers: " + allocatedNum);
+		print("non-allocated RoleActionNumbers: " + nonAllocatedNums);		
+		print("\ncorrect allocations: " + correctAllocationNUms + " and fault allocations: " + faultAllocationNUms + " from: " + allocatedNum + " allocations.");
+		print("correct alloation in allocated RoleActions: " + ((correctAllocationNUms*1.0)/(correctAllocationNUms+faultAllocationNUms))*100 + "%");
+		print("correct alloation in all RoleAction: " + ((correctAllocationNUms*1.0)/allRoleActionNums)*100 + "%");
 		
 	}
 	
@@ -1631,5 +2262,6 @@ public class SceneReasoner {
 		System.out.println(toPrint);		
 	}	
 }
+
 
 

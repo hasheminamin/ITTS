@@ -2,8 +2,6 @@ package sceneElement;
 
 import java.util.ArrayList;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
-
 import enums.POS;
 import enums.ScenePart;
 import model.SceneModel;
@@ -262,18 +260,18 @@ public class SceneElement {
 
 	public ArrayList<String> getElementDatasetStrs(){
 	
-	ArrayList<String> elementStrs = new ArrayList<String>();
-
-	if(_otherWords != null)
-		for(Word wrd:_otherWords)
-			if(wrd.getWordDatasetStrs() != null)
-				elementStrs.addAll(wrd.getWordDatasetStrs());
-
-		
-	return elementStrs;
+		ArrayList<String> elementStrs = new ArrayList<String>();
 	
-}
-
+		if(_otherWords != null)
+			for(Word wrd:_otherWords)
+				if(wrd.getWordDatasetStrs() != null)
+					elementStrs.addAll(wrd.getWordDatasetStrs());
+	
+			
+		return elementStrs;
+		
+	}
+	
 	/**
 	 * this method assessed the equality of two sceneElement based on the equality of
 	 * their _name and their _node or _node_name.
@@ -285,37 +283,40 @@ public class SceneElement {
 	public boolean equals(SceneElement sceneElement) {
 		if(sceneElement == null)
 			return false;
-		
-		if(this._name != null && this._name.equalsIgnoreCase(sceneElement._name)){			
+					
+		if(this._name != null && !this._name.equalsIgnoreCase(sceneElement._name))
+			return false;
+		else{			
 			if(this._node != null) {
-				if(this._node.equalsRelaxed(sceneElement._node))
-					return true;
+				if(!this._node.equalsRelaxed(sceneElement._node))
+					return false;
 			}
 			else//if(this._node == null) 
-				if(sceneElement._node == null)
-					return true;
+				if(sceneElement._node != null)
+					return false;
 			
 			if(this._node_name != null) {
-				if(this._node_name.equalsIgnoreCase(sceneElement._node_name))
-					return true;
+				if(!this._node_name.equalsIgnoreCase(sceneElement._node_name))
+					return false;
 			}
 			else //this._node_name == null
-				if(sceneElement._node_name == null)
-					return true;
+				if(sceneElement._node_name != null)
+					return false;
 		}
 		
 		if((this._mainWord != null && this._mainWord._gPOS == POS.PR) || (sceneElement._mainWord != null && sceneElement._mainWord._gPOS == POS.PR))
 			if(this._node_name != null) {
-				if(this._node_name.equalsIgnoreCase(sceneElement._node_name))
-					return true;
+				if(!this._node_name.equalsIgnoreCase(sceneElement._node_name))
+					return false;
 			}
 			else //this._node_name == null
-				if(sceneElement._node_name == null)
-					return true;
+				if(sceneElement._node_name != null)
+					return false;
 		
-		return false;
+		return true;
 	}
 	
+		
 	/**
 	 * this method merges the SceneElement which is called on with its parameter, element.
 	 * in merging the SceneElement which is called on is prior to input parameter, element.

@@ -439,9 +439,11 @@ public class LearningUI {
 		
 		Dashboard.sceneReasoner.arrangeWordReferences(allStories, null);//all referents will be set.
 		
-//		Dashboard.sceneReasoner.allocateRoleStates(allStories);
+		Dashboard.sceneReasoner.allocateRoleStates(allStories);
+//		Dashboard.sceneReasoner.allocateRoleStatesWithChecking(allStories);
 		
-		Dashboard.sceneReasoner.allocateRoleActions(allStories);
+//		Dashboard.sceneReasoner.allocateRoleActions(allStories);
+//		Dashboard.sceneReasoner.allocateRoleActionsWithChecking(allStories);
 		
 //		Dashboard.sceneReasoner.completeSceneModelsElements(allStories);
 		
