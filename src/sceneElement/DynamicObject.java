@@ -199,7 +199,7 @@ public class DynamicObject extends SceneElement{
 		else{
 			DynamicObjectAction exist = getObject_action(action._mainWord);
 			if(exist != null){				
-				System.out.println(this._name + " DynamicObject Merged this " + action + " ObjectAction with the the equal ObjectAction it had before!\n");
+				System.out.println(this._name + " DynamicObject Merged this " + action + " ObjectAction with the the equal ObjectAction it had before!");
 				exist.mergeWith(action);
 				exist.set_owningDynamicObject(this);
 			}

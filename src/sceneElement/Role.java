@@ -241,7 +241,7 @@ public class Role extends SceneElement{
 		else{			
 			RoleAction exist = getRole_action(role_action._mainWord);
 			if(exist != null){				
-				print(this._name + " role Merged this " + role_action + " RoleAction with the the equal roleAction it had before!\n");
+				print(this._name + " role Merged this " + role_action + " RoleAction with the the equal roleAction it had before!");
 				exist.mergeWith(role_action);
 				exist.set_owningRole(this);
 			}
@@ -366,7 +366,7 @@ public class Role extends SceneElement{
 		if(!hasRole_state(role_state)){
 			this.role_states.add(role_state);
 			role_state.owningRole = this;
-//			System.out.println("RoleState " + role_state + " added to " + this._name);
+			System.out.println("RoleState " + role_state + " added to " + this._name);
 			return role_state;
 		}
 		else{

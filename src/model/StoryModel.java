@@ -63,6 +63,24 @@ public class StoryModel {
 		return null;
 	}
 	
+	public SceneModel getPastScene(SceneModel currentSceneModel) {
+
+		if(currentSceneModel == null)
+			return null;
+		
+		for(int sceneIndex = 0; sceneIndex < this.scenes.size(); sceneIndex++) {
+			
+			SceneModel curScene = this.scenes.get(sceneIndex);
+					
+			if(currentSceneModel.equals(curScene) && (sceneIndex - 1) >= 0)
+				return this.scenes.get(sceneIndex - 1);
+		}
+		
+		return null;
+	}
+
+	
+	
 	public ArrayList<Word> calculateMultiSemanticTagWords(){
 		if(scenes == null || scenes.size() == 0)
 			return null;
@@ -148,6 +166,8 @@ public class StoryModel {
 	private void print(String toPrint){
 		System.out.println(toPrint);		
 	}
+
+
 
 	
 }

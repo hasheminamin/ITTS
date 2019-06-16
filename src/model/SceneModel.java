@@ -176,7 +176,7 @@ public class SceneModel {
 						return rl;
 		}
 		
-//		MyError.error("this SceneModel has no Role with such a " + roleWord._wordName + " Word.");
+		MyError.error("this SceneModel has no Role with such a " + roleWord._wordName + " Word.");
 		return null;
 	}
 	

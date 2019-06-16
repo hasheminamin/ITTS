@@ -44,9 +44,12 @@ public class Dashboard {
 //	public static String inputCorporaPath = "dataset/98-02-09CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect.arff";
 //	public static String inputCorporaPath = "dataset/98-02-18CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect.arff";
 //	public static String inputCorporaPath = "dataset/98-02-23CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS.arff";
-	public static String inputCorporaPath = "dataset/98-02-25CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA.arff";
-		
-//	public static String inputSystemOutpurPath = "dataset/97-12-21out.arff";
+//	public static String inputCorporaPath = "dataset/98-02-25CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA.arff";
+//	public static String inputCorporaPath = "dataset/98-03-04CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA-OS&A.arff";
+	public static String inputCorporaPath = "dataset/98-03-05CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA-OS&A-all.arff";
+	
+	
+	//	public static String inputSystemOutpurPath = "dataset/97-12-21out.arff";
 	public static String inputSystemOutpurPath = "dataset/98-02-05out.arff";
 	
 	public static SceneReasoner sceneReasoner = new SceneReasoner(); 

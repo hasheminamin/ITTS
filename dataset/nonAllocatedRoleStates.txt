@@ -1,18 +1,22 @@
 ))))))))))))))))))))) not allocated: null=  ذوالنون
 ))))))))))))))))))))) not allocated: مالک§n-13378=  صاحب
-))))))))))))))))))))) not allocated: اعتماد§n-13802=  تکيه
 ))))))))))))))))))))) not allocated: حرکت§n-15937=  حرکت
 ))))))))))))))))))))) not allocated: اکسپرس§a-18373=  سريع
 ))))))))))))))))))))) not allocated: null=  خليفه
 ))))))))))))))))))))) not allocated: نماينده§n-13652=  نماينده‌اي
 ))))))))))))))))))))) not allocated: نماينده§n-13652=  نماينده
 ))))))))))))))))))))) not allocated: اخروي§a-1600=  ملکوتي
-))))))))))))))))))))) not allocated: پايين رفتن§n-12788=  فرود
-))))))))))))))))))))) not allocated: اخراج§n-10459=  اخراج
-))))))))))))))))))))) not allocated: null=  حضرت
-))))))))))))))))))))) not allocated: هبوط§n-11628=  هبوط
-))))))))))))))))))))) not allocated: null=  صفي
-))))))))))))))))))))) not allocated: منتخب§n-11356=  برگزيده
-))))))))))))))))))))) not allocated: غسل§n-16171=  غسل
-))))))))))))))))))))) not allocated: نماز§n-20660=  نماز
-))))))))))))))))))))) not allocated: خاکسپاري§n-11616=  
+
+all roleStateNumbers: 56
+Adj roleStateNumbers: 3 which 3 are correct: 100.0
+Moz roleStateNumbers: 8 which 7 are correct: 87.5
+MozEla roleStateNumbers: 1 which 1 are correct: 100.0
+Mosnad roleStateNumbers: 7 which 5 are correct: 71.42857142857143
+NVE roleStateNumbers: 12 which 10 are correct: 83.33333333333333
+chain roleStateNumbers: 17 which 10 are correct: 58.8235294117647
+allocated roleStateNumbers: 48
+non-allocated roleStateNumbers: 8
+
+correct allocations: 36 and fault allocations: 12 from: 48 allocations.
+correct allocation in allocated roleStates: 75.0%
+correct allocation in all roleStates: 64.28571428571429%
