@@ -46,8 +46,9 @@ public class Dashboard {
 //	public static String inputCorporaPath = "dataset/98-02-23CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS.arff";
 //	public static String inputCorporaPath = "dataset/98-02-25CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA.arff";
 //	public static String inputCorporaPath = "dataset/98-03-04CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA-OS&A.arff";
-	public static String inputCorporaPath = "dataset/98-03-05CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA-OS&A-all.arff";
-	
+//	public static String inputCorporaPath = "dataset/98-03-05CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA-OS&A-all.arff";
+//	public static String inputCorporaPath = "dataset/98-03-26CRFcorpora-junk-sceneMarker-corrections-corr-test-sync-PRcorrect-RS-RA-OS&A-all.arff";
+	public static String inputCorporaPath = "dataset/98-04-10CRFcorpora-junk-sceneMarker-corrections-all_rs_ra_ staO_s_dynO_s&a_ri_PR_loc_time_{end}.arff";
 	
 	//	public static String inputSystemOutpurPath = "dataset/97-12-21out.arff";
 	public static String inputSystemOutpurPath = "dataset/98-02-05out.arff";

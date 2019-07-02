@@ -1,0 +1,29 @@
+))))))))))))))))))))) not allocated: دعوت§n-11510=  دعوت
+))))))))))))))))))))) not allocated: تصميم گرفتن§n-10446=  تصميم
+))))))))))))))))))))) not allocated: ترک محل§n-10406=  ترک
+))))))))))))))))))))) not allocated: ذکر§n-14656=  ذکر
+))))))))))))))))))))) not allocated: گذشت§n-14958=  عفو
+))))))))))))))))))))) not allocated: گذشت§n-14958=  بخشش
+))))))))))))))))))))) not allocated: جايگزين§a-1588=  جانشيني
+))))))))))))))))))))) not allocated: سزاوار§a-701=  سزاوارتر
+))))))))))))))))))))) not allocated: بالقوگي§n-12491=  توان
+))))))))))))))))))))) not allocated: متمتع§a-17760=  بهره‌مند
+))))))))))))))))))))) not allocated: مديريت§n-10112=  لياقت
+))))))))))))))))))))) not allocated: مثبت§a-226=  مثبت
+))))))))))))))))))))) not allocated: اقامت کردن§n-10696=  سکونت
+))))))))))))))))))))) not allocated: ذنب§n-10598=  گناه
+))))))))))))))))))))) not allocated: موهبت الهي§n-12481=  رحمت
+
+all roleIntentNumbers: 66
+Adj roleIntentNumbers: 0 which 0 are correct: NaN
+Moz roleIntentNumbers: 11 which 7 are correct: 63.63636363636363
+MozEla roleIntentNumbers: 0 which 0 are correct: NaN
+Mosnad roleIntentNumbers: 4 which 3 are correct: 75.0
+NVE roleIntentNumbers: 15 which 11 are correct: 73.33333333333333
+chain roleIntentNumbers: 21 which 8 are correct: 38.095238095238095
+allocated roleIntentNumbers: 51
+non-allocated roleIntentNumbers: 15
+
+correct allocations: 29 and fault allocations: 22 from: 51 allocations.
+correct allocation in allocated roleIntents: 56.86274509803921%
+correct allocation in all roleIntents: 43.93939393939394%

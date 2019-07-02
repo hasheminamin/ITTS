@@ -1401,7 +1401,7 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 				for(SceneElement intent: stateSceneElements){
 					 
 //					print(state._mainWord._sentence + "");
-					print("\n" + scenePart.toString().toLowerCase() + "Intent: "+ intent);
+//					print("\n" + scenePart.toString().toLowerCase() + "Intent: "+ intent);
 					
 					allStateNums++;
 					
@@ -1421,7 +1421,7 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 						
 						if(tempWord._sceneElement == scenePart) {
 							dependeeWord = tempWord;
-							print("111111111111111111111 Adj referent dependee: " + dependeeWord._wordName);
+//							print("111111111111111111111 Adj referent dependee: " + dependeeWord._wordName);
 							adjStateNums++;							
 							
 							if(dependeeWord.equals(stateWord._referenceWord))
@@ -1439,7 +1439,7 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 								
 								if(me._sceneElement == scenePart) {									
 									dependeeWord = me;							
-									print("222222222222222222222 Moz referent dependee: " + dependeeWord._wordName);
+//									print("222222222222222222222 Moz referent dependee: " + dependeeWord._wordName);
 									
 									mozStateNums++;
 									
@@ -1459,7 +1459,7 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 															
 							if(mozaf != null && mozaf._sceneElement == scenePart) {									
 								dependeeWord = mozaf;					
-								print("333333333333333333333 Moz_elaih referent dependee: " + dependeeWord._wordName);															
+//								print("333333333333333333333 Moz_elaih referent dependee: " + dependeeWord._wordName);															
 								mozElaStateNums++;
 								
 								if(dependeeWord.equals(stateWord._referenceWord))
@@ -1473,20 +1473,42 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 							
 							SentenceModel RSsent = stateWord._sentence;
 							
-							ArrayList<Word> allSbjs = RSsent.getAllSubjects();
+							Word mosnadVerb = RSsent.getWord(stateWord._srcOfSynTag_number);
 							
-							if(allSbjs != null)
-								for(Word sbj:allSbjs)
-									if(sbj != null && sbj._sceneElement == scenePart) {
-										dependeeWord = sbj;
-										print("444444444444444444444 Mosnad referent dependee: " + dependeeWord._wordName);
-										mosnadStateNums++;
-										
-										if(dependeeWord.equals(stateWord._referenceWord))
-											corMosnadStateNums++;
-										
-										break;
-									}
+							if(mosnadVerb != null && mosnadVerb.hasAnyObjects()) {
+								
+								ArrayList<Word> objs = mosnadVerb.getObjects();
+								if(objs != null)
+									for(Word ob:objs)
+										if(ob != null && ob._sceneElement == scenePart) {
+											dependeeWord = ob;
+//											print("444444444444444444444 Mosnad OBJ referent dependee: " + dependeeWord._wordName);
+											mosnadStateNums++;
+											
+											if(dependeeWord.equals(stateWord._referenceWord))
+												corMosnadStateNums++;
+											
+											break;
+										}
+							}
+							//if it is not allocated yet.
+							if(dependeeWord == null) {
+							
+								ArrayList<Word> allSbjs = RSsent.getAllSubjects();
+								
+								if(allSbjs != null)
+									for(Word sbj:allSbjs)
+										if(sbj != null && sbj._sceneElement == scenePart) {
+											dependeeWord = sbj;
+//											print("444444444444444444444 Mosnad SBJ referent dependee: " + dependeeWord._wordName);
+											mosnadStateNums++;
+											
+											if(dependeeWord.equals(stateWord._referenceWord))
+												corMosnadStateNums++;
+											
+											break;
+										}
+							}
 						}
 					}	
 					//if it is not allocated yet.
@@ -1502,7 +1524,7 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 								for(Word obj:verb.getObjects()) {
 									if(obj != null && obj._sceneElement == scenePart) {
 										dependeeWord = obj;										
-										print("555555555555555555555 NVE OBJ referent dependee: " + dependeeWord._wordName);
+//										print("555555555555555555555 NVE OBJ referent dependee: " + dependeeWord._wordName);
 										NVEStateNums++;
 										
 										if(dependeeWord.equals(stateWord._referenceWord))
@@ -1517,7 +1539,7 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 								for(Word sbj:verb.getSubjects()) {
 									if(sbj != null && sbj._sceneElement == scenePart) {
 										dependeeWord = sbj;										
-										print("555555555555555555555 NVE Self SBJ referent dependee: " + dependeeWord._wordName);
+//										print("555555555555555555555 NVE Self SBJ referent dependee: " + dependeeWord._wordName);
 										NVEStateNums++;
 										
 										if(dependeeWord.equals(stateWord._referenceWord))
@@ -1533,7 +1555,7 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 									
 									if(sbj != null && sbj._sceneElement == scenePart) {
 										dependeeWord = sbj;										
-										print("555555555555555555555 NVE All SBJ referent dependee: " + dependeeWord._wordName);
+//										print("555555555555555555555 NVE All SBJ referent dependee: " + dependeeWord._wordName);
 										NVEStateNums++;
 										
 										if(dependeeWord.equals(stateWord._referenceWord))
@@ -1558,7 +1580,7 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 								if(phW._sceneElement == scenePart) {
 									dependeeWord = phW;
 									chainStateNums++;
-									print("666666666666666666666 chain referent depenedee: " + dependeeWord._wordName);
+//									print("666666666666666666666 chain referent depenedee: " + dependeeWord._wordName);
 																																					
 									if(dependeeWord.equals(stateWord._referenceWord))
 										corChainStateNums++;
@@ -1580,35 +1602,17 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 //								roleIntent.set_owningRole(role);
 							}
 						}
-						else if(scenePart == ScenePart.STATIC_OBJECT) {
-							StaticObject statObject = currentSceneModel.getStatic_object(dependeeWord);
-							
-							if(statObject != null) {								
-								StaticObjectState statState = (StaticObjectState)intent;
-								statObject.addObject_state(statState);
-//								statState.set_owningStaticObject(statObject);
-							}
-						}
-						else if(scenePart == ScenePart.DYNAMIC_OBJECT) {
-							DynamicObject dynObject = currentSceneModel.getDynamic_object(dependeeWord);
-							
-							if(dynObject != null) {								
-								DynamicObjectState dynState = (DynamicObjectState)intent;
-								dynObject.addObject_state(dynState);
-//								dynState.set_owningDynamicObject(dynObject);
-							}
-						}
 					}
 					
 					//TODO: these line and all ifs which checks roleStateWord._referenceWord must be deleted!
 					//these are only for checking phase
 					if(dependeeWord != null && dependeeWord.equals(stateWord._referenceWord)) {
 						correctAllocationNUms++;
-						print("##################### correct allocation for " + stateWord._wordName + " role: " + dependeeWord._wordName);							
+//						print("##################### correct allocation for " + stateWord._wordName + " role: " + dependeeWord._wordName);							
 					}
 					else if(dependeeWord != null) {
 						faultAllocationNUms++;
-						print("===================== fault allocation for " + stateWord._wordName + " role: " + dependeeWord._wordName);
+//						print("===================== fault allocation for " + stateWord._wordName + " role: " + dependeeWord._wordName);
 					}
 					else {
 						nonAllocatedNUms++;
@@ -1761,20 +1765,42 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 							
 							SentenceModel RSsent = stateWord._sentence;
 							
-							ArrayList<Word> allSbjs = RSsent.getAllSubjects();
+							Word mosnadVerb = RSsent.getWord(stateWord._srcOfSynTag_number);
 							
-							if(allSbjs != null)
-								for(Word sbj:allSbjs)
-									if(sbj != null && sbj._sceneElement == scenePart) {
-										dependeeWord = sbj;
-										print("444444444444444444444 Mosnad referent dependee: " + dependeeWord._wordName);
-										mosnadStateNums++;
-										
-										if(dependeeWord.equals(stateWord._referenceWord))
-											corMosnadStateNums++;
-										
-										break;
-									}
+							if(mosnadVerb != null && mosnadVerb.hasAnyObjects()) {
+								
+								ArrayList<Word> objs = mosnadVerb.getObjects();
+								if(objs != null)
+									for(Word ob:objs)
+										if(ob != null && ob._sceneElement == scenePart) {
+											dependeeWord = ob;
+											print("444444444444444444444 Mosnad OBJ referent dependee: " + dependeeWord._wordName);
+											mosnadStateNums++;
+											
+											if(dependeeWord.equals(stateWord._referenceWord))
+												corMosnadStateNums++;
+											
+											break;
+										}
+							}
+							//if it is not allocated yet.
+							if(dependeeWord == null) {
+							
+								ArrayList<Word> allSbjs = RSsent.getAllSubjects();
+								
+								if(allSbjs != null)
+									for(Word sbj:allSbjs)
+										if(sbj != null && sbj._sceneElement == scenePart) {
+											dependeeWord = sbj;
+											print("444444444444444444444 Mosnad SBJ referent dependee: " + dependeeWord._wordName);
+											mosnadStateNums++;
+											
+											if(dependeeWord.equals(stateWord._referenceWord))
+												corMosnadStateNums++;
+											
+											break;
+										}
+							}
 						}
 					}	
 					//if it is not allocated yet.
@@ -1841,8 +1867,8 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 							
 							print("state _phrase: " + rsPhrase);
 							
-							for(Word phW:rsPhrase.get_words()) {									
-							
+							for(Word phW:rsPhrase.get_words()) {
+																							
 								if(phW._sceneElement == scenePart) {
 									dependeeWord = phW;
 									chainStateNums++;
@@ -2063,20 +2089,41 @@ private void allocateRoleIntents(ArrayList<StoryModel> allStories, ScenePart sce
 							
 							SentenceModel RSsent = stateWord._sentence;
 							
-							ArrayList<Word> allSbjs = RSsent.getAllSubjects();
+							Word mosnadVerb = RSsent.getWord(stateWord._srcOfSynTag_number);
 							
-							if(allSbjs != null)
-								for(Word sbj:allSbjs)
-									if(sbj != null && sbj._sceneElement == scenePart) {
-										dependeeWord = sbj;
-										print("444444444444444444444 Mosnad referent dependee: " + dependeeWord._wordName);
-										mosnadStateNums++;
-										
-										if(dependeeWord.equals(stateWord._referenceWord))
-											corMosnadStateNums++;
-										
-										break;
-									}
+							if(mosnadVerb != null && mosnadVerb.hasAnyObjects()) {
+								
+								ArrayList<Word> objs = mosnadVerb.getObjects();
+								if(objs != null)
+									for(Word ob:objs)
+										if(ob != null && ob._sceneElement == scenePart) {
+											dependeeWord = ob;
+											print("444444444444444444444 Mosnad OBJ referent dependee: " + dependeeWord._wordName);
+											mosnadStateNums++;
+											
+											if(dependeeWord.equals(stateWord._referenceWord))
+												corMosnadStateNums++;
+											
+											break;
+										}
+							}
+							//it is not allocated or it has a fault allocation!
+							if(dependeeWord == null || (dependeeWord != null && !dependeeWord.equals(stateWord._referenceWord))) {		
+								ArrayList<Word> allSbjs = RSsent.getAllSubjects();
+								
+								if(allSbjs != null)
+									for(Word sbj:allSbjs)
+										if(sbj != null && sbj._sceneElement == scenePart) {
+											dependeeWord = sbj;
+											print("444444444444444444444 Mosnad SBJ referent dependee: " + dependeeWord._wordName);
+											mosnadStateNums++;
+											
+											if(dependeeWord.equals(stateWord._referenceWord))
+												corMosnadStateNums++;
+											
+											break;
+										}
+							}
 						}
 					}	
 					//it is not allocated or it has a fault allocation!

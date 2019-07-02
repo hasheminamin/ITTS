@@ -321,7 +321,7 @@ public class Role extends SceneElement{
 		
 		if(!hasRole_intent(role_intent)){
 			this.role_intents.add(role_intent);
-			System.out.println("RoleIntent " + role_intent + " added to " + this._name);
+//			System.out.println("RoleIntent " + role_intent + " added to " + this._name);
 			role_intent.set_owningRole(this);
 			return role_intent;
 		}
